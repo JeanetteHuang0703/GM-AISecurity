@@ -1,0 +1,199 @@
+{
+  "schemaVersion": 1,
+  "date": "2026-10-11",
+  "timezone": "Asia/Shanghai",
+  "kind": "sample",
+  "note": "本期为历史范例，非完整日报；旧闻解读与首发日期已在各条来源中标明。",
+  "items": [
+    {
+      "id": "2026-10-11-01",
+      "date": "2026-10-11",
+      "rank": 1,
+      "title": "CryptoBilis／Ledger事件出现资金追踪进展：约745万美元ETH流入Tornado Cash【当日跟进】",
+      "tags": [
+        "crypto",
+        "blockchain",
+        "wallets",
+        "supply-chain",
+        "cross-chain"
+      ],
+      "keywords": [
+        "加密货币",
+        "区块链",
+        "钱包与托管"
+      ],
+      "focus": "窃密后的资金跨链与混币追踪仍需保留归因置信度。",
+      "sourceNote": "TokenPost报道，发布时间换算为北京时间10月11日18:20；报道归因于链上调查员 Specter，未取得其原帖，最早披露时间待核。可信度：中。",
+      "sources": [
+        {
+          "name": "TokenPost报道",
+          "url": "https://www.tokenpost.com/news/technology/29774"
+        }
+      ],
+      "summary": "CryptoBilis／Ledger事件在10月11日出现新的资金追踪报道：调查者称约2,990.3 ETH、按报道时价格约745万美元，从14个地址流入Tornado Cash混币器。该报道属于链上追踪跟进，未直接核验最早研究者的完整原始数据，且资金移动不能单独证明设备窃密机制。",
+      "impact": "高：硬件钱包相关事件叠加跨链转移，提高追赃难度；地址复用仍可能提供关联线索。责任归因及损失规模尚需进一步核验。",
+      "researchApplications": "跨链资金流图、地址复用与手续费来源关联；结合设备供应链证据进行归因；评估AI链上分析的误报率。",
+      "relevance": {
+        "level": "direct",
+        "reason": "跨链、智能合约安全：同一密钥泄漏能影响多链资产，链上交易有效不代表用户真实授权。"
+      },
+      "previous": {
+        "ids": [],
+        "note": "有：该报道属于此前CryptoBilis／Ledger调查的资金流向跟进，资金转移发生于10月9–10日。"
+      }
+    },
+    {
+      "id": "2026-10-11-02",
+      "date": "2026-10-11",
+      "rank": 2,
+      "title": "AI在工控实验室完成8类攻击目标，可在约16分钟内推进至工业控制网络【10月11日报道；原始首发时间待核】",
+      "tags": [
+        "cybersecurity",
+        "security-ai",
+        "ot-security",
+        "evaluation"
+      ],
+      "keywords": [
+        "网络安全",
+        "AI 辅助攻防",
+        "工控安全"
+      ],
+      "focus": "AI 能加速工控实验中的攻击步骤，实验含人工批准。",
+      "sourceNote": "原始研究机构：Booz Allen Hamilton；实验说明。10月11日由Cyber Security Review转述。可信度：中高，机构自报实验结果。",
+      "sources": [
+        {
+          "name": "实验说明",
+          "url": "https://www.boozallen.com/insights/cyber/frontier-si-reaches-ot-systems.html"
+        },
+        {
+          "name": "Cyber Security Review",
+          "url": "https://www.cybersecurity-review.com/ai-systems-are-fully-capable-of-carrying-out-attacks-against-infrastructure/"
+        }
+      ],
+      "summary": "Booz Allen在隔离的工控实验室测试AI攻击能力，完成了研究设计的8类攻击目标，其中一次场景约16分钟推进到工业控制网络。每次漏洞利用及可能产生物理效果的动作均经过人员批准，因此结果不能解释为无人监督AI能攻破任意真实工厂。",
+      "impact": "高：说明AI可能缩短从网络访问到物理动作的时间；不能据此认定无人监督AI已能攻破任意真实工厂。",
+      "researchApplications": "在工控数字孪生环境评估AI攻击与防御；检测控制器模式变更、程序写入及跨安全边界会话；测量防御响应时间。",
+      "relevance": {
+        "level": "direct",
+        "reason": "分布式系统安全、AI 辅助攻防：网络访问如何转化为物理动作，以及人工批准如何影响实验结果。"
+      },
+      "previous": {
+        "ids": [],
+        "note": "有：研究延续该机构Cyber Weapon Index工作；原始页面未显示可核验首发日期。"
+      }
+    },
+    {
+      "id": "2026-10-11-03",
+      "date": "2026-10-11",
+      "rank": 3,
+      "title": "XBreaking研究：可解释性分析能定位并削弱开源LLM安全机制【当日报道；论文10月10日发表】",
+      "tags": [
+        "ai-security",
+        "llm-research",
+        "evaluation"
+      ],
+      "keywords": [
+        "AI 安全",
+        "LLM 研究",
+        "评测"
+      ],
+      "focus": "白盒安全机制可被削弱，不能外推为闭源 API 远程攻击。",
+      "sourceNote": "原始机构：帕维亚大学、科钦科技大学；Springer原始论文，期刊为 *Neural Computing and Applications*。可信度：高，同行评审论文；实验外推广有限。",
+      "sources": [
+        {
+          "name": "Springer原始论文",
+          "url": "https://link.springer.com/article/10.1007/s00521-026-12511-3"
+        }
+      ],
+      "summary": "XBreaking研究在7个语言模型上定位与安全对齐相关的内部层，并通过针对性扰动削弱安全限制。实验要求白盒访问模型内部，不等同于远程攻破闭源API；论文在10月10日发表，本期属于媒体解读。",
+      "impact": "中高：提示仅依赖模型内置拒答机制不足以保护高风险应用，特别是可修改权重的部署环境。",
+      "researchApplications": "模型权重完整性检查、安全对齐回归测试、内部异常监测；用于审计区块链代码生成模型的安全稳定性。",
+      "relevance": {
+        "level": "direct",
+        "reason": "LLM 安全与评测：可修改权重的部署需要验证安全对齐和模型内部完整性。"
+      },
+      "previous": {
+        "ids": [],
+        "note": "有：论文于10月10日正式发表，10月11日出现媒体解读；属于研究传播跟进。"
+      }
+    },
+    {
+      "id": "2026-10-11-04",
+      "date": "2026-10-11",
+      "rank": 4,
+      "title": "P7 DarkSword针对iPhone钱包数据的能力受到关注【10月11日回顾，非新披露】",
+      "tags": [
+        "cybersecurity",
+        "crypto",
+        "wallets"
+      ],
+      "keywords": [
+        "网络安全",
+        "加密货币",
+        "钱包与托管"
+      ],
+      "focus": "钱包安全依赖终端安全，本期是旧报告回顾。",
+      "sourceNote": "最早已核验机构：iVerify威胁情报团队，原始报告于10月8日发布；技术报告。CryptoSlate于10月11日解读。可信度：高，样本分析；损失规模未知。",
+      "sources": [
+        {
+          "name": "技术报告",
+          "url": "https://www.iverify.com/blog/darksword-variant-threat-research"
+        },
+        {
+          "name": "CryptoSlate",
+          "url": "https://cryptoslate.com/new-iphone-spyware-can-hunt-for-crypto-wallets-and-extract-their-data-every-15-seconds/"
+        }
+      ],
+      "summary": "iVerify分析的P7 DarkSword植入程序会扫描钱包应用，并提取部分钱包及钥匙串数据。程序默认每15秒轮询控制指令，这个数字衡量指令轮询间隔，不是固定的资产盗取间隔；原始报告10月8日发布，本期回顾未确认新损失规模。",
+      "impact": "高，持续风险：手机系统遭入侵可能使钱包及恢复信息暴露；当前材料未确认由该变种造成的加密资产损失。",
+      "researchApplications": "手机取证与链上异常交易关联；钱包敏感信息隔离；用AI辅助恶意代码识别并验证其检测准确率。",
+      "relevance": {
+        "level": "indirect",
+        "reason": "间接关联钱包安全：终端入侵可能泄漏密钥，但研究没有提出新的共识或跨链机制。"
+      },
+      "previous": {
+        "ids": [],
+        "note": "有：8月发现感染，10月8日披露。10月11日报道未提供已核实的新攻击规模。"
+      }
+    },
+    {
+      "id": "2026-10-11-05",
+      "date": "2026-10-11",
+      "rank": 5,
+      "title": "AI编码产量增长，代码审查成为瓶颈：哈佛研究被重新报道【当日解读，旧研究】",
+      "tags": [
+        "llm-research",
+        "coding",
+        "evaluation"
+      ],
+      "keywords": [
+        "LLM 研究",
+        "AI 编码",
+        "评测"
+      ],
+      "focus": "代码产量增加未直接转化为更多问题解决，审查负担需要一起衡量。",
+      "sourceNote": "原始作者：哈佛大学Fiona Chen、James Stratton；工作论文。Forkast报道时间为北京时间10月11日17:32。可信度：中高，原始工作论文，尚非同行评审结论。",
+      "sources": [
+        {
+          "name": "工作论文",
+          "url": "https://fion.ac/jellyfish.pdf"
+        },
+        {
+          "name": "Forkast报道",
+          "url": "https://forkast.news/ai-coding-agents-write-30-more-code-and-resolve-zero-additional-issues-harvard-study-finds/"
+        }
+      ],
+      "summary": "哈佛工作论文使用718家企业、725,938名员工的数据分析AI编码Agent对软件开发的影响，其中员工样本包含非工程岗位。研究报告代码行数约增加30%，而代码审查时间约增加49%、相当于3.45天，已解决问题数未显著增加。论文首版在1月发布，本期为旧研究的媒体解读，结果不是同行评审后确认的普遍规律。",
+      "impact": "中高：代码生成速度不能直接代表交付效率；安全审查和测试能力可能成为限制因素。",
+      "researchApplications": "评估AI审计与人工审计协作；智能合约开发同时衡量漏洞率、审查耗时和实际交付量；研究审查负担是否抵消生成收益。",
+      "relevance": {
+        "level": "direct",
+        "reason": "LLM 科研与智能合约开发：需要同时衡量交付效率、审查负担和缺陷，而非只衡量代码产量。"
+      },
+      "previous": {
+        "ids": [],
+        "note": "有：论文首版为1月7日，所读版本为8月4日；10月11日是媒体解读，不能算当天新论文。"
+      }
+    }
+  ]
+}

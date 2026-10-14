@@ -1,0 +1,82 @@
+{
+  "cybersecurity": {
+    "label": "网络安全",
+    "description": "漏洞、入侵事件、攻防与基础设施安全"
+  },
+  "blockchain": {
+    "label": "区块链",
+    "description": "区块链协议、资产与链上基础设施"
+  },
+  "crypto": {
+    "label": "加密货币",
+    "description": "加密资产、行业动态与监管"
+  },
+  "consensus": {
+    "label": "共识",
+    "description": "共识、安全不变量、验证者与最终性"
+  },
+  "smart-contracts": {
+    "label": "智能合约",
+    "description": "合约逻辑、授权、执行和资产退出"
+  },
+  "cross-chain": {
+    "label": "跨链",
+    "description": "跨链桥、兑换、资金追踪与状态关联"
+  },
+  "agent-security": {
+    "label": "Agent 安全",
+    "description": "单智能体权限、任务越界、工具与执行安全"
+  },
+  "multi-agent": {
+    "label": "多智能体",
+    "description": "委派、协作、身份传播与跨智能体追踪"
+  },
+  "llm-research": {
+    "label": "LLM 研究",
+    "description": "能力、推理、训练、后训练、科研应用"
+  },
+  "ai-security": {
+    "label": "AI 安全",
+    "description": "对抗攻击、安全对齐、AI 风险与治理"
+  },
+  "security-ai": {
+    "label": "AI 辅助攻防",
+    "description": "AI 用于安全研究、攻击与防御"
+  },
+  "distributed-systems": {
+    "label": "分布式系统",
+    "description": "跨节点控制、状态一致性、隔离与可用性"
+  },
+  "evaluation": {
+    "label": "评测",
+    "description": "实验、基准、证据边界与验证"
+  },
+  "supply-chain": {
+    "label": "供应链安全",
+    "description": "硬件、软件依赖与交付路径"
+  },
+  "wallets": {
+    "label": "钱包与托管",
+    "description": "密钥、钱包、签名和托管权限"
+  },
+  "stablecoins": {
+    "label": "稳定币",
+    "description": "稳定币结构、金融稳定与结算"
+  },
+  "identity": {
+    "label": "身份与权限",
+    "description": "认证、授权、委派及撤销"
+  },
+  "ot-security": {
+    "label": "工控安全",
+    "description": "工业控制、物联网与物理安全"
+  },
+  "coding": {
+    "label": "AI 编码",
+    "description": "代码生成、审查、开发与持续集成"
+  },
+  "regulation": {
+    "label": "监管",
+    "description": "监管报告、准入与行业规则"
+  }
+}

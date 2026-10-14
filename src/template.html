@@ -1,0 +1,34 @@
+<!doctype html>
+<html lang="zh-CN">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <meta name="description" content="网络安全、区块链和 AI 研究日报。按日期、标签与关键词检索历史新闻。">
+  <title>GM · AI & Security 日报</title>
+  <style>/* STYLES */</style>
+</head>
+<body>
+  <header class="masthead">
+    <div class="brand"><span class="mark" aria-hidden="true">GM<span>·</span></span><div><h1>AI & Security 日报</h1><p>网络安全 / 区块链 / Agent 安全 / LLM 研究</p></div></div>
+    <a class="repo-link" href="https://github.com/JeanetteHuang0703/GM-AISecurity" target="_blank" rel="noopener noreferrer">GitHub ↗</a>
+  </header>
+  <main>
+    <section class="intro" aria-label="档案概况"><div><span class="eyebrow">RESEARCH NEWS ARCHIVE</span><h2 id="heading">每日重要新闻</h2><p id="overview"></p></div><div class="date-stamp"><span>最新一期 · 北京时间</span><strong id="latest-date"></strong></div></section>
+    <section class="filters" aria-label="检索新闻">
+      <div class="filter-top"><div class="tabs" role="group" aria-label="浏览范围"><button id="latest" type="button">最新日报</button><button id="archive" type="button">全部历史</button></div><label class="search-label"><span class="sr-only">搜索新闻</span><input id="query" type="search" placeholder="搜索标题、机制、来源或研究方向…" autocomplete="off"></label></div>
+      <div class="filter-selects"><label>日期 <select id="date"></select></label><label>研究相关性 <select id="relevance"><option value="all">全部相关性</option><option value="direct">直接相关</option><option value="indirect">间接相关</option><option value="none">暂无明显相关</option></select></label><label>标签组合 <select id="mode"><option value="any">匹配任一标签</option><option value="all">匹配全部标签</option></select></label><button id="reset" class="text-button" type="button">清除筛选</button></div>
+      <div id="tags" class="tags" role="group" aria-label="按标签检索历史新闻"></div>
+    </section>
+    <div class="results-bar"><p id="result-count" role="status" aria-live="polite"></p><div><button id="download" class="text-button" type="button">导出当前 JSON ↓</button><button id="share" class="text-button" type="button">复制检索链接 ↗</button></div></div>
+    <p id="day-note" class="day-note"></p>
+    <div class="table-wrap" tabindex="0" role="region" aria-label="新闻表格，可横向滚动">
+      <table><caption class="sr-only">新闻按日期从新到旧排列，每日按重要程度排序</caption><colgroup><col class="title-col"><col class="focus-col"><col class="source-col"><col class="summary-col"><col class="impact-col"><col class="application-col"><col class="relevance-col"><col class="previous-col"></colgroup><thead><tr><th scope="col">01 新闻总结标题</th><th scope="col">02 关键词 / 重点问题 / 趋势</th><th scope="col">03 新闻来源 / 最早发布机构 / 可信度</th><th scope="col">04 重要信息及量化信息</th><th scope="col">05 造成的影响判断</th><th scope="col">06 AI 安全 / blockchain 研究应用点</th><th scope="col">07 与你研究的相关性</th><th scope="col">08 是否有前序新闻？</th></tr></thead><tbody id="news"></tbody></table>
+    </div>
+    <div id="empty" class="empty" hidden><h3>没有匹配的新闻</h3><p>试试减少标签，或切换到全部历史。</p><button id="empty-reset" type="button">查看全部历史</button></div>
+  </main>
+  <footer><span>按北京时间归档 · 判断与建议不等于已确认事实</span><span>静态档案 · <a href="data/archive.json">全部 JSON</a> · <a href="data/tags.json">标签词表</a></span></footer>
+  <noscript><p>请启用 JavaScript 以检索新闻，或通过底部链接读取 JSON 档案。</p></noscript>
+  <script id="archive-data" type="application/json">DATA_PLACEHOLDER</script>
+  <script>/* APP */</script>
+</body>
+</html>
