@@ -35,7 +35,7 @@ npm run preview
 
 ## 每天更新
 
-现有 Codex 日程负责检索和整理新闻，然后写入 `data/days/YYYY-MM-DD.json`。日期统一指北京时间前一天，`rank` 是当日重要程度顺序；更新和旧闻不能伪装为当天首次事件。
+现有 Codex 日程在每天北京时间 **9:00** 检索和整理新闻，然后写入 `data/days/YYYY-MM-DD.json`。日期统一指北京时间前一天，`rank` 是当日重要程度顺序；更新和旧闻不能伪装为当天首次事件。
 
 1. 按 `UPDATE_GUIDE.md` 新增当日 JSON；历史日期文件保持原样，事实纠错应保留说明。
 2. 运行 `npm run validate`、`npm test`、`npm run build`。
