@@ -29,7 +29,12 @@
   }
   function openItem(item) {
     setFilters({ date: item.date, tags: [], query: '', relevance: 'all', item: item.id });
-    $('item-' + item.id)?.scrollIntoView({ block: 'center', inline: 'nearest', behavior: 'smooth' });
+    focusItem(item.id);
+  }
+  function focusItem(id) {
+    const row = $('item-' + id);
+    const wrap = document.querySelector('.table-wrap');
+    if (row) wrap.scrollTo({ top: Math.max(0, row.offsetTop - wrap.clientHeight / 2), left: 0, behavior: 'smooth' });
   }
   function renderRow(item) {
     const row = element('tr'); row.id = 'item-' + item.id;
@@ -72,12 +77,13 @@
     $('latest').setAttribute('aria-pressed', String(filters.date === dates[0]));
     $('archive').setAttribute('aria-pressed', String(filters.date === 'all'));
     $('heading').textContent = filters.date === 'all' ? '历史新闻档案' : filters.date + ' 日报';
-    $('result-count').textContent = `找到 ${visible.length} 条新闻 · ${new Set(visible.map(item => item.date)).size} 天 · 每日按重要程度排序`;
+    $('result-count').textContent = `找到 ${visible.length} 条新闻 · ${new Set(visible.map(item => item.date)).size} 天 · 横向滑动查看八列`;
     const selectedDay = data.days.find(day => day.date === filters.date);
     $('day-note').textContent = selectedDay?.note || '日期从新到旧排列。选择标签会检索全部历史；可再限定日期。';
     $('news').replaceChildren(...visible.map(renderRow));
     $('empty').hidden = visible.length !== 0;
     document.querySelector('.table-wrap').hidden = visible.length === 0;
+    if (updateUrl) document.querySelector('.table-wrap').scrollTo({ top: 0, left: 0 });
     for (const button of $('tags').children) button.setAttribute('aria-pressed', String(filters.tags.includes(button.dataset.tag)));
     if (updateUrl) {
       try { history.replaceState(null, '', '?' + filterParams(filters)); } catch { /* Local file previews still support filters. */ }
@@ -116,5 +122,5 @@
   });
   window.addEventListener('popstate', () => { filters = readFilters(location.search, dates, data.taxonomy); render(); });
   render();
-  if (filters.item) $('item-' + filters.item)?.scrollIntoView({ block: 'center', inline: 'nearest' });
+  if (filters.item) focusItem(filters.item);
 })();
