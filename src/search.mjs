@@ -19,8 +19,9 @@ export function filterNews(items, filters, taxonomy = {}) {
 export function readFilters(search, dates, taxonomy) {
   const params = new URLSearchParams(search);
   const selectedTags = [...new Set((params.get('tags') || '').split(',').filter(tag => Object.hasOwn(taxonomy, tag)))];
-  const date = params.get('date') || (selectedTags.length || params.get('q') ? 'all' : dates[0] || 'all');
+  const date = params.get('date') || 'all';
   return {
+    view: ['all', 'favorites'].includes(params.get('view')) ? params.get('view') : 'recent',
     date: dates.includes(date) || date === 'all' ? date : 'all',
     query: params.get('q') || '',
     tags: selectedTags,
@@ -32,6 +33,7 @@ export function readFilters(search, dates, taxonomy) {
 
 export function filterParams(filters) {
   const params = new URLSearchParams();
+  if (filters.view && filters.view !== 'recent') params.set('view', filters.view);
   if (filters.date) params.set('date', filters.date);
   if (filters.query) params.set('q', filters.query);
   if (filters.tags.length) params.set('tags', filters.tags.join(','));

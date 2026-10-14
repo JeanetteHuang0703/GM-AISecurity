@@ -1,6 +1,7 @@
 import { readFile, readdir } from 'node:fs/promises';
 import { fileURLToPath } from 'node:url';
 import path from 'node:path';
+import { beijingDate, pruneArchive } from '../src/archive.mjs';
 
 export const root = fileURLToPath(new URL('../', import.meta.url));
 const requiredText = ['id', 'title', 'focus', 'sourceNote', 'summary', 'impact', 'researchApplications'];
@@ -16,7 +17,7 @@ export function validateArchive(days, taxonomy) {
     assert(!dates.has(day.date), `重复日期: ${day.date}`);
     dates.add(day.date);
     assert(day.schemaVersion === 1 && day.timezone === 'Asia/Shanghai', `${day.date}: 版本或时区错误`);
-    assert(['daily', 'sample'].includes(day.kind), `${day.date}: 缺少日报类型`);
+    assert(['daily', 'sample', 'backfill', 'favorite'].includes(day.kind), `${day.date}: 缺少日报类型`);
     assert(typeof day.note === 'string', `${day.date}: 缺少口径说明`);
     assert(Array.isArray(day.items), `${day.date}: items 必须是数组`);
     const ranks = new Set();
@@ -37,6 +38,7 @@ export function validateArchive(days, taxonomy) {
       }
       assert(['direct', 'indirect', 'none'].includes(item.relevance?.level) && typeof item.relevance.reason === 'string' && item.relevance.reason.trim(), `${item.id}: 相关性不完整`);
       assert(Array.isArray(item.previous?.ids) && typeof item.previous?.note === 'string', `${item.id}: 前序信息不完整`);
+      for (const previous of item.previous.records || []) assert(typeof previous.title === 'string' && isDate(previous.date) && previous.date < item.date, `${item.id}: 已清理前序摘要无效`);
       ids.set(item.id, item);
     }
   }
@@ -55,8 +57,20 @@ export async function loadArchive() {
     assert(file === `${day.date}.json`, `文件名与日期不匹配: ${file}`);
     return day;
   }));
-  const items = validateArchive(days, taxonomy);
-  return { schemaVersion: 1, timezone: 'Asia/Shanghai', latestDate: days.at(-1)?.date || null, taxonomy, days, items };
+  const favorites = JSON.parse(await readFile(path.join(root, 'data/favorites.json'), 'utf8'));
+  assert(favorites.schemaVersion === 1 && Array.isArray(favorites.items), '共享收藏格式错误');
+  assert(new Set(favorites.items.map(item => item.id)).size === favorites.items.length, '共享收藏ID重复');
+  const retained = pruneArchive(days, favorites.items, beijingDate());
+  const all = new Map(retained.favorites.map(item => [item.id, item]));
+  retained.days.flatMap(day => day.items).forEach(item => all.set(item.id, item));
+  const groups = new Map(retained.days.map(day => [day.date, { ...day, items: [] }]));
+  for (const item of all.values()) {
+    if (!groups.has(item.date)) groups.set(item.date, { schemaVersion: 1, date: item.date, timezone: 'Asia/Shanghai', kind: 'favorite', note: '已超过三天，因加入共享爱心收藏而保留。', items: [] });
+    groups.get(item.date).items.push(item);
+  }
+  const mergedDays = [...groups.values()].sort((a, b) => a.date.localeCompare(b.date));
+  const items = validateArchive(mergedDays, taxonomy);
+  return { schemaVersion: 1, timezone: 'Asia/Shanghai', latestDate: retained.days.at(-1)?.date || null, taxonomy, days: mergedDays, items, favoriteIds: favorites.items.map(item => item.id) };
 }
 
 if (process.argv[1] && path.resolve(process.argv[1]) === fileURLToPath(import.meta.url)) {

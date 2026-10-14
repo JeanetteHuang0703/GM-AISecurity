@@ -1,47 +1,47 @@
 # GM · AI & Security 日报
 
-最简单的静态新闻档案：一个 HTML 页面、按天存储的 JSON、浏览器内标签检索。无需数据库、前端框架或运行时 API 密钥。
+为了每天北京时间早上 **08:30 打开瞅一眼**。首页默认展示前 3 个完整自然日的重要新闻，例如 10 月 14 日早上看 10 月 11—13 日全部新闻；日期从新到旧，每天按重要程度排序。
 
-## 浏览与检索
+网站：https://jeanettehuang0703.github.io/GM-AISecurity/
 
-- 默认显示最新一期，保留八列表格，每日按重要程度排序。
-- 点击标签会检索全部历史，支持“任一标签”或“全部标签”；可继续限定日期和研究相关性。
-- 关键词搜索覆盖标题、信息、判断、研究方向及来源。多个空格分隔的词需同时匹配。
-- 前序记录可点击跳转；检索条件保存在 URL，可复制分享。
-- 当前结果可以导出为 JSON；`data/archive.json` 是部署时生成的全量档案。
+## 范围与检索
 
-初始档案来自本对话已输出的 2026-10-11 至 2026-10-13 内容，共 24 条。10 月 11 日是范例，非完整日报。导入没有重新核验原始报道；旧闻解读、实验限制及来源可信度保留在各条记录中。
+收录重大网络攻击、漏洞与补丁、数据泄漏、供应链、云与身份安全；加密货币、区块链、钱包、稳定币及重大行业与监管新闻；AI 系统与单／多 Agent 安全、AI 辅助攻防，以及模型能力、推理、训练／后训练、评测和科研应用。共识、合约、跨链、Agent 和分布式系统是重点研究方向，不排除其他重大新闻。
 
-## 本地预览
+搜索覆盖全部八列、关键词及标签。空格分隔的多个词需要同时匹配；标签支持任一／全部匹配，还可限定日期与研究相关性。每页 40 条，JSON 导出包含全部匹配结果。
 
-需要 Node.js 22 或更新版本，不需要安装 npm 依赖。
+## 三天保留与收藏状态
+
+按用户最新决定，**这次只启用三天晨读，共享爱心收藏暂未启用**。页面显示“收藏待开放”，不会提交 GitHub 请求；仓库不含访客触发的写入工作流，也没有新增 Issue 或内容写入授权。
+
+每日源文件为 `data/days/YYYY-MM-DD.json`。更新前运行 `node scripts/prune.mjs`，清理早于“北京时间今天减三天”的日文件。构建和浏览器展示也会过滤过期未收藏内容。前序正文清理后保留标题、日期及说明。预留的 `data/favorites.json` 当前为空，若将来启用收藏则需完整保存八列正文、来源及标签，并在清理时保留。
+
+当前三天共 24 条：10 月 11 日保留五条早期范例，12—13 日是已有日报导入；各期保留原有核验范围说明。本次不补录 10 月 1—10 日。
+
+## 数据容量
+
+只保存摘要、分析、标签和原始链接，不保存全文、图片、PDF 或运行日志。构建目录 `site/` 不提交，部署产物不反复进入 Git 历史。
+
+**清理当前日文件不会清空 Git 提交历史**，因此仓库总大小并非永久不变。按每条文本约 2—3 KB、每天 20 条估算，新增源内容约 15—22 MB／年，实际 Git 大小受压缩与修改次数影响。目前无需外部数据库；可在 Git 对象或将来收藏接近 200 MB、检索变慢时评估年度归档或对象存储。
+
+GitHub Pages 已发布站点上限为 1 GB，普通 Git 单文件超过 100 MiB 会被阻止。参考 [Pages 限制](https://docs.github.com/en/pages/getting-started-with-github-pages/github-pages-limits)、[GitHub 大文件说明](https://docs.github.com/en/repositories/working-with-files/managing-large-files/about-large-files-on-github)。
+
+## 更新与发布
+
+以 08:30 可读为目标，本地 Codex 日程在北京时间 **08:00 提前启动**，整理前一天新闻、清理过期记录、验证后推送 GitHub，再由 GitHub Actions 发布 Pages。页面显示本版本生成时间；采集、网络或部署异常可能延后。
+
+电脑和 Codex 应用需要运行且 GitHub 认证有效。GitHub Actions 负责构建发布，不自行检索新闻或调用模型；网页发布后可独立访问。参考 [本地日程条件](https://learn.chatgpt.com/docs/automations)。
+
+## 本地验证
+
+需要 Node.js 22 或更新版本，无需安装依赖：
 
 ```powershell
-npm run validate
-npm test
-npm run build
-npm run preview
+node scripts/prune.mjs
+node scripts/validate.mjs
+node --test tests/archive.test.mjs
+node scripts/build.mjs
+node scripts/serve.mjs
 ```
 
-打开 http://127.0.0.1:4173 。也可以直接打开生成的 `site/index.html`；页面内嵌完整档案，检索无需服务器。直接打开文件时，复制在线检索链接不可用。
-
-## GitHub Pages
-
-在仓库 Settings → Pages → Build and deployment 中，将 Source 设为 **GitHub Actions**。提交到 `main` 会自动验证 JSON、运行检索测试、生成静态页面并发布。仓库仅上传 `site/` 目录作为网站，不发布本地研究资料。
-
-网站地址：https://JeanetteHuang0703.github.io/GM-AISecurity/
-
-以上是预期地址，首次 Actions 部署成功后才可访问。工作流位于 `.github/workflows/pages.yml`。
-
-## 每天更新
-
-现有 Codex 日程在每天北京时间 **9:00** 检索和整理新闻，然后写入 `data/days/YYYY-MM-DD.json`。日期统一指北京时间前一天，`rank` 是当日重要程度顺序；更新和旧闻不能伪装为当天首次事件。
-
-1. 按 `UPDATE_GUIDE.md` 新增当日 JSON；历史日期文件保持原样，事实纠错应保留说明。
-2. 运行 `npm run validate`、`npm test`、`npm run build`。
-3. 仅提交本仓库的新闻数据和必要标签变更，推送 `main`。
-4. GitHub Actions 自动更新网页。
-
-**新闻生成依赖本地 Codex 日程**：电脑和桌面应用需要运行，且本地需有 GitHub 写入权限。GitHub Actions 负责发布，不会自行搜集或生成新闻。失败时旧站点继续保留，不写虚构占位日报。
-
-文档：[GitHub Pages 发布](https://docs.github.com/en/get-started/start-your-journey/deploying-your-website-automatically)、[本地日程运行条件](https://learn.chatgpt.com/docs/automations)。
+预览 http://127.0.0.1:4173 。生成的 `site/index.html` 内嵌当前保留内容；构建也输出月分片、新闻索引和标签 JSON。Pages Source 使用 GitHub Actions，推送 main 自动触发 `.github/workflows/pages.yml`。
