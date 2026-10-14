@@ -51,8 +51,11 @@
     date.append(element('span', item.date), element('span', '#' + String(item.rank).padStart(2, '0'), 'rank'));
     cells[0].append(date, element('div', item.title, 'news-title'));
     const favorite = favoriteIds.has(item.id);
-    const heart = element('span', favorite ? '♥ 已加入共享收藏' : '♡ 收藏暂未启用', 'heart' + (favorite ? ' saved' : ' pending'));
-    heart.title = favorite ? '完整记录已保留' : '当前只发布三天晨读，共享收藏功能尚未启用。';
+    const heart = element(favorite ? 'span' : 'a', favorite ? '♥ 已收藏 · 全站保留' : '♡ 收藏', 'heart' + (favorite ? ' saved' : ''));
+    heart.title = favorite ? '任一作者／协作者保存后，全站共同保留完整记录。' : '仅仓库作者或有写权限的协作者能保存：在 GitHub 确认提交后生效。';
+    if (!favorite) {
+      heart.href = favoriteLink(item, data.sourceRevision); heart.target = '_blank'; heart.rel = 'noopener noreferrer';
+    }
     cells[0].append(heart);
     const rowTags = element('div', undefined, 'row-tags');
     for (const tag of item.tags) {
@@ -150,7 +153,7 @@
     $('download').disabled = false;
     $('result-count').textContent = `找到 ${visible.length} 条新闻 · ${new Set(visible.map(item => item.date)).size} 天 · 横向滑动查看八列`;
     const selectedDay = data.days.find(day => day.date === filters.date);
-    $('day-note').textContent = selectedDay?.note || (state.view === 'favorites' ? '共享收藏暂未启用，当前没有自动收藏入口。' : '日期从新到旧，每天按重要程度排列；未收藏的新闻超过三天后清理。当前共享收藏暂未启用。');
+    $('day-note').textContent = selectedDay?.note || (state.view === 'favorites' ? '任一作者／协作者收藏后，全站共同保留完整记录，不受三天清理影响。' : '日期从新到旧，每天按重要程度排列；超过三天只清理未收藏的新闻。');
     $('empty').querySelector('h3').textContent = state.view === 'favorites' && !data.favoriteIds.length ? '还没有共享收藏' : '没有匹配的新闻';
     const focusedIndex = filters.item ? visible.findIndex(item => item.id === filters.item) : -1;
     if (focusedIndex >= 0) pageNumber = Math.floor(focusedIndex / pageSize) + 1;

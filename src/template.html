@@ -15,23 +15,23 @@
   <main>
     <section class="intro" aria-label="档案概况"><div><span class="eyebrow">RESEARCH NEWS ARCHIVE</span><h2 id="heading">每日重要新闻</h2><p id="overview"></p></div><div class="date-stamp"><span>最新一期 · 北京时间</span><strong id="latest-date"></strong></div></section>
     <div class="update-info"><strong>每天北京时间 08:30，打开瞅一眼</strong><span>默认看前 3 个完整自然日：例如 14 日早上看 11—13 日。按天汇总，几分钟浏览重点。</span><span id="generated-at"></span></div>
-    <details class="scope"><summary>收录范围、三天保留与更新方式</summary><p>收录重大漏洞、攻击与数据泄漏，加密货币与区块链、稳定币及监管，AI 安全、Agent 攻防，以及模型能力、推理、训练、评测和科研应用。共识、智能合约、跨链、单／多智能体和分布式系统是重点研究方向，重要新闻即使暂无研究相关性也会保留。</p><p>当前仅发布三天晨读，共享爱心收藏暂未启用。未收藏的新闻超过三天后从当前页面和日数据中清理；Git 中旧版本不会因网页清理自动消失。</p><p>以早上 08:30 可读为目标，本地 Codex 提前整理前一天新闻 → 写入 JSON 并清理过期未收藏记录 → 推送 GitHub → GitHub Actions 发布。生成新闻时电脑与桌面应用需要运行，采集或部署异常可能延后；发布后网页可独立访问。</p></details>
+    <details class="scope"><summary>收录范围、共享收藏与更新方式</summary><p>收录重大漏洞、攻击与数据泄漏，加密货币与区块链、稳定币及监管，AI 安全、Agent 攻防，以及模型能力、推理、训练、评测和科研应用。共识、智能合约、跨链、单／多智能体和分布式系统是重点研究方向，重要新闻即使暂无研究相关性也会保留。</p><p>爱心表示“全站保留这条新闻”。点 ♡ 收藏后进入 GitHub，只有仓库作者和有写权限的协作者可以直接提交到主仓库；确认提交并发布后生效，普通读者不能直接改变收藏。收藏保存在仓库 JSON，不存到点击者的浏览器。超过三天只清理未收藏的新闻；Git 仍保留提交历史。</p><p>以早上 08:30 可读为目标，本地 Codex 提前整理前一天新闻 → 写入 JSON 并清理过期未收藏记录 → 推送 GitHub → GitHub Actions 发布。生成新闻时电脑与桌面应用需要运行，采集或部署异常可能延后；发布后网页可独立访问。</p></details>
     <section class="filters" aria-label="检索新闻">
-      <div class="filter-top"><div class="tabs" role="group" aria-label="浏览范围"><button id="latest" type="button">最近三天</button><button id="favorites" type="button" disabled title="共享收藏暂未启用">♥ 收藏待开放</button><button id="archive" type="button">全部保留</button></div><label class="search-label"><span class="sr-only">全文搜索新闻</span><input id="query" type="search" placeholder="全文搜索：标题、关键词、正文、来源、研究方向…" autocomplete="off"></label></div>
+      <div class="filter-top"><div class="tabs" role="group" aria-label="浏览范围"><button id="latest" type="button">最近三天</button><button id="favorites" type="button">♥ 共同收藏</button><button id="archive" type="button">全部保留</button></div><label class="search-label"><span class="sr-only">全文搜索新闻</span><input id="query" type="search" placeholder="全文搜索：标题、关键词、正文、来源、研究方向…" autocomplete="off"></label></div>
       <div class="filter-selects"><label>日期 <select id="date"></select></label><label>研究相关性 <select id="relevance"><option value="all">全部相关性</option><option value="direct">直接相关</option><option value="indirect">间接相关</option><option value="none">暂无明显相关</option></select></label><label>标签组合 <select id="mode"><option value="any">匹配任一标签</option><option value="all">匹配全部标签</option></select></label><button id="reset" class="text-button" type="button">清除筛选</button></div>
       <div id="tags" class="tags" role="group" aria-label="按标签检索历史新闻"></div>
     </section>
     <div class="results-bar"><p id="result-count" role="status" aria-live="polite"></p><div><button id="download" class="text-button" type="button">导出当前 JSON ↓</button><button id="share" class="text-button" type="button">复制检索链接 ↗</button></div></div>
     <p id="day-note" class="day-note"></p>
-    <p class="search-help">搜索覆盖全部八列、关键词及标签；空格分隔的多个词需同时匹配。共享收藏暂未启用。</p>
+    <p class="search-help">搜索覆盖全部八列、关键词及标签，空格分隔的多个词需同时匹配。♡ 收藏仅由作者／有写权限协作者在 GitHub 确认保存；部署后刷新可见。</p>
     <p id="load-error" class="day-note" role="alert" hidden></p>
     <div class="table-wrap" tabindex="0" role="region" aria-label="新闻表格，可横向滚动">
       <table><caption class="sr-only">新闻按日期从新到旧排列，每日按重要程度排序</caption><colgroup><col class="title-col"><col class="focus-col"><col class="source-col"><col class="summary-col"><col class="impact-col"><col class="application-col"><col class="relevance-col"><col class="previous-col"></colgroup><thead><tr><th scope="col">01 新闻总结标题</th><th scope="col">02 关键词 / 重点问题 / 趋势</th><th scope="col">03 新闻来源 / 最早发布机构 / 可信度</th><th scope="col">04 重要信息及量化信息</th><th scope="col">05 造成的影响判断</th><th scope="col">06 AI 安全 / blockchain 研究应用点</th><th scope="col">07 与你研究的相关性</th><th scope="col">08 是否有前序新闻？</th></tr></thead><tbody id="news"></tbody></table>
     </div>
-    <div id="empty" class="empty" hidden><h3>没有匹配的新闻</h3><p>试试减少标签或搜索词；共享收藏暂未启用。</p><button id="empty-reset" type="button">查看全部保留</button></div>
+    <div id="empty" class="empty" hidden><h3>没有匹配的新闻</h3><p>试试减少标签或搜索词；作者／协作者完成 GitHub 收藏提交后，等待发布再刷新。</p><button id="empty-reset" type="button">查看全部保留</button></div>
     <div id="pagination" class="pagination" hidden><button id="previous-page" type="button">上一页</button><span id="page-label"></span><button id="next-page" type="button">下一页</button></div>
   </main>
-  <footer><span>三天晨读 · 共享收藏待开放 · 判断与建议不等于已确认事实</span><span><a href="data/index.json">新闻索引</a> · <a href="data/tags.json">标签词表</a></span></footer>
+  <footer><span>三天晨读 + 共同收藏 · 判断与建议不等于已确认事实</span><span><a href="data/favorites.json">共同收藏 JSON</a> · <a href="data/index.json">新闻索引</a> · <a href="data/tags.json">标签词表</a></span></footer>
   <noscript><p>请启用 JavaScript 以检索新闻，或通过底部链接读取 JSON 档案。</p></noscript>
   <script id="archive-data" type="application/json">DATA_PLACEHOLDER</script>
   <script>/* APP */</script>

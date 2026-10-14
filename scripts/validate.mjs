@@ -2,6 +2,7 @@ import { readFile, readdir } from 'node:fs/promises';
 import { fileURLToPath } from 'node:url';
 import path from 'node:path';
 import { beijingDate, pruneArchive } from '../src/archive.mjs';
+import { loadSavedRecords } from './favorites.mjs';
 
 export const root = fileURLToPath(new URL('../', import.meta.url));
 const requiredText = ['id', 'title', 'focus', 'sourceNote', 'summary', 'impact', 'researchApplications'];
@@ -60,6 +61,8 @@ export async function loadArchive() {
   const favorites = JSON.parse(await readFile(path.join(root, 'data/favorites.json'), 'utf8'));
   assert(favorites.schemaVersion === 1 && Array.isArray(favorites.items), '共享收藏格式错误');
   assert(new Set(favorites.items.map(item => item.id)).size === favorites.items.length, '共享收藏ID重复');
+  const saved = await loadSavedRecords(root);
+  favorites.items = [...new Map([...favorites.items, ...saved.map(record => record.item)].map(item => [item.id, item])).values()];
   const retained = pruneArchive(days, favorites.items, beijingDate());
   const all = new Map(retained.favorites.map(item => [item.id, item]));
   retained.days.flatMap(day => day.items).forEach(item => all.set(item.id, item));

@@ -27,3 +27,11 @@ export function pruneArchive(days, favorites, today) {
   }
   return { days: keptDays, favorites: keptFavorites, removed: days.filter(day => day.date < start).map(day => day.date) };
 }
+
+export function favoriteLink(item, sourceRevision) {
+  if (!/^\d{4}-\d{2}-\d{2}-\d{2,}$/.test(item.id) || !/^[a-f0-9]{40}$/.test(sourceRevision)) throw new Error('收藏链接参数无效');
+  const url = new URL('https://github.com/JeanetteHuang0703/GM-AISecurity/new/main');
+  url.searchParams.set('filename', `data/saved/${item.id}.json`);
+  url.searchParams.set('value', JSON.stringify({ schemaVersion: 1, id: item.id, sourceRevision }, null, 2) + '\n');
+  return url.toString();
+}
