@@ -1,5 +1,45 @@
 {
   "schemaVersion": 1,
   "id": "2026-10-14-03",
-  "sourceRevision": "3a49eb0c362491c2a7f5764e058073e975c6e36d"
+  "sourceRevision": "3a49eb0c362491c2a7f5764e058073e975c6e36d",
+  "item": {
+    "id": "2026-10-14-03",
+    "date": "2026-10-14",
+    "rank": 3,
+    "title": "Gemini 4 Argon全面开放：长任务推理进入付费API与应用",
+    "tags": [
+      "llm-research",
+      "agent-security",
+      "security-ai",
+      "coding"
+    ],
+    "keywords": [
+      "长上下文",
+      "长时推理",
+      "能力开放"
+    ],
+    "focus": "此次重点是既有前沿模型扩大可用范围，能力排名仍需独立复测。",
+    "sourceNote": "最早：Google，官方页面发布时间13日16:00 UTC，即北京时间14日00:00。API文档为一手规格，发布事实可信度高；性能和科研案例为厂商展示。",
+    "sources": [
+      {
+        "name": "Google开放公告",
+        "url": "https://blog.google/intl/en-in/products/introducing-gemini-4-argon/"
+      },
+      {
+        "name": "官方API规格与价格",
+        "url": "https://ai.google.dev/gemini-api/docs/latest-model?hl=en"
+      }
+    ],
+    "summary": "Google把Gemini 4 Argon开放给付费API开发者、企业及部分订阅用户，并强调持续推理、软件工程和科研任务。官方API允许输入、思考和输出共同占用1,048,576个token的窗口；截至11月30日，每百万输入token为2美元，输出及思考token为10美元，12月起分别为4和20美元。超长输出仍受已用输入与思考预算限制，厂商案例不能直接证明任意科研任务上的可靠性。",
+    "impact": "分析：扩大科研Agent可用模型选择，同时增加长轨迹中的成本、状态管理及权限持续暴露问题。",
+    "researchApplications": "对长任务做分段可靠性、记忆污染、工具越权及可中断性测评；比较思考预算与成功率。",
+    "relevance": {
+      "level": "direct",
+      "reason": "LLM进展及单／多Agent安全：可直接用于长时科研工作流和跨工具执行评测。"
+    },
+    "previous": {
+      "ids": [],
+      "note": "有，9月30日首次介绍模型；本期新增公众与付费API开放，不是再次首次发布模型。"
+    }
+  }
 }
