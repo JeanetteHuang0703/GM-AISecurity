@@ -1,0 +1,574 @@
+{
+  "schemaVersion": 1,
+  "date": "2026-10-21",
+  "timezone": "Asia/Shanghai",
+  "kind": "daily",
+  "note": "北京时间2026年10月21日新增披露或实质更新，按重要性排序。优先官方来源；仅到日的来源注明时区边界不确定，持续更新页面按明确时戳区分21日与22日内容。预印本按21日公开列表归档并另记投稿时间；实验不等于现实能力。22日晨读窗口为19—21日，其中19日无归档，保留缺口、不补录或生成空占位；共享收藏继续保留。",
+  "items": [
+    {
+      "id": "2026-10-21-01",
+      "date": "2026-10-21",
+      "rank": 1,
+      "title": "PHP 发布 PHP2Shell 紧急补丁，两项核心漏洞可导致未认证代码执行",
+      "tags": [
+        "cybersecurity",
+        "supply-chain",
+        "security-ai"
+      ],
+      "keywords": [
+        "运行时内存安全",
+        "紧急补丁",
+        "AI 协同披露"
+      ],
+      "focus": "漏洞位于语言运行时，业务代码自身安全也不能免于影响。",
+      "sourceNote": "原始机构为 PHP 安全团队，官网21日发布安全公告；补丁安排为21日14:00 UTC（北京时间22:00），官网未列出实际发布秒级时间。OpenAI 同日07:00 UTC介绍与 Calif、Wiz 及维护者的协调过程；修复范围可信度高，不将后来观察到的攻击尝试归作当天已确认入侵。",
+      "sources": [
+        {
+          "name": "PHP 官方安全公告",
+          "url": "https://www.php.net/archive/2026.php"
+        },
+        {
+          "name": "OpenAI 原始协调披露说明",
+          "url": "https://openai.com/index/coordinated-disclosure-of-critical-vulnerabilities/"
+        }
+      ],
+      "summary": "PHP 于21日发布8.5.12、8.4.27、8.3.36和8.2.35，修复两项可被未认证请求触发的核心代码执行漏洞。CVE-2026-109618涉及内存不足时处理未完整初始化的数据，CVE-2026-109619涉及已释放内存留下的全局状态；两项 CVSS v4.0 均为9.2分，处理网页请求的多种部署方式受影响。官方认为 Apache mod_php 风险最高，临时配置只能降低部分路径的暴露，完整修复仍需更新。",
+      "impact": "判断：PHP 运行时的广泛部署使补丁具有较高优先级；资产盘点应覆盖网站、管理门户及上游打包组件，不能仅检查业务仓库。",
+      "researchApplications": "研究跨请求状态隔离和内存错误的组合验证；结合此次 AI 辅助发现与维护者协调，评估从漏洞验证、回移补丁到部署的防御窗口。",
+      "relevance": {
+        "level": "indirect",
+        "reason": "分布式系统安全与 AI 辅助攻防：涉及广泛后端组件和自动漏洞研究，但不是新的共识或 Agent 专属漏洞。"
+      },
+      "previous": {
+        "ids": [
+          "2026-10-20-02"
+        ],
+        "note": "有：20日已归档补丁预告；21日新增正式版本、漏洞机制和缓解边界。"
+      }
+    },
+    {
+      "id": "2026-10-21-02",
+      "date": "2026-10-21",
+      "rank": 2,
+      "title": "LiteLLM 1.107.0 供应链投毒，Python 启动即可触发凭据窃取",
+      "tags": [
+        "cybersecurity",
+        "ai-security",
+        "supply-chain",
+        "agent-security"
+      ],
+      "keywords": [
+        "制品投毒",
+        "启动时执行",
+        "模型网关凭据"
+      ],
+      "focus": "只验证源码标签不足以证明发布包可信，受影响环境中的模型及云凭据也需处置。",
+      "sourceNote": "最早核验原始首报为 Upwind 研究人员在官方 GitHub Issue，21日12:06 UTC（北京时间20:06）创建。采用16:00 UTC前的首报及维护者回复；14:32 UTC维护者确认恶意镜像移除，后续22日关于账号与 OAuth token 的推断不纳入本日报；证据可信度高。",
+      "sources": [
+        {
+          "name": "Upwind 在 LiteLLM 官方仓库的首报及维护者回复",
+          "url": "https://github.com/BerriAI/litellm/issues/47826"
+        },
+        {
+          "name": "StepSecurity 原始制品分析",
+          "url": "https://www.stepsecurity.io/blog/litellm-1-107-0-compromised-pypi-backdoored-wheels-credential-stealer"
+        }
+      ],
+      "summary": "LiteLLM 1.107.0的7个 PyPI 平台安装包及官方容器镜像被发现植入凭据窃取器和后台代码加载器，影响使用这一模型接口库和代理服务的环境。恶意文件借 Python 启动机制自动执行，无需显式导入 LiteLLM，就可能读取云密钥、开发工具认证信息及代理数据库中的模型提供商凭据。维护者于北京时间21日22:32确认恶意容器已移除，但当时尚未查明并彻底封堵发布入口，下载下架不等于已安装设备恢复安全。",
+      "impact": "判断：同时影响 AI 网关、开发机和 CI 中的敏感凭据；受影响环境需要干净重建和凭据撤销，不能只升级依赖。",
+      "researchApplications": "比对源码、构建来源证明与实际制品，审计 Python 启动钩子；研究模型网关最小权限和密钥分区对供应链事件的限制效果。",
+      "relevance": {
+        "level": "direct",
+        "reason": "Agent 与分布式系统安全：Agent 工具链、统一模型网关和共享凭据成为同一供应链故障域。"
+      },
+      "previous": {
+        "ids": [],
+        "note": "有外部前序：3月 LiteLLM 曾出现另一供应链事件；本次为不同版本的新事件，不能直接认定攻击者相同。"
+      }
+    },
+    {
+      "id": "2026-10-21-03",
+      "date": "2026-10-21",
+      "rank": 3,
+      "title": "Solana Alpenglow 在主网上线，替换 TowerBFT 并改变投票路径",
+      "tags": [
+        "consensus",
+        "blockchain",
+        "distributed-systems"
+      ],
+      "keywords": [
+        "确定性最终性",
+        "链外投票",
+        "共识迁移"
+      ],
+      "focus": "这是主网共识切换，150毫秒为项目方目标与宣传口径，仍需独立长期测量。",
+      "sourceNote": "原始机构为 Anza；官方上线公告对应21日13:54 UTC（北京时间21:54），项目页和主网浏览器相互印证已上线。上线事实可信度高；延迟和故障容忍指标属于协议条件及项目方口径，不当作任意网络条件下的保证。",
+      "sources": [
+        {
+          "name": "Anza 官方协议与迁移说明",
+          "url": "https://www.anza.xyz/alpenglow"
+        },
+        {
+          "name": "Anza 上线公告",
+          "url": "https://x.com/anza_xyz/status/2112905478921736411"
+        },
+        {
+          "name": "Solana 主网浏览器",
+          "url": "https://explorer.solana.com/?cluster=mainnet"
+        }
+      ],
+      "summary": "Anza 宣布 Solana 主网完成 Alpenglow 共识迁移，以 Votor 替换此前的 TowerBFT，并把验证者投票移出普通交易账本。协议采用并行投票路径：80%质押权重响应时可一轮最终确认，60%路径需两轮，项目方以约150毫秒最终性描述其性能目标。容忍20%恶意与20%离线质押的说法具有组合和网络假设，不能解释为能承受任意40%恶意节点，也不能将投票交易减少误读为用户活动下降。",
+      "impact": "判断：会影响交易所入账、桥接等待时间及链上统计口径；主网迁移后的尾部延迟和异常恢复比单一平均数更值得持续跟踪。",
+      "researchApplications": "分析双路径阈值、网络分区下的安全与活性，测量最终性尾延迟，并验证跨链轻客户端对新证书和迁移边界的处理。",
+      "relevance": {
+        "level": "direct",
+        "reason": "区块链共识、跨链与分布式系统：直接更改确认协议和跨链依赖的最终性证明。"
+      },
+      "previous": {
+        "ids": [],
+        "note": "有外部前序：此前研究、测试网迁移与10月排期；21日新增主网上线，无本地同事件前序。"
+      }
+    },
+    {
+      "id": "2026-10-21-04",
+      "date": "2026-10-21",
+      "rank": 4,
+      "title": "GitLab 修复 CVSS 10.0 未认证代码执行，影响范围追溯至7.0",
+      "tags": [
+        "cybersecurity",
+        "supply-chain",
+        "coding"
+      ],
+      "keywords": [
+        "正则编译",
+        "未认证执行",
+        "旧分支修复"
+      ],
+      "focus": "代码托管和构建控制面存在高影响漏洞，修复必须按所用分支核对。",
+      "sourceNote": "原始机构为 GitLab，官网标记21日发布，未披露精确小时和时区，因此北京时间日界无法完全独立确认。漏洞机制、版本范围与修复版本可信度高；公告没有证明已发生实际利用。",
+      "sources": [
+        {
+          "name": "GitLab 官方严重补丁公告",
+          "url": "https://docs.gitlab.com/releases/patches/patch-release-gitlab-19-5-1-released/"
+        }
+      ],
+      "summary": "GitLab 发布紧急补丁，修复 CVE-2026-110264：攻击者在特定条件下可通过构造正则表达式触发整数溢出，无需登录即可执行服务器代码。漏洞评分为 CVSS 3.1满分10.0，影响范围追溯至7.0，当前分支修复包括19.5.1、19.4.3和19.3.6，部分旧分支也有回移版本。GitLab.com 已打补丁，自托管管理员需按官方版本矩阵升级，公开材料未给出全部利用条件或已确认受害数量。",
+      "impact": "判断：代码仓库和 CI 控制面一旦失陷可能向下游制品扩散；但不能仅凭漏洞评分认定所有实例已被入侵。",
+      "researchApplications": "研究不可信文本编译的隔离边界，以及代码托管服务失陷后对构建凭据、签名密钥和发布链的传播路径。",
+      "relevance": {
+        "level": "indirect",
+        "reason": "分布式系统与软件供应链安全：影响代码及构建基础设施，尚无共识或 Agent 特有机制。"
+      },
+      "previous": {
+        "ids": [],
+        "note": "有更早 GitLab 安全更新，但本地无此 CVE 前序；本次新增明确版本范围及紧急修复。"
+      }
+    },
+    {
+      "id": "2026-10-21-05",
+      "date": "2026-10-21",
+      "rank": 5,
+      "title": "OCC 发布 GENIUS Act 最终规则，稳定币发行与托管要求进一步明确",
+      "tags": [
+        "crypto",
+        "stablecoins",
+        "regulation"
+      ],
+      "keywords": [
+        "发行许可",
+        "储备与赎回",
+        "监管落地"
+      ],
+      "focus": "从立法和征求意见进入最终规则阶段，仍有其他机构规则和实施步骤待完成。",
+      "sourceNote": "原始机构为美国 OCC，新闻稿2026-92标记21日；当天早间转载及报道印证公开，官网未给小时。最终规则存在及公告范围可信度高；这里只概述原始公告，不把它写成所有稳定币监管程序已完成。",
+      "sources": [
+        {
+          "name": "OCC 官方最终规则公告",
+          "url": "https://occ.gov/news-issuances/news-releases/2026/nr-occ-2026-92.html"
+        }
+      ],
+      "summary": "OCC 宣布完成其管辖范围内的 GENIUS Act 稳定币实施规则，覆盖获准发行者、外国发行者及部分受监管托管活动。官方说明规则与法案于2027年1月18日生效，但许可申请受理时间会另行公告，反洗钱和制裁相关要求还将与财政部另行制定。当天没有可据此核验的新增发行规模，不能把规则发布等同于全部机构立即获准经营。",
+      "impact": "判断：影响稳定币产品设计、托管责任与合规准备；实施过程仍需跟踪申请流程和跨机构协调。",
+      "researchApplications": "研究链上储备和赎回状态的可验证核对、托管权限边界，以及合约冻结和恢复功能的审计证据。",
+      "relevance": {
+        "level": "indirect",
+        "reason": "智能合约与区块链应用：影响稳定币系统的实现约束，但公告本身不是新的协议安全结果。"
+      },
+      "previous": {
+        "ids": [],
+        "note": "有外部前序：GENIUS Act 立法与拟议规则征求意见；21日新增 OCC 最终规则，无本地同事件前序。"
+      }
+    },
+    {
+      "id": "2026-10-21-06",
+      "date": "2026-10-21",
+      "rank": 6,
+      "title": "Fearless 浏览器钱包被确认泄露私钥，8名用户报告17286 DOT异常转移",
+      "tags": [
+        "crypto",
+        "wallets",
+        "cybersecurity",
+        "supply-chain"
+      ],
+      "keywords": [
+        "私钥外传",
+        "跨应用复用",
+        "恢复边界"
+      ],
+      "focus": "更换钱包软件或密码不能撤销已泄露的链上签名权限。",
+      "sourceNote": "原始机构为 Polkadot Community Foundation，论坛首帖21日14:00 UTC（北京时间22:00）。代码行为有技术分析支持，可信度高；8起用户报告是可能关联的已报案例，不是全部受害者或最终归因。",
+      "sources": [
+        {
+          "name": "Polkadot Community Foundation 官方安全公告",
+          "url": "https://forum.polkadot.network/t/security-notice-fearless-wallet-browser-extension-leaked-private-keys/19058"
+        },
+        {
+          "name": "公告所附源码行为分析",
+          "url": "https://hackmd.io/@gWEUMERvQZyR5MStsH26g/HyNOm782zg"
+        }
+      ],
+      "summary": "Polkadot Community Foundation 确认，第三方 Fearless 浏览器扩展的3.0.1、3.0.3、3.0.4和3.0.5版本包含解锁时向外部服务器发送私钥的代码。该代码自2025年2月起在不同时间启用，截至公告已有8名用户报告可能相关的异常转移，共17286枚 DOT，数字不代表完整损失。已审查移动版未发现同一代码，但若导入过相同密钥仍受风险牵连，修复需要新的密钥而非仅重装或改密码。",
+      "impact": "判断：泄露的签名密钥可影响同一账户在多条链或多个应用中的资产与治理权限；钱包界面显示正常不足以证明安全。",
+      "researchApplications": "对签名权限、密钥导出和解锁流程开展数据流审计，研究跨链复用密钥的风险传播及资产迁移证明。",
+      "relevance": {
+        "level": "direct",
+        "reason": "区块链与跨链安全：私钥权限可跨应用和链复用，直接影响合约授权与链上资产控制。"
+      },
+      "previous": {
+        "ids": [],
+        "note": "有外部前序：2025年以来的代码和零散用户异常报告；21日新增基金会确认与统一处置说明。"
+      }
+    },
+    {
+      "id": "2026-10-21-07",
+      "date": "2026-10-21",
+      "rank": 7,
+      "title": "ConnectWise 开始分阶段恢复 Cloud Backup，客户租户仍需独立排查",
+      "tags": [
+        "cybersecurity",
+        "identity",
+        "distributed-systems"
+      ],
+      "keywords": [
+        "分阶段恢复",
+        "凭据重置",
+        "租户残留权限"
+      ],
+      "focus": "供应商恢复服务不等于客户侧持久化访问已被清除。",
+      "sourceNote": "原始机构为 ConnectWise；采用21日12:45 UTC（北京时间20:45）及此前公告。明确排除21日22:00 UTC、实际属于北京时间22日的组织归因和 AI 框架新情报；服务状态可信度高，影响范围调查尚未结束。",
+      "sources": [
+        {
+          "name": "ConnectWise 官方带时戳事件更新",
+          "url": "https://www.connectwise.com/company/trust/advisories"
+        }
+      ],
+      "summary": "ConnectWise 在完成受影响环境账户及凭据重置后，宣布开始有安全审查门槛的分阶段服务恢复。21日12:45 UTC的通报预计恢复需要数天，尚未给出全部功能可用时间，合作伙伴仍需等各自服务的正式重连指引。现存备份档案未见受损迹象不等于客户 Microsoft 365 租户没有被入侵，因此逐租户权限和凭据检查仍需继续。",
+      "impact": "判断：业务可用性开始改善，但过早重连可能重新暴露未清除的授权；备份可用与身份清理应分别验证。",
+      "researchApplications": "构建恢复阶段的权限与可用性不变量，验证凭据轮换、客户再授权和遗留密钥清理是否形成闭环。",
+      "relevance": {
+        "level": "direct",
+        "reason": "分布式系统及 Agent 身份安全：跨租户应用授权的恢复与撤销直接相关。"
+      },
+      "previous": {
+        "ids": [
+          "2026-10-20-06"
+        ],
+        "note": "有：20日已归档第二租户持久化证据；21日新增分阶段恢复，调查与服务恢复不可混为一谈。"
+      }
+    },
+    {
+      "id": "2026-10-21-08",
+      "date": "2026-10-21",
+      "rank": 8,
+      "title": "OpenAI 等用大规模并行 Agent 分析脑细胞数据，提出待验证研究线索",
+      "tags": [
+        "llm-research",
+        "multi-agent",
+        "evaluation"
+      ],
+      "keywords": [
+        "科研 Agent",
+        "任务分解",
+        "证据覆盖"
+      ],
+      "focus": "并行分析可扩大探索范围，生成有价值的假说仍不等于完成实验验证。",
+      "sourceNote": "原始机构为 OpenAI、PerturbAI 与 Scripps Research；官方 RSS时间21日04:50 UTC（北京时间12:50），原始研究为预印本。实验与专家比较属作者团队结果，可信度中高；时间优势不是对所有科研工作的统一加速比。",
+      "sources": [
+        {
+          "name": "OpenAI 原始研究介绍",
+          "url": "https://openai.com/index/scaling-ai-research-for-complex-biological-data/"
+        },
+        {
+          "name": "官方科研发布 RSS 时间",
+          "url": "https://openai.com/news/rss.xml"
+        }
+      ],
+      "summary": "OpenAI、PerturbAI 和 Scripps Research 让数千个 GPT-Rosalind Agent 并行分析数百万小鼠脑细胞的既有实验数据，并结合文献提出生物机制解释。团队报告这次分析用时32分钟，在模型和资源固定的最大工作量比较中，并行系统引用超过700篇文献、单 Agent 引用11篇，盲评中专家有75%的比较偏好并行报告。这些是特定分析任务与报告评测，所得线索仍需后续实验，不能解读为已发现有效的人类疾病疗法。",
+      "impact": "判断：说明任务分解可改善大规模证据覆盖，但引用数量本身不保证正确性，专家偏好也不能代替因果验证。",
+      "researchApplications": "比较任务划分、独立证据检索和报告汇总策略，测量重复引用、共享幻觉及跨 Agent 证据污染。",
+      "relevance": {
+        "level": "direct",
+        "reason": "LLM 科研应用、多 Agent 评测：直接展示并行架构相对单 Agent 的受控比较及其验证边界。"
+      },
+      "previous": {
+        "ids": [],
+        "note": "有外部前序：GPT-Rosalind 和脑细胞实验图谱；21日新增分布式分析研究介绍，无本地同事件前序。"
+      }
+    },
+    {
+      "id": "2026-10-21-09",
+      "date": "2026-10-21",
+      "rank": 9,
+      "title": "FCA 就 DeFi 风险和加密业务监管边界发布两份咨询",
+      "tags": [
+        "crypto",
+        "regulation",
+        "smart-contracts"
+      ],
+      "keywords": [
+        "DeFi 运营韧性",
+        "业务边界",
+        "责任归属"
+      ],
+      "focus": "讨论的是现有义务如何适用及监管边界解释，尚未形成最终指导。",
+      "sourceNote": "原始机构为英国 FCA；两份正文首次发布日期均为21日，CP26/36正文时间为11:01 UTC（北京时间19:01），页面较早草稿元数据不用于推定公开日。官方咨询范围和期限可信度高，不将提议写成已生效新法规。",
+      "sources": [
+        {
+          "name": "FCA GC26/7 原始咨询",
+          "url": "https://www.fca.org.uk/publications/guidance-consultations/gc26-7-decentralised-finance-guidance"
+        },
+        {
+          "name": "FCA CP26/36 原始咨询",
+          "url": "https://www.fca.org.uk/publications/consultation-papers/cp26-36-cryptoasset-perimeter-guidance"
+        }
+      ],
+      "summary": "英国 FCA 发布 GC26/7与CP26/36两份咨询，分别说明使用 DeFi 提供金融服务时的运营韧性和金融犯罪风险，以及加密业务监管边界中的部分排除情形。两份咨询均于11月18日截止，DeFi 指导拟于2027年1月定稿，不能把咨询发布当成所有 DeFi 活动已被纳入或豁免监管。公告没有提供可靠量化损失数据，重点在于机构如何理解现有义务与新业务安排。",
+      "impact": "判断：受监管机构接入 DeFi 时，需要把协议依赖、控制权和故障响应落实到可解释的责任与流程。",
+      "researchApplications": "研究合约控制权限、可升级性和外部依赖图如何转化为运营风险证据，验证协议暂停、预言机失效与恢复路径。",
+      "relevance": {
+        "level": "indirect",
+        "reason": "智能合约和分布式系统安全：提供需要评估的业务风险约束，但不是新的合约漏洞发现。"
+      },
+      "previous": {
+        "ids": [],
+        "note": "有外部前序：英国加密业务制度准备；21日新增两份咨询，本地无同事件前序。"
+      }
+    },
+    {
+      "id": "2026-10-21-10",
+      "date": "2026-10-21",
+      "rank": 10,
+      "title": "Chrome 增加 ClickFix 复制警告，并使用服务端 Gemini 辅助识别诈骗",
+      "tags": [
+        "cybersecurity",
+        "security-ai",
+        "ai-security"
+      ],
+      "keywords": [
+        "剪贴板防护",
+        "社工攻击",
+        "云端检测"
+      ],
+      "focus": "把检测延伸到浏览器与终端之间的交接，同时引入需要评估的数据处理边界。",
+      "sourceNote": "原始机构为 Google；官方元数据20日17:00 UTC，对应北京时间21日01:00。功能范围与数据处理说明可信度高，实际检出和误报表现仍为厂商口径，未给独立评测。",
+      "sources": [
+        {
+          "name": "Google 原始防诈骗更新",
+          "url": "https://blog.google/security/our-latest-defenses-against-evolving-web-scams/"
+        }
+      ],
+      "summary": "Google 为开启 Chrome 增强型保护的用户增加 ClickFix 防护：复制可疑命令时，命令经个人信息清理后送往 Safe Browsing 分析，再按危险判定显示警告。Google 还将部分诈骗页面识别迁移至服务端 Gemini，并将模型分析与域名信誉等信号结合；本次没有可独立核验的检出率或误报率。厂商称上传页面内容仅作临时处理，但该保护并不代表所有用户默认启用，也不能阻止所有终端执行路径。",
+      "impact": "判断：有望提前阻断诱骗用户自行运行命令的攻击链；部署范围、误报和敏感信息清理效果需分别验证。",
+      "researchApplications": "构建命令复制到终端执行的攻击链评测，测试混淆指令、合法开发命令和个人信息清理的准确性。",
+      "relevance": {
+        "level": "direct",
+        "reason": "AI 辅助防御与 Agent 安全：直接涉及模型判定不可信网页、执行意图及外部内容到工具动作的边界。"
+      },
+      "previous": {
+        "ids": [],
+        "note": "有外部前序：ClickFix 攻击和 Chrome 既有诈骗检测；本次新增复制命令检测及服务端模型扩展。"
+      }
+    },
+    {
+      "id": "2026-10-21-11",
+      "date": "2026-10-21",
+      "rank": 11,
+      "title": "BeyondTrust 推出 Agent 运行时权限控制，并披露早期客户遥测",
+      "tags": [
+        "agent-security",
+        "identity",
+        "multi-agent"
+      ],
+      "keywords": [
+        "人机权限分离",
+        "运行时策略",
+        "MCP 依赖"
+      ],
+      "focus": "市场开始把用户权限与 Agent 可执行权限分开，但产品有效性仍需独立验证。",
+      "sourceNote": "原始机构为 BeyondTrust，官方新闻稿标记21日、无精确小时，日界存在不确定性。发布与遥测为厂商自报，可信度中；样本是早期客户，命令数字代表请求而非成功执行，不外推为所有企业的普及率。",
+      "sources": [
+        {
+          "name": "BeyondTrust 官方发布及方法说明",
+          "url": "https://www.beyondtrust.com/press/ai-agent-security-general-availability"
+        }
+      ],
+      "summary": "BeyondTrust 宣布 AI Agent Security 在 Windows 和 macOS 上正式提供，以运行时策略区分人类用户和 Agent 的动作权限。其早期客户样本在4周中，从约13.2万条提示观察到128万次 shell 命令请求，平均每条提示近10次请求，这些并不都是成功执行。样本支持关注提示之后的动作链，但不能证明产品已阻止全部越权或代表所有组织的使用情况。",
+      "impact": "判断：有助于把授权单位从登录用户下沉到具体代理动作；身份识别失准或复杂委派仍可能形成策略缺口。",
+      "researchApplications": "对比人机身份归属、子进程和 MCP 调用链的策略执行，测试逐动作批准是否覆盖端到端目的与信息流。",
+      "relevance": {
+        "level": "direct",
+        "reason": "单／多 Agent 及分布式身份安全：直接涉及代理借用用户权限和运行时执行边界。"
+      },
+      "previous": {
+        "ids": [],
+        "note": "有外部前序：早期产品与客户试用；21日新增正式可用和遥测披露，无本地前序。"
+      }
+    },
+    {
+      "id": "2026-10-21-12",
+      "date": "2026-10-21",
+      "rank": 12,
+      "title": "CarryoverBench 测量一次注入在记忆与定时任务中的跨会话复发",
+      "tags": [
+        "agent-security",
+        "ai-security",
+        "evaluation"
+      ],
+      "keywords": [
+        "持久记忆",
+        "定时唤醒",
+        "攻击复发"
+      ],
+      "focus": "删除当轮恶意输入不一定清除已写入运行时持久状态的影响。",
+      "sourceNote": "原始机构为 Xu 等作者团队；20日15:55 UTC投稿，21日进入 arXiv cs.CR公开列表，按公开列表日归档。论文注明获 EMNLP 2026主会接收；数字为受控基准结果，未证明真实部署中的任意长期持续能力。",
+      "sources": [
+        {
+          "name": "CarryoverBench 原始论文",
+          "url": "https://arxiv.org/abs/2610.28425"
+        },
+        {
+          "name": "arXiv 21日公开列表",
+          "url": "https://arxiv.org/list/cs.CR/recent"
+        }
+      ],
+      "summary": "CarryoverBench 研究攻击者一次性把恶意指令植入 Agent 记忆文件或定时任务后，是否会在后续会话再次触发。基准包含12种个人助手情景和101项攻击任务，在5个前沿模型上分别评分植入与触发，已植入载荷在5轮测试中未呈现可测衰减。第二种运行时的测试降低但未消除部分效果，结论受限于测试轮数、植入成功条件和所测系统。",
+      "impact": "判断：会话结束不是充分的攻击清除边界，运行时持久状态应纳入安全评测与响应。",
+      "researchApplications": "分开衡量植入率和条件触发率，测试记忆来源追踪、任务到期撤销与跨会话清理的组合防护。",
+      "relevance": {
+        "level": "direct",
+        "reason": "单 Agent 安全与评测：直接覆盖长期记忆、后台任务以及间接提示注入的生命周期。"
+      },
+      "previous": {
+        "ids": [],
+        "note": "暂无本地同事件前序；本次新增跨会话基准，不能把短期5轮实验概括为永久持久化。"
+      }
+    },
+    {
+      "id": "2026-10-21-13",
+      "date": "2026-10-21",
+      "rank": 13,
+      "title": "MAS-Guard 把单 Agent 护栏与多 Agent 控制平面结合",
+      "tags": [
+        "agent-security",
+        "multi-agent",
+        "ai-security",
+        "evaluation"
+      ],
+      "keywords": [
+        "局部护栏",
+        "协作控制面",
+        "效用权衡"
+      ],
+      "focus": "需要同时检查单个动作与跨 Agent 路由，覆盖范围仍取决于可观测和可执行边界。",
+      "sourceNote": "原始机构为 Kachuee 等作者团队；20日15:44 UTC投稿，21日进入 arXiv公开列表。原始预印本、尚未独立复现，报告的降幅是相对未加防护基线的实验值。",
+      "sources": [
+        {
+          "name": "MAS-Guard 原始论文",
+          "url": "https://arxiv.org/abs/2610.28397"
+        }
+      ],
+      "summary": "MAS-Guard 为可插桩 Agent 添加局部事件检查，并在系统层利用开发者定义的角色约束和控制平面审核路由、能力、消息格式及语义。作者在6个基准、来自不同提供商的3个 Agent 模型上报告，相对未防护基线的整体攻击成功率下降71.5%至86.3%，同时满足其良性任务效用参考标准。这是所测场景的相对降幅，不能解释为绝对成功率仅剩某个固定值或已覆盖所有不透明 Agent。",
+      "impact": "判断：为统一单／多 Agent 策略提供可复现设计，但组合复杂度、误报和控制面可信性需持续评估。",
+      "researchApplications": "比较局部检查与系统层约束的消融，测试恶意中间 Agent、伪造角色和策略冲突下的攻防与效用。",
+      "relevance": {
+        "level": "direct",
+        "reason": "单／多 Agent 安全：直接针对分布式权限、消息传播和协作执行。"
+      },
+      "previous": {
+        "ids": [],
+        "note": "暂无本地同事件前序；这是新预印本，不将实验防护表现写成线上保障。"
+      }
+    },
+    {
+      "id": "2026-10-21-14",
+      "date": "2026-10-21",
+      "rank": 14,
+      "title": "研究指出逐动作许可无法自动组成跨执行的全局授权",
+      "tags": [
+        "agent-security",
+        "multi-agent",
+        "distributed-systems",
+        "evaluation"
+      ],
+      "keywords": [
+        "组合授权",
+        "跨执行策略",
+        "观测能力"
+      ],
+      "focus": "对涉及两次执行关系的政策，单看一个动作可能根本看不到违规证据。",
+      "sourceNote": "原始机构为 Pandey 等作者团队；20日04:35 UTC投稿，21日进入 arXiv公开列表。扩展论文附形式化证明与实验；不可能性结论有策略类型和零误报条件，不能泛化为所有权限系统无效。",
+      "sources": [
+        {
+          "name": "Local Allow, Global Deny 原始论文",
+          "url": "https://arxiv.org/abs/2610.27620"
+        }
+      ],
+      "summary": "论文研究每次工具调用都获准、但组合后的执行仍违反用途、同意或委派政策的情况。作者针对需要比较两次执行关系的一类策略证明：若单执行监控器要求零误报，就无法发现这类违规，并用约束求解器生成反例，在9个 LLM 判断器上比较局部视图和双执行视图。结论要求特定策略与可观测性前提，主张增加跨执行比较或接受误报，并非否定所有逐动作检查。",
+      "impact": "判断：为评估 Agent 护栏的结构性盲区提供形式化依据，单纯更换强模型未必补足缺失上下文。",
+      "researchApplications": "把目的限制、授权来源和委派规则写成跨执行属性，测试共享审计状态、约束合成及误报代价。",
+      "relevance": {
+        "level": "direct",
+        "reason": "单／多 Agent 和分布式系统安全：直接讨论局部决策如何组合成全局安全属性。"
+      },
+      "previous": {
+        "ids": [],
+        "note": "暂无本地同事件前序；与逐动作权限产品相关但不是针对某厂商的实测漏洞。"
+      }
+    },
+    {
+      "id": "2026-10-21-15",
+      "date": "2026-10-21",
+      "rank": 15,
+      "title": "持久记忆 Agent 的隐私研究：普通帮助也可能强化个人属性泄露",
+      "tags": [
+        "agent-security",
+        "ai-security",
+        "evaluation"
+      ],
+      "keywords": [
+        "记忆反馈",
+        "属性推断",
+        "隐私累积"
+      ],
+      "focus": "泄露可在无攻击者的正常对话中累积，不能只靠过滤用户输入解决。",
+      "sourceNote": "原始机构为 Kaneko、Arai、Baldwin；20日投稿、21日进入 arXiv公开列表。原始预印本，使用模拟用户和受控多会话实验；不代表真实用户群体的泄露概率。",
+      "sources": [
+        {
+          "name": "Disclosure Begets Disclosure 原始论文",
+          "url": "https://arxiv.org/abs/2610.28315"
+        }
+      ],
+      "summary": "研究让具有24项个人属性的模拟用户与支持 Agent 多轮会话，比较是否读取长期记忆对帮助质量和属性可推断性的影响。在4个支持模型上，读取记忆提高质量，也提高从累计记录正确推断个人属性的比例，差距随会话增加；Agent 重述或预设属性会强化这一循环。限制 Agent 在回答中陈述或预设属性可降低所测泄露，但这些是模拟实验，不能视作已验证的现实隐私保证。",
+      "impact": "判断：记忆安全需要控制输出如何诱导后续披露，而不仅是存储加密或删除敏感词。",
+      "researchApplications": "分开评测真实属性、模型猜测与用户确认的来源，比较输出约束、遗忘和记忆最小化的质量及隐私权衡。",
+      "relevance": {
+        "level": "direct",
+        "reason": "单 Agent 安全：直接涉及长期记忆、隐私和多会话反馈，适合构造非对抗性安全基准。"
+      },
+      "previous": {
+        "ids": [],
+        "note": "暂无本地同事件前序；本次研究自然对话中的累积泄露，与恶意持久注入属于不同机制。"
+      }
+    }
+  ]
+}
