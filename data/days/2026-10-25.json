@@ -1,0 +1,259 @@
+{
+  "schemaVersion": 1,
+  "date": "2026-10-25",
+  "timezone": "Asia/Shanghai",
+  "kind": "daily",
+  "note": "按北京时间2026年10月25日的新披露或实质更新归档，按重要性排序。本次核验收录6条，研究原型与草案不等于成熟部署，厂商声明不等于独立取证；不把26日北京时间才出现的报道或更新倒填到25日。26日晨读窗口为23—25日，其中23、24日目前没有已核验归档，保留缺口且不补录、不生成空日报。共享收藏继续保留。",
+  "items": [
+    {
+      "id": "2026-10-25-01",
+      "date": "2026-10-25",
+      "rank": 1,
+      "title": "Tailworm 报告揭示 Tailscale SSH 授权后的提权风险，厂商仍在确认范围",
+      "tags": [
+        "cybersecurity",
+        "identity",
+        "distributed-systems"
+      ],
+      "keywords": [
+        "授权后提权",
+        "横向传播",
+        "信任边界"
+      ],
+      "focus": "已获准进入网络并不意味着其 SSH 会话应获得主机管理权限；这是具体配置下的风险披露，不能推断所有安装都可被远程接管。",
+      "sourceNote": "最早发布者为 Erica Windisch／Cyberdione Labs，原始报告未标首发小时；Hacker News 链接记录证明25日00:59 UTC（北京时间08:59）前已公开，测试发生于22—24日。Tailscale 工程副总裁 Mike Shaver 的官方身份回应确认正在修复已识别问题，具体影响配置仍待核实；报告的11项发现不是11个已分配CVE。研究报告中等可信，厂商回应对调查状态可信度高；采集时页面后续编辑不据此推定25日已发布正式补丁。",
+      "sources": [
+        {
+          "name": "Cyberdione Labs 原始 Tailworm 报告",
+          "url": "https://tailworm.com/"
+        },
+        {
+          "name": "Tailscale 工程副总裁回应",
+          "url": "https://www.reddit.com/r/Tailscale/comments/1xeoj1l/recent_tailscale_vulnerability_reports/"
+        },
+        {
+          "name": "25日公开链接时间记录",
+          "url": "https://news.ycombinator.com/item?id=50227138"
+        }
+      ],
+      "summary": "Cyberdione Labs 公开 Tailworm 报告，称在 Tailscale 1.104.2 和自建控制服务器 headscale 0.29.5 的实验环境中发现11项问题，其中 SSH 套接字转发可能使已获准连接的普通会话操作本应由管理员控制的资源。攻击链需要先控制一个设备、满足目标 SSH 访问策略，并具备相关转发条件；研究者演示了提权与策略允许范围内的传播，这不是未认证互联网攻击者可直接接管任意节点的证据。Tailscale 确认正在调查并修复部分问题，但尚未确定全部受影响配置，实验传播结果也不等于已发现现实攻击活动。",
+      "impact": "判断：远程运维和内部网络应优先检查 SSH 授权范围及转发设置，避免一个低权限入口变成跨主机管理权限；不能据此宣布所有 Tailscale 网络失守。",
+      "researchApplications": "研究套接字转发中的权限分离、检查与使用之间的竞态，以及受控节点失陷后跨节点授权的传播边界；把设备身份吊销与重装主机分别建模。",
+      "relevance": {
+        "level": "direct",
+        "reason": "直接涉及分布式系统安全中的节点身份、授权边界与横向传播，可为多节点信任失效分析提供具体案例。"
+      },
+      "previous": {
+        "ids": [],
+        "note": "有事件前史：实验测试为10月22—24日；25日新增公开研究报告及厂商调查说明。本库没有对应前序记录，不虚构前序ID。"
+      }
+    },
+    {
+      "id": "2026-10-25-02",
+      "date": "2026-10-25",
+      "rank": 2,
+      "title": "Keystone 确认硬件钱包客户配送信息外泄，暂未公布受影响人数",
+      "tags": [
+        "cybersecurity",
+        "crypto",
+        "wallets",
+        "identity"
+      ],
+      "keywords": [
+        "客户身份泄漏",
+        "钱包外围系统",
+        "定向诈骗"
+      ],
+      "focus": "硬件钱包的密钥隔离无法保护商店保存的客户住址；本次确认的是购买者资料泄漏，尚无证据证明私钥或钱包加密机制被攻破。",
+      "sourceNote": "最早机构为 Keystone Hardware Wallet，原始声明 X 帖文ID对应24日17:59:04 UTC，即北京时间25日01:59；网页媒体标24日不应直接按北京时间排除。原始帖文访问受限，声明内容通过 CoinEdition 和 Chain Tech Daily 引述交叉核验；公司声明中高可信，攻击技术细节、规模及独立取证仍未公开。10月20日发现异常、23日确认被盗是事件时间，25日是本地披露归档日。",
+      "sources": [
+        {
+          "name": "Keystone 原始声明",
+          "url": "https://x.com/KeystoneWallet/status/2114054080754770137"
+        },
+        {
+          "name": "CoinEdition 对官方声明的报道",
+          "url": "https://coinedition.com/crypto-live-news/keystone-wallet-data-breach-exposes-shipping-details/"
+        },
+        {
+          "name": "Chain Tech Daily 对声明与证据边界的整理",
+          "url": "https://chaintechdaily.com/2026/10/25/keystone-wallet-hack-exposes-buyers-home-addresses-sparking-security-fears/"
+        }
+      ],
+      "summary": "硬件钱包厂商 Keystone 披露，其官网在10月20日出现未授权访问，23日核查电商接口活动后确认第三方取得客户配送资料，披露帖文发表于北京时间25日凌晨。公司称外泄内容包括姓名、联系方式、住址及订单信息，付款卡资料、助记词和私钥未受影响，但没有公布受影响客户人数或可核验的损失金额。公司表示已阻断访问并通知客户；提及 Shopify 接口核查不代表已证明 Shopify 平台本身遭入侵，数据是否已被用于现实人身攻击也未获证实。",
+      "impact": "判断：购买记录与住址结合会提高冒充售后、寄送恶意替换设备和定向勒索的可行性，即使密钥没有泄漏，长期身份暴露仍可能增加用户风险。",
+      "researchApplications": "研究钱包电商接口的最小权限、配送资料最小化留存和售后消息认证，建立将商户客户资料与钱包密钥分别保护的系统模型。",
+      "relevance": {
+        "level": "indirect",
+        "reason": "与区块链钱包周边安全和身份风险有关，但不是共识、智能合约或跨链协议漏洞，不能作为这些机制失效的证据。"
+      },
+      "previous": {
+        "ids": [],
+        "note": "有，10月20日异常访问、23日确认配送信息被盗；本次新增对外披露。Ledger 2020年客户数据泄漏属于可比较背景，并非本事件前序ID。"
+      }
+    },
+    {
+      "id": "2026-10-25-03",
+      "date": "2026-10-25",
+      "rank": 3,
+      "title": "Nanbeige4.3-33B 补齐模型卡与 Agent 评测，能力优势仍需独立复现",
+      "tags": [
+        "llm-research",
+        "coding",
+        "evaluation",
+        "agent-security"
+      ],
+      "keywords": [
+        "开放模型",
+        "Agent 评测",
+        "后训练蒸馏"
+      ],
+      "focus": "当日新增的是可审查的评测条件与使用说明；单项榜单领先不能推出整体领先或安全性提升。",
+      "sourceNote": "最早机构 Nanbeige Team，Hugging Face 原始提交可核验。权重24日已上传；25日10:29—11:11 UTC（北京时间18:29—19:11）的 README 提交才补齐模型介绍和完整评测，之前模型卡仅含许可证元数据。本条固定引用25日提交 c1093c501cc6460427c0ac634db7223d0450c0ee，属于实质资料更新；模型和提交事实可信度高，性能为厂商自报、未独立复现。",
+      "sources": [
+        {
+          "name": "Nanbeige 25日模型卡固定版本",
+          "url": "https://huggingface.co/Nanbeige/Nanbeige4.3-33B/blob/c1093c501cc6460427c0ac634db7223d0450c0ee/README.md"
+        },
+        {
+          "name": "官方模型提交历史",
+          "url": "https://huggingface.co/Nanbeige/Nanbeige4.3-33B/commits/main"
+        }
+      ],
+      "summary": "Nanbeige 团队在25日补充 Nanbeige4.3-33B 的完整模型卡，公开这一约330亿参数模型的 Agent 编程评测与推理配置，权重本身已于24日上线。按团队所称的最高思考强度及同一基准内相同推理框架比较，DeepSWE 得分为65.5，对照 Qwen3.8-27B 的42.5；但 SWE-Bench Pro 为60.3，低于同一对照的61.7，表明优势随任务变化。结果尚待独立复现，团队计划用它蒸馏后续小模型，不能将计划中的3B模型当成已经发布或将任务得分当作安全保证。",
+      "impact": "判断：为中等规模开放模型的编程 Agent 与后训练研究增加一个候选基线，但部署成本、真实任务可靠性和攻击下表现不能由这些分数直接推导。",
+      "researchApplications": "复现相同代理框架与思考配置下的任务结果，消融历史思考保留对长程工具调用的作用，并分别测量能力、越权行为和蒸馏后的安全迁移。",
+      "relevance": {
+        "level": "direct",
+        "reason": "直接关联 LLM 能力、后训练蒸馏与 Agent 评测，开放模型便于做可控实验；模型卡没有给出单／多Agent安全能力结论。"
+      },
+      "previous": {
+        "ids": [],
+        "note": "有，24日已上传权重，25日新增完整模型卡、评测表及使用条件；这是资料和结果公开的跟进，不重复算作再次发布权重。"
+      }
+    },
+    {
+      "id": "2026-10-25-04",
+      "date": "2026-10-25",
+      "rank": 4,
+      "title": "研究者公开哈希链账户 OP Stack 原型，提款仍依赖受信任提议者",
+      "tags": [
+        "blockchain",
+        "smart-contracts",
+        "cross-chain",
+        "consensus",
+        "distributed-systems"
+      ],
+      "keywords": [
+        "有状态签名替代",
+        "承诺与揭示",
+        "跨层信任"
+      ],
+      "focus": "把二层交易授权改成哈希链，并不会自动消除一层签名、排序器或提款验证的信任假设。",
+      "sourceNote": "最早发布者为 Hadamard／bb84payments.app 项目方，Ethereum Research 原帖创建于24日23:24 UTC，即北京时间25日07:24。原型自9月30日运行，文中提到的共识规则修订发生在10月21日；25日新增机制与局限的公开说明，不是新链当日上线。自述实验／原型中等可信，作者披露商业关联，未提供独立审计或安全证明。",
+      "sources": [
+        {
+          "name": "Ethereum Research 原始技术报告",
+          "url": "https://ethresear.ch/t/a-hash-only-rollup-op-stack-l2-accounts-as-lamport-style-hash-chains-no-ecdsa-inside-the-l2/26172"
+        }
+      ],
+      "summary": "一名 OP Stack 原型开发者于北京时间25日公开技术报告，介绍用哈希链而非椭圆曲线签名授权二层账户交易：用户逐次公开预先承诺的秘密，并用承诺与揭示流程绑定交易内容。默认每条账户哈希链可消耗1000次授权，因而钱包必须正确同步剩余状态，作者也承认曾出现状态失同步导致用户无法继续操作的问题。原型仍使用中心化排序器和受许可提议者，而且没有欺诈证明、提款信任提议者，一层仍用传统签名，因此不能称为完整抗量子或无需信任的跨层系统。",
+      "impact": "判断：提供了有状态账户与交易排序交互的具体研究样本；其安全成本从签名验证转移到了密钥状态管理、承诺排序和提款信任，现阶段不宜据此推导生产安全性。",
+      "researchApplications": "分析承诺过期与恶意排序造成的阻塞、重组后秘密暴露、钱包状态恢复，以及欺诈证明缺失时桥接资产退出的安全边界。",
+      "relevance": {
+        "level": "direct",
+        "reason": "同时涉及区块链交易有效性、智能合约式承诺机制、跨层提款和分布式状态一致性，与既有研究方向直接重合。"
+      },
+      "previous": {
+        "ids": [],
+        "note": "有，原型称9月30日已运行，10月21日修订重复承诺处理规则；25日新增公开研究说明，未发现本库对应前序条目。"
+      }
+    },
+    {
+      "id": "2026-10-25-05",
+      "date": "2026-10-25",
+      "rank": 5,
+      "title": "ERC-8454 草案收紧声明确认的版本绑定，负债估值规则仍受质疑",
+      "tags": [
+        "blockchain",
+        "smart-contracts",
+        "agent-security",
+        "identity"
+      ],
+      "keywords": [
+        "授权上下文",
+        "版本绑定",
+        "声明重复计算"
+      ],
+      "focus": "确认一个资产描述不能被解释为确认它与另一资产的关系；标准草案正在修补语义授权边界，尚不能视为已完成的安全规范。",
+      "sourceNote": "最早发布者 Gary Yang／AIFi Unit Framework 提案团队。Ethereum Magicians 修订通知为24日16:51 UTC，即北京时间25日00:51；同日05:22北京时间出现新的负债边界审查意见。原讨论创建于21日17:48 UTC（北京时间22日01:48），本次是公开评审中的关系标识与版本绑定修订，ERC PR #2095 不等于标准获批或主网广泛部署；文本变更可信度高，安全效果及金融语义正确性未获独立证明。",
+      "sources": [
+        {
+          "name": "Ethereum Magicians 原始讨论与修订",
+          "url": "https://ethereum-magicians.org/t/erc-8454-aifi-unit-framework/30040"
+        },
+        {
+          "name": "ERC 草案审议 PR",
+          "url": "https://github.com/ethereum/ERCs/pull/2095"
+        },
+        {
+          "name": "提案方规范与测试仓库",
+          "url": "https://github.com/garyyang-finchip/aifi-unit-framework"
+        }
+      ],
+      "summary": "用于登记资产描述与确认声明的 ERC-8454 草案在北京时间25日修订，要求对“两项记录是否代表同一经济权益”等关系的确认，明确绑定关系标识、包含该关系的版本及有资格的确认者。此前对单个元素或旧版本的认可不能再自动确认新关系，提案方称现有注册表接口无需修改，并补充了错误主体、错误版本等测试。当天评审者仍指出负债重复计算可能把估值区间上下界颠倒，说明这仍是待完善草案，未提供生产部署规模或可核验的安全收益量化。",
+      "impact": "判断：有助于防止旧授权被借用为新声明的背书，但关系确认与估值规则的正确性需要分别验证，不能把文字修订当成已经解决所有重复计算问题。",
+      "researchApplications": "形式化“谁在何版本确认了哪一条关系”，测试版本重放、确认者资格与撤销语义，并用正负资产组合检查声明解析和区间估值。",
+      "relevance": {
+        "level": "direct",
+        "reason": "与智能合约授权及 Agent 消费链上声明时的可信上下文直接有关，尤其适合研究签名或确认语义被跨对象、跨版本复用的问题。"
+      },
+      "previous": {
+        "ids": [],
+        "note": "有，原始讨论北京时间22日创建，此前已讨论经济权益重复计算；25日新增关系本身与声明版本的绑定修订及尚未解决的负债审查意见。没有可引用的本库前序ID。"
+      }
+    },
+    {
+      "id": "2026-10-25-06",
+      "date": "2026-10-25",
+      "rank": 6,
+      "title": "Claude 两次请求错误升高已恢复，状态页未披露攻击或影响比例",
+      "tags": [
+        "distributed-systems",
+        "agent-security"
+      ],
+      "keywords": [
+        "模型服务可用性",
+        "故障恢复",
+        "工具重试"
+      ],
+      "focus": "连续调用外部模型的 Agent 需要处理局部服务故障；两次错误率事件不足以证明安全攻击或长期可靠性趋势。",
+      "sourceNote": "最早机构 Anthropic，官方 Claude 状态 API 给出事件及影响窗口。第一起记录创建于25日14:14北京时间，影响14:05—14:35；第二起16:17创建，影响16:08—16:29。状态改为resolved的时间晚于实际影响结束，不能把整个调查时长算作停机；公司状态记录可信度高，但未公开独立测量、错误比例或具体根因。",
+      "sources": [
+        {
+          "name": "Claude 多模型错误事件",
+          "url": "https://status.claude.com/incidents/334jvgbrc4ff"
+        },
+        {
+          "name": "Claude Fable 5.1 错误事件",
+          "url": "https://status.claude.com/incidents/vx06kp8wfpq2"
+        },
+        {
+          "name": "官方状态历史 API",
+          "url": "https://status.claude.com/api/v2/incidents.json"
+        }
+      ],
+      "summary": "Anthropic 的官方状态页记录，25日北京时间14:05—14:35间 Sonnet 5.5 等多个 Claude 模型请求错误升高，随后16:08—16:29间 Fable 5.1 又出现一次错误事件，两起均已恢复。两个影响窗口分别为30分钟和21分钟，涉及模型不同，不能相加成全站中断51分钟，官方也没有给出失败请求比例或受影响用户数量。公告没有证据将事件归因于网络攻击，应将其作为服务可用性事件理解。",
+      "impact": "判断：依赖多步模型调用的业务可能遇到任务中断或重复执行风险，影响取决于是否调用相关模型及自身重试策略，无法由公告估计全体客户损失。",
+      "researchApplications": "在 Agent 故障实验中注入局部模型超时，验证检查点恢复、外部工具调用的幂等重试，以及切换模型后权限和任务状态的一致性。",
+      "relevance": {
+        "level": "direct",
+        "reason": "直接涉及分布式系统容错和 LLM Agent 执行可靠性；与安全研究的交点在恢复时的权限与副作用控制，本事件本身未证实是安全入侵。"
+      },
+      "previous": {
+        "ids": [],
+        "note": "同日两起服务事件合并展示；本库无对应前序记录，两次恢复状态不是额外独立新闻。"
+      }
+    }
+  ]
+}
