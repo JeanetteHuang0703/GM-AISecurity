@@ -46,9 +46,43 @@
       }
     },
     {
+      "id": "2026-10-27-12",
+      "title": "澳大利亚 ASD 披露切断 Amadey 控制器与18万台受感染设备的联系",
+      "tags": [
+        "cybersecurity",
+        "distributed-systems"
+      ],
+      "keywords": [
+        "僵尸网络",
+        "控制面切断",
+        "处置边界"
+      ],
+      "focus": "切断一组控制连接可以削弱犯罪基础设施，但不等于每台终端的恶意软件已经清除。",
+      "sourceNote": "最早对外采访来源为ABC News对ASD官员的直接采访，27日澳大利亚早间发布，属于北京时间27日。行动发生于此前、准确执行日期未公开；官员对行动及规模的陈述中高可信，未公开全部技术证据或独立终端验证。",
+      "sources": [
+        {
+          "name": "ABC 对ASD官员的原始采访",
+          "url": "https://www.abc.net.au/news/2026-10-27/australian-signals-directorate-ai-cybersecurity-hacking-threats/107309858"
+        }
+      ],
+      "summary": "澳大利亚信号局ASD向ABC披露，行动人员进入一个Amadey犯罪运营后台，切断该控制器与约18万台全球受感染计算机的连接。这个数字衡量该犯罪网络可访问的终端范围，不是已完成清理的设备数，也不能推断所有Amadey运营者都被瓦解。27日新增的是此前行动的公开说明，官员没有提供可独立核验的逐台终端恢复结果。",
+      "impact": "判断：干预控制平面能在不逐台接触终端的情况下限制后续窃取，但终端残留、其他控制通道和凭据失窃仍需处理。",
+      "researchApplications": "研究恶意控制网络的失效隔离、切断后的再连接检测和处置成效度量，区分控制面瘫痪与终端恢复。",
+      "relevance": {
+        "level": "indirect",
+        "reason": "与分布式控制网络安全和大规模事件处置相关，不涉及新的区块链或LLM技术机制。"
+      },
+      "previous": {
+        "ids": [],
+        "note": "有，Amadey长期存在；27日新披露对一组犯罪控制后台的干预，不能写成当日新感染18万台。"
+      },
+      "date": "2026-10-27",
+      "rank": 2
+    },
+    {
       "id": "2026-10-27-02",
       "date": "2026-10-27",
-      "rank": 2,
+      "rank": 3,
       "title": "GPT-6.1 Terra 发布：计算机操作能力与价格改善，安全结论仍依赖评测条件",
       "tags": [
         "llm-research",
@@ -91,7 +125,7 @@
     {
       "id": "2026-10-27-03",
       "date": "2026-10-27",
-      "rank": 3,
+      "rank": 4,
       "title": "OpenAI 公布三项 AI 科研结果，ETH 反证主张进入开放核验",
       "tags": [
         "llm-research",
@@ -129,7 +163,7 @@
     {
       "id": "2026-10-27-04",
       "date": "2026-10-27",
-      "rank": 4,
+      "rank": 5,
       "title": "Cohere 报告 Qwen Agent 尝试非任务上传，沙箱阻断且动机未定",
       "tags": [
         "agent-security",
@@ -172,7 +206,7 @@
     {
       "id": "2026-10-27-05",
       "date": "2026-10-27",
-      "rank": 5,
+      "rank": 6,
       "title": "Predict.fun 用户钱包被盗，平台初步怀疑 API 文档站点受侵",
       "tags": [
         "crypto",
@@ -214,9 +248,44 @@
       }
     },
     {
+      "id": "2026-10-27-13",
+      "title": "ENGIE 确认合作方营销工具泄漏客户资料，内部系统未见被攻破",
+      "tags": [
+        "cybersecurity",
+        "supply-chain",
+        "identity"
+      ],
+      "keywords": [
+        "第三方数据权限",
+        "客户资料",
+        "范围确认"
+      ],
+      "focus": "合作工具中的客户资料也属于攻击面，客户数据事件不等于能源生产系统失陷。",
+      "sourceNote": "原始客户通知24日已被转发；27日09:25 UTC（北京时间17:25）的BleepingComputer报道新增ENGIE发言人直接回应。公司口径对确认范围中高可信，未提供独立取证或受影响人数，不能把企业客户总数当作泄漏规模。",
+      "sources": [
+        {
+          "name": "BleepingComputer 对ENGIE的直接采访报道",
+          "url": "https://www.bleepingcomputer.com/news/security/energy-giant-engie-discloses-data-breach-affecting-customers/"
+        }
+      ],
+      "summary": "ENGIE向BleepingComputer确认，法国部分客户资料因合作方使用的营销平台遭未授权访问而暴露，公司称已切断攻击者访问，其内部系统没有被攻破。客户通知涉及联系方式、客户与合同标识及计量点资料，公司表示不包含银行数据，但没有公布可靠的受影响人数或入侵持续时间。27日新增是公司对范围与内部系统边界的回应，不能据此认定电力或天然气生产控制系统被入侵。",
+      "impact": "判断：合同和计量标识可能提高冒充能源供应商的诈骗可信度，但目前没有证据支持能源供应被此事中断。",
+      "researchApplications": "暂无明确AI或区块链专用应用；可用于第三方数据最小化、访问撤销与客户通知范围验证研究。",
+      "relevance": {
+        "level": "none",
+        "reason": "这是客户数据与营销供应商事件，暂无与现有共识、合约、跨链、Agent或LLM研究的明确关联，仍因事件重要性保留。"
+      },
+      "previous": {
+        "ids": [],
+        "note": "有，24日已有客户通知；27日新增发言人确认合作平台和内部系统边界，未虚构新的泄漏人数。"
+      },
+      "date": "2026-10-27",
+      "rank": 7
+    },
+    {
       "id": "2026-10-27-06",
       "date": "2026-10-27",
-      "rank": 6,
+      "rank": 8,
       "title": "DreamHost 文件管理器恢复，部分邮箱与 FTP 密码仍需重置",
       "tags": [
         "cybersecurity",
@@ -251,7 +320,7 @@
     {
       "id": "2026-10-27-07",
       "date": "2026-10-27",
-      "rank": 7,
+      "rank": 9,
       "title": "BNY 新增 XRP 与 RLUSD 托管，直接铸赎和贸易融资仍属后续计划",
       "tags": [
         "crypto",
@@ -287,7 +356,7 @@
     {
       "id": "2026-10-27-08",
       "date": "2026-10-27",
-      "rank": 8,
+      "rank": 10,
       "title": "I-HITL 研究：Agent 能读审批验证码时，人类审批可能形同虚设",
       "tags": [
         "agent-security",
@@ -323,7 +392,7 @@
     {
       "id": "2026-10-27-09",
       "date": "2026-10-27",
-      "rank": 9,
+      "rank": 11,
       "title": "CyberDual 以可执行攻击检验 AI 代码评审，仍存在跨提交漏检",
       "tags": [
         "security-ai",
@@ -359,7 +428,7 @@
     {
       "id": "2026-10-27-10",
       "date": "2026-10-27",
-      "rank": 10,
+      "rank": 12,
       "title": "DeepSeek V4.1 Flash-1017 第三方评估强调小版本也需持续安全测试",
       "tags": [
         "llm-research",
@@ -395,7 +464,7 @@
     {
       "id": "2026-10-27-11",
       "date": "2026-10-27",
-      "rank": 11,
+      "rank": 13,
       "title": "CVM-Store 把机密虚拟机保护扩展到持久化存储与防回滚",
       "tags": [
         "distributed-systems",
