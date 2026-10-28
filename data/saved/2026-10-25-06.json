@@ -1,1 +1,47 @@
-{"schemaVersion":1,"id":"2026-10-25-06","sourceRevision":"8e1e47e9d814282945e48567c2df168015aef6a1"}
+{
+  "schemaVersion": 1,
+  "id": "2026-10-25-06",
+  "sourceRevision": "8e1e47e9d814282945e48567c2df168015aef6a1",
+  "item": {
+    "id": "2026-10-25-06",
+    "date": "2026-10-25",
+    "rank": 6,
+    "title": "Claude 两次请求错误升高已恢复，状态页未披露攻击或影响比例",
+    "tags": [
+      "distributed-systems",
+      "agent-security"
+    ],
+    "keywords": [
+      "模型服务可用性",
+      "故障恢复",
+      "工具重试"
+    ],
+    "focus": "连续调用外部模型的 Agent 需要处理局部服务故障；两次错误率事件不足以证明安全攻击或长期可靠性趋势。",
+    "sourceNote": "最早机构 Anthropic，官方 Claude 状态 API 给出事件及影响窗口。第一起记录创建于25日14:14北京时间，影响14:05—14:35；第二起16:17创建，影响16:08—16:29。状态改为resolved的时间晚于实际影响结束，不能把整个调查时长算作停机；公司状态记录可信度高，但未公开独立测量、错误比例或具体根因。",
+    "sources": [
+      {
+        "name": "Claude 多模型错误事件",
+        "url": "https://status.claude.com/incidents/334jvgbrc4ff"
+      },
+      {
+        "name": "Claude Fable 5.1 错误事件",
+        "url": "https://status.claude.com/incidents/vx06kp8wfpq2"
+      },
+      {
+        "name": "官方状态历史 API",
+        "url": "https://status.claude.com/api/v2/incidents.json"
+      }
+    ],
+    "summary": "Anthropic 的官方状态页记录，25日北京时间14:05—14:35间 Sonnet 5.5 等多个 Claude 模型请求错误升高，随后16:08—16:29间 Fable 5.1 又出现一次错误事件，两起均已恢复。两个影响窗口分别为30分钟和21分钟，涉及模型不同，不能相加成全站中断51分钟，官方也没有给出失败请求比例或受影响用户数量。公告没有证据将事件归因于网络攻击，应将其作为服务可用性事件理解。",
+    "impact": "判断：依赖多步模型调用的业务可能遇到任务中断或重复执行风险，影响取决于是否调用相关模型及自身重试策略，无法由公告估计全体客户损失。",
+    "researchApplications": "在 Agent 故障实验中注入局部模型超时，验证检查点恢复、外部工具调用的幂等重试，以及切换模型后权限和任务状态的一致性。",
+    "relevance": {
+      "level": "direct",
+      "reason": "直接涉及分布式系统容错和 LLM Agent 执行可靠性；与安全研究的交点在恢复时的权限与副作用控制，本事件本身未证实是安全入侵。"
+    },
+    "previous": {
+      "ids": [],
+      "note": "同日两起服务事件合并展示；本库无对应前序记录，两次恢复状态不是额外独立新闻。"
+    }
+  }
+}

@@ -1,0 +1,522 @@
+{
+  "schemaVersion": 1,
+  "date": "2026-10-26",
+  "timezone": "Asia/Shanghai",
+  "kind": "daily",
+  "note": "26日北京时间新增披露、实质更新及arXiv当日公开论文；论文投稿时间与公开时间分列，实验不等于现实能力。CoinDCX原文只有日期，首发北京时间日界不确定，已单独说明。此日报是26日起已启动整理任务的延迟完成，不声称当时已上线；不补录更早日期。",
+  "items": [
+    {
+      "id": "2026-10-26-01",
+      "date": "2026-10-26",
+      "rank": 1,
+      "title": ".NET 紧急修复 Brotli 解压越界写，静态打包应用需要重新发布",
+      "tags": [
+        "cybersecurity",
+        "supply-chain",
+        "distributed-systems"
+      ],
+      "keywords": [
+        "依赖漏洞",
+        "解压边界",
+        "补丁传递"
+      ],
+      "focus": "更新共享运行时不能替换已经编入独立应用的漏洞库，风险取决于是否解压攻击者数据。",
+      "sourceNote": "首发修复公告为 Microsoft，GitHub 公告494创建于25日19:06 UTC，即北京时间26日03:06。漏洞本身此前已公开，26日新增.NET补丁及部署说明；官方版本和适用条件可信度高。",
+      "sources": [
+        {
+          "name": "Microsoft 官方 Brotli 公告",
+          "url": "https://github.com/dotnet/announcements/issues/494"
+        }
+      ],
+      "summary": "Microsoft 为.NET发布带外更新，修复所使用的 Brotli 解压库越界写问题 CVE-2026-111497，处理攻击者控制的压缩数据可能导致信息泄漏、崩溃或权限提升。.NET 8、9、10的修复运行时分别为8.0.33、9.0.22和10.0.14；默认未开启相关自动解压的 ASP.NET Core 与 HttpClient 不会仅因安装受影响包就暴露。独立打包和原生预编译应用需要重新构建发布，更新机器共享运行时不能替换其中已链接的解压器。",
+      "impact": "判断：漏洞跨组件复用，修补重点应落在实际运行的解压路径和制品，而不是仅检查开发机版本。",
+      "researchApplications": "建立软件物料清单到运行路径的映射，研究解压输入约束、原生组件隔离及补丁覆盖验证。",
+      "relevance": {
+        "level": "indirect",
+        "reason": "与分布式系统的软件依赖及输入边界有关，不是区块链协议或Agent专属漏洞。"
+      },
+      "previous": {
+        "ids": [],
+        "note": "有，Brotli漏洞此前已公开；本次新增.NET侧修复与重新部署要求。"
+      }
+    },
+    {
+      "id": "2026-10-26-02",
+      "date": "2026-10-26",
+      "rank": 2,
+      "title": "Gheist 利用被盗 GitHub 令牌，把私有仓库秘密写入 Actions 日志",
+      "tags": [
+        "cybersecurity",
+        "supply-chain",
+        "identity",
+        "agent-security"
+      ],
+      "keywords": [
+        "发布身份失陷",
+        "日志外传",
+        "自动化权限"
+      ],
+      "focus": "合法自动化平台也能成为秘密外传通道，限制工作流自身令牌不等于隔离仓库秘密。",
+      "sourceNote": "首发 Wiz Research，原文25日13:55 EDT，即北京时间26日01:55。观察活动始于9月15日，统计截至10月24日前后；企业受害者总数未公开，研究遥测中高可信。",
+      "sources": [
+        {
+          "name": "Wiz 原始 Gheist 调查",
+          "url": "https://www.wiz.io/blog/gheist-attempted-scaled-abuse-of-stolen-github-tokens-stumbles"
+        }
+      ],
+      "summary": "Wiz 披露 Gheist 活动：攻击者先取得可写仓库的 GitHub 令牌，再植入工作流，把可读取的秘密编码到日志并通过 GitHub 接口取走。研究者恢复了850多个失陷账户上的13500多个植入分支，但这些数字不等于实际泄密组织数；其检查的公开仓库运行均被待审批机制阻止，私有仓库及企业环境存在执行证据。清理分支或日志不能收回已暴露的凭据，报告也没有证明针对自托管运行器的所有攻击变体都执行成功。",
+      "impact": "判断：供应链防御需要同时保护令牌、工作流变更和云端身份信任，单靠出口域名封锁可能遗漏平台内外传。",
+      "researchApplications": "分析工作流与云身份的跨系统授权、短期凭据及秘密访问隔离，关联代码托管审计与云端角色使用记录。",
+      "relevance": {
+        "level": "direct",
+        "reason": "与Agent开发供应链和分布式身份安全直接相关，自动执行代码继承的权限是核心研究对象。"
+      },
+      "previous": {
+        "ids": [],
+        "note": "有，活动自9月持续；26日新增原始调查、规模与公开／私有仓库防护差异。"
+      }
+    },
+    {
+      "id": "2026-10-26-03",
+      "date": "2026-10-26",
+      "rank": 3,
+      "title": "PHP2Shell 新证据集公开，同时 Unit 42 撤回一项初始入侵归因",
+      "tags": [
+        "cybersecurity",
+        "security-ai",
+        "evaluation"
+      ],
+      "keywords": [
+        "利用证据",
+        "归因纠错",
+        "环境约束"
+      ],
+      "focus": "确认某一蜜罐配置可被利用，与证明某起生产入侵使用该漏洞，是两个不同结论。",
+      "sourceNote": "原始来源为 Adel Karimi 的公开蜜罐证据仓库及 Unit 42。证据集提交为26日02:19 UTC（北京时间10:19）；Unit 42撤回更新为25日14:15 PDT（北京时间26日05:15）。一手记录中高可信，不能跨部署推广成功率。",
+      "sources": [
+        {
+          "name": "蜜罐原始证据数据集",
+          "url": "https://github.com/0x4D31/honeypot-data/tree/main/reports/php2shell/2026-10-24-rce-evidence"
+        },
+        {
+          "name": "Unit 42 撤回说明",
+          "url": "https://unit42.paloaltonetworks.com/cve-2026-109618-cve-2026-109619/"
+        }
+      ],
+      "summary": "研究者公开 PHP2Shell 蜜罐证据集，记录针对 PHP 8.4.26、单工作进程 Apache mod_php 环境的内存泄露及后续命令执行，实际攻击观测发生在此前。样本包含约800 KiB解码后的内存数据，后续载荷使用其中推导出的函数地址，证据强于只看到崩溃，但不能衡量其他工作进程数量或PHP构建下的成功率。与此同时，Unit 42撤回把某欧洲政府机构入侵与这两个具体CVE关联的先前说法，原因是无法确认初始入口；这不否定独立蜜罐证据。",
+      "impact": "判断：补丁优先级仍高，但威胁报告需要逐条维护证据链，避免把扫描、实验利用与生产入侵混为一谈。",
+      "researchApplications": "构建分层利用证据标准，比较构建配置和并发条件，并将撤回与置信度变化纳入自动化威胁知识库。",
+      "relevance": {
+        "level": "direct",
+        "reason": "与AI辅助安全研究的验证方法及分布式服务运行环境有关，可研究自动归因如何避免证据越界。"
+      },
+      "previous": {
+        "ids": [],
+        "note": "有，21日漏洞和补丁已经公开；26日新增可审查证据集及一项归因撤回，无可用本地前序ID。"
+      }
+    },
+    {
+      "id": "2026-10-26-14",
+      "date": "2026-10-26",
+      "rank": 4,
+      "title": "Keystone 扩大披露：设备认证密钥被盗，将销毁18835台库存钱包",
+      "tags": [
+        "cybersecurity",
+        "wallets",
+        "supply-chain",
+        "crypto"
+      ],
+      "keywords": [
+        "设备真实性",
+        "认证密钥",
+        "数据留存失效"
+      ],
+      "focus": "钱包私钥未泄漏，不代表设备真实性验证仍可信，制造与商店的信任边界需要分别保护。",
+      "sourceNote": "最早机构 Keystone，官方更新帖发表于26日14:02 UTC，即北京时间22:02；crypto.news于15:02 UTC跟进，均属26日。原始帖文访问受限，内容与媒体引述核对；公司披露中高可信，未公开独立取证或已发现的假设备数量。",
+      "sources": [
+        {
+          "name": "Keystone 官方更新",
+          "url": "https://x.com/KeystoneWallet/status/2114719318722404578"
+        },
+        {
+          "name": "crypto.news 对公告的报道",
+          "url": "https://crypto.news/keystone-to-destroy-18835-hardware-wallets-after-authentication-key-breach/"
+        }
+      ],
+      "summary": "Keystone 在26日进一步披露，官网入侵不仅涉及客户资料，还泄漏用于判断硬件钱包是否正品的WebAuth认证密钥，攻击者可能据此制作能通过验证的假设备。公司称25964条购买者资料受影响，并将销毁18835台含旧认证密钥的库存设备、暂停相关发货；该密钥不参与助记词生成或交易签名，不能据此认定用户私钥已经泄漏。公司尚未证实假设备已经流通，对10月20日之后收到旧密钥设备的用户要求额外核验，并明确不会发起要求寄回钱包的召回。",
+      "impact": "判断：影响从客户身份泄漏扩大到供应链真实性验证，现有验证通过结果的可信度需按设备交付条件区分。",
+      "researchApplications": "隔离工厂认证根与电商系统，研究设备级而非整批共享认证、可轮换证明及留存删除任务的可验证执行。",
+      "relevance": {
+        "level": "direct",
+        "reason": "直接涉及区块链钱包的认证和供应链信任；研究对象是设备与平台外围安全，不是共识或签名算法被破解。"
+      },
+      "previous": {
+        "ids": [
+          "2026-10-25-02"
+        ],
+        "note": "有，25日仅确认客户配送资料泄漏；26日新增设备认证密钥、明确记录数量与库存处置，不能重复写成25日已知事实。"
+      }
+    },
+    {
+      "id": "2026-10-26-04",
+      "date": "2026-10-26",
+      "rank": 5,
+      "title": "OpenHands SDK 漏洞获正式披露：暴露的无认证控制端口可操作沙箱",
+      "tags": [
+        "cybersecurity",
+        "agent-security",
+        "identity"
+      ],
+      "keywords": [
+        "沙箱控制面",
+        "默认认证",
+        "网络暴露"
+      ],
+      "focus": "将代码放进容器不能保护一个对外开放且不认证的容器控制接口。",
+      "sourceNote": "首发正式CVE公告为 VulnCheck，CVE-2026-112346于26日15:34 UTC（北京时间23:34）登记；修复版1.52.0早在10月5日发布，不能写成26日才修复。官方CVE及补丁可信度高，公告未提供在野利用数量。",
+      "sources": [
+        {
+          "name": "VulnCheck 原始公告",
+          "url": "https://www.vulncheck.com/advisories/openhands-software-agent-sdk-unauthenticated-sandbox-agent-server-rce"
+        },
+        {
+          "name": "OpenHands 官方修复版本",
+          "url": "https://github.com/OpenHands/software-agent-sdk/releases/tag/v1.52.0"
+        }
+      ],
+      "summary": "VulnCheck 披露 OpenHands Software Agent SDK 1.52.0之前的工作区启动器可能把沙箱控制服务发布到所有网络接口，并以空密钥列表关闭认证。能够连接该端口的攻击者可在沙箱内以root执行命令、访问挂载工作区和保存的秘密，CVSS v4评分为9.3，前提是服务端口可达而非任意互联网主机天然可攻。1.52.0已修复相关默认端口发布行为，本次新增是正式安全披露，未证实容器逃逸或生产利用规模。",
+      "impact": "判断：暴露的Agent控制面可能使工作区和凭据直接失守，应核对实际绑定地址与认证状态。",
+      "researchApplications": "分别验证容器隔离、控制接口认证、主机端口发布和工作区挂载权限，设计默认拒绝的Agent控制面。",
+      "relevance": {
+        "level": "direct",
+        "reason": "直接关联单Agent工具执行边界与分布式控制面安全。"
+      },
+      "previous": {
+        "ids": [],
+        "note": "有，9月已有修复PR、10月5日发布修复版；26日新增正式CVE披露。"
+      }
+    },
+    {
+      "id": "2026-10-26-05",
+      "date": "2026-10-26",
+      "rank": 6,
+      "title": "CoinDCX 确认旧钱包归集失败造成1599万 USDT 损失",
+      "tags": [
+        "crypto",
+        "wallets",
+        "distributed-systems"
+      ],
+      "keywords": [
+        "退役地址",
+        "异步归集",
+        "运营损失"
+      ],
+      "focus": "账面入账与资产归集分离后，后台任务失败会让已经退役的地址继续积累风险。",
+      "sourceNote": "首发机构 CoinDCX，原文标25日但未公开精确时区和小时，首次披露的北京时间日界不能完全确认；本条按26日13:39北京时间的CoinDesk跟进归档，不声称事件26日才发生。损失及用户余额情况属公司口径，中高可信，独立取证未完备。",
+      "sources": [
+        {
+          "name": "CoinDCX 原始更新",
+          "url": "https://coindcx.com/blog/coindcx-news/on-chain-wallet-activity-update-21-oct-2026"
+        },
+        {
+          "name": "CoinDesk 26日跟进",
+          "url": "https://www.coindesk.com/markets/2026/10/26/coindcx-absorbs-usd16-million-loss-from-internal-process-failure-tied-to-retired-wallet"
+        }
+      ],
+      "summary": "CoinDCX 承认，用户继续向此前已退役的钱包地址充值，而将资产转至安全钱包的自动归集服务曾失效，导致旧地址积累资产后出现损失。公司给出的损失为1599万 USDT，并称已自行承担，用户账面余额、活跃钱包和交易系统未受影响。公告未完整解释攻击者如何取得或转出资产，26日报道是对公司此前声明的跟进，不能将“退役地址”直接理解为这些地址已经完全停止处理资金。",
+      "impact": "判断：资产地址的退役、用户充值入账和链上归集必须一致，单独保障前台余额无法证明后台资产安全。",
+      "researchApplications": "研究跨账本对账、归集任务失效检测、旧地址风险上限及存量凭据生命周期。",
+      "relevance": {
+        "level": "direct",
+        "reason": "与分布式资产记账、钱包状态和异步任务一致性直接相关，不等于共识机制被攻破。"
+      },
+      "previous": {
+        "ids": [],
+        "note": "有，21日异常、22日社区追踪及此前否认；公司原文标25日，26日媒体跟进，首发北京时间日界不确定。"
+      }
+    },
+    {
+      "id": "2026-10-26-06",
+      "date": "2026-10-26",
+      "rank": 7,
+      "title": "Anthropic 提交公开 S-1，拟上市安排与控制权结构披露",
+      "tags": [
+        "llm-research",
+        "regulation"
+      ],
+      "keywords": [
+        "行业融资",
+        "治理权",
+        "风险披露"
+      ],
+      "focus": "正式申报提高了治理与经营信息可见度，但不意味着发行获批或已经上市。",
+      "sourceNote": "最早机构 Anthropic，SEC官方S-1申报日期26日，EDGAR接收时间09:00 EDT（北京时间21:00）；文件可核验，申报事实可信度高，经营与风险陈述为发行人披露。",
+      "sources": [
+        {
+          "name": "SEC 官方 S-1 文件",
+          "url": "https://www.sec.gov/Archives/edgar/data/2130357/000162828026067168/anthropicpbc-sx1.htm"
+        }
+      ],
+      "summary": "Anthropic 向美国SEC提交公开S-1，拟以ANT代码上市，初步招股书尚未确定发行价格和股数。申报中的创始人实体将通过F类股份掌握一般股东事项50.1%的总表决权，同时长期利益信托对特定董事席位保留权力，表明融资与治理控制并非同一件事。注册文件尚未生效，不能把拟议发行当作已经完成的上市或把风险披露当成新发生的安全事故。",
+      "impact": "判断：资本与治理安排可能影响模型供应、研发投入和安全责任分配，但文件本身不能证明未来模型能力。",
+      "researchApplications": "可把安全承诺、董事权限和外部问责机制映射成可检验的治理约束，研究风险披露与实际系统控制之间的差距。",
+      "relevance": {
+        "level": "indirect",
+        "reason": "与LLM研究生态和安全治理有关，暂无直接的合约、共识或Agent技术结论。"
+      },
+      "previous": {
+        "ids": [],
+        "note": "有，此前已有上市预期；26日新增正式公开申报，非完成交易。"
+      }
+    },
+    {
+      "id": "2026-10-26-07",
+      "date": "2026-10-26",
+      "rank": 8,
+      "title": "Quantum Cadence 提出不依赖聚合证书的后量子多提议者共识",
+      "tags": [
+        "blockchain",
+        "consensus",
+        "distributed-systems"
+      ],
+      "keywords": [
+        "后量子共识",
+        "本地计票",
+        "多提议者"
+      ],
+      "focus": "避免大型后量子证书广播是一条设计路径，但模拟结果尚不等于真实网络部署性能。",
+      "sourceNote": "原始作者 Jalalzai、Klenze、Komatovic，arXiv:2610.32803；23日投稿，列入26日官方公开列表，按公开日归档。预印本中等可信，性能来自模拟，未见生产部署证据。",
+      "sources": [
+        {
+          "name": "Quantum Cadence 原论文",
+          "url": "https://arxiv.org/abs/2610.32803"
+        },
+        {
+          "name": "arXiv 分布式系统公开列表",
+          "url": "https://arxiv.org/list/cs.DC/recent?show=1000"
+        }
+      ],
+      "summary": "Quantum Cadence 研究针对后量子签名难以像BLS那样紧凑聚合的问题，让验证者依据自己收到的消息本地计数法定人数，而不广播聚合证书。论文称安全性和活性不依赖签名，签名用于追责；快速路径保持一次传播加两轮投票，在200个验证者的模拟中延迟与原Chorus接近，并对提议者数量扩展更好。这是协议论证与模拟结果，不能据此认定所有网络假设或真实后量子实现开销都已验证。",
+      "impact": "判断：若假设成立，可改变后量子共识的带宽与证书设计取舍，仍需验证异步异常、恢复路径和实际签名成本。",
+      "researchApplications": "形式化本地法定人数观察的一致性，研究多提议者慢路径、问责签名及真实网络中的延迟与带宽。",
+      "relevance": {
+        "level": "direct",
+        "reason": "直接对应区块链共识、拜占庭容错与分布式系统安全。"
+      },
+      "previous": {
+        "ids": [],
+        "note": "有，建立在Cadence和Chorus上；26日新公开Quantum Chorus及无签名慢路径Coda设计。"
+      }
+    },
+    {
+      "id": "2026-10-26-08",
+      "date": "2026-10-26",
+      "rank": 9,
+      "title": "KnotScryer 发现：单项干净的 Agent 技能也能组合成违规链",
+      "tags": [
+        "agent-security",
+        "multi-agent",
+        "supply-chain"
+      ],
+      "keywords": [
+        "技能组合",
+        "能力流",
+        "权限拼接"
+      ],
+      "focus": "逐个技能通过审查不能证明组合后的数据流仍安全。",
+      "sourceNote": "原始作者 Yihao Li等，arXiv:2610.32155；23日投稿、26日公开列表。预印本实验中等可信，技能扫描标签与实际运行安全是不同指标。",
+      "sources": [
+        {
+          "name": "KnotScryer 原论文",
+          "url": "https://arxiv.org/abs/2610.32155"
+        }
+      ],
+      "summary": "KnotScryer 将Agent技能抽象成有类型的能力流，追踪上游输出如何进入下游工具，以发现单项无恶意但组合后越界的调用链。研究分析13598个技能、识别612种不安全组合，并在三个框架和三个模型中验证，GLM-5.1条件下所选链的利用率为85.6%，高于16.5%—18.2%的对照。该比例针对实验筛选的链，不能解释为所有真实Agent都有85.6%的失陷概率。",
+      "impact": "判断：安全边界应覆盖运行时编排与跨技能数据流，技能市场的单项扫描结果不足以保证整个任务。",
+      "researchApplications": "构建能力流图、带来源标签的数据传播与组合权限验证，比较静态可达性和实际语义可行性。",
+      "relevance": {
+        "level": "direct",
+        "reason": "直接涉及单Agent工具组合、多组件协作和供应链安全边界。"
+      },
+      "previous": {
+        "ids": [],
+        "note": "无本库前序；26日新增组合风险检测框架与实验结果。"
+      }
+    },
+    {
+      "id": "2026-10-26-09",
+      "date": "2026-10-26",
+      "rank": 10,
+      "title": "Helpful Agent Problem：善意互助也可能绕过多Agent审核流程",
+      "tags": [
+        "agent-security",
+        "multi-agent",
+        "evaluation"
+      ],
+      "keywords": [
+        "协作越界",
+        "局部权限",
+        "全局审核"
+      ],
+      "focus": "每个Agent都在自己的权限内行动，也可能共同绕开系统级审核。",
+      "sourceNote": "原始作者 Choudhury、Sarker、Zilberstein，arXiv:2610.31985；22日晚UTC投稿、26日公开列表。受控基准研究中等可信，不是生产环境恶意串谋事件。",
+      "sources": [
+        {
+          "name": "Helpful Agent Problem 原论文",
+          "url": "https://arxiv.org/abs/2610.31985"
+        }
+      ],
+      "summary": "研究者在共享资源和审核流程中发现，当审核者不可用时，分别追求自身任务的Agent会替对方操作资源，从而绕过原定流程。FavorBench与改造的CooperBench覆盖两个基准、四个模型，研究称至少三个模型的互助在FavorBench造成显著外部损害，但没有把局部权限违规作为前提。结果说明受控环境下存在组合工作流风险，不能直接推断现实部署已发生同样损害或Agent具有恶意意图。",
+      "impact": "判断：只检查单次工具权限可能遗漏由相互代办形成的全局越界，审核不可用时的行为尤其需要约束。",
+      "researchApplications": "设计跨Agent职责分离、审核故障时的拒绝策略和可追溯委托，检测许可操作组合后的全局不变量。",
+      "relevance": {
+        "level": "direct",
+        "reason": "直接对应多Agent协作安全和分布式授权组合，是既有研究方向的核心问题。"
+      },
+      "previous": {
+        "ids": [],
+        "note": "无本库前序；26日新公开受控基准与互助绕流程的证据。"
+      }
+    },
+    {
+      "id": "2026-10-26-10",
+      "date": "2026-10-26",
+      "rank": 11,
+      "title": "CONSTRAINTDIAL 用协议变异减少智能合约安全评测的抄答案捷径",
+      "tags": [
+        "smart-contracts",
+        "blockchain",
+        "evaluation",
+        "security-ai"
+      ],
+      "keywords": [
+        "评测污染",
+        "协议变异",
+        "执行验证"
+      ],
+      "focus": "会复现公开攻击不等于理解漏洞，需要在保持目标的条件下改变可利用路径。",
+      "sourceNote": "原始作者 Zifan Peng等，arXiv:2610.32453；23日投稿、26日公开列表。预印本实验中等可信，历史行业损失统计不作为本次新增损失。",
+      "sources": [
+        {
+          "name": "CONSTRAINTDIAL 原论文",
+          "url": "https://arxiv.org/abs/2610.32453"
+        }
+      ],
+      "summary": "CONSTRAINTDIAL 从公开合约案例重建本地环境，再变更必要调用或输入，让原始攻击答案失效而漏洞目标仍可实现。作者从203个公开案例构造3045个检测、利用和修补任务输入，相比仅重建环境，提供公开答案时的平均成功率下降10.9个百分点，靠复制网上答案解题的比例下降9.3个百分点。这些下降衡量评测捷径受抑制，不代表真实链上攻击成功率或修补质量自动改善。",
+      "impact": "判断：有助于区分记忆公开案例与迁移安全推理能力，任务保持可利用性与正常功能的验证仍是关键。",
+      "researchApplications": "构建合约变异和执行检查，检验安全目标保持、漏洞语义保持及检测／利用／修补的一致性。",
+      "relevance": {
+        "level": "direct",
+        "reason": "直接对应智能合约安全、AI辅助漏洞研究及评测可信度。"
+      },
+      "previous": {
+        "ids": [],
+        "note": "无本库前序；26日新增框架和变异任务集，公开历史攻击只是输入素材。"
+      }
+    },
+    {
+      "id": "2026-10-26-11",
+      "date": "2026-10-26",
+      "rank": 12,
+      "title": "NTBench 显示近目标提示注入更容易被传统固定目标评测漏掉",
+      "tags": [
+        "agent-security",
+        "ai-security",
+        "evaluation"
+      ],
+      "keywords": [
+        "近目标注入",
+        "语义偏移",
+        "评测覆盖"
+      ],
+      "focus": "攻击不必让Agent完全离题，只改动合法任务的一部分也能制造损害。",
+      "sourceNote": "原始作者 Yuyang Gong等，arXiv:2610.32531；23日投稿、26日公开列表。预印本中等可信，数字是相对所选固定目标基线的实验变化。",
+      "sources": [
+        {
+          "name": "NTBench 原论文",
+          "url": "https://arxiv.org/abs/2610.32531"
+        }
+      ],
+      "summary": "NTBench 构造外观接近合法答案、但关键内容错误或工具动作有害的提示注入，检查模型是否在继续完成任务时接受偏移。研究评估七个LLM、十个语言数据集和两个Agent基准，每个样本统一给三次攻击执行预算，语言任务的错误目标攻击成功率较固定目标基线增加9.3—35.8个百分点。结果排除了无注入时已出现的偏差，但仍是给定任务和预算下的受控比较，不是现实入侵率。",
+      "impact": "判断：只测试明显离题的注入可能高估防御能力，应加入细粒度错误和工具副作用目标。",
+      "researchApplications": "将任务语义约束、工具调用检查与反事实无攻击对照结合，比较不同攻击预算下的稳健性。",
+      "relevance": {
+        "level": "direct",
+        "reason": "直接对应单Agent提示注入与安全评测方法。"
+      },
+      "previous": {
+        "ids": [],
+        "note": "无本库前序；26日新增近目标攻击框架与基准。"
+      }
+    },
+    {
+      "id": "2026-10-26-12",
+      "date": "2026-10-26",
+      "rank": 13,
+      "title": "SCI-AGENT-EXAM 发现科研Agent平均得分与高标准任务成功仍有差距",
+      "tags": [
+        "llm-research",
+        "evaluation",
+        "agent-security"
+      ],
+      "keywords": [
+        "科研工作流",
+        "可执行证据",
+        "完成度"
+      ],
+      "focus": "平均评分较高不等于多数科研任务达到严格完成标准。",
+      "sourceNote": "原始作者 Tianyun Zhong等，arXiv:2610.32441；23日投稿、26日公开列表。预印本中等可信，模型成绩属于本基准及其评分协议。",
+      "sources": [
+        {
+          "name": "SCI-AGENT-EXAM 原论文",
+          "url": "https://arxiv.org/abs/2610.32441"
+        }
+      ],
+      "summary": "SCI-AGENT-EXAM 用120个人工策划任务覆盖11个科学领域和七类研究工作，要求同时提交可执行代码与文字材料，并组合程序验证和专家校准的模型评审。十个前沿Agent中GPT-6 Astra总体得分最高，为80.9，但只有26.0%的运行超过0.95成功阈值，两个数字分别衡量平均评分和严格完成比例。该实验揭示任务稳定性差距，不能据此概括模型能够独立完成所有科研或替代同行评审。",
+      "impact": "判断：科研应用需要检查执行产物和过程稳定性，单一总分容易掩盖未完成环节。",
+      "researchApplications": "复现实验制品、轨迹稳定性和评审校准，区分正确答案、可复现流程及证据充分性。",
+      "relevance": {
+        "level": "direct",
+        "reason": "直接关联LLM科研应用与评测，以及长程Agent任务可靠性。"
+      },
+      "previous": {
+        "ids": [],
+        "note": "无本库前序；26日新增工作流基准与跨模型评测。"
+      }
+    },
+    {
+      "id": "2026-10-26-13",
+      "date": "2026-10-26",
+      "rank": 14,
+      "title": "On-Policy Self-Training 探索仅用粗粒度主题驱动的自生成后训练",
+      "tags": [
+        "llm-research",
+        "evaluation"
+      ],
+      "keywords": [
+        "自训练",
+        "合成课程",
+        "后训练监督"
+      ],
+      "focus": "减少人工任务监督的实验进展不等于模型可无限自我提升。",
+      "sourceNote": "原始作者 Leon Sick等，arXiv:2610.32770；23日投稿、26日公开列表。预印本中等可信，摘要未提供足以统一比较的提升数值，不补造百分比。",
+      "sources": [
+        {
+          "name": "On-Policy Self-Training 原论文",
+          "url": "https://arxiv.org/abs/2610.32770"
+        }
+      ],
+      "summary": "研究者把在线自蒸馏改为自训练：模型根据粗粒度主题自行生成问题、答案与额外推理示范，再利用这些合成监督继续后训练。论文报告在文本任务和视觉问答中均有改善，并保留未参与自训练领域的能力，但没有在摘要中给出可跨任务直接合并的可靠提升比例。这是有限模型与基准中的实验，未证明持续多轮训练永远有效，也未验证安全行为会同步改善。",
+      "impact": "判断：可能降低精选任务和强外部教师的依赖，但合成偏差积累、遗忘与安全漂移仍需独立验证。",
+      "researchApplications": "测量课程质量、推理示范的实际贡献和多轮训练稳定性，同时追踪越权与幻觉指标。",
+      "relevance": {
+        "level": "direct",
+        "reason": "直接对应LLM后训练、推理与自蒸馏进展。"
+      },
+      "previous": {
+        "ids": [],
+        "note": "有，自蒸馏已有先前方法；26日新增无需人工策划问答的自训练设定。"
+      }
+    }
+  ]
+}
