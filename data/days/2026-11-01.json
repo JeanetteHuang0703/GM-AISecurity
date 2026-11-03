@@ -1,0 +1,160 @@
+{
+  "schemaVersion": 1,
+  "date": "2026-11-01",
+  "timezone": "Asia/Shanghai",
+  "kind": "daily",
+  "note": "北京时间2026年11月1日新增披露或实质更新。该次采集未能在原定晨读时段完成；本文件为已启动任务的延迟完成，非空占位。周末研究检索中未将更早发表论文或模型重报道冒充当日新发布；各项时间边界见来源说明。",
+  "items": [
+    {
+      "id": "2026-11-01-01",
+      "date": "2026-11-01",
+      "rank": 1,
+      "title": "币安盗币获FBI正式归因，并公布分阶段恢复提现计划",
+      "tags": [
+        "crypto",
+        "wallets",
+        "cross-chain",
+        "cybersecurity"
+      ],
+      "keywords": [
+        "国家背景盗币",
+        "跨链洗钱",
+        "提现恢复"
+      ],
+      "focus": "同一事件的新增进展是官方归因和恢复服务，补足资产不等于追回赃款。",
+      "sourceNote": "最早机构：FBI、币安。FBI公告标注美国10月31日，ABC于当日18:31美东夏令时（北京时间11月1日06:31）已报道；币安恢复公告为11月1日，网页显示04:08但未标时区。机构公告可信度高，具体入侵根因和资产覆盖为币安初步自述。",
+      "sources": [
+        {
+          "name": "FBI原始归因公告",
+          "url": "https://www.fbi.gov/investigate/cyber/alerts/2026/north-korea-responsible-for-6-billion-binance-attack"
+        },
+        {
+          "name": "币安恢复公告",
+          "url": "https://www.binance.com/en-GB/support/announcement/security-incident-recovery-update-4-withdrawals-resume-in-phases-2026-11-01-73911fb819b240f88b88256bdd318eda"
+        },
+        {
+          "name": "ABC归因报道时间",
+          "url": "https://abcnews.com/amp/Business/binance-estimates-security-breach-impact-63-billion/story?id=137698510"
+        }
+      ],
+      "summary": "FBI将10月29日前后的币安盗币事件正式归因于朝鲜TraderTraitor活动，并公布涉案地址，称观察到赃款主要被兑换为ETH。币安11月1日公告计划在北京时间14:00—17:00启动首批分阶段提现，并称已用公司资源补足约95%的受影响资产，高于前次90%，事件估计影响约63亿美元。补足比例是交易所的资产恢复口径，不代表追回95%赃款，也不等于全部网络已恢复或入侵根因已查清。",
+      "impact": "分析：大型托管平台的操作权限、资产调度和流动性同时承压；跨链兑换使冻结和追踪需要多个平台协作，正式归因仍不等于已公开完整取证链。",
+      "researchApplications": "建立跨链资金流证据图；区分冻结、追回、补足和可提现状态；评估托管签名授权、分层额度及异常提款熔断。",
+      "relevance": {
+        "level": "direct",
+        "reason": "跨链、智能合约和分布式系统安全：多链洗钱追踪与托管控制面的权限、恢复一致性均直接相关。"
+      },
+      "previous": {
+        "ids": [],
+        "note": "有外部前序：10月29日盗币、30日初步披露、31日资产补足更新；本期新增FBI归因及恢复公告。本地没有这些日期的已发布条目，不创建前序ID。"
+      }
+    },
+    {
+      "id": "2026-11-01-02",
+      "date": "2026-11-01",
+      "rank": 2,
+      "title": "俄罗斯统计局承认网站遭攻击，未确认数据库泄漏",
+      "tags": [
+        "cybersecurity"
+      ],
+      "keywords": [
+        "公共网站破坏",
+        "数据泄漏争议"
+      ],
+      "focus": "网站可用性受损已获机构承认，攻击者声称的内部失窃规模仍待独立核验。",
+      "sourceNote": "最早机构：Rosstat声明；Interfax于11月1日10:46莫斯科时间（北京时间15:46）直接引述。机构承认攻击的可信度高，否认泄漏仍属调查阶段结论；攻击者的23TB等数字未独立验证。",
+      "sources": [
+        {
+          "name": "Interfax直接引述统计局声明",
+          "url": "https://www.interfax.ru/russia/1126380"
+        }
+      ],
+      "summary": "俄罗斯联邦统计局11月1日表示，其信息资源在10月29日至11月1日遭到有针对性的破坏性网络攻击，官网外部访问仍需恢复。该局称监控系统触发了响应，尚未发现数据库被攻破或受法律保护的信息泄漏，但没有公布可靠的受影响人数、停机时长或损失金额。网上流传的数万台主机和23TB失窃说法来自攻击者，不能当作已确认事实。",
+      "impact": "分析：已确认影响集中于公共信息发布的可用性与公信力，不能由网页异常推导出内部数据库已全面失守。",
+      "researchApplications": "研究外部发布层与内部数据系统的隔离、不可篡改发布日志及独立泄漏证据校验；暂无必须引入AI或区块链的技术需求。",
+      "relevance": {
+        "level": "none",
+        "reason": "暂无明显相关：当前公开内容是政府网站事件通报，缺少可直接对应共识、合约、Agent或分布式协议的新机制。"
+      },
+      "previous": {
+        "ids": [],
+        "note": "有事件前序：机构称攻击从10月29日持续至11月1日；当天新增官方确认及否认泄漏的表态，无本地前序ID。"
+      }
+    },
+    {
+      "id": "2026-11-01-03",
+      "date": "2026-11-01",
+      "rank": 3,
+      "title": "Northflank在密钥泄漏事件后扩大托管服务凭据轮换支持",
+      "tags": [
+        "cybersecurity",
+        "identity",
+        "distributed-systems",
+        "ai-security"
+      ],
+      "keywords": [
+        "云端秘密泄露",
+        "凭据撤销",
+        "恢复依赖"
+      ],
+      "focus": "恢复需覆盖应用之外的托管组件，已泄漏的旧凭据不会因平台修补自动失效。",
+      "sourceNote": "最早机构：Northflank状态页。10月31日22:32及23:31 UTC（北京时间11月1日06:32及07:31）分别新增Minio、RabbitMQ轮换支持。可信度高；密钥滥用在北京时间10月31日之前已被报告，不冒充当天新发现。",
+      "sources": [
+        {
+          "name": "Northflank官方事件时间线",
+          "url": "https://status.northflank.com/"
+        }
+      ],
+      "summary": "云应用平台Northflank在此前环境变量可能被解密、客户AI API密钥遭未授权使用的事件后，于11月1日新增Minio和RabbitMQ托管组件的秘密轮换支持。此前已开放Postgres、MongoDB、MySQL和Redis的相关支持，本次进展是扩大恢复覆盖，而不是发现新的受害者数量。官方仍要求撤销并替换平台保存的凭据，尚无可靠的总受害人数或损失金额。",
+      "impact": "分析：平台事件可通过仍有效的密钥扩散至AI供应商、对象存储和数据库；恢复应按凭据依赖关系推进，而非只检查服务是否在线。",
+      "researchApplications": "构建跨服务秘密依赖图和撤销传播验证；测试凭据轮换期间的权限收敛与工作负载重连；监测异常模型调用和消费。",
+      "relevance": {
+        "level": "direct",
+        "reason": "分布式系统与Agent安全：工作负载和Agent调用链依赖多家服务凭据，涉及跨域撤销和权限恢复的一致性。"
+      },
+      "previous": {
+        "ids": [],
+        "note": "有外部前序：10月30日平台披露并要求轮换，随后确认客户报告AI密钥滥用；11月1日新增两个组件的恢复能力，无本地前序ID。"
+      }
+    },
+    {
+      "id": "2026-11-01-04",
+      "date": "2026-11-01",
+      "rank": 4,
+      "title": "Anthropic扩展旧模型水印：客户通知提示采样参数限制",
+      "tags": [
+        "ai-security",
+        "llm-research",
+        "evaluation"
+      ],
+      "keywords": [
+        "文本来源标记",
+        "采样配置",
+        "检测边界"
+      ],
+      "focus": "水印能提供来源线索，其覆盖条件不能替代可靠的出处证明。",
+      "sourceNote": "最早机构：Anthropic发给API客户的通知，The Decoder于10月31日19:20 UTC（北京时间11月1日03:20）公开报道其内容；官方帮助页确认分阶段补充旧模型水印。通知内容为媒体转述，可信度中等偏高；采样限制未在本次独立实验复现，不能据帮助页推定所有平台均已完成上线。",
+      "sources": [
+        {
+          "name": "Anthropic官方内容标记说明",
+          "url": "https://support.claude.com/en/articles/16266773-how-claude-marks-ai-generated-content"
+        },
+        {
+          "name": "客户通知的公开报道",
+          "url": "https://the-decoder.com/anthropics-watermark-rollout-leaves-a-loophole-on-two-older-claude-models/"
+        }
+      ],
+      "summary": "Anthropic面向API客户的通知称，将文本水印扩展到Mythos 5、Opus 4.7、Opus 4.6和Sonnet 4.6等旧模型，以补充AI生成内容的来源标记。据通知报道，Opus 4.6和Sonnet 4.6仅在temperature、top_p和top_k均保持默认值时应用该标记，改变其中一个设置可能使输出不带该水印。官方同时强调没有检测到标记不能证明文本由人类生成，目前也没有公开、可独立核验的统一漏检率。",
+      "impact": "分析：依赖输出水印的审计或合规流程需明确模型、平台、采样和文本加工条件，不能把缺少标记当作可信内容的充分条件。",
+      "researchApplications": "以不同采样、截断、改写和混合文本构造可复现鲁棒性评测；把统计水印与签名来源记录分别建模。",
+      "relevance": {
+        "level": "direct",
+        "reason": "LLM评测与AI安全：这是输出溯源的适用条件问题，可对应检测器校准和对抗变换研究，尚非Agent权限防护。"
+      },
+      "previous": {
+        "ids": [],
+        "note": "有外部前序：官方对新模型已有内容标记承诺，本期新增旧模型扩展通知及其参数限制报道；无本地前序ID。"
+      }
+    }
+  ]
+}
