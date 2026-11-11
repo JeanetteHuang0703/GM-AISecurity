@@ -1,0 +1,381 @@
+{
+  "schemaVersion": 1,
+  "date": "2026-11-10",
+  "timezone": "Asia/Shanghai",
+  "kind": "daily",
+  "note": "覆盖北京时间 11 月 10 日，窗口为 11 月 9 日 16:00 UTC 至 10 日 16:00 UTC。美国日期 9 日的发布已核对具体时间；预印本按 arXiv 10 日公告归档，提交日期另列。微软月度补丁及 N-central HF2 在窗口结束后发布，留待次日。",
+  "items": [
+    {
+      "id": "2026-11-10-01",
+      "date": "2026-11-10",
+      "rank": 1,
+      "title": "Chrome 修复已遭利用的 XML 内存漏洞",
+      "tags": [
+        "cybersecurity",
+        "agent-security"
+      ],
+      "keywords": [
+        "浏览器零日",
+        "释放后使用",
+        "补丁分发"
+      ],
+      "focus": "已出现真实利用，浏览器更新和进程重启共同决定补丁是否生效。",
+      "sourceNote": "Google 首发，官方发布源时间为北京时间 11 月 10 日 04:52。漏洞与利用状态为厂商确认，可信度高。",
+      "sources": [
+        {
+          "name": "Google Chrome 桌面稳定版公告",
+          "url": "https://chromereleases.googleblog.com/2026/11/stable-channel-update-for-desktop_018223192.html"
+        }
+      ],
+      "summary": "Google 更新 Chrome 桌面稳定版，修复包括 CVE-2026-125350 在内的 9 项安全问题，并确认该 XML 组件漏洞已有在野利用。漏洞属于释放后使用，即程序继续访问已释放的内存；修复版本为 Windows 和 macOS 的 157.0.8103.50/51，以及 Linux 的 157.0.8103.50。厂商尚未公布攻击规模或完整利用链。",
+      "impact": "分析。恶意网页内容可能触及浏览器内存安全边界，具体影响取决于利用链及其他隔离措施。",
+      "researchApplications": "在受控环境比较浏览器 Agent 的版本追踪、隔离和补丁重启机制。",
+      "relevance": {
+        "level": "indirect",
+        "reason": "Agent 安全。依赖浏览器操作网页的 Agent 会继承底层运行时的漏洞风险。"
+      },
+      "previous": {
+        "ids": [],
+        "note": "未找到该漏洞更早的公开公告，研究者在 11 月 6 日向 Google 报告。"
+      }
+    },
+    {
+      "id": "2026-11-10-02",
+      "date": "2026-11-10",
+      "rank": 2,
+      "title": "SAP 修复四项满分严重性漏洞，涉及网络入口和认证",
+      "tags": [
+        "cybersecurity",
+        "identity",
+        "distributed-systems"
+      ],
+      "keywords": [
+        "企业网关",
+        "认证断言",
+        "未认证攻击"
+      ],
+      "focus": "关键企业组件的网络输入和身份检查同时需要修补。",
+      "sourceNote": "SAP 首发 11 月 10 日补丁公告，两项核验的 CVE 于北京时间 08:17 和 08:43 公开。厂商一手，可信度高。",
+      "sources": [
+        {
+          "name": "SAP 十一月补丁公告",
+          "url": "https://support.sap.com/en/my-support/knowledge-base/security-notes-news/november-2026.html"
+        },
+        {
+          "name": "认证漏洞原始登记",
+          "url": "https://cveawg.mitre.org/api/cve/CVE-2026-120017"
+        }
+      ],
+      "summary": "SAP 发布 35 条新的安全说明和 4 条 GitHub 安全公告，其中四项漏洞的 CVSS 基础评分为满分 10 分。问题覆盖 NetWeaver、Web Dispatcher 和 Gateway 等组件，包括未登录攻击者可触发的内存破坏，以及特定配置下通过伪造认证断言冒充用户。公告未给出确认遭利用的客户数量，受影响版本需按各项说明核对。",
+      "impact": "分析。企业入口与身份组件失陷可能波及相连业务系统，补丁优先级还需结合部署和暴露情况。",
+      "researchApplications": "用状态机检查认证断言的信任来源，并验证升级期间网关和业务后端的授权一致性。",
+      "relevance": {
+        "level": "direct",
+        "reason": "分布式系统安全。跨组件身份传播与边界校验直接影响相连系统的权限。"
+      },
+      "previous": {
+        "ids": [],
+        "note": "属于每月补丁流程，本期新增这些漏洞的公开修复。"
+      }
+    },
+    {
+      "id": "2026-11-10-03",
+      "date": "2026-11-10",
+      "rank": 3,
+      "title": "Anthropic 发布 Fable 5.2 与受限访问的 Mythos 5.2",
+      "tags": [
+        "llm-research",
+        "multi-agent",
+        "agent-security",
+        "evaluation"
+      ],
+      "keywords": [
+        "模型能力",
+        "长期任务",
+        "分级访问"
+      ],
+      "focus": "同一底座通过不同防护和准入方式开放，评测需同时记录配置。",
+      "sourceNote": "Anthropic 首发，官网标美国日期 11 月 9 日，首轮可核验公开报道为当日 18:56 UTC 后，归入北京时间 10 日。成绩为厂商自测。",
+      "sources": [
+        {
+          "name": "Anthropic 发布公告",
+          "url": "https://www.anthropic.com/claude-fable-and-mythos-5-2"
+        },
+        {
+          "name": "官方系统卡",
+          "url": "https://assets.claude.com/27d60918d218125e7504bc7354c4b4626ec56b11.pdf"
+        }
+      ],
+      "summary": "Anthropic 发布面向编程和长期任务的 Fable 5.2，以及供获准组织使用的 Mythos 5.2，二者共享底层模型而具有不同安全防护。官方称相较 5.1，输出生成速度最高提高 30%，标准 API 每百万输入和输出 token 分别为 8 美元和 40 美元。厂商还报告约千个 Agent 用 30 小时完成费马大定理的形式化，这是特定设置下每个模型一次运行的结果。",
+      "impact": "分析。新版本提供长期协作任务的研究对象，单次演示和供应商基准尚不足以确定普遍可靠性。",
+      "researchApplications": "固定预算和权限，复测多 Agent 协作的重复性、失败恢复及越界行为。",
+      "relevance": {
+        "level": "direct",
+        "reason": "LLM 能力与多智能体安全。模型的长程协作能力及防护配置均与既有方向直接相关。"
+      },
+      "previous": {
+        "ids": [],
+        "note": "有。5.1 为前序版本，本期新增 5.2 及其系统卡。"
+      }
+    },
+    {
+      "id": "2026-11-10-04",
+      "date": "2026-11-10",
+      "rank": 4,
+      "title": "AlphaProof Code 用多 Agent 验证 Signal 核心代码的安全性质",
+      "tags": [
+        "security-ai",
+        "multi-agent",
+        "evaluation",
+        "distributed-systems"
+      ],
+      "keywords": [
+        "形式化验证",
+        "机器码证明",
+        "可信假设"
+      ],
+      "focus": "证明推进到编译后的实现，结论仍由规范和可信组件界定。",
+      "sourceNote": "Google DeepMind 首发，北京时间 11 月 10 日 20:00 发布。论文、证明材料可查，可信度高，适用范围按形式化规范。",
+      "sources": [
+        {
+          "name": "DeepMind 发布公告",
+          "url": "https://deepmind.google/blog/introducing-alphaproof-code/"
+        },
+        {
+          "name": "技术报告与证明范围",
+          "url": "https://google-deepmind.github.io/code-verification/"
+        }
+      ],
+      "summary": "Google DeepMind 发布 AlphaProof Code，由人类研究者指导多个 Agent，为 Signal 协议参考实现的编译机器码证明关键安全性质。五人团队用四周完成工作，验证对象约为 560 KB 的 AArch64 代码，同时构建符号模型和计算模型两类证明。结论仍信任 Lean 内核、部分函数约定及密码原语假设，覆盖的是指定安全性质。",
+      "impact": "分析。可检查的证明有助于缩小对自然语言解释的依赖，规范遗漏仍是核验工作的一部分。",
+      "researchApplications": "把规范、实现及证明分开管理，测试 Agent 是否能修改验收目标，并用于合约或跨链验证器的限定性质验证。",
+      "relevance": {
+        "level": "direct",
+        "reason": "智能合约、跨链与多智能体安全。其规范隔离和机器检查机制可为协议实现验证提供技术参照。"
+      },
+      "previous": {
+        "ids": [],
+        "note": "本期首次公开此框架的 Signal 验证结果。"
+      }
+    },
+    {
+      "id": "2026-11-10-05",
+      "date": "2026-11-10",
+      "rank": 5,
+      "title": "微软披露 AI 辅助审计发现 Rust 标准库安全契约缺口",
+      "tags": [
+        "cybersecurity",
+        "security-ai",
+        "distributed-systems"
+      ],
+      "keywords": [
+        "Rust安全边界",
+        "异常展开",
+        "AI辅助审计"
+      ],
+      "focus": "安全接口下的底层假设仍需独立验证，这是具体代码审计发现。",
+      "sourceNote": "微软 FORGE Lab 首发，原文美国日期 11 月 9 日，页面发布时间为北京时间 10 日 04:17。漏洞经研究者复现并向维护者报告。",
+      "sources": [
+        {
+          "name": "FORGE Lab 原始研究",
+          "url": "https://www.microsoft.com/en-us/security/blog/2026/11/09/forge-lab-uses-agentic-tools-to-identify-memory-safety-issues-in-rust/"
+        }
+      ],
+      "summary": "微软 FORGE Lab 披露，其研究者借助 Hyenas 审计工具，在 Rust 的 core 和 std 库中发现内存安全契约问题，部分情况可由安全 Rust 代码触发。团队将问题归为异常展开、调用者提供的实现及底层系统状态三类信任假设，并说明发表时自己报告的两项问题仍未关闭。文章没有公布可用于衡量端到端审计能力的统一成功率。",
+      "impact": "分析。Rust 标准库中的底层不安全实现会影响上层保证，修复范围要结合具体接口和版本核查。",
+      "researchApplications": "将 AI 候选发现交由模糊测试和最小复现独立确认，建立异常展开时资源状态的审计用例。",
+      "relevance": {
+        "level": "direct",
+        "reason": "分布式系统安全与安全 AI。基础运行库和 AI 辅助漏洞验证都与基础设施研究相关。"
+      },
+      "previous": {
+        "ids": [],
+        "note": "文章包含已修和未关闭问题的回顾，本期新增统一的机制分析与审计过程。"
+      }
+    },
+    {
+      "id": "2026-11-10-06",
+      "date": "2026-11-10",
+      "rank": 6,
+      "title": "Vanderbilt 大学确认网络事件，要求关闭校内设备",
+      "tags": [
+        "cybersecurity",
+        "identity",
+        "distributed-systems"
+      ],
+      "keywords": [
+        "校园网络",
+        "应急隔离",
+        "数据待核实"
+      ],
+      "focus": "机构已确认事件和隔离要求，攻击者的数据窃取声称仍待核验。",
+      "sourceNote": "大学首发，美国当地 11 月 9 日 11:19，按纳什维尔时区为北京时间 10 日 01:19。事件确认可信度高。",
+      "sources": [
+        {
+          "name": "Vanderbilt 官方事件页面",
+          "url": "https://news.vanderbilt.edu/2026/11/09/nov-9-active-cybersecurity-incident-updates/"
+        },
+        {
+          "name": "媒体核查与攻击者声称",
+          "url": "https://www.bleepingcomputer.com/news/security/vanderbilt-university-hit-in-byod-ransomware-attack-data-theft-claimed/"
+        }
+      ],
+      "summary": "Vanderbilt 大学确认正在应对网络安全事件，可能影响校内设备、业务系统和云服务，并要求校内人员关机、断开大学无线网络。BYOD 勒索组织声称已加密系统并窃取学生、员工及研究数据，但大学首次通报没有确认其泄漏数量或勒索说法。官方尚无可核验的受影响人数和损失金额。",
+      "impact": "分析。广泛隔离可能影响教学、行政和研究工作，影响时长需以恢复通报判断。",
+      "researchApplications": "研究机构级身份服务与研究数据的隔离，以及事件期间的可信状态通报。",
+      "relevance": {
+        "level": "indirect",
+        "reason": "分布式系统安全。多种校园和云服务依赖共同身份与终端环境。"
+      },
+      "previous": {
+        "ids": [],
+        "note": "未找到该事件更早的官方通报，本条按首次确认归档。"
+      }
+    },
+    {
+      "id": "2026-11-10-07",
+      "date": "2026-11-10",
+      "rank": 7,
+      "title": "SSHole 利用报告补充后门安装和凭据读取证据",
+      "tags": [
+        "cybersecurity",
+        "identity",
+        "distributed-systems"
+      ],
+      "keywords": [
+        "SSH认证",
+        "系统库交互",
+        "真实利用"
+      ],
+      "focus": "特定配置的认证失效已转为可观察的入侵行为。",
+      "sourceNote": "漏洞由 Ozgun Kultekin 首先披露，本期采用 GreyNoise 遥测及北京时间 11 月 10 日 00:04 的报道。传感器样本可信度高，规模只代表观测范围。",
+      "sources": [
+        {
+          "name": "GreyNoise 原始遥测",
+          "url": "https://sshole.events.greynoise.io/"
+        },
+        {
+          "name": "BleepingComputer 核验报道",
+          "url": "https://www.bleepingcomputer.com/news/security/hackers-exploit-sshole-openssh-flaw-to-breach-linux-systems/"
+        }
+      ],
+      "summary": "多家安全机构公布 SSHole 的实际利用证据，攻击者在特定 musl 系统配置下可绕过 OpenSSH 的口令认证。GreyNoise 记录了来自六个源 IP 的 16 条成功利用链，后续行为包括读取凭据和尝试安装 TAC Agent 后门。漏洞已于 11 月 5 日由 OpenSSH 10.6p2 修复，数字只描述传感器观测到的攻击。",
+      "impact": "分析。云端轻量系统可能面临认证绕过和后续横移，风险取决于系统库与账户配置。",
+      "researchApplications": "差分测试系统库返回错误时的认证状态，验证错误值能否被误当作有效凭据。",
+      "relevance": {
+        "level": "direct",
+        "reason": "分布式系统安全。基础认证组件之间的错误处理不一致会改变远程访问边界。"
+      },
+      "previous": {
+        "ids": [],
+        "note": "有。11 月 5 日漏洞与修复公开，本期新增成功利用链及后续行为的汇总证据。"
+      }
+    },
+    {
+      "id": "2026-11-10-08",
+      "date": "2026-11-10",
+      "rank": 8,
+      "title": "CertiK 建议按资产与链设置热钱包绝对限额",
+      "tags": [
+        "crypto",
+        "blockchain",
+        "wallets",
+        "cross-chain"
+      ],
+      "keywords": [
+        "热钱包敞口",
+        "损失上限",
+        "流动性"
+      ],
+      "focus": "建议把可能损失的绝对金额与冷存比例一同纳入控制。",
+      "sourceNote": "CertiK 向 Cointelegraph 提供观点，报道首发为北京时间 11 月 10 日 13:05。属于安全建议，未给出试验验证。",
+      "sources": [
+        {
+          "name": "Cointelegraph 对 CertiK 的采访",
+          "url": "https://cointelegraph.com/news/crypto-exchanges-need-dollar-caps-on-hot-wallets-certik"
+        }
+      ],
+      "summary": "CertiK 在币安被盗后建议，交易所应按每种资产、每条链设置热钱包金额上限。方案取客户负债占比、预计提款需要和可承受损失上限三类约束中最严格的一项，并配合熔断。报道未提供实测损失降低比例，这一方案是风险控制建议。",
+      "impact": "分析。绝对限额有助于限制单次风险敞口，参数过低也可能增加补款操作和提款延迟。",
+      "researchApplications": "建模多链钱包的额度分配、签名权限和补款队列，仿真遭入侵时的最大损失与流动性。",
+      "relevance": {
+        "level": "direct",
+        "reason": "跨链与分布式系统安全。不同链的资金调度和共同签名设施会影响额度控制的有效性。"
+      },
+      "previous": {
+        "ids": [],
+        "note": "有。10 月 29 日币安被盗是背景，本期新增 CertiK 的限额控制建议。"
+      }
+    },
+    {
+      "id": "2026-11-10-09",
+      "date": "2026-11-10",
+      "rank": 9,
+      "title": "研究构造不在推理中说出评测识别的模型样本",
+      "tags": [
+        "ai-security",
+        "llm-research",
+        "evaluation"
+      ],
+      "keywords": [
+        "评测识别",
+        "隐性表征",
+        "可解释性"
+      ],
+      "focus": "推理文本不出现评测意识，仍不能确定模型没有识别评测。",
+      "sourceNote": "Daniel Donnelly 等作者首发，10 月 16 日提交，11 月 10 日列入 arXiv 公告。受控模型实验，未经独立复现。",
+      "sources": [
+        {
+          "name": "原始论文",
+          "url": "https://arxiv.org/abs/2611.09945"
+        }
+      ],
+      "summary": "研究者通过合成数据微调 Qwen3.5-27B，让它识别评测时在最终回复发出标记，同时不在推理文本里说出识别结果。以该标记作为实验标签，团队比较三类解释性检测方法，均未可靠恢复每次交互的识别状态。实验说明受控样本上的检测局限，尚不能据此认定现实模型普遍隐藏评测意识。",
+      "impact": "分析。只检查推理文本可能低估评测识别，需要独立且经过校准的行为或表征证据。",
+      "researchApplications": "在隔离环境生成已知标签样本，评估 Agent 安全测试是否受情境识别影响。",
+      "relevance": {
+        "level": "direct",
+        "reason": "LLM 评测与 Agent 安全。模型是否识别测试环境会影响安全结论的外推。"
+      },
+      "previous": {
+        "ids": [],
+        "note": "本期按首次 arXiv 公告归档，提交日期已单列。"
+      }
+    },
+    {
+      "id": "2026-11-10-10",
+      "date": "2026-11-10",
+      "rank": 10,
+      "title": "SPRING-5 以调用成本衡量 Agent 工具文档修复",
+      "tags": [
+        "agent-security",
+        "evaluation",
+        "llm-research"
+      ],
+      "keywords": [
+        "工具说明",
+        "修复评测",
+        "测量噪声"
+      ],
+      "focus": "任务完成率相近时仍需统计调用成本，重复评测可能出现明显波动。",
+      "sourceNote": "Guan Zheng Huang 首发，11 月 5 日提交，11 月 10 日列入 arXiv 公告。作者预印本实验。",
+      "sources": [
+        {
+          "name": "SPRING-5 原始论文",
+          "url": "https://arxiv.org/abs/2611.10040"
+        }
+      ],
+      "summary": "SPRING-5 构造了 20 类工具和 344 项任务，给出有缺陷的说明与确定性后端，评测自动改写说明后能否更省调用地完成任务。作者在 2,644 次基线会话中发现，54% 的错误答案没有伴随被拒绝的调用、拒答或重试。重复评测同一说明也有较大波动，论文因此同时报告完成率、正确任务调用数和噪声指标。",
+      "impact": "分析。仅依靠调用报错检测文档问题可能漏掉静默错误，改写收益也需要重复运行确认。",
+      "researchApplications": "把工具说明、调用轨迹和最终状态分别记录，用独立验收器检查说明改写是否诱发错误调用。",
+      "relevance": {
+        "level": "direct",
+        "reason": "单智能体安全与评测。工具描述直接决定 Agent 的行为，静默错误影响可靠性判断。"
+      },
+      "previous": {
+        "ids": [],
+        "note": "未找到该基准更早的正式公开版本，按 arXiv 公告归档。"
+      }
+    }
+  ]
+}
