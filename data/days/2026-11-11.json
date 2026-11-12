@@ -1,0 +1,439 @@
+{
+  "schemaVersion": 1,
+  "date": "2026-11-11",
+  "timezone": "Asia/Shanghai",
+  "kind": "daily",
+  "note": "覆盖北京时间 11 月 11 日，窗口为 11 月 10 日 16:00 UTC 至 11 日 16:00 UTC。预印本按当日 arXiv 公告归档，事件和首次披露时间分别注明。11 月 12 日任务触发已晚于 08:30，按实际部署核验时间报告。",
+  "items": [
+    {
+      "id": "2026-11-11-01",
+      "date": "2026-11-11",
+      "rank": 1,
+      "title": "微软月度补丁修复已遭利用的 Outlook 欺骗漏洞",
+      "tags": [
+        "cybersecurity",
+        "supply-chain"
+      ],
+      "keywords": [
+        "在野利用",
+        "Outlook",
+        "月度补丁"
+      ],
+      "focus": "真实利用提升了该漏洞的处置优先级，严重性分数只是其中一项依据。",
+      "sourceNote": "微软首发，Outlook CVE 登记于北京时间 11 月 11 日 02:22。漏洞及利用状态经微软与 CISA 确认，可信度高。",
+      "sources": [
+        {
+          "name": "微软漏洞公告",
+          "url": "https://msrc.microsoft.com/update-guide/vulnerability/CVE-2026-124194"
+        },
+        {
+          "name": "MS-ISAC 补丁通报",
+          "url": "https://www.cisecurity.org/advisory/critical-patches-issued-for-microsoft-products-november-10-2026_2026-132"
+        },
+        {
+          "name": "CISA 目录更新",
+          "url": "https://github.com/cisagov/kev-data/commit/6b8d7ba579672e4f84e2b1f255724aa97c8455b4"
+        }
+      ],
+      "summary": "微软发布 11 月安全补丁，覆盖 Windows、Office、Exchange、SharePoint 等产品，并修复已遭利用的 Outlook 欺骗漏洞 CVE-2026-124194。该漏洞的 CVSS 基础评分为 6.5 分（满分 10 分），CISA 随后将其列入已知被利用漏洞目录，要求适用的美国联邦机构于 11 月 24 日前完成处置。微软未公布确认受害规模。",
+      "impact": "企业补丁排序需要同时考虑已确认利用、客户端覆盖率和系统暴露情况。",
+      "researchApplications": "用经核验的补丁状态和利用证据评估安全运维 Agent 的优先级判断。",
+      "relevance": {
+        "level": "none",
+        "reason": "暂无明显相关。新闻主要涉及通用企业软件补丁。"
+      },
+      "previous": {
+        "ids": [],
+        "note": "每月例行更新，本期新增该漏洞修复与在野利用确认。"
+      }
+    },
+    {
+      "id": "2026-11-11-02",
+      "date": "2026-11-11",
+      "rank": 2,
+      "title": "Across 官网遭劫持后恢复，承诺补偿受影响用户",
+      "tags": [
+        "crypto",
+        "cross-chain",
+        "wallets",
+        "cybersecurity"
+      ],
+      "keywords": [
+        "域名劫持",
+        "钱包授权",
+        "跨链前端"
+      ],
+      "focus": "跨链合约之外，域名和钱包交易界面也属于资产安全边界。",
+      "sourceNote": "Across 首发官方通报并于北京时间 11 月 11 日 09:16 宣布恢复。项目公告可信度高，GoPlus 的损失为外部估算。",
+      "sources": [
+        {
+          "name": "Across 项目通报",
+          "url": "https://x.com/AcrossProtocol/status/2120324818385912082"
+        },
+        {
+          "name": "GoPlus 链上估算",
+          "url": "https://x.com/GoPlusSecurity/status/2120374599414378626"
+        },
+        {
+          "name": "The Block 核验报道",
+          "url": "https://www.theblock.co/news/defi/2026-11-11-crosschain-protocol-across-restores-systems-after-domain-hijack-437843"
+        }
+      ],
+      "summary": "Across 官方域名在北京时间 11 月 11 日约 02:45 遭劫持，攻击者通过域名注册商的社交工程取得控制，并把访问者导向钓鱼页面。项目恢复域名及服务后承诺补偿，GoPlus 估计六条链上的钱包合计损失约 35 万美元。该数字是第三方估算，项目尚未公布最终损失和受影响人数。",
+      "impact": "用户可被熟悉的域名诱导签署恶意授权，恢复域名后仍需处理已经签出的授权。",
+      "researchApplications": "把域名、前端发布和签名请求纳入跨链威胁模型，检验钱包能否独立识别异常收款方和授权范围。",
+      "relevance": {
+        "level": "direct",
+        "reason": "跨链与智能合约安全。攻击位于跨链应用前端，后果通过链上钱包授权产生。"
+      },
+      "previous": {
+        "ids": [],
+        "note": "同日先停前端和 API，再恢复域名并承诺补偿。"
+      }
+    },
+    {
+      "id": "2026-11-11-03",
+      "date": "2026-11-11",
+      "rank": 3,
+      "title": "CISA 将 Cisco BroadWorks 和 Barracuda 等六项漏洞列入已知利用目录",
+      "tags": [
+        "cybersecurity",
+        "distributed-systems",
+        "identity"
+      ],
+      "keywords": [
+        "已知利用",
+        "通信平台",
+        "边界设备"
+      ],
+      "focus": "已公开的旧漏洞获得在野利用确认，处置优先级随证据变化。",
+      "sourceNote": "CISA 首发目录增补，官方 Git 提交为北京时间 11 月 11 日 04:16。厂商公告说明各自影响范围，可信度高。",
+      "sources": [
+        {
+          "name": "CISA 当日目录差异",
+          "url": "https://github.com/cisagov/kev-data/commit/6b8d7ba579672e4f84e2b1f255724aa97c8455b4"
+        },
+        {
+          "name": "Cisco 公告",
+          "url": "https://sec.cloudapps.cisco.com/security/center/content/CiscoSecurityAdvisory/cisco-sa-bworks-xxe-uwUd7CEt"
+        },
+        {
+          "name": "Barracuda 公告",
+          "url": "https://trust.barracuda.com/security/pre-authentication-authorization-bypass-command-injection"
+        }
+      ],
+      "summary": "CISA 将六项漏洞加入已知被利用目录，其中包括 Cisco BroadWorks 的 XML 解析问题及 Barracuda 的认证绕过和命令注入问题。BroadWorks 漏洞可能导致未登录者读取敏感配置，美国联邦机构对该项的处置期限为 11 月 24 日，两项 Barracuda 漏洞的期限为 11 月 13 日。目录确认漏洞存在实际利用，未给出受影响组织总数。",
+      "impact": "通信服务配置和邮件网关具有较高信任权限，外部暴露的旧版本需重新评估风险。",
+      "researchApplications": "结合资产拓扑和利用证据对修复排序，验证网关隔离能否限制下游传播。",
+      "relevance": {
+        "level": "direct",
+        "reason": "分布式系统安全。通信和邮件边界设备持有下游信任，暴露可能影响多个服务。"
+      },
+      "previous": {
+        "ids": [
+          "2026-11-10-01"
+        ],
+        "note": "有。Cisco 与 Barracuda 此前已披露漏洞，本期新增 CISA 收录。同批也收录此前报道的 Chrome 漏洞。"
+      }
+    },
+    {
+      "id": "2026-11-11-04",
+      "date": "2026-11-11",
+      "rank": 4,
+      "title": "N-able 发布 N-central 紧急修复，升级涉及终端组件兼容性",
+      "tags": [
+        "cybersecurity",
+        "distributed-systems",
+        "supply-chain"
+      ],
+      "keywords": [
+        "运维平台",
+        "紧急热补丁",
+        "升级顺序"
+      ],
+      "focus": "修复需要协调服务器、终端代理和探针，版本不匹配会暂时影响服务。",
+      "sourceNote": "N-able 首发 HF2，发布说明页面时间为北京时间 11 月 11 日 04:48。厂商一手，可信度高。",
+      "sources": [
+        {
+          "name": "N-central HF2 发布说明",
+          "url": "https://status.n-able.com/2026/11/10/n-central-2026-4-hf2-release-notes/"
+        },
+        {
+          "name": "N-able 事件通报",
+          "url": "https://uptime.n-able.com/event/202559/"
+        }
+      ],
+      "summary": "N-able 在此前暂停 N-central 托管环境后发布紧急修复 2026.4 HF2，构建号为 2026.4.1.26，强化认证、权限检查及组件通信。厂商负责托管服务器升级，客户仍需升级终端代理和探针，提前升级探针可能使旧版代理或补丁管理组件无法与其通信。内置远程控制暂时停用，厂商未公布受害客户数量。",
+      "impact": "分批升级有助于恢复运维，但部分功能仍可能因组件版本不一致而中断。",
+      "researchApplications": "为高权限运维系统验证升级依赖、兼容矩阵及补丁离线缓存的降级。",
+      "relevance": {
+        "level": "direct",
+        "reason": "分布式系统安全。多组件升级需要同时保持授权边界和通信可用性。"
+      },
+      "previous": {
+        "ids": [
+          "2026-11-09-01"
+        ],
+        "note": "有。11 月 9 日停机，本期新增热修复与升级约束。"
+      }
+    },
+    {
+      "id": "2026-11-11-05",
+      "date": "2026-11-11",
+      "rank": 5,
+      "title": "Arcus 补足 223 万 USDG 缺口，披露跨链限额拦截结果",
+      "tags": [
+        "crypto",
+        "smart-contracts",
+        "cross-chain",
+        "stablecoins"
+      ],
+      "keywords": [
+        "子账户记账",
+        "桥接限额",
+        "资金补足"
+      ],
+      "focus": "单独的桥接限额压低了记账错误可造成的损失。",
+      "sourceNote": "Arcus 首发复盘，正文元数据含北京时间 11 月 11 日 03:57 的发布记录。事件、损失及补足范围来自项目。",
+      "sources": [
+        {
+          "name": "Arcus 事件复盘",
+          "url": "https://arcus.xyz/blog/arcus-incident-report-november-9-2026"
+        },
+        {
+          "name": "DefiLlama 事件记录",
+          "url": "https://defillama.com/protocol/arcus"
+        }
+      ],
+      "summary": "Arcus 披露，11 月 10 日北京时间，一名攻击者利用同一用户的子账户转账记账错误虚增余额，实际提走 2,234,391 枚 USDG。桥的链上限额挡下额外约 300 万美元的提款请求，随后这些请求被撤销，Arcus 于北京时间 11 日 01:28 用公司金库补足缺口。平台称其他用户余额未受影响，已转走的资金仍在追踪。",
+      "impact": "独立提款限额能在内部记账失效后约束实际出金，平台补资与资金追回是两个阶段。",
+      "researchApplications": "用守恒不变量测试子账户转账，并验证内部余额与跨链提款队列的独立限额。",
+      "relevance": {
+        "level": "direct",
+        "reason": "智能合约和跨链安全。记账错误与跨链出金上限分别作用于同一资金路径。"
+      },
+      "previous": {
+        "ids": [],
+        "note": "有。攻击和初步止损发生在北京时间 10 日，本期新增公司补足与正式复盘。"
+      }
+    },
+    {
+      "id": "2026-11-11-06",
+      "date": "2026-11-11",
+      "rank": 6,
+      "title": "Google 开放 Gemini 4 Carbon，发布长程 Agent 评测",
+      "tags": [
+        "llm-research",
+        "evaluation",
+        "agent-security"
+      ],
+      "keywords": [
+        "多模态",
+        "长程任务",
+        "模型评测"
+      ],
+      "focus": "新模型开放后，长任务的完成率、成本和工具配置可以分别复测。",
+      "sourceNote": "Google 首发，官网时间 11 月 10 日 16:00 UTC，对应北京时间 11 日 00:00。规格为一手，评测按测试条件解释。",
+      "sources": [
+        {
+          "name": "Google 发布公告",
+          "url": "https://blog.google/innovation-and-ai/models-and-research/gemini-models/gemini-4-carbon-now-available/"
+        },
+        {
+          "name": "DeepMind 模型卡",
+          "url": "https://deepmind.google/models/model-cards/gemini-4-carbon/"
+        }
+      ],
+      "summary": "Google 向付费开发者和企业开放基于 Gemini 4 Argon 的 Gemini 4 Carbon，可处理文字、图像、音频和视频，输入与输出合计最多 100 万 token。模型卡中，衡量终端任务的 Terminal-Bench 4.0 得分为 65.2%，Argon 为 57.1%。结果受评测环境和工具配置影响，模型卡的网络安全成绩对应特定准入渠道。",
+      "impact": "研究者可在相同工具环境复测长任务和多模态输入，模型可用性扩大了实验范围。",
+      "researchApplications": "固定输入预算、工具权限和执行环境，测量长上下文下任务完成和违规动作。",
+      "relevance": {
+        "level": "direct",
+        "reason": "LLM 能力与单 Agent 安全。长程工具任务的模型卡提供了可复测的对照。"
+      },
+      "previous": {
+        "ids": [],
+        "note": "有。Argon 是前序底座，本期新增 Carbon 的开放渠道与评测结果。"
+      }
+    },
+    {
+      "id": "2026-11-11-07",
+      "date": "2026-11-11",
+      "rank": 7,
+      "title": "阿里云开放 Qwen4-Max 限期预览",
+      "tags": [
+        "llm-research",
+        "evaluation",
+        "coding"
+      ],
+      "keywords": [
+        "多模态",
+        "百万上下文",
+        "推理预算"
+      ],
+      "focus": "推理与回答共享输出额度，评测需要把两种消耗同时计入。",
+      "sourceNote": "阿里云首发，预览于北京时间 11 月 11 日 10:00 开始。规格和访问范围为官方文档，可信度高。",
+      "sources": [
+        {
+          "name": "阿里云模型文档",
+          "url": "https://help.aliyun.com/en/model-studio/qwen4-max-preview"
+        }
+      ],
+      "summary": "阿里云开放 Qwen4-Max 预览 API，支持文本、图像和视频输入，预览期为北京时间 11 月 11 日 10:00 至 25 日结束。官方文档列出 100 万 token 上下文和最多 393,216 个输出 token，后者由思考内容与最终回答共用。预览接口限 Token Plan，文档规格无法直接说明真实任务完成率。",
+      "impact": "限期预览提供了可复现的测试窗口，较大额度也增加了比较时统一预算的重要性。",
+      "researchApplications": "分层测试长上下文中的证据定位、权限保持及输出预算耗尽时的处理。",
+      "relevance": {
+        "level": "direct",
+        "reason": "LLM 推理与评测。新版本的上下文和输出预算适合开展控制变量实验。"
+      },
+      "previous": {
+        "ids": [],
+        "note": "本期首次开放此预览版本。"
+      }
+    },
+    {
+      "id": "2026-11-11-08",
+      "date": "2026-11-11",
+      "rank": 8,
+      "title": "马士基确认并购遗留系统遭未授权访问和数据提取",
+      "tags": [
+        "cybersecurity",
+        "distributed-systems"
+      ],
+      "keywords": [
+        "遗留系统",
+        "并购整合",
+        "数据外泄"
+      ],
+      "focus": "并购带来的旧系统仍可能保有独立的安全风险。",
+      "sourceNote": "马士基首发官方确认，公告标 11 月 11 日，当日 14:44 UTC 已有媒体引述。事件可信度高，数据分类仍在调查。",
+      "sources": [
+        {
+          "name": "马士基官方公告",
+          "url": "https://www.maersk.com/news/articles/2026/11/11/it-security-incident"
+        }
+      ],
+      "summary": "马士基确认，一套此前收购获得的本地遗留系统遭未授权访问，并有数据被提取。公司初步调查将事件范围限定在一套系统，尚无其他马士基系统或客户集成接口受影响的迹象，客户可继续管理货运订单。公司认为当前发现强烈指向未披露敏感数据，仍在调查，未公布数据量或受影响人数。",
+      "impact": "遗留系统隔离可能降低向客户接口扩散的风险，具体数据影响仍需调查确认。",
+      "researchApplications": "建立并购后资产、身份和集成接口的信任清单，验证遗留系统隔离及退役流程。",
+      "relevance": {
+        "level": "indirect",
+        "reason": "分布式系统安全。涉及旧系统与客户集成之间的隔离边界。"
+      },
+      "previous": {
+        "ids": [],
+        "note": "此前有第三方声称，本期新增企业对未授权访问和数据提取的确认。"
+      }
+    },
+    {
+      "id": "2026-11-11-09",
+      "date": "2026-11-11",
+      "rank": 9,
+      "title": "彭博报道多家金融机构承诺为美元稳定币项目投入约 2.7 亿美元",
+      "tags": [
+        "crypto",
+        "stablecoins",
+        "regulation"
+      ],
+      "keywords": [
+        "银行联盟",
+        "美元稳定币",
+        "运营资金"
+      ],
+      "focus": "资金承诺为共同发行机构提供运营资源，产品进度仍受设立和监管安排影响。",
+      "sourceNote": "彭博 11 月 10 日美东报道，11 月 10 日 17:42 UTC 已有后续报道，归入北京时间 11 日。金额来自匿名知情人士，机构参与名单有前序联合公告。",
+      "sources": [
+        {
+          "name": "彭博原始报道",
+          "url": "https://www.bloomberg.com/news/articles/2026-11-10/goldman-citi-among-banks-in-270-million-stablecoin-backing"
+        },
+        {
+          "name": "Wells Fargo 联合公告",
+          "url": "https://newsroom.wf.com/news-releases/news-details/2026/Group-of-leading-international-financial-institutions-to-establish-stablecoin-enterprise/default.aspx"
+        }
+      ],
+      "summary": "彭博援引知情人士称，高盛、花旗、桑坦德及德意志银行等机构承诺为共同发行美元稳定币的计划投入约 2.7 亿美元。该笔金额据报用于计划中新公司的前五年运营，参与计划的 21 家机构此前已公布目标为 2027 年上半年推出美元产品。出资细节仍待参与方确认，发行尚在筹备。",
+      "impact": "多机构共用发行方可能推动结算互通，储备、赎回和治理权的实际安排仍需披露。",
+      "researchApplications": "设计多机构的铸造与赎回审批模型，检查各链供应量和储备对账的一致性。",
+      "relevance": {
+        "level": "indirect",
+        "reason": "与跨链及智能合约研究间接相关。出资新闻未披露所用链和合约实现。"
+      },
+      "previous": {
+        "ids": [],
+        "note": "有。21 家机构在 9 月公布设立计划，本期新增运营资金承诺报道。"
+      }
+    },
+    {
+      "id": "2026-11-11-10",
+      "date": "2026-11-11",
+      "rank": 10,
+      "title": "ProofCoder 在 Rocq 验证任务中提高自动证明成功率",
+      "tags": [
+        "llm-research",
+        "evaluation",
+        "smart-contracts",
+        "coding"
+      ],
+      "keywords": [
+        "持续推理",
+        "证明助手",
+        "验证成本"
+      ],
+      "focus": "证明反馈可以帮助 Agent 主动调整搜索与回退。",
+      "sourceNote": "Martim Afonso 等作者首发，11 月 10 日提交，列入 11 日 arXiv 公告。结果为作者预印本实验。",
+      "sources": [
+        {
+          "name": "ProofCoder 论文",
+          "url": "https://arxiv.org/abs/2611.14106"
+        }
+      ],
+      "summary": "研究团队提出 ProofCoder，让 Agent 根据 Rocq 证明助手的反馈查找前提、修改证明片段或回退。作者在 AutoRocq 的 280 项验证任务上报告，最佳配置的证明成功率从基线 47% 提升到 60%，开销约为基线一半。结果来自同一基准，迁移到大型协议仍需测量。",
+      "impact": "Agent 可能降低生成部分证明的成本，复杂任务仍依赖规范、证明检查和人工复核。",
+      "researchApplications": "在固定资源预算下复测合约不变量和跨链状态机的证明生成，并隔离规格修改权限。",
+      "relevance": {
+        "level": "direct",
+        "reason": "智能合约与 LLM 科研应用。证明助手反馈可用于验证合约状态和协议安全性质。"
+      },
+      "previous": {
+        "ids": [],
+        "note": "本期为该论文的 arXiv 公告，AutoRocq 是其前序对照。"
+      }
+    },
+    {
+      "id": "2026-11-11-11",
+      "date": "2026-11-11",
+      "rank": 11,
+      "title": "WikiTrace 为 Agent 记忆保留原始轨迹证据",
+      "tags": [
+        "agent-security",
+        "llm-research",
+        "evaluation"
+      ],
+      "keywords": [
+        "证据关联记忆",
+        "回溯",
+        "任务退化"
+      ],
+      "focus": "保存可查证的轨迹可帮助 Agent 发现经验总结错误或不适用。",
+      "sourceNote": "Yukyeong Lee 等作者首发，北京时间 11 月 11 日提交并列入当日 arXiv 公告。结果为作者实验。",
+      "sources": [
+        {
+          "name": "WikiTrace 论文",
+          "url": "https://arxiv.org/abs/2611.14320"
+        }
+      ],
+      "summary": "研究者提出 WikiTrace，将 Agent 的经验摘要与原始任务轨迹关联，使它能在摘要冲突或证据不足时回查后再行动。作者报告，在五项 Agent 基准上，该方法均优于只给相同经验摘要的对照，并减少了原本能完成的任务因加入记忆而失败的情况。实验测量的是任务退化，抵御蓄意记忆污染的效果仍需专门评测。",
+      "impact": "证据链有助于纠正失效记忆，同时引入了轨迹访问控制与保留成本。",
+      "researchApplications": "测试轨迹访问权限及完整性，分别测量误记忆、蓄意污染和过时经验对动作的影响。",
+      "relevance": {
+        "level": "direct",
+        "reason": "单 Agent 安全与 LLM 评测。记忆内容是否可信会直接影响后续工具行为。"
+      },
+      "previous": {
+        "ids": [],
+        "note": "本期首次公开该方法的预印本，前期记忆污染研究属于相关背景。"
+      }
+    }
+  ]
+}
