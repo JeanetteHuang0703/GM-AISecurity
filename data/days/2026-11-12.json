@@ -1,0 +1,433 @@
+{
+  "schemaVersion": 1,
+  "date": "2026-11-12",
+  "timezone": "Asia/Shanghai",
+  "kind": "daily",
+  "note": "覆盖北京时间 11 月 12 日 00:00 至 24:00，按首次公开或当日实质更新归档。事件、公告与后续报道的时间分别注明。11 月 13 日任务触发晚于 08:30，以上线核验时间为准。",
+  "items": [
+    {
+      "id": "2026-11-12-01",
+      "date": "2026-11-12",
+      "rank": 1,
+      "title": "Citrix 修复 NetScaler 默认配置也受影响的高危内存漏洞",
+      "tags": [
+        "cybersecurity",
+        "distributed-systems",
+        "identity"
+      ],
+      "keywords": [
+        "边缘网关",
+        "默认配置",
+        "补丁覆盖"
+      ],
+      "focus": "其中一项漏洞影响默认部署，补丁排查要覆盖未启用 VPN 的设备。",
+      "sourceNote": "Cloud Software Group（Citrix）首发。相关 CVE 在北京时间 11 月 12 日晚登记，CERT-EU 后续汇总。厂商与应急机构公告，可信度高。",
+      "sources": [
+        {
+          "name": "Citrix 安全公告",
+          "url": "https://support.citrix.com/external/article/CTX697305/citrix-netscaler-adc-and-citrix-netscale.html"
+        },
+        {
+          "name": "CERT-EU 通报",
+          "url": "https://cert.europa.eu/publications/security-advisories/2026-020/"
+        }
+      ],
+      "summary": "Citrix 为承担负载均衡和远程接入的 NetScaler ADC 与 Gateway 发布安全补丁，CERT-EU 汇总涉及 28 处内存缺陷。其中 CVE-2026-120868 的严重性为 9.3 分（满分 10 分），可在默认配置下导致设备异常或拒绝服务。公告未提供实际利用或受害规模。",
+      "impact": "同一网关可能同时承载多项关键业务，默认配置受影响会扩大停机风险。",
+      "researchApplications": "用网关版本和业务拓扑评估补丁顺序，并检验分批升级期间的故障切换。",
+      "relevance": {
+        "level": "direct",
+        "reason": "分布式系统安全。负载均衡和接入设备的共同缺陷可能导致多个服务同时失效。"
+      },
+      "previous": {
+        "ids": [],
+        "note": "无同批补丁的前序。"
+      }
+    },
+    {
+      "id": "2026-11-12-02",
+      "date": "2026-11-12",
+      "rank": 2,
+      "title": "Debian 为稳定版修复 Apache HTTP/2 远程代码执行风险",
+      "tags": [
+        "cybersecurity",
+        "distributed-systems",
+        "supply-chain"
+      ],
+      "keywords": [
+        "HTTP/2",
+        "并发同步",
+        "发行版补丁"
+      ],
+      "focus": "上游修复公布后，发行版用户需要核对自己的软件包版本与修复状态。",
+      "sourceNote": "Apache 项目 11 月 11 日首发上游补丁，Red Hat 同日披露。Debian 于北京时间 11 月 12 日 17:54 发布稳定版更新。原始公告可信度高。",
+      "sources": [
+        {
+          "name": "Apache 漏洞公告",
+          "url": "https://httpd.apache.org/security/vulnerabilities_24.html#CVE-2026-119618"
+        },
+        {
+          "name": "Debian 安全通报",
+          "url": "https://lists.debian.org/debian-security-announce/2026/msg00540.html"
+        },
+        {
+          "name": "Red Hat 漏洞记录",
+          "url": "https://access.redhat.com/security/cve/cve-2026-119618"
+        }
+      ],
+      "summary": "Debian 为稳定版 trixie 发布 Apache HTTP Server 安全更新，修复 3 项上游漏洞。其中最严重的一项来自 HTTP/2 模块访问共享内存时的同步缺陷，可能导致远程代码执行，影响启用该模块的上游 2.4.55 至 2.4.70 版本。Debian 本次发布的修复包为 2.4.71-1~deb13u1，公告未确认在野利用。",
+      "impact": "运行受影响模块的网站和代理面临较高风险，实际补丁覆盖取决于发行版和部署配置。",
+      "researchApplications": "在持续集成中检查网络组件的并发安全，并用发行版公告校验补丁识别工具。",
+      "relevance": {
+        "level": "direct",
+        "reason": "分布式系统安全。公共 HTTP 入口的并发缺陷可能影响多个上游服务。"
+      },
+      "previous": {
+        "ids": [],
+        "note": "有。11 月 11 日 Apache 发布上游 2.4.71，本次新增 Debian 稳定版修复。"
+      }
+    },
+    {
+      "id": "2026-11-12-03",
+      "date": "2026-11-12",
+      "rank": 3,
+      "title": "四家公益组织起诉五家 AI 企业，要求冻结最先进模型开发",
+      "tags": [
+        "ai-security",
+        "agent-security",
+        "regulation"
+      ],
+      "keywords": [
+        "前沿模型",
+        "安全责任",
+        "禁令请求"
+      ],
+      "focus": "这起诉讼试图用现有法律约束前沿模型开发中的安全风险。",
+      "sourceNote": "原告之一 Public Citizen 首发，AP 于北京时间 11 月 12 日 23:00 报道。起诉事实可信度高，指控尚待法院认定。",
+      "sources": [
+        {
+          "name": "Public Citizen 起诉公告",
+          "url": "https://www.citizen.org/news/coalition-of-nonprofits-files-landmark-lawsuit-to-stop-development-of-advanced-ai-systems-at-anthropic-google-meta-openai-and-spacexsi-that-proliferate-bioweapons-and-cyberattacks/"
+        },
+        {
+          "name": "美联社报道",
+          "url": "https://apnews.com/article/03ece37b96979fe834f60976648504ba"
+        }
+      ],
+      "summary": "包括 Public Citizen 在内的 4 家非营利组织在旧金山向 Anthropic、Google、Meta、OpenAI 和 SpaceXSI 提起诉讼。原告认为现有防护不足以控制高级 AI 系统造成严重伤害的风险，请求法院冻结这 5 家企业进一步开发最先进的模型。冻结属于原告请求，法院是否准许仍待确认。",
+      "impact": "案件可能提高外界对模型发布前安全证据和事故记录的要求，实际约束取决于法院裁定。",
+      "researchApplications": "把执行权限、人工批准与可审计的停止机制纳入 Agent 发布前评估。",
+      "relevance": {
+        "level": "indirect",
+        "reason": "单／多 Agent 安全。诉讼涉及运行约束与安全证据，技术措施仍需单独验证。"
+      },
+      "previous": {
+        "ids": [],
+        "note": "无同一诉讼的前序。"
+      }
+    },
+    {
+      "id": "2026-11-12-04",
+      "date": "2026-11-12",
+      "rank": 4,
+      "title": "微软披露 AI 辅助筛查 Linux 内核，形成 59 份上游报告",
+      "tags": [
+        "security-ai",
+        "cybersecurity",
+        "evaluation",
+        "distributed-systems"
+      ],
+      "keywords": [
+        "AI 辅助审计",
+        "人工复核",
+        "上游修复"
+      ],
+      "focus": "大规模发现候选问题后，复核、修复与维护者审查仍占用大量专家时间。",
+      "sourceNote": "微软 FORGE Lab 首发，文章标注美国日期 11 月 11 日，页面发布时间换算为北京时间 11 月 12 日 00:55。项目数字来自研究团队，可信度高。",
+      "sources": [
+        {
+          "name": "微软安全研究",
+          "url": "https://www.microsoft.com/en-us/security/blog/2026/11/11/lessons-from-59-linux-kernel-bug-reports/"
+        }
+      ],
+      "summary": "微软 FORGE Lab 公开用 AI 扫描 Linux 部分内核子系统的结果，以及研究者如何向维护团队报告和修补问题。约两周的扫描产出 26,502 条待筛线索，经筛选和数月人工复核后形成 59 份公开上游报告，其中 33 项获 CVE 编号，截至发文有 38 份报告对应的修复已合入主线。数据只覆盖所选子系统与这次项目。",
+      "impact": "AI 可以扩大代码审查覆盖，但安全产出取决于可验证的报告和被接纳的修复。",
+      "researchApplications": "按候选线索、独立确认、补丁合入三阶段衡量防御审计效果，并记录人工工时。",
+      "relevance": {
+        "level": "direct",
+        "reason": "LLM 评测和 Agent 安全。真实维护流程提供了衡量准确率、复核成本与修复质量的参照。"
+      },
+      "previous": {
+        "ids": [],
+        "note": "无同一批 Linux 内核报告的前序。"
+      }
+    },
+    {
+      "id": "2026-11-12-05",
+      "date": "2026-11-12",
+      "rank": 5,
+      "title": "DTCC 计划在 2027 年下半年把代币化证券服务接入 Solana",
+      "tags": [
+        "blockchain",
+        "cross-chain",
+        "smart-contracts",
+        "regulation"
+      ],
+      "keywords": [
+        "证券代币化",
+        "多链托管",
+        "权益一致性"
+      ],
+      "focus": "接入计划把跨账本的所有权同步和监管约束带到公链环境。",
+      "sourceNote": "DTCC 11 月 12 日首发。公开报道在北京时间当日晚已引用公告。项目计划可信度高，落地时间以实际交付为准。",
+      "sources": [
+        {
+          "name": "DTCC 接入公告",
+          "url": "https://www.dtcc.com/press-releases/2026/dtcc-tokenization-service-to-connect-with-solana"
+        },
+        {
+          "name": "DTCC 服务上线公告",
+          "url": "https://www.dtcc.com/press-releases/2026/dtcc-tokenization-service-goes-live"
+        }
+      ],
+      "summary": "美国证券交易后基础设施机构 DTCC 宣布，拟把 10 月 28 日已上线的代币化服务接入 Solana，使其旗下托管机构 DTC 持有的合资格证券可在该链上发行代币化凭证。公告把接入时间定在 2027 年下半年，并计划支持代币发行及后续生命周期管理。Solana 上首批资产范围和具体上线日期尚未公布。",
+      "impact": "若按计划上线，证券托管平台需要在多链环境下维持所有权记录一致，并处理链上确认和链下更正之间的时间差。",
+      "researchApplications": "定义同一证券在托管账本和各链之间的供应量不变量，验证转移、赎回、暂停与重组时的对账。",
+      "relevance": {
+        "level": "direct",
+        "reason": "跨链与智能合约。它提供受监管资产跨不同账本表示并维持权益一致的实际案例。"
+      },
+      "previous": {
+        "ids": [],
+        "note": "有。DTCC 10 月 28 日宣布服务上线，本次新增 Solana 接入计划。"
+      }
+    },
+    {
+      "id": "2026-11-12-10",
+      "date": "2026-11-12",
+      "title": "Ethlabs 撤回以太坊快速出块提案，建议 2027 年优先推进抗量子升级",
+      "tags": [
+        "blockchain",
+        "consensus",
+        "distributed-systems"
+      ],
+      "keywords": [
+        "抗量子迁移",
+        "验证者密钥",
+        "出块时隙"
+      ],
+      "focus": "同一次升级的工程资源有限，Ethlabs 主张先投入签名迁移和客户端加固。",
+      "sourceNote": "Ethlabs 在 Ethereum Magicians 首发，论坛时间换算为北京时间 11 月 12 日 04:51。提案和撤回声明可信度高，时间目标属于作者主张。",
+      "sources": [
+        {
+          "name": "Ethlabs 原始提案",
+          "url": "https://ethereum-magicians.org/t/an-ethlabs-view-on-post-quantum-and-post-ai-timelines-pqai27/30351"
+        },
+        {
+          "name": "以太坊共识开发者会议纪要",
+          "url": "https://ethereum-magicians.org/t/all-core-devs-consensus-acdc-188-october-1-2026/29737"
+        }
+      ],
+      "summary": "以太坊研究团队 Ethlabs 宣布从计划中的 Hegotá 升级撤回 Quick Slots，并建议将资源投向抗量子迁移和客户端加固。Quick Slots 曾讨论将出块时隙从 12 秒缩短到 10 秒，新提案改以 2027 年推进抗量子防护为目标，包括验证者更换签名密钥的准备工作。该目标仍需社区与客户端团队协调，主网升级尚未确定。",
+      "impact": "如果获得广泛支持，验证者密钥迁移和客户端加固的优先级会上升，缩短时隙的工程安排可能后移。",
+      "researchApplications": "在混合签名迁移期间验证共识安全性、活性和客户端兼容性，并测量签名开销。",
+      "relevance": {
+        "level": "direct",
+        "reason": "区块链共识与分布式系统安全。密钥迁移与时隙调整都会改变验证者在升级期间的运行条件。"
+      },
+      "previous": {
+        "ids": [],
+        "note": "有。10 月 1 日共识开发者会议讨论过缩短时隙，本次新增 Ethlabs 的撤回决定和 2027 年提案。"
+      },
+      "rank": 6
+    },
+    {
+      "id": "2026-11-12-11",
+      "date": "2026-11-12",
+      "title": "欧盟开始对 USDC 实施重大电子货币代币双重监管",
+      "tags": [
+        "crypto",
+        "stablecoins",
+        "regulation",
+        "blockchain"
+      ],
+      "keywords": [
+        "MiCA",
+        "双重监管",
+        "储备与赎回"
+      ],
+      "focus": "首个被认定为重大的欧盟电子货币代币进入分工监管阶段。",
+      "sourceNote": "欧洲银行管理局（EBA）10 月 14 日首发，11 月 12 日为公告规定的生效日。Circle 向美国证监会提交的季报确认相同日期，可信度高。",
+      "sources": [
+        {
+          "name": "EBA 决定",
+          "url": "https://www.eba.europa.eu/publications-and-media/press-releases/eba-classifies-usdc-first-significant-e-money-token-european-union"
+        },
+        {
+          "name": "Circle 季报",
+          "url": "https://www.sec.gov/Archives/edgar/data/1876042/000187604226000311/crcl-20260930.htm"
+        }
+      ],
+      "summary": "欧盟开始对 Circle 欧洲实体发行的 USDC 施行《加密资产市场监管条例》下的双重监管。USDC 是 EBA 10 月公告时 45 种已申报电子货币代币中首个被认定为重大的代币，EBA 接手储备、流动性和赎回计划监督，法国审慎监管机构继续负责治理和外包等事项。",
+      "impact": "此次生效建立了大型稳定币在欧盟的监管分工，后续可观察该分工如何落实到储备报告与赎回演练。",
+      "researchApplications": "研究如何用统一时间戳和可验证证据衔接多链发行记录、储备记录与赎回数据。",
+      "relevance": {
+        "level": "indirect",
+        "reason": "智能合约和跨链。监管对象是发行方，链上记录可以为核对发行和赎回提供输入。"
+      },
+      "previous": {
+        "ids": [],
+        "note": "有。EBA 于 10 月 14 日公告分类，本次新增是监管分工正式生效。"
+      },
+      "rank": 7
+    },
+    {
+      "id": "2026-11-12-06",
+      "date": "2026-11-12",
+      "rank": 8,
+      "title": "Salesforce 披露研发 Agent 优化企业检索模型的结果",
+      "tags": [
+        "llm-research",
+        "evaluation",
+        "multi-agent"
+      ],
+      "keywords": [
+        "自动化研发",
+        "嵌入模型",
+        "推理效率"
+      ],
+      "focus": "给定算力预算与评测标准后，Agent 可在特定模型上探索质量和速度的改进。",
+      "sourceNote": "Salesforce AI Research 首发应用结果，页面日期为美国 11 月 11 日，发布时间换算为北京时间 11 月 12 日 00:00。数字来自公司实验，可信度中高。",
+      "sources": [
+        {
+          "name": "Salesforce 应用结果",
+          "url": "https://www.salesforce.com/news/stories/agents-that-improve-ai-models/?bc=OTH"
+        },
+        {
+          "name": "SFR-AutoR&D 研究项目",
+          "url": "https://sfr-autornd.github.io/engineer/"
+        }
+      ],
+      "summary": "Salesforce 披露用 SFR-AutoR&D 优化企业检索所用的 SFR-Embedding V3，Agent 在给定目标和算力预算下提出改动，并通过对照实验筛选。公司称，在 10 项公开检索任务中，前 10 条结果的排序质量指标比原基线提升 6.13 点。随后约 9 小时的性能优化将吞吐提高 36%、延迟降低 17%，检索质量基本保持，这些结果来自该公司的特定模型和测试。",
+      "impact": "这种做法可能缩短检索模型的迭代周期，跨模型与跨业务的收益仍需验证。",
+      "researchApplications": "设置隔离的训练环境和保留测试集，审计研发 Agent 对评测、数据与代码所做的改动。",
+      "relevance": {
+        "level": "direct",
+        "reason": "LLM 科研应用与多 Agent 安全。该案例把自动研发、资源预算和独立评测放在同一流程。"
+      },
+      "previous": {
+        "ids": [],
+        "note": "有。团队此前已公布 SFR-AutoR&D 项目，本次新增企业检索模型的应用数据。"
+      }
+    },
+    {
+      "id": "2026-11-12-07",
+      "date": "2026-11-12",
+      "rank": 9,
+      "title": "Tether Gold 披露 KPMG 对发行方 2025 年财报的无保留意见",
+      "tags": [
+        "blockchain",
+        "crypto",
+        "stablecoins"
+      ],
+      "keywords": [
+        "黄金储备",
+        "实物盘点",
+        "历史时点"
+      ],
+      "focus": "实物盘点提高了历史储备的可验证性，审计覆盖的日期仍是判断边界。",
+      "sourceNote": "Tether 11 月 12 日首发，当日北京时间晚间已有公开报道。审计结论和盘点数字来自发行方对 KPMG 美国审计的披露，可信度中高。",
+      "sources": [
+        {
+          "name": "Tether 审计公告",
+          "url": "https://tether.io/news/tether-gold-xaut-becomes-tethers-second-stablecoin-to-complete-a-big-four-audit/"
+        }
+      ],
+      "summary": "Tether 宣布，KPMG 美国对黄金代币 XAU₮ 发行方 TG Commodities 的 2025 年财报出具无保留意见，并逐根盘点对应金条。按公告口径，截至 2025 年 12 月 31 日，发行方持有 520,089.350 金衡盎司黄金，对应 520,089.300 枚流通代币，略高于每枚一金衡盎司的设计比例。该结论适用于年末财报及盘点时点，当前储备和赎回能力仍需其他证据。",
+      "impact": "此类审计增强对链下托管资产的历史验证，公开披露频率会影响投资者对最新覆盖率的判断。",
+      "researchApplications": "研究把独立托管报告、链上发行量和赎回记录按同一时点对齐的储备证明。",
+      "relevance": {
+        "level": "indirect",
+        "reason": "智能合约。链上发行量可以核验，实物资产与权属仍依赖链下审计和托管证据。"
+      },
+      "previous": {
+        "ids": [],
+        "note": "有。Tether 8 月披露美元代币发行方的独立审计，本次新增黄金代币发行方的年度财报审计。"
+      }
+    },
+    {
+      "id": "2026-11-12-08",
+      "date": "2026-11-12",
+      "rank": 10,
+      "title": "AWS 将 eMudhra 证书信任更新扩展至更新中的任意 Lambda 运行时",
+      "tags": [
+        "cybersecurity",
+        "identity",
+        "distributed-systems"
+      ],
+      "keywords": [
+        "证书信任",
+        "云函数",
+        "撤销传播"
+      ],
+      "focus": "分批推送信任变更时，同一平台的不同运行时可能暂时接受不同的证书。",
+      "sourceNote": "AWS 10 月 24 日美国当地时间首发该公告，本轮更新为北京时间 11 月 12 日 04:05。服务状态来自 AWS，可信度高。",
+      "sources": [
+        {
+          "name": "AWS 安全公告",
+          "url": "https://aws.amazon.com/security/security-bulletins/2026-150-aws/"
+        }
+      ],
+      "summary": "AWS 更新 eMudhra 证书安全公告，说明此前受影响的证书颁发机构信任变更已覆盖 Node.js 22、24 和 26 的全部 Lambda 函数。AWS 表示，任意运行时的函数在更新时也会取得新的信任配置，其余运行时的整体推送预计 11 月 17 日完成。此次公布的是云平台部署进度，AWS 未公布客户受影响规模。",
+      "impact": "更新窗口内，不同服务实例可能对同一证书给出不同的验证结果，影响依赖这些服务的身份验证和连接。",
+      "researchApplications": "测量撤销信息在异构客户端和运行时之间的传播延迟，验证信任配置不一致时的访问策略。",
+      "relevance": {
+        "level": "direct",
+        "reason": "分布式系统安全。公告给出了身份信任变更分阶段传播的生产案例。"
+      },
+      "previous": {
+        "ids": [],
+        "note": "有。AWS 10 月首次公告证书密钥问题，本次新增 Lambda 更新规则与覆盖进度。"
+      }
+    },
+    {
+      "id": "2026-11-12-09",
+      "date": "2026-11-12",
+      "rank": 11,
+      "title": "韩国支付商 MOIN 将以 USDC 为 Nium 跨境汇款预充值",
+      "tags": [
+        "crypto",
+        "stablecoins",
+        "blockchain"
+      ],
+      "keywords": [
+        "跨境支付",
+        "稳定币资金池",
+        "周末预充值"
+      ],
+      "focus": "稳定币首先改善的是支付机构的资金调拨时段，到账仍取决于当地支付网络。",
+      "sourceNote": "MOIN 经 EIN Presswire 首发。新闻稿署名地点日期为首尔 11 月 11 日，公开分发为北京时间 11 月 12 日 13:39。合作计划可信度中高。",
+      "sources": [
+        {
+          "name": "MOIN 新闻稿",
+          "url": "https://www.einnews.com/pr_news/956142827/moin-becomes-one-of-the-first-to-fund-cross-border-payouts-with-usdc-through-nium"
+        },
+        {
+          "name": "新闻稿分发时间",
+          "url": "https://www.todayinfinance.com/article/956142827-moin-becomes-one-of-the-first-to-fund-cross-border-payouts-with-usdc-through-nium"
+        }
+      ],
+      "summary": "韩国支付基础设施商 MOIN 宣布，将用美元稳定币 USDC 为其在 Nium 的跨境付款余额充值，收款人仍通过当地渠道收到法币。该安排让 MOIN 可在周末和公共假日为付款预先调拨资金，减少对银行工作时段的依赖。公司未披露付款规模、实际到账时间或成本降幅。",
+      "impact": "资金预置时间可能缩短，实际到账提速还取决于换汇、当地清算时间与合规审核。",
+      "researchApplications": "设计把链上入金确认、内部资金账户与法币付款回执串联的对账流程，并检查重复付款和失败重试。",
+      "relevance": {
+        "level": "indirect",
+        "reason": "分布式系统安全。跨账本异步付款涉及状态一致性和失败恢复，公告未涉及具体跨链协议。"
+      },
+      "previous": {
+        "ids": [],
+        "note": "有。双方于 2025 年 11 月建立合作，本次新增 USDC 预充值。"
+      }
+    }
+  ]
+}
