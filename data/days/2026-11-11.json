@@ -130,10 +130,15 @@
         "reason": "分布式系统安全。通信和邮件边界设备持有下游信任，暴露可能影响多个服务。"
       },
       "previous": {
-        "ids": [
-          "2026-11-10-01"
-        ],
-        "note": "有。Cisco 与 Barracuda 此前已披露漏洞，本期新增 CISA 收录。同批也收录此前报道的 Chrome 漏洞。"
+        "ids": [],
+        "note": "有。Cisco 与 Barracuda 此前已披露漏洞，本期新增 CISA 收录。同批也收录此前报道的 Chrome 漏洞。",
+        "records": [
+          {
+            "id": "2026-11-10-01",
+            "title": "Chrome 修复已遭利用的 XML 内存漏洞",
+            "date": "2026-11-10"
+          }
+        ]
       }
     },
     {
