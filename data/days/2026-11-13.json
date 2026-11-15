@@ -81,10 +81,15 @@
         "reason": "LLM 推理和多 Agent 安全。模型能力与速度的差异影响任务分配以及权限边界。"
       },
       "previous": {
-        "ids": [
-          "2026-11-11-06"
-        ],
-        "note": "有。11 月 11 日已记录同系列 Carbon 的开放，本次新增 Hydrogen 及其评测。"
+        "ids": [],
+        "note": "有。11 月 11 日已记录同系列 Carbon 的开放，本次新增 Hydrogen 及其评测。",
+        "records": [
+          {
+            "id": "2026-11-11-06",
+            "title": "Google 开放 Gemini 4 Carbon，发布长程 Agent 评测",
+            "date": "2026-11-11"
+          }
+        ]
       }
     },
     {

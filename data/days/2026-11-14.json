@@ -1,0 +1,366 @@
+{
+  "schemaVersion": 1,
+  "date": "2026-11-14",
+  "timezone": "Asia/Shanghai",
+  "kind": "daily",
+  "note": "收录北京时间 11 月 14 日新发布或有实质更新的消息。厂商初步调查、遥测样本和实验室成绩分别标明证据范围。",
+  "items": [
+    {
+      "id": "2026-11-14-01",
+      "date": "2026-11-14",
+      "rank": 1,
+      "title": "微软 365 完成恢复，披露网络容量升级隐患",
+      "tags": [
+        "cybersecurity",
+        "distributed-systems"
+      ],
+      "keywords": [
+        "云服务",
+        "容量升级",
+        "健康探测"
+      ],
+      "focus": "这次事故显示，共享网络变更可能把局部容量问题传导至多个云服务。",
+      "sourceNote": "微软服务健康公告最早确认恢复，宾夕法尼亚大学公开转载，北京时间 11 月 14 日 12:17。可信度高，根因仍属初步调查。",
+      "sources": [
+        {
+          "name": "宾夕法尼亚大学转载微软状态公告",
+          "url": "https://mailservices.isc.upenn.edu/computing/email/penno365/alerts/ms-incidents.html"
+        },
+        {
+          "name": "美联社报道",
+          "url": "https://apnews.com/article/ca395c0f1e51af784b6d70afb6554f6a"
+        }
+      ],
+      "summary": "微软确认 Microsoft 365 多项服务已恢复，并更新了这次跨服务中断的初步原因。按微软状态记录，受影响时段从北京时间 11 月 12 日 18:05 持续到 14 日 00:10，约 30 小时，随后微软在当天中午发布恢复确认。初步调查发现，先前网络容量升级中潜伏的问题在后续变更时显现，并影响健康检测和流量处理。",
+      "impact": "共享基础设施故障可同时降级多个业务，恢复时间也需要与公告时间分开衡量。",
+      "researchApplications": "设计分区域变更对照，测量依赖链路降级后的隔离效果和容量恢复时间。",
+      "relevance": {
+        "level": "direct",
+        "reason": "分布式系统安全。可用于研究共享网络故障怎样突破服务级故障域。"
+      },
+      "previous": {
+        "ids": [
+          "2026-11-13-12"
+        ],
+        "note": "有。11 月 13 日晨读记录了中断，本次补充恢复和初步根因。"
+      }
+    },
+    {
+      "id": "2026-11-14-02",
+      "date": "2026-11-14",
+      "rank": 2,
+      "title": "Cloudflare 与 AWS 公布 AI 智能体参与真实网络活动",
+      "tags": [
+        "cybersecurity",
+        "security-ai",
+        "agent-security"
+      ],
+      "keywords": [
+        "AI 智能体",
+        "规模化扫描",
+        "云端观测"
+      ],
+      "focus": "两家云服务商都观察到相关活动。扫描请求数衡量暴露压力，入侵规模仍待核验。",
+      "sourceNote": "Cloudflare 北京时间 11 月 14 日 03:26 发布，AWS 约一小时后公布独立观测。可信度高，遥测反映各自覆盖范围。",
+      "sources": [
+        {
+          "name": "Cloudflare 网络遥测",
+          "url": "https://blog.cloudflare.com/adapting-to-ai-penetration-testing-orchestrators/"
+        },
+        {
+          "name": "AWS 威胁情报",
+          "url": "https://aws.amazon.com/blogs/security/amazon-threat-intelligence-observes-threat-actors-running-cybercrime-campaigns-with-artex-ai-agents/"
+        }
+      ],
+      "summary": "Cloudflare 与 AWS 分别披露了真实环境中使用 AI 编排框架的扫描活动和疑似网络犯罪活动，AWS 的报告聚焦于 ARTEX 智能体。Cloudflare 在此前三天识别到超过 50 种框架家族产生的客户扫描流量，其跟踪样本的日请求量较 10 月 1 日增长超过 30 倍。AWS 的独立观测也来自自身传感器，目前数据无法推算全行业的成功入侵数量。",
+      "impact": "自动化提高了面向公网资产的探测频率，单一请求限速可能难以衡量持续行为。",
+      "researchApplications": "用防守方网关和诱饵遥测评估跨会话聚合、异常速率限制和误报。",
+      "relevance": {
+        "level": "direct",
+        "reason": "单智能体和多智能体安全。真实防守侧数据可帮助定义智能体滥用的观测边界。"
+      },
+      "previous": {
+        "ids": [],
+        "note": "有。此前已有 AI 辅助攻击披露，本次新增两家云服务商的现场观测。"
+      }
+    },
+    {
+      "id": "2026-11-14-03",
+      "date": "2026-11-14",
+      "rank": 3,
+      "title": "CISA 确认 Check Point 和 UnrealIRCd 两项漏洞已被利用",
+      "tags": [
+        "cybersecurity",
+        "identity",
+        "distributed-systems"
+      ],
+      "keywords": [
+        "已知被利用漏洞",
+        "权限边界",
+        "边缘网关"
+      ],
+      "focus": "美国官方确认在野利用，使两项漏洞从潜在风险升级为紧急修复事项。",
+      "sourceNote": "CISA 目录北京时间 11 月 14 日 01:49 发布，03:18 同步至 GitHub。可信度高，实际受影响机构数量未披露。",
+      "sources": [
+        {
+          "name": "CISA 已知被利用漏洞目录变更",
+          "url": "https://github.com/cisagov/kev-data/commit/4eb869f871072701a32c1ebc69f90647c2d56419"
+        },
+        {
+          "name": "Check Point 调查公告",
+          "url": "https://research.checkpoint.com/2026/php2shell-exploitation-on-check-point-gateway/"
+        }
+      ],
+      "summary": "美国网络安全和基础设施安全局把 Check Point Gaia 的权限提升漏洞和 UnrealIRCd 聊天服务器的权限检查漏洞加入已知被利用漏洞目录。此次新增 2 项，美国联邦民事机构须在 11 月 16 日前按公告采取整改措施。Check Point 此前公开过一宗相关入侵调查，目录更新没有披露整体受影响规模。",
+      "impact": "网关和公开消息服务器处于重要信任边界，整改优先级应结合资产暴露和现有访问权限判断。",
+      "researchApplications": "研究如何把实际利用证据、服务拓扑和身份边界用于补丁排序。",
+      "relevance": {
+        "level": "indirect",
+        "reason": "分布式系统安全。涉及边缘节点和服务控制权限，公告未涉及共识或节点容错。"
+      },
+      "previous": {
+        "ids": [],
+        "note": "有。Check Point 先前已披露相关入侵，本次新增 CISA 的在野利用确认和整改期限。"
+      }
+    },
+    {
+      "id": "2026-11-14-04",
+      "date": "2026-11-14",
+      "rank": 4,
+      "title": "Google 对外开放部分科研智能体工具并公布协作结果",
+      "tags": [
+        "multi-agent",
+        "agent-security",
+        "llm-research",
+        "evaluation"
+      ],
+      "keywords": [
+        "多智能体",
+        "形式化验证",
+        "科研工程"
+      ],
+      "focus": "独立验证器能把多个智能体提出的候选结果变成可检查的研究产出。",
+      "sourceNote": "Google Research 首发并由文章作者在北京时间 11 月 14 日 05:04 发布消息。可信度高，实验由项目参与方报告。",
+      "sources": [
+        {
+          "name": "Google Research 成果与工具说明",
+          "url": "https://research.google/blog/advancing-science-engineering-with-antigravitys-teamwork-feature/"
+        },
+        {
+          "name": "Google Antigravity 早期预览",
+          "url": "https://antigravity.google/blog/teamwork-when-ai-becomes-a-research-partner"
+        }
+      ],
+      "summary": "Google Research 公布多智能体系统 Antigravity Teamwork 与人类专家合作的数学及系统工程成果，并说明相关工具已向外部开放。系统让多个智能体分别提出候选解，再用形式化证明检查器、测试套件或模拟器独立验证，报告包含对 2013 年提出的 Courtade–Kumar 猜想的证明。发表的成果来自特定项目和专家协作，跨任务成功率仍待系统评估。",
+      "impact": "生成和验证分工为长任务提供了可审计的过程，适用范围取决于能否建立可靠的验收条件。",
+      "researchApplications": "让多个证明智能体提出协议不变量，用形式化工具独立验收，并测量错误发现率和人工审查时间。",
+      "relevance": {
+        "level": "direct",
+        "reason": "多智能体与 LLM 科研应用。该工作给出长任务上下文隔离和独立验收的实际系统案例。"
+      },
+      "previous": {
+        "ids": [],
+        "note": "有。Google 8 月已介绍 Teamwork 预览，本次新增科研结果和外部开放信息。"
+      }
+    },
+    {
+      "id": "2026-11-14-05",
+      "date": "2026-11-14",
+      "rank": 5,
+      "title": "Anthropic 公开多轮安全评测方法，部署配置可使合适应答率相差 34 个百分点",
+      "tags": [
+        "ai-security",
+        "agent-security",
+        "evaluation",
+        "llm-research"
+      ],
+      "keywords": [
+        "多轮评测",
+        "部署配置",
+        "统计不确定性"
+      ],
+      "focus": "同一底层模型的测试结果可能随服务中的系统提示等配置改变。",
+      "sourceNote": "Anthropic 工程博客首发，官方账号北京时间 11 月 14 日 03:00 公布。可信度高，所列成绩来自厂商评测。",
+      "sources": [
+        {
+          "name": "Anthropic 工程评测报告",
+          "url": "https://www.anthropic.com/research/building-strong-safety-evaluations"
+        }
+      ],
+      "summary": "Anthropic 发布多轮安全评测方法，用整段对话是否持续符合专家评分标准来衡量安全表现。Claude Fable 5.1 在其中一项测试上的合适应答率，API 配置为 60%，加入针对性系统提示的 Claude.ai 配置为 94%，相差 34 个百分点。这个差距对应这项实验及其配置，其他任务和实际部署的表现需单独测量。",
+      "impact": "模型卡、API 测试和面向用户的产品测试适用范围不同，需要公开配置和统计不确定性才能比较。",
+      "researchApplications": "在无外网的评测环境中，每次只改变一个配置，比较多轮任务中策略遵循和及时终止的比率。",
+      "relevance": {
+        "level": "direct",
+        "reason": "单智能体和多智能体安全。系统提示、工具与运行边界都是评测结论成立的条件。"
+      },
+      "previous": {
+        "ids": [],
+        "note": "有。报告扩展了此前的智能体能力评测方法，并引用 Claude 模型卡的测试案例。"
+      }
+    },
+    {
+      "id": "2026-11-14-06",
+      "date": "2026-11-14",
+      "rank": 6,
+      "title": "Unocoin 确认三只热钱包受影响，估计损失约 20 万美元",
+      "tags": [
+        "blockchain",
+        "crypto",
+        "wallets",
+        "cybersecurity"
+      ],
+      "keywords": [
+        "多签钱包",
+        "备份密钥",
+        "托管隔离"
+      ],
+      "focus": "托管方冻结账户后，自持备份密钥所对应的链上签名权限仍需独立控制。",
+      "sourceNote": "Unocoin 官网北京时间 11 月 14 日披露。可信度高，损失数字为交易所初步估算。",
+      "sources": [
+        {
+          "name": "Unocoin 11 月 14 日事故更新",
+          "url": "https://blog.unocoin.com/security-incident-update/"
+        },
+        {
+          "name": "Unocoin 事故时间线",
+          "url": "https://blog.unocoin.com/unocoin-security-update-official-timeline-progress-updates/"
+        }
+      ],
+      "summary": "印度加密货币交易所 Unocoin 更新失窃调查，确认超过 20 只运营钱包中有 3 只热钱包受影响，初步估计损失约 20 万美元。公司称，未经授权的链上交易使用了由其保管的备份密钥取得所需签名，交易在 BitGo 平台外完成。Unocoin 承诺自行承担已识别损失，仍在调查备份密钥如何外泄及客户数据的暴露范围。",
+      "impact": "业务平台层面的暂停无法替代对备用签名路径的隔离。钱包恢复能力和应急止损之间的取舍因此更容易验证。",
+      "researchApplications": "为钱包恢复路径制定独立审批、延时生效和紧急撤权规则，并通过链上不变量验证。",
+      "relevance": {
+        "level": "direct",
+        "reason": "区块链钱包与智能合约安全。案例暴露了多签恢复路径和运营冻结之间的权限差异。"
+      },
+      "previous": {
+        "ids": [],
+        "note": "有。Unocoin 前一份公告已披露交易在 BitGo 平台外签发，本次确认受影响钱包和初步金额。"
+      }
+    },
+    {
+      "id": "2026-11-14-07",
+      "date": "2026-11-14",
+      "rank": 7,
+      "title": "N-able 公布 N-central 第三轮热修复计划",
+      "tags": [
+        "cybersecurity",
+        "identity",
+        "distributed-systems"
+      ],
+      "keywords": [
+        "远程运维",
+        "端点身份",
+        "旧接口"
+      ],
+      "focus": "远程运维平台的信任边界既包括公开入口，也包括管理服务器和受管端点之间的授权。",
+      "sourceNote": "N-able 官方博客披露，页面标注北美 11 月 13 日。可信度高，涉及厂商当前计划。",
+      "sources": [
+        {
+          "name": "N-able 修复进度和范围",
+          "url": "https://www.n-able.com/blog/n-able-vulnerability-remediation-update"
+        },
+        {
+          "name": "N-able 分开发布的安全更新",
+          "url": "https://www.n-able.com/blog/new-security-update-on-n-central"
+        }
+      ],
+      "summary": "远程监控和管理平台 N-central 的厂商 N-able 公布第三轮热修复 HF3 的计划，涵盖认证、权限检查、受管端点的身份核验及旧接口移除。厂商列出上一轮 HF2 修复的 7 个公开编号漏洞，本次更新说明第二轮修复后仍需处理的信任边界。报告发布时 HF3 仍在开发，尚无全量部署或残余风险降幅数据。",
+      "impact": "集中管理系统的权限问题可能沿受管设备扩散，已更新服务器也仍有必要跟踪补丁覆盖范围。",
+      "researchApplications": "评估管理节点与端点之间的双向身份验证、短期凭据和异常时权限撤销。",
+      "relevance": {
+        "level": "direct",
+        "reason": "分布式系统安全。管理控制面和受管端点之间的信任关系是本次修复重点。"
+      },
+      "previous": {
+        "ids": [],
+        "note": "有。11 月 11 日已有 HF2 修复报道，本次新增 HF3 的设计范围。",
+        "records": [
+          {
+            "id": "2026-11-11-04",
+            "title": "N-able 发布 N-central 紧急修复，升级涉及终端组件兼容性",
+            "date": "2026-11-11"
+          }
+        ]
+      }
+    },
+    {
+      "id": "2026-11-14-08",
+      "date": "2026-11-14",
+      "rank": 8,
+      "title": "比特币跌至约 6.5 万美元，美国现货 ETF 连续第七个交易日净流出",
+      "tags": [
+        "crypto",
+        "blockchain"
+      ],
+      "keywords": [
+        "比特币",
+        "现货 ETF",
+        "资金流"
+      ],
+      "focus": "价格下跌延续至周末，ETF 流出延续至周五，两个时段需要分开观察。",
+      "sourceNote": "Bitcoin Magazine Pro 提供价格观测，Investing.com 转引 SoSoValue 基金数据。可信度中高，价格随取价时间和交易场所变化。",
+      "sources": [
+        {
+          "name": "Bitcoin Magazine 行情与数据",
+          "url": "https://bitcoinmagazine.com/markets/bitcoin-price-crashes-13-percent-65600"
+        },
+        {
+          "name": "Investing.com 市场报道",
+          "url": "https://sg.finance.yahoo.com/news/bitcoin-slides-below-68-000-061956476.html"
+        }
+      ],
+      "summary": "比特币在北京时间 11 月 14 日晚间继续下跌，Bitcoin Magazine Pro 观测价格接近 6.5 万美元，较一周前约 7.58 万美元低约 14%。Investing.com 引用 SoSoValue 数据称，美国现货比特币 ETF 在当地 11 月 13 日净流出约 1.85 亿美元，连续第 7 个交易日净流出。两组指标来自不同市场和统计时段，无法单独确定价格变动原因。",
+      "impact": "连续流出和周末波动说明当天市场承压。资产价格波动也会改变以比特币作为抵押的头寸风险。",
+      "researchApplications": "可在跨市场风险分析中对齐价格、基金资金流与链上清算时间，避免用单日指标推断因果。",
+      "relevance": {
+        "level": "none",
+        "reason": "暂无明显相关。此新闻主要涉及市场价格和基金流向。"
+      },
+      "previous": {
+        "ids": [],
+        "note": "有。此前已有价格下探和 ETF 净流出报道，本次更新周末低点和最新交易日的资金流。"
+      }
+    },
+    {
+      "id": "2026-11-14-09",
+      "date": "2026-11-14",
+      "rank": 9,
+      "title": "Ai2 解读 XYBench，五款模型更常回答字面请求",
+      "tags": [
+        "llm-research",
+        "evaluation",
+        "agent-security"
+      ],
+      "keywords": [
+        "意图识别",
+        "用户误解",
+        "模型评测"
+      ],
+      "focus": "当用户请求暗含错误前提时，字面执行可能偏离真实目标。",
+      "sourceNote": "Ai2 通过 Hugging Face 在北京时间 11 月 14 日 01:02 发布技术解读。可信度高，成绩适用于该论文的单轮实验。",
+      "sources": [
+        {
+          "name": "Ai2 技术解读",
+          "url": "https://huggingface.co/blog/allenai/xybench"
+        },
+        {
+          "name": "XYBench 原始论文",
+          "url": "https://arxiv.org/abs/2609.06842"
+        }
+      ],
+      "summary": "Ai2 发表 XYBench 技术解读，说明如何判断模型是否发现用户的错误前提，以及能否帮用户实现背后的目标。对 Stack Overflow 子集的五款模型单轮测试中，75% 至 86% 的回答提供了字面请求的解决办法，59% 至 71% 提供了真实目标的解决办法，两种答案可以出现在同一回复。当天新增的是实验结果解读，原论文此前已发布。",
+      "impact": "如果同样的偏差进入工具调用，智能体可能正确执行了指令，却仍无法完成用户真正的任务。",
+      "researchApplications": "建立带歧义和错误前提的工具调用任务，比较先确认目标、直接行动和提出可逆方案的任务成功率。",
+      "relevance": {
+        "level": "direct",
+        "reason": "LLM 评测与单智能体安全。意图澄清影响智能体是否应继续执行有副作用的动作。"
+      },
+      "previous": {
+        "ids": [],
+        "note": "有。原论文于北京时间 9 月 7 日提交 arXiv，本次为作者解读。"
+      }
+    }
+  ]
+}
