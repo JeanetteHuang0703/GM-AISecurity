@@ -1,0 +1,453 @@
+{
+  "schemaVersion": 1,
+  "date": "2026-11-15",
+  "timezone": "Asia/Shanghai",
+  "kind": "daily",
+  "note": "按北京时间 11 月 15 日首次公开或出现实质跟进归档。事件时间、公开报道和稍后的官方说明分别标明。",
+  "items": [
+    {
+      "id": "2026-11-15-01",
+      "date": "2026-11-15",
+      "rank": 1,
+      "title": "法国邮政集团确认 Maileva 泄露涉及约 2,200 万名收件人",
+      "tags": [
+        "cybersecurity",
+        "supply-chain",
+        "identity"
+      ],
+      "keywords": [
+        "邮寄外包",
+        "身份数据",
+        "跨机构通知"
+      ],
+      "focus": "同一家文档寄送服务商的事故，可同时影响多个行业的收件人。",
+      "sourceNote": "Cyberattaque.org 此前引述 Maileva 首次披露规模。法国邮政集团随后向法新社确认，安莎社北京时间 11 月 15 日 05:52 转述。可信度高，范围按集团声明。",
+      "sources": [
+        {
+          "name": "安莎社转引集团确认",
+          "url": "https://www.ansa.it/sito/notizie/mondo/2026/11/14/attacco-cyber-a-la-poste-violati-i-dati-di-22-milioni-di-persone_0324e481-bf35-4d5d-bfa1-0d199a789a40.html"
+        },
+        {
+          "name": "法国邮政集团后续说明",
+          "url": "https://www.lapostegroupe.com/fr/actualite/cyberattaque-de-maileva-ce-quil-faut-savoir"
+        },
+        {
+          "name": "最早可核的规模披露",
+          "url": "https://www.cyberattaque.org/maileva-docaposte-la-poste-cyberattaque/"
+        }
+      ],
+      "summary": "法国邮政集团向法新社确认，其文档寄送服务商 Maileva 在 9 月中旬遭到攻击。约 2,200 万名收件人的姓名和邮寄地址被窃取，这一数字统计的是收件人。集团称监管机构已获通知，司法调查正在进行。",
+      "impact": "共享寄送基础设施汇集多个机构的身份数据，单次泄露会造成跨机构通知负担。",
+      "researchApplications": "按客户隔离收件人数据，并用抽样审计检查外包方的数据保留期限。",
+      "relevance": {
+        "level": "indirect",
+        "reason": "分布式系统安全。事件涉及不同机构委托同一平台处理数据后的隔离与审计。"
+      },
+      "previous": {
+        "ids": [],
+        "note": "有。Cyberattaque.org 在 11 月 13 日已刊出 Maileva 对规模的确认，本次新增母集团对法新社的公开确认和调查状态。"
+      }
+    },
+    {
+      "id": "2026-11-15-02",
+      "date": "2026-11-15",
+      "rank": 2,
+      "title": "Kava Lend 资产流出获量化，按事发前价格估计约 376 万美元",
+      "tags": [
+        "blockchain",
+        "crypto",
+        "smart-contracts",
+        "cross-chain"
+      ],
+      "keywords": [
+        "借贷核算",
+        "抵押品",
+        "跨链资金流"
+      ],
+      "focus": "借贷市场的核算异常可外溢至跨链资产流转。",
+      "sourceNote": "Kava 团队北京时间 11 月 14 日晚先确认异常。The Block 于 15 日 07:07 发布链上估算。事件可信度高，损失规模为独立估算。",
+      "sources": [
+        {
+          "name": "Kava 官方范围说明",
+          "url": "https://x.com/KAVA_CHAIN/status/2121574325765476462"
+        },
+        {
+          "name": "The Block 链上核算",
+          "url": "https://www.theblock.co/news/defi/2026-11-14-kava-lend-loses-roughly-3-8-million-to-hack-sending-kava-token-down-nearly-40-440350"
+        },
+        {
+          "name": "DefiLlama 事故记录",
+          "url": "https://defillama.com/hacks"
+        }
+      ],
+      "summary": "Kava 链的借贷协议 Kava Lend 在 11 月 14 日遭遇异常资金流出，团队称影响局限于该协议。11 月 15 日公布的独立链上复核估算，约 5,520 万枚 KAVA 流出借贷池，按事发前每枚 0.068 美元约合 376 万美元，部分资产随后转至 BNB Chain。根因调查和最终损失仍待项目方确认。",
+      "impact": "借贷模块的偿付风险可扩散到其他链上的市场，协议损失和后续变现额需要采用各自的计价口径。",
+      "researchApplications": "对借贷模块做低流动性下的会计不变量测试，并评估跨链异常流量告警的时延。",
+      "relevance": {
+        "level": "direct",
+        "reason": "智能合约和跨链安全。事件涉及抵押品核算与资产跨链处置。"
+      },
+      "previous": {
+        "ids": [],
+        "note": "有。11 月 14 日项目方确认异常和范围，本次新增链上流出估算。"
+      }
+    },
+    {
+      "id": "2026-11-15-03",
+      "date": "2026-11-15",
+      "rank": 3,
+      "title": "Bitrise 确认入侵后分阶段恢复，构建服务仍受影响",
+      "tags": [
+        "cybersecurity",
+        "supply-chain",
+        "identity",
+        "distributed-systems"
+      ],
+      "keywords": [
+        "构建平台",
+        "密钥轮换",
+        "分阶段恢复"
+      ],
+      "focus": "构建平台能先恢复用户查看和轮换凭据，构建执行可在独立验证后恢复。",
+      "sourceNote": "Bitrise 官方状态页首发。北京时间 11 月 15 日更新受限恢复进度。可信度高，调查由平台方执行。",
+      "sources": [
+        {
+          "name": "Bitrise 安全事件时间线",
+          "url": "https://bitrise.statuspage.io/incidents/7055z4g9nbck"
+        }
+      ],
+      "summary": "移动应用构建平台 Bitrise 确认其内部系统被未授权访问，随后暂时关闭服务并轮换平台内部凭据。北京时间 11 月 15 日，平台在受限模式下重新开放网页和 API，事件仍列为覆盖全部用户的最高严重等级 SEV-1，构建功能仍待恢复。官方在此前调查中尚未发现客户数据、密钥或源代码外泄证据。",
+      "impact": "构建暂不可用会拖延应用发布，分阶段恢复可先让客户查验并轮换与平台相连的凭据。",
+      "researchApplications": "在 CI 平台演练中分别测量密钥撤销、身份恢复与构建队列重启所需时间。",
+      "relevance": {
+        "level": "direct",
+        "reason": "分布式系统安全。集中式构建控制面的停运和恢复影响多个租户。"
+      },
+      "previous": {
+        "ids": [],
+        "note": "有。11 月 14 日已披露内部系统被访问，本次新增受限恢复进度。"
+      }
+    },
+    {
+      "id": "2026-11-15-04",
+      "date": "2026-11-15",
+      "rank": 4,
+      "title": "美国全国停飞后，两台空管路由器接受诊断",
+      "tags": [
+        "cybersecurity",
+        "distributed-systems",
+        "ot-security"
+      ],
+      "keywords": [
+        "空管网络",
+        "路由器",
+        "故障隔离"
+      ],
+      "focus": "故障跨站点传播，精确根因仍在调查。",
+      "sourceNote": "美国运输部长宣布对涉事设备进行诊断，美联社北京时间 11 月 15 日 22:18 报道。可信度高，根因待确认。",
+      "sources": [
+        {
+          "name": "美联社现场跟进",
+          "url": "https://apnews.com/article/1a308c557552b2ce24a0532fee0be191"
+        },
+        {
+          "name": "美国运输部说明",
+          "url": "https://www.transportation.gov/briefing-room/icymi-trumps-transportation-secretary-sean-p-duffy-provides-update-across-sunday"
+        }
+      ],
+      "summary": "美国运输部长在全国停飞解除后披露，调查人员正检测阿肯色州和得克萨斯州空管设施的两台路由器。交通部门称，先前的全国停飞措施涉及逾 3,500 架航班，调查将核查一个站点的通信变更后为何在另一站点出现故障。官员称目前没有发现网络攻击迹象，确切技术根因仍待确认。",
+      "impact": "关键业务网络即使有多个站点，也可能因共享路由依赖发生相关失效。",
+      "researchApplications": "检查站点间的路由和故障切换依赖，用分区故障演练验证应急通信。",
+      "relevance": {
+        "level": "direct",
+        "reason": "分布式系统安全。两地设施的故障传播提供了检查多站点隔离假设的案例。"
+      },
+      "previous": {
+        "ids": [],
+        "note": "有。全国停飞在北京时间 11 月 14 日已被报道，本次更新设备检测与调查范围。"
+      }
+    },
+    {
+      "id": "2026-11-15-05",
+      "date": "2026-11-15",
+      "rank": 5,
+      "title": "韩国交易所 Coinone 确认外包客服资料泄露",
+      "tags": [
+        "cybersecurity",
+        "crypto",
+        "supply-chain",
+        "identity",
+        "wallets"
+      ],
+      "keywords": [
+        "客服外包",
+        "个人信息",
+        "钱包隐私"
+      ],
+      "focus": "客服记录可把链上地址或交易编号和实名资料联系起来。",
+      "sourceNote": "Coinone 北京时间 11 月 15 日 07:00 发布正式通知。可信度高，调查尚在进行。",
+      "sources": [
+        {
+          "name": "Coinone 原始公告",
+          "url": "https://coinone.co.kr/info/notice/5950"
+        }
+      ],
+      "summary": "韩国加密货币交易所 Coinone 确认，外包客服商 MetaM 的服务器在 11 月 12 日被未经授权访问，涉及曾联系客服的用户资料。公告列出 11 类可能暴露的信息，包括身份资料、钱包地址和链上交易编号，具体字段因人而异。交易所尚未公布受影响人数，也尚未发现独立运行的账户、交易或钱包系统被直接侵入的迹象。",
+      "impact": "身份与链上活动被关联后，可能增加有针对性的诈骗和隐私暴露。",
+      "researchApplications": "评估客服流程是否可用短时关联编号代替长期存储的实名与链上地址对应表。",
+      "relevance": {
+        "level": "indirect",
+        "reason": "区块链钱包隐私。事件涉及把个人身份关联至公开链上活动的链下数据。"
+      },
+      "previous": {
+        "ids": [],
+        "note": "有。入侵发生于 11 月 12 日，本次为交易所确认与字段披露。"
+      }
+    },
+    {
+      "id": "2026-11-15-06",
+      "date": "2026-11-15",
+      "rank": 6,
+      "title": "德国酒店披露 Outlook 中断时泳池告警未送达，15 人受伤",
+      "tags": [
+        "distributed-systems",
+        "ot-security",
+        "cybersecurity"
+      ],
+      "keywords": [
+        "告警传递",
+        "工控可用性",
+        "云服务依赖"
+      ],
+      "focus": "安全告警依赖单一邮件链路，投递中断可能延误现场处置。",
+      "sourceNote": "德国西部广播公司 WDR 北京时间 11 月 15 日 01:16 转述酒店方说明。可信度中高，邮件关联来自酒店方。",
+      "sources": [
+        {
+          "name": "WDR 原始快讯",
+          "url": "https://www.presseportal.de/pm/179961/6390540"
+        },
+        {
+          "name": "WDR 后续报道",
+          "url": "https://www1.wdr.de/nrw/rheinland/rhein-erft-kreis/technischer-defekt-chlor-phantasialand-100.html"
+        }
+      ],
+      "summary": "德国布吕尔 Phantasialand 的一家酒店因泳池加氯装置故障，造成 15 名客人受伤。酒店方向 WDR 表示，装置原本通过电邮发送水质异常警报，但微软服务中断期间邮件未送达，工作人员未及时获知水质异常。该说明涉及告警链路，起始的设备故障仍是独立事件。",
+      "impact": "把现场安全告警交给单一云邮件渠道，会让办公系统故障影响工业控制的处置时效。",
+      "researchApplications": "测试现场声光告警、独立值班通道和云邮件三者之间的故障独立性，并记录告警送达率。",
+      "relevance": {
+        "level": "direct",
+        "reason": "分布式系统安全。事件体现了业务系统与现场安全系统之间隐含的可用性依赖。"
+      },
+      "previous": {
+        "ids": [
+          "2026-11-14-01"
+        ],
+        "note": "有。11 月 14 日已记录微软 365 恢复，本次新增酒店方披露的下游影响。"
+      }
+    },
+    {
+      "id": "2026-11-15-07",
+      "date": "2026-11-15",
+      "rank": 7,
+      "title": "N-able 推迟 N-central 第三轮热修复，仍处于验证阶段",
+      "tags": [
+        "cybersecurity",
+        "identity",
+        "distributed-systems"
+      ],
+      "keywords": [
+        "远程运维",
+        "补丁延期",
+        "临时缓解"
+      ],
+      "focus": "补丁延期会延长远程管理系统依赖临时缓解措施的时间。",
+      "sourceNote": "N-able 状态更新由 Pingoru 保留。北京时间 11 月 15 日 06:49 公布延期，22:32 更新验证进度。可信度高。",
+      "sources": [
+        {
+          "name": "N-able 状态更新转存",
+          "url": "https://pingoru.io/providers/n-able/incidents/12482602"
+        },
+        {
+          "name": "厂商整改计划",
+          "url": "https://www.n-able.com/blog/n-able-vulnerability-remediation-update"
+        }
+      ],
+      "summary": "远程运维平台 N-central 的供应商 N-able 推迟了原拟在美东 11 月 14 日发布的第三轮热修复 HF3。北京时间 11 月 15 日 22:32 的公告确认仍在最终验证，厂商没有确认可用时间，也未量化延期涉及的系统数量。该修复针对认证、权限和旧接口，部署方仍需依赖原有补丁与临时缓解。",
+      "impact": "自托管系统需要追踪旧接口关闭是否实际生效，并单独验证修复落地。",
+      "researchApplications": "在补丁延期演练中测量临时隔离、旧接口关停和受管终端身份验证的覆盖率。",
+      "relevance": {
+        "level": "direct",
+        "reason": "分布式系统安全。涉及集中式运维控制面的补丁发布与端点信任。"
+      },
+      "previous": {
+        "ids": [
+          "2026-11-14-07"
+        ],
+        "note": "有。11 月 14 日已公布 HF3 范围，本次新增延期和最终验证状态。"
+      }
+    },
+    {
+      "id": "2026-11-15-08",
+      "date": "2026-11-15",
+      "rank": 8,
+      "title": "比特币跌至约 6.2 万美元，跟踪平台 24 小时清算约 20 亿美元",
+      "tags": [
+        "crypto",
+        "blockchain"
+      ],
+      "keywords": [
+        "比特币",
+        "杠杆清算",
+        "周末行情"
+      ],
+      "focus": "周末跌势延续，最新增量是更低的报价和更大的衍生品清算量。",
+      "sourceNote": "彭博社北京时间 11 月 15 日报道，清算数据来自 CoinGlass。可信度中高，取价场所和统计窗口影响数值。",
+      "sources": [
+        {
+          "name": "彭博社报道转载",
+          "url": "https://economictimes.indiatimes.com/markets/cryptocurrency/bitcoin-tumbles-to-four-month-low-as-liquidations-accelerate/articleshow/135846837.cms"
+        },
+        {
+          "name": "同日较早行情与清算口径",
+          "url": "https://www.straitstimes.com/business/bitcoin-tumbles-to-three-month-low-as-liquidations-accelerate"
+        }
+      ],
+      "summary": "比特币北京时间 11 月 15 日亚洲交易时段延续下跌，彭博社报告的低点为 62,112 美元，约为 7 月 14 日以来最低。彭博援引 CoinGlass 数据称，截至当日上午的滚动 24 小时内，受跟踪交易所约有 20 亿美元的加密货币杠杆仓位被强制平仓。清算金额只涵盖该数据源跟踪的市场。",
+      "impact": "杠杆压力增大时，抵押品估值和跨市场清算时点更容易出现差异。",
+      "researchApplications": "可对比中心化平台和链上借贷的清算时钟，检验价格波动如何传至链上抵押头寸。",
+      "relevance": {
+        "level": "none",
+        "reason": "暂无明显相关。主体是价格和衍生品仓位，未涉及共识或合约变更。"
+      },
+      "previous": {
+        "ids": [
+          "2026-11-14-08"
+        ],
+        "note": "有。11 月 14 日已记录约 6.5 万美元报价，本次新增更低报价及清算规模。"
+      }
+    },
+    {
+      "id": "2026-11-15-09",
+      "date": "2026-11-15",
+      "rank": 9,
+      "title": "HyprEarn 调查未授权交易，提醒撤销旧 Hyperliquid 交易委托",
+      "tags": [
+        "blockchain",
+        "smart-contracts",
+        "wallets",
+        "identity",
+        "crypto"
+      ],
+      "keywords": [
+        "委托钱包",
+        "交易权限",
+        "链上撤权"
+      ],
+      "focus": "撤销平台一侧的委托仍需配合账户一侧的授权更新。",
+      "sourceNote": "HyprEarn 官方账号北京时间 11 月 15 日 02:37 首发，DefiLlama 收录。可信度中高，受影响数量和损失未公布。",
+      "sources": [
+        {
+          "name": "HyprEarn 原始公告",
+          "url": "https://x.com/HyprEarn/status/2121673806704243178"
+        },
+        {
+          "name": "DefiLlama 事故记录",
+          "url": "https://defillama.com/hacks"
+        }
+      ],
+      "summary": "交易应用 HyprEarn 称，正在调查少量 Hyperliquid 账户的未授权交易报告，这些账户曾批准该应用的委托交易钱包。团队已在应用侧撤销旧钱包，但用户在 Hyperliquid 账户上的旧授权仍需单独解除，委托钱包可交易但没有提款权限。团队未公布受影响账户数、金额或根因。",
+      "impact": "限制提款可缩小权限范围，未授权交易依然可能给持仓带来损失。",
+      "researchApplications": "验证分层委托的撤权一致性，并为委托交易设计交易规模和有效期约束。",
+      "relevance": {
+        "level": "direct",
+        "reason": "区块链授权与智能合约安全。这里的 Agent 是委托签名账户，研究关联在权限及撤销机制。"
+      },
+      "previous": {
+        "ids": [],
+        "note": "未发现同一事件更早的公开公告。"
+      }
+    },
+    {
+      "id": "2026-11-15-10",
+      "date": "2026-11-15",
+      "rank": 10,
+      "title": "路易斯安那州抗辩联邦预测市场诉讼，Kalshi 和 Polymarket 回应",
+      "tags": [
+        "crypto",
+        "regulation"
+      ],
+      "keywords": [
+        "预测市场",
+        "管辖权",
+        "州级限制"
+      ],
+      "focus": "联邦与州的争议关系到实际市场准入，法院仍待裁决。",
+      "sourceNote": "路易斯安那州总检察长北京时间 11 月 15 日 01:05 先回应，The Block 当天补充两家平台声明。可信度高，双方主张待裁判。",
+      "sources": [
+        {
+          "name": "州总检察长公开回应",
+          "url": "https://x.com/AGLizMurrill/status/2121650739558920501"
+        },
+        {
+          "name": "CFTC 联邦案诉状",
+          "url": "https://www.cftc.gov/media/14936/OGC_LouisianaCompliant111326/download"
+        },
+        {
+          "name": "The Block 跟进",
+          "url": "https://www.theblock.co/news/regulation/2026-11-14-louisiana-ag-calls-cftc-chair-an-obsequious-standard-bearer-for-prediction-markets-following-agency-lawsuit-440342"
+        }
+      ],
+      "summary": "路易斯安那州总检察长在美国商品期货交易委员会提起联邦诉讼后回应，坚持州政府可对涉赌活动执法。联邦诉状记载，此前州级执法案涉及 32 个实体，联邦机构则主张自己对受其监管的交易场所所提供的事件合约拥有管辖权。当天 Kalshi 与 Polymarket 也公开回应，法院尚未最终解决争议。",
+      "impact": "如果审理结果改变州级限制的适用范围，部分预测市场的平台准入安排可能随之调整。",
+      "researchApplications": "暂无明确安全技术切入点。争议聚焦事件合约的法律管辖。",
+      "relevance": {
+        "level": "none",
+        "reason": "暂无明显相关。主体是监管权限和诉讼，未涉及区块链协议变更。"
+      },
+      "previous": {
+        "ids": [],
+        "note": "有。州级执法案和联邦反诉此前已提起，本次新增州检察长和平台回应。"
+      }
+    },
+    {
+      "id": "2026-11-15-11",
+      "date": "2026-11-15",
+      "rank": 11,
+      "title": "开源方案用操作契约约束智能体的外部写入",
+      "tags": [
+        "agent-security",
+        "ai-security",
+        "distributed-systems",
+        "evaluation"
+      ],
+      "keywords": [
+        "工具授权",
+        "幂等写入",
+        "断线恢复"
+      ],
+      "focus": "把写入规则放在服务端，才能在智能体失去连接或重复请求时继续执行。",
+      "sourceNote": "开源作者在 Hugging Face 论坛发布，11 月 15 日可核。可信度中高，有方案和仓库，暂无独立效果数据。",
+      "sources": [
+        {
+          "name": "作者的发布帖",
+          "url": "https://discuss.huggingface.co/t/agent-ready-engineering-is-your-mcp-server-or-api-ready-for-agents/191894"
+        },
+        {
+          "name": "项目和操作契约",
+          "url": "https://github.com/tubban1/agent-ready-engineering"
+        }
+      ],
+      "summary": "开源项目 Agent-Ready Engineering 提出为智能体可调用的业务操作编写公开契约，明确服务端审批、版本冲突和结果查询的规则。作者以工单关闭为例，建议测试服务端已经提交但响应丢失的情况，让客户端用同一个请求标识查询或重试，确保最多只产生一次变更。当前是设计方案和验收示例，暂无可靠量化评测。",
+      "impact": "带副作用的操作可在服务端测试和审计，降低对模型从提示中正确理解重试语义的依赖。",
+      "researchApplications": "用断线、超时、并发调用测试单个或多个智能体共享工具时的状态一致性与越权拦截。",
+      "relevance": {
+        "level": "direct",
+        "reason": "单智能体、多智能体安全与分布式系统安全。该方案把工具权限与写入恢复语义落到服务端。"
+      },
+      "previous": {
+        "ids": [],
+        "note": "未找到同一发布的更早公告。"
+      }
+    }
+  ]
+}
