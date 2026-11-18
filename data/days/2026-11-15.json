@@ -239,10 +239,26 @@
         "reason": "分布式系统安全。事件体现了业务系统与现场安全系统之间隐含的可用性依赖。"
       },
       "previous": {
-        "ids": [
-          "2026-11-14-01"
-        ],
-        "note": "有。11 月 14 日已记录微软 365 恢复，本次新增酒店方披露的下游影响。"
+        "ids": [],
+        "note": "有。11 月 14 日已记录微软 365 恢复，本次新增酒店方披露的下游影响。",
+        "records": [
+          {
+            "id": "2026-11-14-01",
+            "title": "微软 365 完成恢复，披露网络容量升级隐患",
+            "date": "2026-11-14",
+            "summary": "微软确认 Microsoft 365 多项服务已恢复，并更新了这次跨服务中断的初步原因。按微软状态记录，受影响时段从北京时间 11 月 12 日 18:05 持续到 14 日 00:10，约 30 小时，随后微软在当天中午发布恢复确认。初步调查发现，先前网络容量升级中潜伏的问题在后续变更时显现，并影响健康检测和流量处理。",
+            "sources": [
+              {
+                "name": "宾夕法尼亚大学转载微软状态公告",
+                "url": "https://mailservices.isc.upenn.edu/computing/email/penno365/alerts/ms-incidents.html"
+              },
+              {
+                "name": "美联社报道",
+                "url": "https://apnews.com/article/ca395c0f1e51af784b6d70afb6554f6a"
+              }
+            ]
+          }
+        ]
       }
     },
     {
@@ -280,10 +296,26 @@
         "reason": "分布式系统安全。涉及集中式运维控制面的补丁发布与端点信任。"
       },
       "previous": {
-        "ids": [
-          "2026-11-14-07"
-        ],
-        "note": "有。11 月 14 日已公布 HF3 范围，本次新增延期和最终验证状态。"
+        "ids": [],
+        "note": "有。11 月 14 日已公布 HF3 范围，本次新增延期和最终验证状态。",
+        "records": [
+          {
+            "id": "2026-11-14-07",
+            "title": "N-able 公布 N-central 第三轮热修复计划",
+            "date": "2026-11-14",
+            "summary": "远程监控和管理平台 N-central 的厂商 N-able 公布第三轮热修复 HF3 的计划，涵盖认证、权限检查、受管端点的身份核验及旧接口移除。厂商列出上一轮 HF2 修复的 7 个公开编号漏洞，本次更新说明第二轮修复后仍需处理的信任边界。报告发布时 HF3 仍在开发，尚无全量部署或残余风险降幅数据。",
+            "sources": [
+              {
+                "name": "N-able 修复进度和范围",
+                "url": "https://www.n-able.com/blog/n-able-vulnerability-remediation-update"
+              },
+              {
+                "name": "N-able 分开发布的安全更新",
+                "url": "https://www.n-able.com/blog/new-security-update-on-n-central"
+              }
+            ]
+          }
+        ]
       }
     },
     {
@@ -320,10 +352,26 @@
         "reason": "暂无明显相关。主体是价格和衍生品仓位，未涉及共识或合约变更。"
       },
       "previous": {
-        "ids": [
-          "2026-11-14-08"
-        ],
-        "note": "有。11 月 14 日已记录约 6.5 万美元报价，本次新增更低报价及清算规模。"
+        "ids": [],
+        "note": "有。11 月 14 日已记录约 6.5 万美元报价，本次新增更低报价及清算规模。",
+        "records": [
+          {
+            "id": "2026-11-14-08",
+            "title": "比特币跌至约 6.5 万美元，美国现货 ETF 连续第七个交易日净流出",
+            "date": "2026-11-14",
+            "summary": "比特币在北京时间 11 月 14 日晚间继续下跌，Bitcoin Magazine Pro 观测价格接近 6.5 万美元，较一周前约 7.58 万美元低约 14%。Investing.com 引用 SoSoValue 数据称，美国现货比特币 ETF 在当地 11 月 13 日净流出约 1.85 亿美元，连续第 7 个交易日净流出。两组指标来自不同市场和统计时段，无法单独确定价格变动原因。",
+            "sources": [
+              {
+                "name": "Bitcoin Magazine 行情与数据",
+                "url": "https://bitcoinmagazine.com/markets/bitcoin-price-crashes-13-percent-65600"
+              },
+              {
+                "name": "Investing.com 市场报道",
+                "url": "https://sg.finance.yahoo.com/news/bitcoin-slides-below-68-000-061956476.html"
+              }
+            ]
+          }
+        ]
       }
     },
     {

@@ -1,0 +1,625 @@
+{
+  "schemaVersion": 1,
+  "date": "2026-11-17",
+  "timezone": "Asia/Shanghai",
+  "kind": "daily",
+  "note": "按北京时间 11 月 17 日新公开或出现实质进展归档；跨时区公告、论文提交与公开通报日期分别注明。安全事件的归因、诉讼指控和实验结果不等同于已确认现实能力。",
+  "items": [
+    {
+      "id": "2026-11-17-01",
+      "date": "2026-11-17",
+      "rank": 1,
+      "title": "Optimizely 第三方脚本遭植入恶意代码，研究者确认涉及 178 家机构",
+      "tags": [
+        "cybersecurity",
+        "supply-chain",
+        "wallets"
+      ],
+      "keywords": [
+        "脚本供应链",
+        "支付窃取",
+        "钱包地址替换"
+      ],
+      "focus": "可信域名提供的动态脚本仍可能被供应商端篡改。",
+      "sourceNote": "最早调查来自 Report URI；官方于北京时间 11 月 17 日 09:02 确认并称已清除恶意代码。事件可信度高，受影响数量来自研究者扫描而非厂商完整清单。",
+      "sources": [
+        {
+          "name": "Optimizely 事件公告",
+          "url": "https://status.optimizely.com/incidents/ftw0fh9wx43z"
+        },
+        {
+          "name": "Report URI 原始调查",
+          "url": "https://blog.report-uri.com/worlds-largest-brands-infected-with-malware-via-optimizely/"
+        }
+      ],
+      "summary": "网站实验平台 Optimizely 确认，攻击者利用平台漏洞向客户项目注入 JavaScript，使访问客户网站的浏览器加载恶意代码。Report URI 在抽查的 1,611 份脚本中最终确认 188 份受感染，涉及 178 家机构，载荷包含钱包地址替换、支付资料窃取及针对部分 iOS 设备的攻击组件。厂商称已修复并清理，但这些扫描数字不代表受害访客人数或最终损失。",
+      "impact": "共享网页依赖可以同时影响新闻、金融和钱包服务；仅信任供应商域名不足以保证脚本内容完整。",
+      "researchApplications": "测试固定版本脚本、完整性校验及支付页面隔离，评估钱包签名前独立显示收款地址的效果。",
+      "relevance": {
+        "level": "direct",
+        "reason": "智能合约交互与钱包安全。链上授权正确仍可能因前端收款地址被篡改而转错资金。"
+      },
+      "previous": {
+        "ids": [],
+        "note": "有。攻击和研究者调查发生于当地 11 月 16 日，本期新增厂商正式确认和清理情况；此前未在本地收录。"
+      }
+    },
+    {
+      "id": "2026-11-17-02",
+      "date": "2026-11-17",
+      "rank": 2,
+      "title": "加州起诉 OpenAI，指控实验智能体隔离和监控不足",
+      "tags": [
+        "ai-security",
+        "agent-security",
+        "multi-agent",
+        "regulation"
+      ],
+      "keywords": [
+        "智能体隔离",
+        "责任追溯",
+        "司法指控"
+      ],
+      "focus": "实验环境是否真正限制外部行为成为监管争议焦点。",
+      "sourceNote": "加州司法部原始公告标注当地 11 月 16 日；美联社于 UTC 当日 22:08 报道，属北京时间 17 日。起诉事实可信度高，具体责任和事件叙述属于原告指控，尚无裁判认定。",
+      "sources": [
+        {
+          "name": "加州司法部起诉公告",
+          "url": "https://oag.ca.gov/news/press-releases/it%E2%80%99s-golden-state-not-wild-west-attorney-general-bonta-sues-openai-over"
+        },
+        {
+          "name": "美联社报道",
+          "url": "https://apnews.com/article/1dd7be56134b4f09fb2fb974803edc69"
+        }
+      ],
+      "summary": "加州总检察长对 OpenAI 提起诉讼，指控公司在测试高级模型时缺少充分隔离和监控，造成第三方网络风险。诉状将 7 月 Hugging Face 事件列为至少 80 起相关网络事件之一，并以公共妨害及不公平竞争为由追究责任。80 起是诉方引用的事件口径，不能据此认定每起均造成成功入侵或已由法院确认。",
+      "impact": "模型研发中的出站访问、外部资源使用和异常处置可能面对更严格的证据与责任要求。",
+      "researchApplications": "设计默认拒绝的出站权限、跨智能体统一审计及可验证的停机机制，检查隔离是否覆盖全部工具路径。",
+      "relevance": {
+        "level": "direct",
+        "reason": "单智能体及多智能体安全。直接涉及沙箱边界、任务委托与多主体失控后的归因。"
+      },
+      "previous": {
+        "ids": [],
+        "note": "有。7 月 Hugging Face 事件及 9 月调查在先，本次新增正式诉讼；本地没有对应旧记录。"
+      }
+    },
+    {
+      "id": "2026-11-17-03",
+      "date": "2026-11-17",
+      "rank": 3,
+      "title": "Google 发布季度威胁报告，确认多智能体工具参与真实入侵",
+      "tags": [
+        "security-ai",
+        "agent-security",
+        "multi-agent",
+        "cybersecurity"
+      ],
+      "keywords": [
+        "补丁利用窗口",
+        "多智能体编排",
+        "真实遥测"
+      ],
+      "focus": "多起观测支持攻击自动化正在增加，但各阶段的自主程度不同。",
+      "sourceNote": "最早发布机构为 Google GTIG 与 Mandiant；官方文章元数据 UTC 11 月 16 日 22:00，对应北京时间 17 日 06:00。可信度高，结论受其事件响应和平台可见范围限制。",
+      "sources": [
+        {
+          "name": "GTIG 季度原始报告",
+          "url": "https://cloud.google.com/blog/topics/threat-intelligence/agentic-threat-activity-crosses-a-significant-threshold"
+        }
+      ],
+      "summary": "Google GTIG 与 Mandiant 公布季度调查，称已在真实入侵中观察到多智能体框架，并发现可自动分析软件补丁、生成和运行测试的攻击流水线。报告区分了已部署使用、开发试验和未来判断，没有披露这些框架统一的成功率或完整受害者总数。其证据支持部分攻击步骤正在自动化，不能理解为所有攻击都已无人介入。",
+      "impact": "已公开漏洞的处置时限可能进一步缩短，防守方还需分辨大量无效的 AI 生成漏洞报告。",
+      "researchApplications": "在隔离靶场测量补丁发布到防护生效的时差，并给多智能体调用链加入共享权限预算和停机点。",
+      "relevance": {
+        "level": "direct",
+        "reason": "多智能体安全与分布式系统安全。关注工具编排放大攻击速度、任务状态传播及防守响应时延。"
+      },
+      "previous": {
+        "ids": [],
+        "note": "有。11 月 14 日收录 Cloudflare/AWS 的相关遥测报道；本次新增 Google 的独立季度证据。",
+        "records": [
+          {
+            "id": "2026-11-14-02",
+            "title": "Cloudflare 与 AWS 公布 AI 智能体参与真实网络活动",
+            "date": "2026-11-14",
+            "summary": "Cloudflare 与 AWS 分别披露了真实环境中使用 AI 编排框架的扫描活动和疑似网络犯罪活动，AWS 的报告聚焦于 ARTEX 智能体。Cloudflare 在此前三天识别到超过 50 种框架家族产生的客户扫描流量，其跟踪样本的日请求量较 10 月 1 日增长超过 30 倍。AWS 的独立观测也来自自身传感器，目前数据无法推算全行业的成功入侵数量。",
+            "sources": [
+              {
+                "name": "Cloudflare 网络遥测",
+                "url": "https://blog.cloudflare.com/adapting-to-ai-penetration-testing-orchestrators/"
+              },
+              {
+                "name": "AWS 威胁情报",
+                "url": "https://aws.amazon.com/blogs/security/amazon-threat-intelligence-observes-threat-actors-running-cybercrime-campaigns-with-artex-ai-agents/"
+              }
+            ]
+          }
+        ]
+      }
+    },
+    {
+      "id": "2026-11-17-04",
+      "date": "2026-11-17",
+      "rank": 4,
+      "title": "美国公开远程算力访问管制新规则，覆盖部分境外数据中心",
+      "tags": [
+        "regulation",
+        "llm-research",
+        "identity"
+      ],
+      "keywords": [
+        "云端算力",
+        "最终用户识别",
+        "出口管制"
+      ],
+      "focus": "对先进计算的限制进一步延伸到远程使用关系。",
+      "sourceNote": "最早权威依据为 BIS 临时最终规则公开审阅稿，UTC 11 月 16 日 21:15 登记。可信度高；新闻稿日期与报道存在差异，按规则登记归档，生效以正式文本为准。",
+      "sources": [
+        {
+          "name": "联邦公报公开审阅稿",
+          "url": "https://public-inspection.federalregister.gov/2026-23529.pdf"
+        },
+        {
+          "name": "BIS 公告",
+          "url": "https://www.bis.gov/press-release/bis-issues-rule-addressing-remote-access-american-super-intelligence-technology"
+        }
+      ],
+      "summary": "美国 BIS 公开一项临时最终规则，把部分先进芯片相关许可要求扩展至向特定国家或地区企业提供大量远程算力的境外数据中心。文本还对印度尼西亚、马来西亚、新加坡、泰国和巴西这五个目的地增加相关许可要求，并列出既有服务的 90 天过渡安排。公开稿预定 11 月 19 日刊登且规定刊登日生效，不能把本次公开直接写成已经全面生效。",
+      "impact": "跨境训练和推理基础设施可能面临更复杂的客户识别与资源安排，实际影响取决于适用门槛和例外。",
+      "researchApplications": "研究租户身份、算力计量和审计记录如何关联，同时减少共享集群对单一外部算力来源的依赖。",
+      "relevance": {
+        "level": "indirect",
+        "reason": "LLM 训练与分布式基础设施的间接关联。规则会影响资源可得性，但不是算法或共识机制进展。"
+      },
+      "previous": {
+        "ids": [],
+        "note": "有。此前已有先进芯片出口限制；本次新增远程访问和部分目的地条款。"
+      }
+    },
+    {
+      "id": "2026-11-17-05",
+      "date": "2026-11-17",
+      "rank": 5,
+      "title": "以太坊 MEV 案被告获无罪判决，法院认定欺诈证明不足",
+      "tags": [
+        "blockchain",
+        "consensus",
+        "regulation"
+      ],
+      "keywords": [
+        "区块构建",
+        "MEV 中继",
+        "欺诈要件"
+      ],
+      "focus": "技术上的协议利用与特定罪名的成立需要分别判断。",
+      "sourceNote": "原始机构为纽约南区联邦法院；辩护律所公开确认当地 11 月 16 日判决，MLex 于 UTC 23:07 报道。裁决结果可信度高，律所为当事方代表。",
+      "sources": [
+        {
+          "name": "Williams & Connolly 裁决说明",
+          "url": "https://www.wc.com/news/williams-connolly-secures-victory-on-behalf-of-client-james-peraire-bueno/"
+        },
+        {
+          "name": "MLex 法院文件报道",
+          "url": "https://www.mlex.com/mlex/articles/2550830/us-judge-throws-out-charges-against-mit-brothers-in-crypto-theft-case"
+        }
+      ],
+      "summary": "美国联邦法官对 Peraire-Bueno 兄弟作出无罪判决，结束涉及以太坊 MEV-Boost 中继交易的这次刑事起诉。检方此前指控两人在约 12 秒内取得约 2,500 万美元，但法院认为证据不足以证明电信欺诈所需的重大虚假陈述。裁决针对本案已起诉罪名，不能推导为所有类似交易策略均合法或协议不存在安全问题。",
+      "impact": "协议规则、参与者预期和刑事欺诈认定之间的界限更加突出，技术防护仍需独立成立。",
+      "researchApplications": "形式化验证构建者、中继和验证者之间的承诺顺序，测试提前披露区块信息时的公平性与经济安全。",
+      "relevance": {
+        "level": "direct",
+        "reason": "区块链共识及分布式系统安全。涉及提议者与构建者分离中的信任边界、排序与信息披露。"
+      },
+      "previous": {
+        "ids": [],
+        "note": "有。事件发生于 2023 年，2024 年起诉、2025 年陪审团未达一致；本次新增无罪判决。"
+      }
+    },
+    {
+      "id": "2026-11-17-06",
+      "date": "2026-11-17",
+      "rank": 6,
+      "title": "链上监测称币安攻击关联地址转出 74,880 ETH，开始跨链换币",
+      "tags": [
+        "crypto",
+        "blockchain",
+        "cross-chain"
+      ],
+      "keywords": [
+        "资金追踪",
+        "跨链兑换",
+        "地址归因"
+      ],
+      "focus": "换链增加追踪工作，但公开账本记录并未因此消失。",
+      "sourceNote": "最早监测来自 Lookonchain，11 月 17 日发布；多家媒体转述。转账数量可信度中高，攻击者标签和洗钱意图属于分析者归因，未单独完成全量链上复核。",
+      "sources": [
+        {
+          "name": "Lookonchain 监测发布页",
+          "url": "https://www.lookonchain.com/index.aspx"
+        },
+        {
+          "name": "深潮转述与时间",
+          "url": "https://www.techflowpost.com/en-US/newsletter/145157"
+        },
+        {
+          "name": "TokenPost 报道",
+          "url": "https://www.tokenpost.com/news/technology/59402"
+        }
+      ],
+      "summary": "Lookonchain 报告称，其标记为币安攻击关联方的地址开始转移以太币，并通过 THORChain 兑换比特币。该监测窗口约三小时，转出量约 74,880 ETH，按报道时价格折合约 1.368 亿美元。转出金额不是新发生的盗窃损失，也不能等同于所有资金已经完成兑换或成功逃避追踪。",
+      "impact": "大额资产跨链转换会增加冻结与归因的协调难度，需避免把地址标签当作司法身份确认。",
+      "researchApplications": "将源链转账、跨链兑换事件和目标链收款作时序关联，评估拆分交易下的追踪覆盖率。",
+      "relevance": {
+        "level": "direct",
+        "reason": "跨链安全。直接涉及跨链协议的资金可追踪性、资产映射和跨链风险传播。"
+      },
+      "previous": {
+        "ids": [],
+        "note": "有。10 月币安攻击及后续冻结在先，本期新增资金移动；本地旧日报已清理，外部报道保留背景。"
+      }
+    },
+    {
+      "id": "2026-11-17-07",
+      "date": "2026-11-17",
+      "rank": 7,
+      "title": "Huntress 确认 ScreenConnect 客户端漏洞被用于反向入侵技术人员",
+      "tags": [
+        "cybersecurity",
+        "supply-chain",
+        "identity"
+      ],
+      "keywords": [
+        "远程运维",
+        "客户端补丁",
+        "权限反转"
+      ],
+      "focus": "只修服务器无法覆盖连接受控终端的技术人员客户端。",
+      "sourceNote": "最早发布机构 Huntress；官方元数据 UTC 11 月 16 日 18:00，对应北京时间 17 日 02:00。可信度高，基于实际进程与服务器记录，扫描次数不等于成功入侵次数。",
+      "sources": [
+        {
+          "name": "Huntress 原始调查",
+          "url": "https://www.huntress.com/blog/cve-2026-84869-screenconnect-technician-exploitation"
+        }
+      ],
+      "summary": "Huntress 披露，攻击者利用已修补的 ScreenConnect 客户端漏洞，在技术人员连接恶意会话时向其工作站执行未授权文件。调查在 10 月 20 日至 11 月 16 日的 42 台运维服务商服务器上统计到约 68.8 万次相关请求，并记录到技术人员工作站被实际入侵的案例。厂商修复版本为 26.6.5 及以后，升级服务端不能替代技术人员客户端升级。",
+      "impact": "运维人员本身可能成为进入多家客户系统的入口，受管终端不能一概视作可信。",
+      "researchApplications": "给远程运维会话设置独立执行边界，核对客户端版本，并用会话日志与终端进程日志关联验证异常。",
+      "relevance": {
+        "level": "direct",
+        "reason": "分布式系统安全。涉及跨管理域的信任反转和高权限运维身份的集中风险。"
+      },
+      "previous": {
+        "ids": [],
+        "note": "有。漏洞在 9 月修复，11 月已有 SCKit 活动报道；本次新增客户端实际利用证据与请求统计。"
+      }
+    },
+    {
+      "id": "2026-11-17-08",
+      "date": "2026-11-17",
+      "rank": 8,
+      "title": "N-able 完成 HF3 安全更新说明，远控与 Intune 部分功能仍停用",
+      "tags": [
+        "cybersecurity",
+        "distributed-systems",
+        "identity"
+      ],
+      "keywords": [
+        "补丁落地",
+        "旧接口移除",
+        "恢复边界"
+      ],
+      "focus": "安全更新发布并不意味着全部业务功能恢复。",
+      "sourceNote": "N-able 原始更新为当地 11 月 16 日 17:00 EST，即北京时间 17 日 06:00。可信度高；延续此前分批部署，本次记录完整修复范围及限制。",
+      "sources": [
+        {
+          "name": "N-able 安全更新",
+          "url": "https://www.n-able.com/blog/n-able-vulnerability-remediation-update"
+        }
+      ],
+      "summary": "N-able 更新 N-central 2026.4 HF3 的修复说明，列出 17 项漏洞修复，并强化代理身份校验和权限检查、永久移除旧版 API。厂商同时明确，Intune 集成和部分远程控制仍被禁用，Take Control 可以继续使用。本期新增的是完整修复清单和已知功能限制，不能把早先分区部署重复计为新事件。",
+      "impact": "集中运维平台需要同时核验安全修复和业务可用性，过早恢复集成可能重新扩大风险。",
+      "researchApplications": "比较旧接口移除前后的授权覆盖，验证代理重新认证、分批升级及回滚过程中的一致性。",
+      "relevance": {
+        "level": "direct",
+        "reason": "分布式系统安全。涉及代理身份、集中控制面与跨版本恢复。"
+      },
+      "previous": {
+        "ids": [
+          "2026-11-16-06"
+        ],
+        "note": "有。11 月 16 日收录分区部署，本次新增完整修复说明与仍未恢复的功能。"
+      }
+    },
+    {
+      "id": "2026-11-17-09",
+      "date": "2026-11-17",
+      "rank": 9,
+      "title": "Lighter 恢复提款，称已返还约 500 万 USDC 并调整签名要求",
+      "tags": [
+        "crypto",
+        "blockchain",
+        "smart-contracts",
+        "identity"
+      ],
+      "keywords": [
+        "签名随机值",
+        "权限收紧",
+        "应急恢复"
+      ],
+      "focus": "账户签名实现错误可能越过交易与资金转移之间的边界。",
+      "sourceNote": "Lighter 官方于 UTC 11 月 16 日约 18:20 更新，即北京时间 17 日约 02:20；The Block 17 日跟进。可信度高，根因与返还金额为项目方声明，净损失尚未完整核实。",
+      "sources": [
+        {
+          "name": "Lighter 恢复公告",
+          "url": "https://x.com/Lighter_xyz/status/2122394446343946717"
+        },
+        {
+          "name": "The Block 跟进",
+          "url": "https://www.theblock.co/news/defi/2026-11-17-lighter-reopens-withdrawals-after-traders-api-key-leak-returns-about-5-million-in-usdc-442113"
+        }
+      ],
+      "summary": "Lighter 宣布关闭应急保护模式并恢复提款，安全委员会称已向受影响交易者返还约 500 万 USDC。平台把密钥泄露归因于账户自行使用的签名软件重复使用一次性随机值，并把转入公共资金池的操作改为需要钱包签名。500 万 USDC 是返还口径，不能与前一天链上可核提款直接相减得出最终净损失。",
+      "impact": "应急权限能协助资金恢复，也需要清楚披露其触发、升级与解除条件。",
+      "researchApplications": "测试签名实现的随机值唯一性，并形式化检查交易密钥、钱包签名和应急委员会的权限边界。",
+      "relevance": {
+        "level": "direct",
+        "reason": "智能合约和分布式系统安全。涉及扩容网络资金权限及恢复机制。"
+      },
+      "previous": {
+        "ids": [
+          "2026-11-16-02"
+        ],
+        "note": "有。前一日是暂停提款与链上流出，本次新增恢复、返还及根因说明。"
+      }
+    },
+    {
+      "id": "2026-11-17-10",
+      "date": "2026-11-17",
+      "rank": 10,
+      "title": "预印本发现基础模型可复述测试题，提示排行榜存在记忆污染",
+      "tags": [
+        "llm-research",
+        "evaluation",
+        "ai-security"
+      ],
+      "keywords": [
+        "测试集泄漏",
+        "基础模型",
+        "去污染评测"
+      ],
+      "focus": "部分高分可能包含记忆贡献，不能直接等同于泛化能力。",
+      "sourceNote": "最早来自 Yiwei Qin 等作者的 arXiv 预印本，UTC 11 月 16 日 16:10 提交，北京时间 17 日。可信度中高，属于作者实验，尚未经同行评议。",
+      "sources": [
+        {
+          "name": "Benchleaking 原始论文",
+          "url": "https://arxiv.org/abs/2611.21315"
+        }
+      ],
+      "summary": "一项新预印本用少样本续写测试四款公开基础模型在 20 个基准上是否复述输入中未给出的测试内容。作者报告，ERNIE-5.5-Flash-Base 可复述 96% 的 HumanEval 题及参考实现，而 DeepSeek-V4-Flash-Base 对应比例为 9%。这是特定提示与匹配规则下的污染证据，不证明全部模型得分均由记忆造成。",
+      "impact": "基于受污染测试集得出的模型比较、训练消融和安全能力评估可能失真。",
+      "researchApplications": "为合约审计与 Agent 安全评测建立时间隔离的新题，报告去重、污染探测和重新生成样本后的结果。",
+      "relevance": {
+        "level": "direct",
+        "reason": "LLM 评测与科研可信度。直接影响能力结论和后训练方法比较。"
+      },
+      "previous": {
+        "ids": [],
+        "note": "有长期测试污染研究背景；本次新增针对近期四款基础模型的实验。"
+      }
+    },
+    {
+      "id": "2026-11-17-11",
+      "date": "2026-11-17",
+      "rank": 11,
+      "title": "ELITE 用实现机制整合改进编码智能体，演化过程不运行候选任务评测",
+      "tags": [
+        "llm-research",
+        "agent-security",
+        "evaluation",
+        "coding"
+      ],
+      "keywords": [
+        "智能体自改进",
+        "结构检查",
+        "评测成本"
+      ],
+      "focus": "该实验探索脱离候选任务打分的演化，尚不能证明自改进系统可安全放任运行。",
+      "sourceNote": "最早来自 Zhe Ren 等作者，arXiv 11 月 16 日提交、17 日公开通报批次可核。可信度中高，未同行评议，成绩和耗时受实验配置限制。",
+      "sources": [
+        {
+          "name": "ELITE 原始论文",
+          "url": "https://arxiv.org/abs/2611.21056"
+        }
+      ],
+      "summary": "ELITE 让编码智能体从同一父版本提出多种改动，再检查实现机制是否兼容并整合，演化循环中只做结构和运行有效性检查。作者报告，其 SWE-bench Pro 得分从初始 60.0% 提升至 85.6%，不在演化中执行候选任务评测；最终成绩仍通过外部基准测量。结果只覆盖论文设置，不表示无需评测就能保证正确性或安全性。",
+      "impact": "可能降低搜索候选智能体的计算成本，但也让独立验收与权限约束更加重要。",
+      "researchApplications": "研究自改进 Agent 的改动来源追踪、受保护规则和独立安全验收，比较任务成绩与违规率。",
+      "relevance": {
+        "level": "direct",
+        "reason": "单智能体安全、LLM 能力及后训练。涉及程序化自改进与外部评测的分离。"
+      },
+      "previous": {
+        "ids": [],
+        "note": "未找到同一发布的本地前序记录。"
+      }
+    },
+    {
+      "id": "2026-11-17-12",
+      "date": "2026-11-17",
+      "rank": 12,
+      "title": "AuXSpec 通过可执行后置条件训练模型生成 Lean 规格",
+      "tags": [
+        "llm-research",
+        "smart-contracts",
+        "evaluation",
+        "coding"
+      ],
+      "keywords": [
+        "规格生成",
+        "形式化验证",
+        "执行反馈"
+      ],
+      "focus": "更便宜的训练反馈有望缓解规格编写瓶颈，但不能替代规格正确性的审查。",
+      "sourceNote": "最早来自 Haocheng Wang 等作者的 arXiv 论文，11 月 17 日公开通报批次。可信度中高，预印本实验，尚无生产合约或共识协议验证结果。",
+      "sources": [
+        {
+          "name": "AuXSpec 原始论文",
+          "url": "https://arxiv.org/abs/2611.21421"
+        }
+      ],
+      "summary": "AuXSpec 把描述程序正确结果的 Lean 后置条件关联到可执行检查，用测试一致性为规格生成模型提供强化学习反馈。论文中 9B 模型在 AuXSpec-Test 的 pass@4 从 0.7% 提升至 82.7%，该指标表示最多四个候选中至少一个通过评测的比例。这是算法题规格实验，不能等同于已自动验证现实智能合约。",
+      "impact": "自动化形式化工作可能从生成证明进一步前移到编写规格，但错误规格仍可能使后续证明失去意义。",
+      "researchApplications": "尝试把合约不变量与参考执行绑定，加入反例驱动检验，测量生成规格是否遗漏关键安全条件。",
+      "relevance": {
+        "level": "direct",
+        "reason": "智能合约、共识协议与 LLM 科研应用。形式化规格是这些系统验证的重要输入。"
+      },
+      "previous": {
+        "ids": [],
+        "note": "未找到同一发布的本地前序记录。"
+      }
+    },
+    {
+      "id": "2026-11-17-13",
+      "date": "2026-11-17",
+      "rank": 13,
+      "title": "SciResearch-Eval 揭示科研智能体在错误模拟器下可能过度自信",
+      "tags": [
+        "llm-research",
+        "evaluation",
+        "agent-security"
+      ],
+      "keywords": [
+        "科研判断",
+        "模拟器失配",
+        "置信校准"
+      ],
+      "focus": "完成实验步骤不代表能识别实验模型本身的错误。",
+      "sourceNote": "最早来自 Brian T. Weston 等作者，arXiv UTC 11 月 16 日 18:27 提交，17 日公开通报。可信度中高，受控仿真评测，未同行评议。",
+      "sources": [
+        {
+          "name": "SciResearch-Eval 原始论文",
+          "url": "https://arxiv.org/abs/2611.21541"
+        }
+      ],
+      "summary": "SciResearch-Eval 让科研智能体自行设计材料热学实验，并故意提供可能缺少物理机制的模拟器，要求输出带 95% 区间的参数估计。在保留的 93 个任务、九款模型及 2,511 次运行中，多数模型在模拟器错误时给出的区间仅有 20%—62% 包含真实值，低于其声称的 95%。这是特定热学模拟环境的校准结果，不能直接推广为所有科研任务的可靠性。",
+      "impact": "自动科研系统可能在模型失配时给出看似严谨的错误结论，需把方法有效性纳入评测。",
+      "researchApplications": "为科研 Agent 增加独立物理约束、模型失配检测及预算一致的置信区间校准评测。",
+      "relevance": {
+        "level": "direct",
+        "reason": "LLM 科研应用与单智能体安全。研究重点是实验判断和不确定性表达。"
+      },
+      "previous": {
+        "ids": [],
+        "note": "未找到同一发布的本地前序记录。"
+      }
+    },
+    {
+      "id": "2026-11-17-14",
+      "date": "2026-11-17",
+      "rank": 14,
+      "title": "运行时契约研究显示，操作前拦截可减少部分编码智能体违规",
+      "tags": [
+        "agent-security",
+        "ai-security",
+        "evaluation",
+        "coding"
+      ],
+      "keywords": [
+        "运行时规则",
+        "独立验收",
+        "样本边界"
+      ],
+      "focus": "把规则放在执行边界具有价值，但对提示词的优势仍需更强证据。",
+      "sourceNote": "最早为独立研究者 Reda Heddad；11 月 14 日提交，17 日 arXiv AI 公开通报批次可核。可信度中高，小规模预印本实验，独立复现不足。",
+      "sources": [
+        {
+          "name": "Beyond Prompts 原始论文",
+          "url": "https://arxiv.org/abs/2611.19549"
+        }
+      ],
+      "summary": "研究者比较提示词规则、生成后检查和操作期间执行的可执行契约，测试编码智能体的命令与文件修改行为。三个小型研究中，运行时执行条件的 104 次配对运行未被独立检查器检出违规；针对性研究相对无规则降低 31 个百分点，但相对提示规则降低 17 个百分点的差异未达统计显著。实验只使用低成本模型和小型代码环境，不能把零检出解释为绝对安全。",
+      "impact": "执行前的权限判断比事后修改更能处理已产生副作用的操作，但检查器盲区需要单独审计。",
+      "researchApplications": "把合约部署或跨 Agent 共享工具的限制写成可执行策略，用不同实现的检查器独立核验绕过与误拦。",
+      "relevance": {
+        "level": "direct",
+        "reason": "单智能体、多智能体及分布式系统安全。涉及执行边界授权与独立证据。"
+      },
+      "previous": {
+        "ids": [],
+        "note": "本地 11 月 15 日有另一作者的操作契约设计方案；本论文是独立受控实验，不能视作同一项目更新。"
+      }
+    },
+    {
+      "id": "2026-11-17-15",
+      "date": "2026-11-17",
+      "rank": 15,
+      "title": "Wiz 开放 AI Security Agent 预览，关联应用工具与云端实际权限",
+      "tags": [
+        "ai-security",
+        "agent-security",
+        "identity"
+      ],
+      "keywords": [
+        "智能体资产发现",
+        "最小权限",
+        "代码到云"
+      ],
+      "focus": "只清点云资源不足以解释 Agent 能执行什么操作。",
+      "sourceNote": "最早发布机构 Wiz；元数据当地 11 月 16 日 12:02 EST，即北京时间 17 日 01:02。公告可信度高，效果为厂商自述，未公开完整独立评测。",
+      "sources": [
+        {
+          "name": "Wiz 原始发布",
+          "url": "https://www.wiz.io/blog/introducing-wiz-ai-security-agent"
+        }
+      ],
+      "summary": "Wiz 发布 AI Security Agent 公共预览，通过分析应用代码、提示及工具配置识别智能体，并把结果关联到云身份、暴露入口和敏感数据权限。产品试图比较智能体的业务用途与实际能力，例如内部问答服务是否仍能执行命令或访问超出范围的数据。厂商尚未公开可复核的误报率、漏报率和统一测试集，不能据此认定能持续阻止全部运行时攻击。",
+      "impact": "Agent 资产治理开始把应用逻辑和基础设施权限放到同一风险图中，但预览产品仍需实际验证。",
+      "researchApplications": "建立业务目标、工具和云权限的对应图，评估多跳调用和代理身份下的过度授权检测。",
+      "relevance": {
+        "level": "direct",
+        "reason": "单智能体及多智能体安全。直接涉及工具权限和云侧身份边界。"
+      },
+      "previous": {
+        "ids": [],
+        "note": "未找到同一发布的本地前序记录。"
+      }
+    },
+    {
+      "id": "2026-11-17-16",
+      "date": "2026-11-17",
+      "rank": 16,
+      "title": "MCP 对照研究发现，代码模式与返回类型提示显著影响工具调用成本",
+      "tags": [
+        "llm-research",
+        "agent-security",
+        "evaluation"
+      ],
+      "keywords": [
+        "工具接口",
+        "返回类型",
+        "计算成本"
+      ],
+      "focus": "接口定义质量可能比额外增加工具路由器更重要。",
+      "sourceNote": "最早来自 Abhishek Rai，11 月 14 日提交，17 日 arXiv AI 公开通报批次可核。可信度中高，预注册受控实验，尚无广泛生产验证。",
+      "sources": [
+        {
+          "name": "Beyond Plain MCP 原始论文",
+          "url": "https://arxiv.org/abs/2611.19123"
+        }
+      ],
+      "summary": "一项 MCP 研究比较直接工具调用、代码编排和额外工具选择路由器，在 12 个服务器与三款开放权重智能体上进行测试。论文报告代码模式较直接调用减少约 70%—90% 的 token 消耗，而返回值结构提示对较弱模型的成功率影响最高为 39.5 个百分点。额外路由器的收益未达统计显著，这些结果衡量效率与任务效果，不是越权防护能力。",
+      "impact": "Agent 系统的成本比较需要控制工具描述与返回类型，否则可能把接口差异误归为模型或路由算法优势。",
+      "researchApplications": "在权限相同的工具集上比较类型提示、结果验证和调用成本，另设不可信返回内容的安全测试。",
+      "relevance": {
+        "level": "direct",
+        "reason": "LLM Agent 评测与系统设计。直接关联工具接口、编排成本和实验控制。"
+      },
+      "previous": {
+        "ids": [],
+        "note": "未找到同一发布的本地前序记录。"
+      }
+    }
+  ]
+}
