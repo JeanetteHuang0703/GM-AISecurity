@@ -1,0 +1,781 @@
+{
+  "schemaVersion": 1,
+  "date": "2026-11-18",
+  "timezone": "Asia/Shanghai",
+  "kind": "daily",
+  "note": "按北京时间 2026 年 11 月 18 日首次披露、首次论文公告或当日实质报道归档；首次事件、原始修复与后续报道时间分别注明。覆盖网络安全、加密资产、AI 安全与科研；晚于 UTC 18 日 16:00 的后续追踪不当作本期已知事实。",
+  "items": [
+    {
+      "id": "2026-11-18-01",
+      "date": "2026-11-18",
+      "rank": 1,
+      "title": "Java4Shell：Java 底层解码漏洞可危及 Jira、Jenkins 等企业服务",
+      "tags": [
+        "cybersecurity",
+        "distributed-systems",
+        "security-ai"
+      ],
+      "keywords": [
+        "运行时内存破坏",
+        "认证前攻击",
+        "人机协作发现"
+      ],
+      "focus": "内存安全语言的底层优化仍可能暴露跨应用攻击面。",
+      "sourceNote": "最早披露机构 Calif，原文标注美国 11 月 17 日，未展示精确首发时刻；18 日厂商和 CERT 陆续发布通告。Oracle/OpenJDK 已发布修复；研究者演示可信度高，不代表已发现野外攻击。",
+      "sources": [
+        {
+          "name": "Calif 原始研究",
+          "url": "https://calif.io/java4shell/"
+        },
+        {
+          "name": "Oracle 官方补丁清单",
+          "url": "https://www.oracle.com/security-alerts/cspunov2026.html"
+        },
+        {
+          "name": "CERT-EU 条件说明",
+          "url": "https://www.cert.europa.eu/publications/security-advisories/2026-021/pdf"
+        }
+      ],
+      "summary": "Calif 披露 Java 运行时 Base64 解码器的内存破坏漏洞 CVE-2026-114938，并演示在 Jira、Jenkins、Keycloak 等应用中执行未经授权的代码。风险依赖受影响 Java 版本、支持 AVX-512 VBMI 的 x86-64 处理器及可达的解码路径，ARM64 不在该路径的影响范围内。研究者称借助 AI 用约 1 小时发现、另约 2 小时完成首个利用，但这是特定团队的实验，实际利用需要按目标适配，尚不能认定已有在野攻击。",
+      "impact": "应优先盘点互联网入口及软件内置的 Java 运行时；业务代码未修改，也可能因底层运行时而暴露风险。",
+      "researchApplications": "复现硬件优化路径的差分测试，研究 AI 辅助漏洞发现的人工贡献、真实成本与跨版本可迁移性。",
+      "relevance": {
+        "level": "direct",
+        "reason": "分布式系统安全及 AI 辅助攻防：身份服务、构建系统和中间件共享运行时，单点缺陷可能跨服务传播。"
+      },
+      "previous": {
+        "ids": [],
+        "note": "未发现本地前序；本条为新披露或首次公告。"
+      }
+    },
+    {
+      "id": "2026-11-18-02",
+      "date": "2026-11-18",
+      "rank": 2,
+      "title": "OpenAI 发布 GPT-6.2 Astra 与 Sol，科研效率提升伴随新的安全评估边界",
+      "tags": [
+        "llm-research",
+        "agent-security",
+        "ai-security",
+        "evaluation"
+      ],
+      "keywords": [
+        "科研工作流",
+        "单位任务成本",
+        "自主能力分级"
+      ],
+      "focus": "能力和效率改善需要与更强的执行约束一起评估。",
+      "sourceNote": "最早发布机构 OpenAI，公告和系统卡日期为美国 11 月 17 日，公开发布约 UTC 17:54，属北京时间 18 日。发布事实可信度高，能力数字及风险分级主要为厂商评估。",
+      "sources": [
+        {
+          "name": "OpenAI 发布公告",
+          "url": "https://openai.com/index/introducing-gpt-6-2-astra-sol/"
+        },
+        {
+          "name": "GPT-6.2 系统卡",
+          "url": "https://deploymentsafety.openai.com/gpt-6-2-astra-sol/gpt-6-2-astra-sol.pdf"
+        }
+      ],
+      "summary": "OpenAI 向付费产品和 API 发布 GPT-6.2 Astra、Sol，主打复杂编码、专业文档及科研任务的执行效率。厂商称 Astra 在终端科研基准上比 GPT-6 Astra 高 9 个百分点、评测任务成本不到三分之一，同时标准 API 输入和输出单价降低 20%。系统卡将两者网络安全能力列为 Critical、Astra 的 AI 自我改进能力列为 High，并报告部分监控及已知障碍披露问题；这些分级不等于模型已实现全自动递归自我改进。",
+      "impact": "科研和编码代理的可用性有望提高，但低成本长程执行也提高隔离、权限和独立验证的重要性。",
+      "researchApplications": "在相同工具、预算和隐藏测试下复测科研与编码任务，并将行动日志监控与推理文本监控分开评估。",
+      "relevance": {
+        "level": "direct",
+        "reason": "LLM 进展和单／多 Agent 安全：新模型同时改变科研能力基线与长程自主执行的风险假设。"
+      },
+      "previous": {
+        "ids": [],
+        "note": "有。延续 GPT-6 Astra 和 GPT-6.1 Sol；本期新增 6.2 发布、定价和系统卡，本地无对应旧模型发布记录。"
+      }
+    },
+    {
+      "id": "2026-11-18-03",
+      "date": "2026-11-18",
+      "rank": 3,
+      "title": "微软 Agent Framework 两个 PyPI 版本被植入凭据窃取器",
+      "tags": [
+        "cybersecurity",
+        "agent-security",
+        "supply-chain",
+        "identity"
+      ],
+      "keywords": [
+        "包发布权限",
+        "启动即执行",
+        "云凭据外泄"
+      ],
+      "focus": "安装可信项目名的软件包，仍需验证具体发布产物。",
+      "sourceNote": "最早技术披露来自 Wiz，UTC 11 月 17 日 22:03 发布，即北京时间 18 日 06:03；恶意版本此前于 UTC 20:35、21:08 上传。样本分析可信度高，最初发布权限如何失守尚未确认。",
+      "sources": [
+        {
+          "name": "Wiz 样本与时间线",
+          "url": "https://www.wiz.io/blog/malicious-version-of-microsofts-agent-framework-published-to-pypi"
+        }
+      ],
+      "summary": "微软 Python 包 agent-framework 的 1.26.1 和 1.26.2 被发现包含窃取 Azure、持续集成和开发者凭据的代码，两个版本已从 PyPI 移除。恶意组件通过 Python 启动时自动处理的文件触发，即使用户从未导入该包也可能运行；Wiz 记录其从首个上传到下架约 55 分钟。项目每周约 4.1 万次下载是正常包的流量，不能当作恶意版本的实际受害人数，根因仍待确认。",
+      "impact": "影响可能超出开发环境并延伸至云身份和发布流水线，卸载包本身未必足以消除凭据风险。",
+      "researchApplications": "研究包产物与仓库版本的可验证关联、短期身份凭据撤销，以及 Agent 开发环境的最小权限隔离。",
+      "relevance": {
+        "level": "direct",
+        "reason": "Agent 安全及分布式系统身份安全：框架依赖能够直接触及工具令牌和跨云执行权限。"
+      },
+      "previous": {
+        "ids": [],
+        "note": "未发现本地前序；本条为新披露或首次公告。"
+      }
+    },
+    {
+      "id": "2026-11-18-04",
+      "date": "2026-11-18",
+      "rank": 4,
+      "title": "Puppet 已修复漏洞被纳入在野利用清单，配置管理控制面需优先处理",
+      "tags": [
+        "cybersecurity",
+        "distributed-systems",
+        "identity"
+      ],
+      "keywords": [
+        "证书自动签发",
+        "不安全反序列化",
+        "配置分发控制面"
+      ],
+      "focus": "客户端证书不应自动等同于可信管理指令。",
+      "sourceNote": "最早漏洞与修复来自 Perforce，修复于 11 月 3 日发布；CISA 清单新增日期为 UTC 11 月 17 日且未给时刻，18 日 10:37 UTC 出现本轮报道。CISA 确认在野利用可信度高，首次利用并非发生在本期。",
+      "sources": [
+        {
+          "name": "CISA 在野利用清单",
+          "url": "https://www.cisa.gov/sites/default/files/feeds/known_exploited_vulnerabilities.json"
+        },
+        {
+          "name": "Perforce 官方漏洞页",
+          "url": "https://portal.perforce.com/s/cve/a91Qi000003IaHpIAK/report-deserialization-code-execution"
+        },
+        {
+          "name": "SecurityWeek 本轮报道",
+          "url": "https://www.securityweek.com/critical-perforce-puppet-rce-exploited-in-attacks/"
+        }
+      ],
+      "summary": "Puppet 配置管理平台漏洞 CVE-2026-115731 被 CISA 纳入已遭实际利用的漏洞清单，本期新增的是风险升级和修复提醒。持有受信任代理证书的客户端可通过报告处理路径让服务器执行代码；如果证书自动签发缺少验证，攻击者取得这一前提会更容易。官方清单要求适用的美国联邦机构在 12 月 1 日前处置，不能误写为 12 月 8 日，也不能据此推断所有部署均已失陷。",
+      "impact": "配置管理服务器负责向大量节点分发状态，其签发密钥或管理权限失守可能放大为全网配置污染。",
+      "researchApplications": "验证证书签发、报告解析与配置分发之间的授权边界，设计可撤销的节点身份和管理指令溯源。",
+      "relevance": {
+        "level": "direct",
+        "reason": "分布式系统安全：核心问题是客户端身份如何越过控制面边界并影响其他受管节点。"
+      },
+      "previous": {
+        "ids": [],
+        "note": "有。11 月 3 日已修复、4 日已有利用标记；本期跟进 CISA 收录和处置期限，本地未收录旧记录。"
+      }
+    },
+    {
+      "id": "2026-11-18-05",
+      "date": "2026-11-18",
+      "rank": 5,
+      "title": "K3 暂停 sBOLD 金库，Blockaid 初估约 343 万美元被取走",
+      "tags": [
+        "blockchain",
+        "smart-contracts",
+        "stablecoins",
+        "crypto"
+      ],
+      "keywords": [
+        "份额估值",
+        "第三方金库",
+        "初步损失口径"
+      ],
+      "focus": "上层金库的会计安全与底层借贷协议安全需要分开判断。",
+      "sourceNote": "最早告警机构 Blockaid，UTC 11 月 18 日 12:50；K3 于 13:08 确认调查并暂停，均属北京时间 18 日晚间。暂停可信度高，金额与机制属初步研究；跨过北京时间日界的后续追踪不混入本期事实。",
+      "sources": [
+        {
+          "name": "Blockaid 原始告警",
+          "url": "https://x.com/blockaid_/status/2123036162847613184"
+        },
+        {
+          "name": "K3、Liquity 声明及时间线",
+          "url": "https://tsnmedia.org/k3-sbold-vault-paused/"
+        },
+        {
+          "name": "当日交叉报道",
+          "url": "https://crypto.news/k3-capital-reental-defi-exploits-3-88-million/"
+        }
+      ],
+      "summary": "K3 Capital 确认其运行在 Liquity V2 之上的 sBOLD 收益金库出现恶意活动并暂停合约，Liquity 表示核心 V2 协议未受影响。Blockaid 在早期告警中估计约 343 万美元经约 34 笔交易被取走，初步指向金库份额低估与资产转换导致其他存款价值被提取。项目方尚未给出最终损失和完整根因，告警时的交易数也不是最终清算结果。",
+      "impact": "组合式 DeFi 可能在底层协议正常时发生上层金库损失；需关注暂停后资产可兑付性及会计重建。",
+      "researchApplications": "建立跨资产净值与份额铸造的不变量，测试捐赠、清算收益、阈值和闪电贷组合下的会计一致性。",
+      "relevance": {
+        "level": "direct",
+        "reason": "智能合约安全：金库价值分配和底层资产记账错误，可能把正常协议操作组合为资金提取路径。"
+      },
+      "previous": {
+        "ids": [],
+        "note": "未发现本地前序；本条为新披露或首次公告。"
+      }
+    },
+    {
+      "id": "2026-11-18-06",
+      "date": "2026-11-18",
+      "rank": 6,
+      "title": "Microsoft Perception 正式可用，安全处置转向红蓝绿多智能体协作",
+      "tags": [
+        "security-ai",
+        "multi-agent",
+        "agent-security"
+      ],
+      "keywords": [
+        "闭环安全处置",
+        "任务级权限",
+        "独立行动验证"
+      ],
+      "focus": "自动发现、调查和修复的衔接正在进入实际产品。",
+      "sourceNote": "最早发布机构 Microsoft Security，UTC 11 月 17 日 18:14，即北京时间 18 日 02:14。正式发布可信度高；覆盖率来自微软自有告警分析，不是独立防御效果评测。",
+      "sources": [
+        {
+          "name": "微软安全官方公告",
+          "url": "https://www.microsoft.com/en-us/security/blog/2026/11/17/security-for-the-agentic-era-powered-by-microsoft-perception/"
+        },
+        {
+          "name": "Perception 发布说明",
+          "url": "https://techcommunity.microsoft.com/blog/perception-blog/whats-new-with-microsoft-perception-at-ignite-2026/4571834"
+        }
+      ],
+      "summary": "微软将 Perception 安全平台转为正式可用，通过红队探测、蓝队调查和绿队修复智能体协作执行安全工作流。微软对约 800 万条自身产品告警的分析认为分诊智能体可覆盖约 80% 的告警量，这衡量适用范围，不是 80% 攻击阻断率或每个客户的保证。部分渗透测试、临时漏洞屏蔽和风险修复功能仍在预览，不能将整套路线图视作全部上线。",
+      "impact": "安全团队可能减少跨工具手工衔接，但自动修复也将权限误用和错误传播纳入生产风险。",
+      "researchApplications": "研究跨智能体行动审批、可回滚修复、证据共享及任务级动态授权的完整性。",
+      "relevance": {
+        "level": "direct",
+        "reason": "多 Agent 与分布式系统安全：涉及分工、上下文共享、权限传递和协同处置中的错误放大。"
+      },
+      "previous": {
+        "ids": [],
+        "note": "未发现本地前序；本条为新披露或首次公告。"
+      }
+    },
+    {
+      "id": "2026-11-18-07",
+      "date": "2026-11-18",
+      "rank": 7,
+      "title": "NSA 内部分级通信网络故障，官方称发生于计划维护",
+      "tags": [
+        "cybersecurity",
+        "distributed-systems"
+      ],
+      "keywords": [
+        "关键系统可用性",
+        "维护变更",
+        "归因证据"
+      ],
+      "focus": "重大故障本身不能证明遭到网络攻击。",
+      "sourceNote": "最早报道来自 CNN；美联社于 UTC 11 月 17 日晚间援引美国官员回应，属北京时间 18 日。多家独立媒体确认中断，具体根因和影响细节尚未完整公开；不采用无证据的攻击归因。",
+      "sources": [
+        {
+          "name": "CNN 首报",
+          "url": "https://www.cnn.com/2026/11/17/politics/highly-classified-national-security-communications-network-goes-down"
+        },
+        {
+          "name": "美联社报道",
+          "url": "https://apnews.com/article/nsa-computer-network-down-22dc6be1bf1d1f5f86a7167f016e9526"
+        }
+      ],
+      "summary": "美国国家安全局用于内部机密通信的 NSANet 出现中断，多地员工的工作安排受到影响。美国官员称问题发生在计划例行维护期间，并表示关键任务能力仍在运行；公开材料未提供可靠的统一中断时长或受影响人数。现有证据不足以认定这是网络攻击，也不足以把近期其他机构故障归为同一事件。",
+      "impact": "高保密系统仍需要维护期间的降级通信与业务连续性；公开信息不足时，应将故障和攻击研判分开。",
+      "researchApplications": "研究分批变更、跨站点故障隔离、独立备用通信及补丁发布的失效模式。",
+      "relevance": {
+        "level": "direct",
+        "reason": "分布式系统安全与可用性：展示跨地点共享控制组件维护可能产生的共同故障。"
+      },
+      "previous": {
+        "ids": [],
+        "note": "未发现本地前序；本条为新披露或首次公告。"
+      }
+    },
+    {
+      "id": "2026-11-18-08",
+      "date": "2026-11-18",
+      "rank": 8,
+      "title": "Chrome 158 修复 204 项安全问题，其中 6 项为严重级别",
+      "tags": [
+        "cybersecurity",
+        "agent-security",
+        "security-ai"
+      ],
+      "keywords": [
+        "浏览器运行环境",
+        "批量补丁",
+        "AI 辅助发现"
+      ],
+      "focus": "浏览器代理的安全基线会随底层版本变化。",
+      "sourceNote": "最早发布机构 Google Chrome，公告标注美国 11 月 17 日、未展示精确时区；18 日 UTC 11:43 出现本轮报道。补丁数量和版本以官方公告为准，未见官方宣称这些问题已遭在野利用。",
+      "sources": [
+        {
+          "name": "Chrome 官方稳定版公告",
+          "url": "https://chromereleases.googleblog.com/2026/11/stable-channel-update-for-desktop_01699533288.html"
+        },
+        {
+          "name": "SecurityWeek 本轮报道",
+          "url": "https://www.securityweek.com/chrome-158-patches-204-vulnerabilities/"
+        }
+      ],
+      "summary": "Google 发布 Chrome 158 稳定版，修复 204 项安全问题，其中 6 项被列为严重级别，涉及图形、媒体及内存管理组件。Linux 修复版本为 158.0.8127.36，Windows 和 macOS 为 158.0.8127.36 或 .37，官方名单还注明部分漏洞由研究者借助 Claude 发现。公告没有确认这些漏洞已被实际利用，版本将分批推送，不能仅凭看到更新通知就认定所有终端已完成升级。",
+      "impact": "浏览器及以其为执行器的自动化任务需要同步更新；AI 辅助发现已有具体漏洞记录，但不能据此量化整个领域的效果。",
+      "researchApplications": "比较浏览器 Agent 的运行时补丁覆盖率、沙箱隔离和攻击面暴露，审计 AI 发现漏洞的可复现证据。",
+      "relevance": {
+        "level": "direct",
+        "reason": "单 Agent 安全：浏览器是网页代理的工具执行边界，其内存漏洞可能绕过上层提示约束。"
+      },
+      "previous": {
+        "ids": [],
+        "note": "有。Chrome 定期发布安全更新；本期为 158 稳定版，具体新增修复以官方名单为准。"
+      }
+    },
+    {
+      "id": "2026-11-18-09",
+      "date": "2026-11-18",
+      "rank": 9,
+      "title": "大崎电气遭勒索软件攻击，暂停智能电表生产和出货",
+      "tags": [
+        "cybersecurity",
+        "ot-security",
+        "supply-chain"
+      ],
+      "keywords": [
+        "制造业务中断",
+        "勒索软件",
+        "供应连续性"
+      ],
+      "focus": "企业服务器失陷可以转化为实体产品供应中断。",
+      "sourceNote": "最早发布机构大崎电气，11 月 18 日官方首次公告。厂商对停产和加密的确认可信度高，泄漏、损失和恢复时间仍在调查。",
+      "sources": [
+        {
+          "name": "大崎电气官方首次通报",
+          "url": "https://www.osaki.co.jp/en/ir/news/auto_20261118582910/pdfFile.pdf"
+        }
+      ],
+      "summary": "日本智能电表厂商大崎电气公告称，11 月 17 日发现服务器数据被勒索软件加密，随后断开外部网络。公司暂停埼玉研发制造中心及相关岩手、大崎普拉泰克生产点的系统，并停止智能电表等产品的生产与出货。11 月 18 日首次通报仍未确定恢复时间、财务损失或是否外泄，不能将停产等同于在用电表已被攻击。",
+      "impact": "影响首先表现为制造与交货连续性，若停产持续可能向下游项目传导；当前尚无规模量化依据。",
+      "researchApplications": "可应用业务网络与生产网络分段、离线恢复演练及关键供应商中断场景建模。",
+      "relevance": {
+        "level": "none",
+        "reason": "暂无明显相关：主要涉及工业企业停产和供应链，公告未涉及共识、智能合约或 LLM。"
+      },
+      "previous": {
+        "ids": [],
+        "note": "未发现本地前序；本条为新披露或首次公告。"
+      }
+    },
+    {
+      "id": "2026-11-18-10",
+      "date": "2026-11-18",
+      "rank": 10,
+      "title": "微软推出 MAI Code 2、Cyber 2 Flash，并提供受许可的权重访问",
+      "tags": [
+        "llm-research",
+        "coding",
+        "security-ai"
+      ],
+      "keywords": [
+        "领域专用模型",
+        "成本性能",
+        "受许可权重"
+      ],
+      "focus": "厂商正以任务专用模型和执行框架共同优化成本。",
+      "sourceNote": "最早发布机构微软，Ignite 主博客 UTC 11 月 17 日 18:36，即北京时间 18 日 02:36；具体模型事实以官方公告及现场记录为准，领先表现主要为厂商自述。",
+      "sources": [
+        {
+          "name": "微软 Ignite 主公告",
+          "url": "https://blogs.microsoft.com/blog/2026/11/17/ignite-2026-building-the-frontier-ecosystem/"
+        },
+        {
+          "name": "微软 Ignite 实时官方记录",
+          "url": "https://news.microsoft.com/events/ignite/2026/live-news/"
+        }
+      ],
+      "summary": "微软在 Ignite 推出面向编码的 MAI Code 2、Code 2 Flash 和面向安全的 Cyber 2 Flash，并宣布向受信任客户提供 MAI 模型的许可权重访问。官方称 Cyber 2 Flash 每次激活约 120 亿参数，并与安全工具共同设计以降低任务成本，但发布材料未给足可独立复算的完整比较条件。许可权重访问不等于不受限制的开源，具体模型的正式可用或预览状态也需要分别确认。",
+      "impact": "较小的专用模型可能改变多模型安全系统的部署经济性，但真实价值需要按完整任务成本而非参数规模判断。",
+      "researchApplications": "复测模型路由、专用安全模型与通用模型的组合，记录工具调用、失败重试和防御约束的总成本。",
+      "relevance": {
+        "level": "direct",
+        "reason": "LLM 能力及 AI 辅助攻防：为安全任务选型与多模型 Agent 编排提供新的研究对象。"
+      },
+      "previous": {
+        "ids": [],
+        "note": "未发现本地前序；本条为新披露或首次公告。"
+      }
+    },
+    {
+      "id": "2026-11-18-11",
+      "date": "2026-11-18",
+      "rank": 11,
+      "title": "Reental 代理合约异常升级，Blockaid 初估两笔交易取走约 45.4 万美元",
+      "tags": [
+        "blockchain",
+        "smart-contracts",
+        "identity",
+        "crypto"
+      ],
+      "keywords": [
+        "代理升级",
+        "管理员权限",
+        "资产提取边界"
+      ],
+      "focus": "可升级合约的信任边界包含管理权和新实现代码。",
+      "sourceNote": "最早告警机构 Blockaid，UTC 11 月 18 日告警；同日 13:47 UTC 的交叉报道可定位在北京时间 18 日。链上行为和早期金额属研究者分析，管理员身份及动机未获确认。",
+      "sources": [
+        {
+          "name": "Blockaid 原始告警",
+          "url": "https://x.com/blockaid_/status/2123033403553689899"
+        },
+        {
+          "name": "当日可核验报道",
+          "url": "https://crypto.news/k3-capital-reental-defi-exploits-3-88-million/"
+        }
+      ],
+      "summary": "Blockaid 报告 Polygon 上 Reental 的 USDT、USDC 存款凭证代理合约被管理员升级为允许提取底层资产的新实现。研究者在告警时记录约 45.4 万美元经两笔交易被取走，并描述剩余稳定币随后被转出，但该数字只是早期已识别交易口径。谁控制管理权、升级是否出于密钥失陷以及最终总损失仍待项目说明，不能直接认定为已证实的内部作恶。",
+      "impact": "即使常规借贷逻辑正确，升级权限也可能重写资产访问规则；最终损失需包含升级前后完整资金流。",
+      "researchApplications": "研究代理升级的语义差分、延时生效、资产访问不变量和管理员操作的可验证约束。",
+      "relevance": {
+        "level": "direct",
+        "reason": "智能合约安全：直接涉及可升级代理、控制权及实现替换后的权限变化。"
+      },
+      "previous": {
+        "ids": [],
+        "note": "未发现本地前序；本条为新披露或首次公告。"
+      }
+    },
+    {
+      "id": "2026-11-18-12",
+      "date": "2026-11-18",
+      "rank": 12,
+      "title": "Reflection 向经过审核的机构开放 Laser 自主渗透测试预览",
+      "tags": [
+        "security-ai",
+        "multi-agent",
+        "agent-security"
+      ],
+      "keywords": [
+        "授权范围",
+        "共享证据账本",
+        "独立监督"
+      ],
+      "focus": "开放权重厂商也开始对高风险工具采用审核访问。",
+      "sourceNote": "最早发布机构 Reflection，原始公告标注当地 11 月 17 日；Axios 当日 UTC 23:27 报道，属北京时间 18 日。产品与访问限制可信度高，尚无公开独立效果数字。",
+      "sources": [
+        {
+          "name": "Reflection 原始公告",
+          "url": "https://reflection.ai/blog/launching-trusted-access-program"
+        },
+        {
+          "name": "Axios 当日采访",
+          "url": "https://www.axios.com/2026/11/17/reflection-cybersecurity-gated-access-tools"
+        }
+      ],
+      "summary": "Reflection 启动 Trusted Access Program，只向获准商业伙伴提供 Laser 自主渗透测试工具的研究预览。Laser 由执行智能体记录观察、独立监督者审查证据，在任务停滞时可委派其他工作者，但都应共享测试范围和证据账本。公司尚未披露可靠的成功率、客户规模或完整准入标准，因此不能把架构设计视作已验证的防越界保证。",
+      "impact": "攻击能力的开放方式正被分为模型权重与具体工具访问两个层次；审核流程可能同时影响防守者可获得性。",
+      "researchApplications": "验证委派后测试范围是否保持不变，以及监督者能否依靠独立证据识别虚报成功和越界行为。",
+      "relevance": {
+        "level": "direct",
+        "reason": "多 Agent 安全：执行、监督和工作者之间存在明确的授权传播与证据一致性问题。"
+      },
+      "previous": {
+        "ids": [],
+        "note": "未发现本地前序；本条为新披露或首次公告。"
+      }
+    },
+    {
+      "id": "2026-11-18-13",
+      "date": "2026-11-18",
+      "rank": 13,
+      "title": "Visa 将 Agentic Ready 扩至商户和收单侧，加入逾 140 家首批参与者",
+      "tags": [
+        "agent-security",
+        "identity",
+        "regulation"
+      ],
+      "keywords": [
+        "代理支付授权",
+        "商户身份",
+        "可验证委托"
+      ],
+      "focus": "智能体商业交易的信任验证正扩展到支付接受端。",
+      "sourceNote": "最早发布机构 Visa，投资者新闻列表时间为美国东部 11 月 17 日 23:30，即北京时间 18 日 12:30。参与方数量来自公司公告，可信度较高，不是交易规模或安全效果指标。",
+      "sources": [
+        {
+          "name": "Visa 官方扩展公告",
+          "url": "https://investor.visa.com/news/news-details/2026/Visa-Expands-Agentic-Ready-to-Help-Scale-Trusted-AI-Commerce-Globally/default.aspx"
+        },
+        {
+          "name": "Visa 官方发布时间列表",
+          "url": "https://visa.gcs-web.com/investor-overview?field_nir_news_date_value%5Bmin%5D=2026"
+        }
+      ],
+      "summary": "Visa 将 Agentic Ready 从发卡机构扩展至商户、支付服务商和收单机构，帮助现有支付网络识别、认证和处理智能体发起的交易。新阶段有超过 140 家首批参与者，承接此前覆盖 45 个市场、175 家以上发卡机构的项目。上述数字衡量生态参与范围，不代表已经完成的代理交易量，也不是欺诈损失下降的证据。",
+      "impact": "代理支付需要把用户意图、代理身份、交易范围和商户接受流程连起来，行业协作可能推动统一验证接口。",
+      "researchApplications": "设计绑定金额、收款方、有效期和用户意图的委托凭证，并研究退款及争议中的可审计证据。",
+      "relevance": {
+        "level": "direct",
+        "reason": "单 Agent 与身份安全：代理能否付款取决于被授权的具体交易，而不只是登录身份。"
+      },
+      "previous": {
+        "ids": [],
+        "note": "有。Agentic Ready 此前面向发卡机构，本期新增商户与收单侧扩展；本地无对应旧记录。"
+      }
+    },
+    {
+      "id": "2026-11-18-14",
+      "date": "2026-11-18",
+      "rank": 14,
+      "title": "ATI 提出跨组织 Agent 身份与证明架构，模拟实验仍有未拦住的攻击",
+      "tags": [
+        "agent-security",
+        "multi-agent",
+        "identity",
+        "distributed-systems"
+      ],
+      "keywords": [
+        "联邦身份",
+        "配置证明",
+        "跨组织授权"
+      ],
+      "focus": "跨组织协作需要在模型之外验证身份和执行配置。",
+      "sourceNote": "最早来源 Nguyen、Husain 原始预印本，UTC 11 月 17 日 18:44 提交，即北京时间 18 日 02:44，并列入 18 日 arXiv 公告。研究存在可信度高，效果为作者模拟实验，非生产安全证明。",
+      "sources": [
+        {
+          "name": "ATI 原始论文",
+          "url": "https://arxiv.org/abs/2611.23202"
+        }
+      ],
+      "summary": "ATI 论文提出以组织级证书机构、远程证明和外部策略执行层，校验跨组织智能体的身份、模型及工具配置。作者在模拟联邦环境报告，全部机制启用后攻击遏制率由 43% 升至 84%，请求额外开销约 174 微秒；在所有配置共同评测的 11 类攻击上则由 40% 升至 80%。结果仍包含漏防，部分结论依赖模型裁判，不能直接外推为真实多组织环境的安全保证。",
+      "impact": "为跨组织 Agent 的身份、完整性和权限分离提供了可实现架构，但信任引导和证明失效仍需检验。",
+      "researchApplications": "研究证书撤销、策略冲突、证明与真实执行的一致性，以及恶意组织加入时的信任收敛。",
+      "relevance": {
+        "level": "direct",
+        "reason": "多 Agent 和分布式系统安全：对应用户关注的跨主体身份、授权与不可信节点协作。"
+      },
+      "previous": {
+        "ids": [],
+        "note": "未发现本地前序；本条为新披露或首次公告。"
+      }
+    },
+    {
+      "id": "2026-11-18-15",
+      "date": "2026-11-18",
+      "rank": 15,
+      "title": "千万次调用研究：Agent 自我改进的瓶颈可能在于分不清真正进步",
+      "tags": [
+        "llm-research",
+        "evaluation",
+        "agent-security"
+      ],
+      "keywords": [
+        "评测噪声",
+        "候选选择",
+        "自我改进可靠性"
+      ],
+      "focus": "提高搜索次数未必能弥补改进识别能力不足。",
+      "sourceNote": "最早来源 Zeng 等人的原始预印本，UTC 11 月 17 日 16:57 提交，即北京时间 18 日 00:57。实验规模可核验，核心解释是作者提出的假说，仍需独立复现。",
+      "sources": [
+        {
+          "name": "Resolution Hypothesis 原始论文",
+          "url": "https://arxiv.org/abs/2611.23068"
+        }
+      ],
+      "summary": "研究者分析智能体反复修改提示、技能和记忆的进化流程，认为很多方法停滞是因为评测噪声使系统无法可靠选择更好的候选。实验覆盖 7 种进化方法、6 个模型和超过 1,000 万次调用，发现部分候选选择接近随机，同一方法独立运行的波动还会超过方法间几百分点的差距。结论针对所测任务和选择机制，不能概括为所有自我改进方法均无效。",
+      "impact": "小幅排行榜领先可能不稳健，系统长期优化可能积累错误选择而非真实能力增长。",
+      "researchApplications": "采用配对重复实验、独立隐藏测试和序贯显著性检验，研究安全约束是否随迭代退化。",
+      "relevance": {
+        "level": "direct",
+        "reason": "LLM 后训练与 Agent 安全：直接影响如何判断能力或安全性的改进是否真实可累积。"
+      },
+      "previous": {
+        "ids": [],
+        "note": "未发现本地前序；本条为新披露或首次公告。"
+      }
+    },
+    {
+      "id": "2026-11-18-16",
+      "date": "2026-11-18",
+      "rank": 16,
+      "title": "DiscoveryAgent 用检查点与审计智能体支持科学家追问和纠错",
+      "tags": [
+        "llm-research",
+        "multi-agent",
+        "evaluation"
+      ],
+      "keywords": [
+        "科研可追溯",
+        "人类引导",
+        "独立审计"
+      ],
+      "focus": "科研代理开始把过程检查和科学家纠偏作为系统能力。",
+      "sourceNote": "最早来源 Queen 等人的预印本，UTC 11 月 16 日 22:17 提交；arXiv 将其列入 11 月 18 日首次公告批次。按本期首次公告归档，实验效果为作者报告，尚非通用科研能力证明。",
+      "sources": [
+        {
+          "name": "DiscoveryAgent 原始论文",
+          "url": "https://arxiv.org/abs/2611.21950"
+        },
+        {
+          "name": "arXiv 首次公告日期清单",
+          "url": "https://arxiv.org/list/cs.AI/recent?show=2000"
+        }
+      ],
+      "summary": "DiscoveryAgent 让科学家在多轮自主研究间修改假设，并让审计智能体基于检查点记录追溯论断和重跑分析。作者报告，在其研究审核实验中，科学家配合审计智能体识别的有效错误数量约为纯人工审核的 14 倍。该结果衡量特定实验的纠错数量，不能等同于科研整体准确率提高 14 倍或无需人工验证。",
+      "impact": "相比只评价最终论文，保留可重放研究过程可能帮助发现隐藏的数据和分析错误。",
+      "researchApplications": "研究审计者与研究者的错误相关性、检查点完整性及防篡改证据链。",
+      "relevance": {
+        "level": "direct",
+        "reason": "科研 LLM 应用与多 Agent 安全：同时涉及自主分析、人类监督和审计智能体的可信性。"
+      },
+      "previous": {
+        "ids": [],
+        "note": "未发现本地前序；本条为新披露或首次公告。"
+      }
+    },
+    {
+      "id": "2026-11-18-17",
+      "date": "2026-11-18",
+      "rank": 17,
+      "title": "Inventa 以验证后的共享知识连接研究代理，作者报告更高发现效率",
+      "tags": [
+        "llm-research",
+        "multi-agent",
+        "evaluation"
+      ],
+      "keywords": [
+        "共享记忆污染",
+        "去中心化探索",
+        "候选验证"
+      ],
+      "focus": "多代理研究需要限制未经验证的结论在共享记忆中传播。",
+      "sourceNote": "最早来源 Jana 等人的预印本，UTC 11 月 16 日 20:07 提交；列入 11 月 18 日 arXiv 首次公告。属于作者基准实验，暂无生产或独立复现证据。",
+      "sources": [
+        {
+          "name": "Inventa 原始论文",
+          "url": "https://arxiv.org/abs/2611.21847"
+        },
+        {
+          "name": "arXiv 首次公告日期清单",
+          "url": "https://arxiv.org/list/cs.AI/recent?show=2000"
+        }
+      ],
+      "summary": "Inventa 把科研探索分成多个自主研究单元，单元之间只能通过验证器审核后的共享知识交流，局部协调者可在进展停滞时更换模型或重启搜索。作者在科学规律发现基准 EurekaBench 上报告 73.6% 的成绩，高于对照 CORAL 的 56.2%，并在另一个创意基准中减少了模型调用。成绩依赖所用验证器、任务和基线配置，不能直接证明它能产生同等质量的真实科学发现。",
+      "impact": "共享记忆从任意文本池转为受验证的知识通道，可能缓解重复探索与错误放大。",
+      "researchApplications": "设计共享知识的来源证明、撤回机制和冲突处理，并测试恶意研究单元能否污染全局结论。",
+      "relevance": {
+        "level": "direct",
+        "reason": "多 Agent 安全及科研 LLM：研究单元间共享状态是用户关心的协作信任边界。"
+      },
+      "previous": {
+        "ids": [],
+        "note": "未发现本地前序；本条为新披露或首次公告。"
+      }
+    },
+    {
+      "id": "2026-11-18-18",
+      "date": "2026-11-18",
+      "rank": 18,
+      "title": "RSI-Prime 用 350 条实验轨迹训练模型执行模型训练",
+      "tags": [
+        "llm-research",
+        "coding",
+        "evaluation"
+      ],
+      "keywords": [
+        "训练实验决策",
+        "决策级监督",
+        "递归改进前置能力"
+      ],
+      "focus": "会做训练实验与持续自主提升自身仍是不同能力。",
+      "sourceNote": "最早来源 Zheng 等人的原始预印本，UTC 11 月 17 日 17:55 提交，即北京时间 18 日 01:55。数据与结果来自作者实验，尚未证明开放式递归自我改进。",
+      "sources": [
+        {
+          "name": "RSI-Prime 原始论文",
+          "url": "https://arxiv.org/abs/2611.23138"
+        }
+      ],
+      "summary": "RSI-Prime 提供覆盖 7 类任务的 350 条完整训练实验轨迹，并对实验决策质量做细粒度标注，训练时排除低质量行为的监督。作者报告，使用这些数据训练后的 GLM-5.3 在自主后训练基准 PostTrainBench 上比原模型总体表现相对提高 31.95%。这是相对增幅而非提高 31.95 个百分点，也不表示模型已能无限自我改进。",
+      "impact": "训练实验的决策过程开始成为独立训练目标，可能改变自动科研和后训练平台的设计。",
+      "researchApplications": "审查训练数据的实验泄漏、资源预算一致性及异常实验的停止策略，分离研究规划与集群执行权限。",
+      "relevance": {
+        "level": "direct",
+        "reason": "LLM 训练、后训练和科研应用：聚焦模型如何选择并完成训练实验。"
+      },
+      "previous": {
+        "ids": [],
+        "note": "未发现本地前序；本条为新披露或首次公告。"
+      }
+    },
+    {
+      "id": "2026-11-18-19",
+      "date": "2026-11-18",
+      "rank": 19,
+      "title": "MLPerf 新分析纳入 Agent 强化学习训练，强调软件优化与可比条件",
+      "tags": [
+        "llm-research",
+        "distributed-systems",
+        "evaluation"
+      ],
+      "keywords": [
+        "Agent 后训练",
+        "多节点扩展",
+        "软件效率"
+      ],
+      "focus": "训练性能比较必须固定任务定义和集群条件。",
+      "sourceNote": "最早来源 MLCommons；原始结果于美国 11 月 16 日发布，本期新增分析于 UTC 17 日 21:07 发布，即北京时间 18 日 05:07。结果经过基准规则验证，但不等同于开放科研或安全能力。",
+      "sources": [
+        {
+          "name": "MLCommons 本期分析",
+          "url": "https://mlcommons.org/2026/11/mlperf-training-v6-1-insights/"
+        }
+      ],
+      "summary": "MLCommons 发布 MLPerf Training 6.1 的进一步分析，新增用强化学习训练 Qwen3.5-397B 修复软件项目的工作负载。这个 Agent 后训练项目收到 7 家提交者的 29 份结果，整轮多节点系统占比达到 76%，显示基准正在覆盖更复杂的后训练基础设施。跨轮比较只能用于定义未变的任务；训练完成速度不能直接作为代理真实编程能力或安全性的排名。",
+      "impact": "后训练开始有更系统的基础设施性能度量，有助于区分算法收益与软件、网络和集群规模带来的收益。",
+      "researchApplications": "研究异步执行、分布式轨迹收集、故障恢复及相同资源预算下的后训练效率。",
+      "relevance": {
+        "level": "direct",
+        "reason": "LLM 后训练与分布式系统：同时涉及强化学习训练管线、集群扩展和可复现性能评测。"
+      },
+      "previous": {
+        "ids": [],
+        "note": "有。11 月 16 日先发布本轮结果；本期新增对软件优化、多节点系统与新工作负载的分析，本地无旧结果记录。"
+      }
+    },
+    {
+      "id": "2026-11-18-20",
+      "date": "2026-11-18",
+      "rank": 20,
+      "title": "编码代理连续自测通过后提前停止可省成本，但质量不劣尚未成立",
+      "tags": [
+        "llm-research",
+        "coding",
+        "evaluation"
+      ],
+      "keywords": [
+        "停止策略",
+        "隐藏测试",
+        "成本质量权衡"
+      ],
+      "focus": "自测通过不是任务真正完成的充分证据。",
+      "sourceNote": "最早来源 Yang 等人的预印本，UTC 11 月 17 日 15:07 提交，列入 11 月 18 日 arXiv 首次公告。采用预注册复验，但质量保持结论明确存在不确定性。",
+      "sources": [
+        {
+          "name": "Done, But Still Working 原始论文",
+          "url": "https://arxiv.org/abs/2611.22901"
+        },
+        {
+          "name": "arXiv 首次公告日期清单",
+          "url": "https://arxiv.org/list/cs.AI/recent?show=2000"
+        }
+      ],
+      "summary": "研究者回放约 6,000 次编码代理运行，用隐藏测试评估中途补丁，分析通过自测后继续工作的价值。在预注册复验中，同一补丁连续两次通过自测就停止的规则节省约 23% 成本，但研究未能证明其质量不劣于继续运行。结果覆盖 8 个开放模型和两种执行框架，不能将节省成本直接理解为无损优化。",
+      "impact": "代理成本控制需要同时衡量漏修和后续改坏的风险，统一轮数上限可能不适合不同模型。",
+      "researchApplications": "构建按风险分级的停止规则，使用独立验证器和隐藏测试估计提前退出造成的质量损失。",
+      "relevance": {
+        "level": "direct",
+        "reason": "LLM 评测与单 Agent 可靠性：涉及任务完成判断、自我验证和自动代码交付的证据边界。"
+      },
+      "previous": {
+        "ids": [],
+        "note": "未发现本地前序；本条为新披露或首次公告。"
+      }
+    }
+  ]
+}
