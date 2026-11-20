@@ -325,10 +325,26 @@
         "reason": "分布式系统安全。涉及代理身份、集中控制面与跨版本恢复。"
       },
       "previous": {
-        "ids": [
-          "2026-11-16-06"
-        ],
-        "note": "有。11 月 16 日收录分区部署，本次新增完整修复说明与仍未恢复的功能。"
+        "ids": [],
+        "note": "有。11 月 16 日收录分区部署，本次新增完整修复说明与仍未恢复的功能。",
+        "records": [
+          {
+            "id": "2026-11-16-06",
+            "title": "N-able 开始分区部署 N-central 第三轮热修复",
+            "date": "2026-11-16",
+            "summary": "远程运维平台 N-central 的供应商 N-able 开始向托管客户分批发布 HF3，构建号为 2026.4.1.39。厂商按欧洲、中东和非洲、北美及亚太三个区域安排部署与验证。开始发布时，各环境的完成情况仍需以运维状态为准。",
+            "sources": [
+              {
+                "name": "N-able 部署进展",
+                "url": "https://www.reddit.com/r/Nable/comments/1xxhy15/ncentral_20264_hf3_release_upgrade_phased_rollout/"
+              },
+              {
+                "name": "N-able 版本说明",
+                "url": "https://status.n-able.com/2026/11/16/n-central-2026-4-hf3-release-notes/"
+              }
+            ]
+          }
+        ]
       }
     },
     {
@@ -367,10 +383,26 @@
         "reason": "智能合约和分布式系统安全。涉及扩容网络资金权限及恢复机制。"
       },
       "previous": {
-        "ids": [
-          "2026-11-16-02"
-        ],
-        "note": "有。前一日是暂停提款与链上流出，本次新增恢复、返还及根因说明。"
+        "ids": [],
+        "note": "有。前一日是暂停提款与链上流出，本次新增恢复、返还及根因说明。",
+        "records": [
+          {
+            "id": "2026-11-16-02",
+            "title": "Lighter 因交易账户密钥泄露暂停提款，链上确认一笔约 1,039 万 USDC 提款",
+            "date": "2026-11-16",
+            "summary": "衍生品交易平台 Lighter 在出现异常资金流后暂停提款，运营方将事件归因于一名交易者的 API 密钥泄露，并表示协议和智能合约未受影响。Bitquery 在以太坊追踪到单笔约 1,039 万 USDC 的提款，但其观测无法覆盖 Lighter 扩容网络内的全部交易。该笔可核提款与最终净损失需要分别核对。",
+            "sources": [
+              {
+                "name": "Lighter 首次公告",
+                "url": "https://x.com/Lighter_xyz/status/2122284181422284986"
+              },
+              {
+                "name": "Bitquery 链上调查",
+                "url": "https://bitquery.io/investigations/lighter-hack"
+              }
+            ]
+          }
+        ]
       }
     },
     {
