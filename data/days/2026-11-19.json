@@ -45,10 +45,30 @@
         "reason": "跨链与区块链安全：直接涉及多链资金迁移及不同资产的控制权限。"
       },
       "previous": {
-        "ids": [
-          "2026-11-17-06"
-        ],
-        "note": "有。17日记录攻击关联地址跨链换币，本期新增冻结令；不是新发生同额损失。"
+        "ids": [],
+        "note": "有。17日记录攻击关联地址跨链换币，本期新增冻结令；不是新发生同额损失。",
+        "records": [
+          {
+            "id": "2026-11-17-06",
+            "title": "链上监测称币安攻击关联地址转出 74,880 ETH，开始跨链换币",
+            "date": "2026-11-17",
+            "summary": "Lookonchain 报告称，其标记为币安攻击关联方的地址开始转移以太币，并通过 THORChain 兑换比特币。该监测窗口约三小时，转出量约 74,880 ETH，按报道时价格折合约 1.368 亿美元。转出金额不是新发生的盗窃损失，也不能等同于所有资金已经完成兑换或成功逃避追踪。",
+            "sources": [
+              {
+                "name": "Lookonchain 监测发布页",
+                "url": "https://www.lookonchain.com/index.aspx"
+              },
+              {
+                "name": "深潮转述与时间",
+                "url": "https://www.techflowpost.com/en-US/newsletter/145157"
+              },
+              {
+                "name": "TokenPost 报道",
+                "url": "https://www.tokenpost.com/news/technology/59402"
+              }
+            ]
+          }
+        ]
       }
     },
     {
