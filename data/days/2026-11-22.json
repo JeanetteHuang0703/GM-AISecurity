@@ -1,0 +1,359 @@
+{
+  "schemaVersion": 1,
+  "date": "2026-11-22",
+  "timezone": "Asia/Shanghai",
+  "kind": "daily",
+  "note": "按北京时间2026年11月22日首次公开报道或实质更新归档，区分事件发生、原始通知、采访核验和后续处置。研究范围已检索，未把周末重新汇总的旧论文和20日模型发布当作22日新成果。当前20—22日窗口内缺少21日日报；遵照不补录旧日期的要求，不将缺失日期伪装为已完成或无新闻。",
+  "items": [
+    {
+      "id": "2026-11-22-01",
+      "date": "2026-11-22",
+      "rank": 1,
+      "title": "OpenRouter 下架三家供应商、取消125个端点的零留存资格",
+      "tags": [
+        "ai-security",
+        "agent-security",
+        "supply-chain",
+        "identity"
+      ],
+      "keywords": [
+        "数据零留存",
+        "推理路由链",
+        "代理凭据"
+      ],
+      "focus": "多家独立披露支持供应链隐私风险的判断，但不能把所有端点都认定为已被攻陷。",
+      "sourceNote": "最早研究来自 Dragos 19日；本期新增 OpenRouter 22日公告，元数据为UTC22日00:00。平台处置高可信，泄漏根因分别按供应商声明理解；Together首公告标21日、22日更新，不能把历史数据泄漏说成当天发生。",
+      "sources": [
+        {
+          "name": "OpenRouter 当日处置公告",
+          "url": "https://openrouter.ai/blog/announcements/data-processing-incidents-on-inference-providers/"
+        },
+        {
+          "name": "Dragos 原始研究",
+          "url": "https://www.dragos.com/blog/ai-supply-chain-security-canary-tokens"
+        },
+        {
+          "name": "Together AI 原始事件说明",
+          "url": "https://www.together.ai/blog/security-event-prompt-leakage-for-requests-in-june-and-july-of-2026"
+        }
+      ],
+      "summary": "OpenRouter 因供应商数据处理调查下架三家供应商，并取消125个推理端点的零数据留存资格，后者包含预防性剔除，不代表全部端点遭到入侵。相关供应商 Together AI 披露，编码代理曾把能够读取私有提示词仓库的凭据提交到公开代码库，导致6—7月保存的客户提示词样本被下载。OpenRouter 表示未发现自身被入侵，本次新增的是路由平台的处置与持续核验安排。",
+      "impact": "分析：只设置零留存标志不能证明整条推理路径的隐私；上下文中的凭据可能把提示词暴露扩大为其他服务风险。",
+      "researchApplications": "为推理多跳路由建立可验证的数据去向记录，结合诱饵凭据、最小权限和提交前凭据检查检测泄漏。",
+      "relevance": {
+        "level": "direct",
+        "reason": "单／多 Agent 安全与分布式系统安全：代理上下文、代码提交权限和多组织推理链的信任边界直接相连。"
+      },
+      "previous": {
+        "ids": [],
+        "note": "有外部前序。Dragos 19日研究及供应商此前披露在先；本期新增22日 OpenRouter 下架和资格复核，不补写旧日报。"
+      }
+    },
+    {
+      "id": "2026-11-22-02",
+      "date": "2026-11-22",
+      "rank": 2,
+      "title": "美联社独立消息源确认 FBI 正调查 NCIC 疑似入侵，影响范围仍不明",
+      "tags": [
+        "cybersecurity",
+        "distributed-systems",
+        "identity"
+      ],
+      "keywords": [
+        "跨机构数据",
+        "调查证据",
+        "记录完整性"
+      ],
+      "focus": "本次是疑似入侵调查获得独立报道支持，不能推定记录已被篡改。",
+      "sourceNote": "CNN 美国20日晚首次报道；AP于21日16:33 UTC，即北京22日00:33，引用独立知情人士确认正在调查。报道可信度较高，匿名来源不等于FBI公开发布取证结论；未公布损失规模。",
+      "sources": [
+        {
+          "name": "AP 独立采访报道",
+          "url": "https://apnews.com/article/d066cff87a64a564db0a00172c124972"
+        }
+      ],
+      "summary": "美联社援引知情人士确认，FBI 正调查国家犯罪信息中心 NCIC 的疑似入侵，该系统向各级执法机构共享通缉、失踪人员及犯罪记录等信息。FBI 未公开说明受影响记录数量、攻击入口或是否发生数据篡改，因此没有可靠的量化损失信息。本次新增独立采访确认，不能将其与9月招聘门户泄漏或近期其他系统故障视为同一事件。",
+      "impact": "分析：若共享数据的机密性或完整性受损，影响可能跨机构传播；目前尚不能断言这一后果已发生。",
+      "researchApplications": "研究跨机构查询的来源证明、不可篡改审计及受污染记录的撤销与重新校验。",
+      "relevance": {
+        "level": "indirect",
+        "reason": "分布式系统安全：跨机构共享数据的信任及完整性与研究相邻，但具体受攻击机制尚未公开。"
+      },
+      "previous": {
+        "ids": [],
+        "note": "有外部前序。CNN此前首先报道疑似事件；本期新增AP独立确认。与9月FBIJobs事件区分。"
+      }
+    },
+    {
+      "id": "2026-11-22-03",
+      "date": "2026-11-22",
+      "rank": 3,
+      "title": "Rackspace Spot 披露集群 Secrets 暴露，恢复控制台不等于完成凭据恢复",
+      "tags": [
+        "cybersecurity",
+        "distributed-systems",
+        "identity"
+      ],
+      "keywords": [
+        "云控制面",
+        "集群密钥",
+        "恢复闭环"
+      ],
+      "focus": "撤销平台会话与轮换下游密钥是不同恢复步骤。",
+      "sourceNote": "最早机构为 Rackspace 客户通知；BleepingComputer 21日17:59 EST报道，即北京22日06:59，取得通知原文；Platform9共同开发方另有说明。通知内容可信度高，客户数及实际外流规模未公开。",
+      "sources": [
+        {
+          "name": "取得通知及采访的原始报道",
+          "url": "https://www.bleepingcomputer.com/news/security/rackspace-spot-breach-let-hackers-access-customer-kubernetes-secrets/"
+        },
+        {
+          "name": "服务恢复公开说明",
+          "url": "https://www.reddit.com/r/rxt_spot/comments/1y22b0d/service_fully_restored/"
+        }
+      ],
+      "summary": "Rackspace 披露，攻击者17日利用泄露凭据进入 Spot 云平台，可在部分客户 Kubernetes 集群创建工作负载并读取保存密码、令牌等信息的 Secrets。公司给出的活动窗口约为17日00:20—22:00 UTC，并称已撤销相关令牌、清除非法工作负载及恢复服务，尚未公开受影响客户数。平台恢复不代表下游数据库、代码仓库等凭据已安全，客户仍需轮换相关密钥并回查日志。",
+      "impact": "分析：一个云控制面身份可扩展为多个下游服务的访问，恢复验证应覆盖完整凭据依赖链。",
+      "researchApplications": "构建平台令牌至集群及下游服务的权限图，验证撤销、密钥轮换和日志回溯是否闭环。",
+      "relevance": {
+        "level": "direct",
+        "reason": "分布式系统安全：涉及Kubernetes控制面、工作负载隔离和跨服务凭据传播。"
+      },
+      "previous": {
+        "ids": [],
+        "note": "有事件前序但无本地条目。17日发生入侵、18日确认；本期新增公开客户通知及恢复范围。"
+      }
+    },
+    {
+      "id": "2026-11-22-04",
+      "date": "2026-11-22",
+      "rank": 4,
+      "title": "微软确认 Entra Connect Health 元数据被读取，未发现有效密钥泄漏",
+      "tags": [
+        "cybersecurity",
+        "identity",
+        "distributed-systems"
+      ],
+      "keywords": [
+        "身份监控API",
+        "租户元数据",
+        "定向社工"
+      ],
+      "focus": "元数据暴露与认证凭据失窃应分别评估。",
+      "sourceNote": "最早机构为微软20日客户通知；BleepingComputer 21日13:01 EST，即北京22日02:01，取得微软确认。通知及记者核验可信度高，受影响租户数量和首次利用时间未披露。",
+      "sources": [
+        {
+          "name": "微软确认及通知核验",
+          "url": "https://www.bleepingcomputer.com/news/security/microsoft-entra-connect-health-flaw-exploited-to-steal-tenant-data/"
+        },
+        {
+          "name": "管理员分享的原始通知",
+          "url": "https://www.reddit.com/r/sysadmin/comments/1y1of2u/important_security_notification_regarding/"
+        }
+      ],
+      "summary": "微软确认 Entra Connect Health 漏洞曾被利用，攻击者读取租户管理员邮箱、目录同步状态等监控与配置信息。微软19日完成服务端修复、20日结束调查，称未发现未授权配置更改，也未暴露密码、认证令牌或有效密钥。受影响租户数量仍不明，管理员可查看的检查脚本展示当前值，不能重建当时实际泄露的数据。",
+      "impact": "分析：租户细节可提升定向钓鱼可信度，但不能据此断言攻击者已能登录管理员账户。",
+      "researchApplications": "研究监控API最小数据暴露、陈旧凭据清理和元数据泄漏后的身份风险评估。",
+      "relevance": {
+        "level": "direct",
+        "reason": "分布式系统身份安全：身份监控服务也有独立的授权边界与数据生命周期。"
+      },
+      "previous": {
+        "ids": [],
+        "note": "有外部前序。19日服务端修复、20日完成调查；本期新增公开采访核验及暴露字段范围。"
+      }
+    },
+    {
+      "id": "2026-11-22-05",
+      "date": "2026-11-22",
+      "rank": 5,
+      "title": "Chainflip 将跨链金库损失范围扩大到比特币，提出限期返还方案",
+      "tags": [
+        "blockchain",
+        "cross-chain",
+        "consensus",
+        "wallets"
+      ],
+      "keywords": [
+        "多链金库",
+        "签名密钥",
+        "损失口径修正"
+      ],
+      "focus": "以太坊单链流出不能代表跨链系统总损失。",
+      "sourceNote": "最早机构为 Chainflip Labs 原始返还通知；Crypto.news 22日11:54 UTC报道，即北京时间19:54。资产数量为官方披露，美元总额随估值变化；密钥暴露机制已修复是项目方声明，未见独立完整取证。",
+      "sources": [
+        {
+          "name": "Chainflip 原始返还通知",
+          "url": "https://chainflip.io/return"
+        },
+        {
+          "name": "当日资产范围跟进",
+          "url": "https://crypto.news/chainflip-12m-hack-attacker-10-percent-bounty/"
+        }
+      ],
+      "summary": "Chainflip 披露21日金库事件还涉及约122.86 BTC，使此前主要基于以太坊金库估算的约486万美元损失扩大到约1200万美元。官方同时列出约520.22 ETH及约400.78万美元稳定币，并提出在23日18:38 UTC前返还90%、保留10%作为赏金的方案。本次新增多链资产范围和返还条件，密钥暴露根因与修复效果仍主要依据项目方说法，不能当作资金已追回。",
+      "impact": "分析：需要同时核验各链托管状态及签名权限，赏金提议不代表实际回收或司法结论。",
+      "researchApplications": "研究跨链签名密钥暴露后的金库撤销、资产一致性核验及可验证恢复程序。",
+      "relevance": {
+        "level": "direct",
+        "reason": "跨链、共识与钱包安全：直接涉及验证者相关密钥和多链金库资产控制。"
+      },
+      "previous": {
+        "ids": [],
+        "note": "有外部前序。21日初始报道主要关注以太坊流出；本期新增约122.86 BTC及返还条件，不将两种估算相加。"
+      }
+    },
+    {
+      "id": "2026-11-22-06",
+      "date": "2026-11-22",
+      "rank": 6,
+      "title": "Cleverbridge 客户通知披露支付卡号与安全码被复制",
+      "tags": [
+        "cybersecurity",
+        "supply-chain"
+      ],
+      "keywords": [
+        "支付服务商",
+        "敏感数据",
+        "第三方泄漏"
+      ],
+      "focus": "服务商客户名单不等于实际受影响商户名单。",
+      "sourceNote": "最早机构为 Cleverbridge，4日发现、20日起通知；BleepingComputer 22日10:43 EST，即北京23:43，取得具体字段通知。官方确认卡数据被复制，安全码字段由记者取得的通知核验；数量及入口未知。",
+      "sources": [
+        {
+          "name": "Cleverbridge 原始事件说明",
+          "url": "https://grow.cleverbridge.com/incident-update"
+        },
+        {
+          "name": "当日通知字段核验",
+          "url": "https://www.bleepingcomputer.com/news/security/cleverbridge-warns-hackers-stole-credit-card-numbers-cvvs-in-data-breach/"
+        }
+      ],
+      "summary": "电商与订阅支付服务商 Cleverbridge 确认平台中的支付卡数据被复制，记者取得的客户通知进一步列出卡号、有效期和CVV/CVC安全码。公司4日发现异常、20日起通知客户，但尚未公开受影响人数、商户名单及攻击入口，因此没有可靠的规模数据。本次新增具体泄漏字段的公开核验，公司称并非勒索加密事件。",
+      "impact": "分析：已暴露卡片存在交易欺诈风险；不能把服务商全部知名客户都列为确认受害者。",
+      "researchApplications": "暂无明确AI或区块链专属切入点；可研究支付链路的数据最小化与第三方敏感数据访问审计。",
+      "relevance": {
+        "level": "none",
+        "reason": "暂无明显相关：属于重大支付数据事件，尚无共识、跨链或LLM机制方面的直接证据。"
+      },
+      "previous": {
+        "ids": [],
+        "note": "有外部前序。4日发现、20日开始通知；本期新增卡号及安全码字段核验。"
+      }
+    },
+    {
+      "id": "2026-11-22-07",
+      "date": "2026-11-22",
+      "rank": 7,
+      "title": "CYBER 出现异常铸币和跨链储备流出，交易所暂停充提",
+      "tags": [
+        "blockchain",
+        "cross-chain",
+        "smart-contracts"
+      ],
+      "keywords": [
+        "异常铸币",
+        "桥储备",
+        "交易所隔离"
+      ],
+      "focus": "两链异常需一起核验，不能仅凭现象确定是哪一层被攻破。",
+      "sourceNote": "最早机构 Cyber 原始声明，美国21日13:25 EST，即北京22日02:25；The Block 02:51北京时间报道并核对交易，Upbit亦发通知。链上转账可信度高，约100万美元为出售所得估算，根因和最终损失未定。",
+      "sources": [
+        {
+          "name": "Cyber 原始声明",
+          "url": "https://x.com/BuildOnCyber/status/2124207519581327394"
+        },
+        {
+          "name": "The Block 原始链上核验",
+          "url": "https://www.theblock.co/news/defi/2026-11-21-cyber-investigating-suspected-1-million-bridge-exploit-as-upbit-bithumb-freeze-transfers-444810"
+        },
+        {
+          "name": "Upbit 暂停通知",
+          "url": "https://www.upbit.com/service_center/notice?id=dd25a506-71f1-4124-be21-b6abae7a91d6"
+        }
+      ],
+      "summary": "Cyber 发现 Solana 上约521.3万枚 CYBER 异常铸造，随后同额代币从以太坊桥接储备合约转出，Upbit和Bithumb暂停相关充提。记者依据链上记录估算，多数流出代币被卖出换得约96.8万美元ETH，这不是已经确认的最终总损失。项目仍在调查影响路线，尚不能据此认定底层跨链协议整体失陷。",
+      "impact": "分析：源链铸造与目标链释放之间的授权验证需要整体审计，暂停充提可减少扩散但不等于资产已回收。",
+      "researchApplications": "核验跨链消息来源、铸造与释放守恒约束、重放保护及异常跨链状态的隔离策略。",
+      "relevance": {
+        "level": "direct",
+        "reason": "跨链与智能合约安全：同时涉及源链铸币和目标链锁仓资产释放。"
+      },
+      "previous": {
+        "ids": [],
+        "note": "未发现本地同事件前序；本期首次收录。"
+      }
+    },
+    {
+      "id": "2026-11-22-08",
+      "date": "2026-11-22",
+      "rank": 8,
+      "title": "比特币反弹重回6万美元，24小时约18亿美元杠杆仓位被清算",
+      "tags": [
+        "crypto",
+        "blockchain"
+      ],
+      "keywords": [
+        "杠杆清算",
+        "流动性压力",
+        "时间窗口"
+      ],
+      "focus": "一次反弹不足以确认趋势反转，清算额也不是被盗金额。",
+      "sourceNote": "CoinDesk 21日12:50 EST发布、15:05 EST更新，分别为北京22日01:50和04:05；清算数据来自CoinGlass，价格为报道时点快照。市场统计可信度中高，不能用当前动态页面替换历史窗口。",
+      "sources": [
+        {
+          "name": "CoinDesk 当时市场报道",
+          "url": "https://www.coindesk.com/markets/2026/11/21/bitcoin-bounces-9-from-two-year-low-to-retake-usd60-000-as-traders-eye-monday-s-stock-open"
+        },
+        {
+          "name": "CoinGlass 数据机构",
+          "url": "https://www.coinglass.com/"
+        }
+      ],
+      "summary": "比特币在此前下探约55130美元后，报道时回升至约60300美元，重回6万美元上方。CoinGlass统计显示，截至报道的过去24小时约18亿美元加密资产杠杆仓位被清算，其中约13亿美元为多头。该数字不是22日自然日总额，也不是平台被盗或全市场市值损失。",
+      "impact": "分析：强制平仓可放大短期波动，反弹本身不证明流动性风险已经解除。",
+      "researchApplications": "用历史价格与清算快照对抵押合约、清算激励和预言机延迟开展压力测试。",
+      "relevance": {
+        "level": "indirect",
+        "reason": "智能合约安全：可提供DeFi清算场景参数，但本条统计主要来自整体交易市场。"
+      },
+      "previous": {
+        "ids": [],
+        "note": "有行情前序。此前大幅下跌，本期新增反弹与对应24小时清算快照；无本地同事件条目。"
+      }
+    },
+    {
+      "id": "2026-11-22-09",
+      "date": "2026-11-22",
+      "rank": 9,
+      "title": "Kalshi 面临纽约听证，潜在全国停运仍是争议后果",
+      "tags": [
+        "crypto",
+        "regulation"
+      ],
+      "keywords": [
+        "预测市场",
+        "监管权限",
+        "服务连续性"
+      ],
+      "focus": "申请的禁令、当事人对后果的主张与法院实际裁定应分开。",
+      "sourceNote": "The Block 21日16:17 EST报道，即北京22日05:17，依据庭审和双方律师文件。程序进展可信度较高；全国停运是Kalshi主张，纽约总检察长明确不同意这一描述。",
+      "sources": [
+        {
+          "name": "The Block 法院程序报道",
+          "url": "https://www.theblock.co/news/regulation/2026-11-21-kalshi-faces-monday-hearing-on-new-york-order-it-says-would-shut-down-its-exchange-nationwide-444813"
+        }
+      ],
+      "summary": "美国20日，联邦法官拒绝CFTC再次阻止纽约州执法案件的紧急请求，使针对Kalshi的州法院禁令申请继续推进。听证拟于美国23日11:30 EST举行，即北京时间24日00:30；Kalshi认为相关措辞可能导致全国停运，纽约总检察长则否认以此为目标。本期尚无听证后裁定，不能宣布交易所已被全国禁止经营。",
+      "impact": "分析：管辖争议可能影响预测市场服务连续性和未结算头寸，但实际影响取决于后续裁定。",
+      "researchApplications": "暂无直接AI或区块链技术结论；可作为交易服务中断及未结算状态处理的制度背景。",
+      "relevance": {
+        "level": "none",
+        "reason": "暂无明显相关：这是重大预测市场监管事件，报道没有新的共识、跨链或Agent技术机制。"
+      },
+      "previous": {
+        "ids": [],
+        "note": "有外部前序。纽约州诉讼及CFTC此前紧急申请在先；美国20日再次被拒，本期新增公开程序跟进及后续听证安排。"
+      }
+    }
+  ]
+}

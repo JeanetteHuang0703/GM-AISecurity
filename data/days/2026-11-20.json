@@ -36,10 +36,26 @@
         "reason": "分布式系统安全：认证信任在管理节点、主机和服务之间传播，直接关系到控制面隔离与恢复。"
       },
       "previous": {
-        "ids": [
-          "2026-11-19-04"
-        ],
-        "note": "有。19日收录 vCenter 补丁，本期新增历史攻击链、工具和身份持久化证据。"
+        "ids": [],
+        "note": "有。19日收录 vCenter 补丁，本期新增历史攻击链、工具和身份持久化证据。",
+        "records": [
+          {
+            "id": "2026-11-19-04",
+            "title": "VMware 修复 vCenter 认证绕过及管理组件漏洞",
+            "date": "2026-11-19",
+            "summary": "Broadcom 修复vCenter、SDDC Manager及Windows VMware Tools的5项安全问题。vCenter的CVE-2026-123890允许能访问管理服务的攻击者绕过认证，修复版本包括8.0 U3m、9.0.2.0200和9.1.1.0200。官方明确这不是虚拟机逃逸，其他组件的版本及前置权限需分别检查。",
+            "sources": [
+              {
+                "name": "VMware 官方问答",
+                "url": "https://github.com/vmware/vcf-security-and-compliance-guidelines/blob/main/security-advisories/vmsa-2026-0009/README.md"
+              },
+              {
+                "name": "Broadcom 修复矩阵",
+                "url": "https://knowledge.broadcom.com/external/article/463116"
+              }
+            ]
+          }
+        ]
       }
     },
     {
@@ -190,10 +206,26 @@
         "reason": "暂无明显相关：属于重大行业融资，对现有共识、跨链及 Agent 安全研究没有直接技术结论。"
       },
       "previous": {
-        "ids": [
-          "2026-11-19-11"
-        ],
-        "note": "有。19日收录发行定价，本期新增正式交割、超额配售及公司实际募集额口径。"
+        "ids": [],
+        "note": "有。19日收录发行定价，本期新增正式交割、超额配售及公司实际募集额口径。",
+        "records": [
+          {
+            "id": "2026-11-19-11",
+            "title": "Anthropic IPO 定价每股83美元，发行总额约813亿美元",
+            "date": "2026-11-19",
+            "summary": "Anthropic以每股83美元发行9.8亿股，乘积约813.4亿美元，是未扣费用且包含老股的发行总额。公司出售约9.5635亿股，其余由现有股东出售，因此总额不全部流入公司。公告预计19日开始交易，定价和交易计划不等于已完成交割。",
+            "sources": [
+              {
+                "name": "Anthropic 正式公告",
+                "url": "https://www.anthropic.com/news/anthropic-prices-initial-public-offering"
+              },
+              {
+                "name": "官方发布帖",
+                "url": "https://x.com/AnthropicAI/status/2123196808675405860"
+              }
+            ]
+          }
+        ]
       }
     },
     {
