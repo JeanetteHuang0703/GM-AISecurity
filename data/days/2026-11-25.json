@@ -1,0 +1,1154 @@
+{
+  "schemaVersion": 1,
+  "date": "2026-11-25",
+  "timezone": "Asia/Shanghai",
+  "kind": "daily",
+  "note": "按北京时间2026年11月25日新增披露或有实质更新归档，日界为UTC24日16:00至25日15:59:59。论文均核对25日arXiv首次公告批次，区分初稿提交时间；署日、精确元数据或正文观察存在差异时逐项说明。旧事件保留本期新增内容，未知规模不编造，匿名报道、官方事实、理论与实验结果分开。仅维护23—25日三天普通新闻及共享收藏，不补录旧日期。",
+  "items": [
+    {
+      "id": "2026-11-25-01",
+      "date": "2026-11-25",
+      "rank": 1,
+      "title": "FinCEN 确认部分系统遭未授权访问，部分服务预防性下线",
+      "tags": [
+        "cybersecurity",
+        "distributed-systems",
+        "identity"
+      ],
+      "keywords": [
+        "金融情报系统",
+        "部分停服",
+        "取证边界"
+      ],
+      "focus": "部分系统失陷与整个申报平台瘫痪、核心数据库泄漏是不同判断。",
+      "sourceNote": "最早机构FinCEN，24日美国晚间公开警报；Reuters于25日09:42 EST（北京22:42）引述官员确认。官方警报高可信，攻击者、入口和完整范围未公开；未采用北京26日才出现的后续更新。",
+      "sources": [
+        {
+          "name": "FinCEN 官方实时警报",
+          "url": "https://bsaefiling.fincen.gov/api/prod/alerts/public"
+        },
+        {
+          "name": "Reuters 官员声明",
+          "url": "https://www.streetinsider.com/Reuters/US%2BFinCEN%2Btakes%2Bsome%2Bsystems%2Boffline%2Bafter%2Bcyber%2Bincident%2C%2Bofficial%2Bsays/27399689.html"
+        }
+      ],
+      "summary": "美国金融犯罪执法网络FinCEN确认，网络安全事件导致其一小部分系统被未授权访问，部分系统被预防性下线。官方警报称BSA电子申报网站仍运行、个别服务可能不可用，官员同时称尚无银行保密法或受益所有权数据库被入侵的证据。取证仍在进行，攻击时间、入口和泄漏规模没有可靠公开量化，也没有证据将其与CIA事件归为同一次攻击。",
+      "impact": "分析：金融情报提交链路可能受到影响，但不能把部分服务中断写成所有报告渠道不可用或核心数据库已外泄。",
+      "researchApplications": "研究安全事件中的服务依赖隔离、可信降级通道、敏感数据边界与恢复验证。",
+      "relevance": {
+        "level": "direct",
+        "reason": "分布式系统安全：涉及关键服务在局部入侵后的隔离与可用性保障。"
+      },
+      "previous": {
+        "ids": [],
+        "note": "无本地同事件前序，本期首次收录。"
+      }
+    },
+    {
+      "id": "2026-11-25-02",
+      "date": "2026-11-25",
+      "rank": 2,
+      "title": "报道称 CIA 非机密分析系统遭入侵，工具归因尚未获官方确认",
+      "tags": [
+        "cybersecurity",
+        "security-ai",
+        "distributed-systems"
+      ],
+      "keywords": [
+        "非机密网络",
+        "匿名信源",
+        "攻击归因"
+      ],
+      "focus": "非机密系统被入侵的报道，不等于机密网络或多个机构已被同一攻击者攻破。",
+      "sourceNote": "最早报道来自纽约时报，AP于24日20:29 UTC（北京25日04:29）独立引述匿名知情人士；后续BleepingComputer为25日07:45 UTC。事件报道中等可信，ARTEX工具及其他机构影响属于报道层信息，非官方完整取证。",
+      "sources": [
+        {
+          "name": "AP 原始采访报道",
+          "url": "https://apnews.com/article/bfa6d3b02e3b0e2779dfb613c900bd77"
+        },
+        {
+          "name": "当日跟进报道",
+          "url": "https://www.bleepingcomputer.com/news/security/hackers-reportedly-breached-cia-intelligence-analysis-system/"
+        }
+      ],
+      "summary": "AP援引知情人士称，CIA一套非机密系统遭网络入侵，消息人士称不涉及机密信息且问题已解决。后续报道把系统描述为开源情报分析环境，并提及ARTEX工具，但这些细节尚未得到完整公开取证或机构正式确认。公开材料没有可靠的受影响记录数，亦不能把同期NSA故障和FinCEN事件串成一条已确认攻击链。",
+      "impact": "分析：即使是非机密分析环境，也可能承载敏感工作流；当前证据不足以评估具体损失或自主AI程度。",
+      "researchApplications": "如后续公开执行轨迹，可研究分析Agent的数据访问预算、外部工具隔离及独立审计证据。",
+      "relevance": {
+        "level": "indirect",
+        "reason": "AI辅助攻防与分布式系统风险相关，但技术路径和AI参与程度尚未确认。"
+      },
+      "previous": {
+        "ids": [],
+        "note": "无本地同事件前序，本期首次收录。"
+      }
+    },
+    {
+      "id": "2026-11-25-03",
+      "date": "2026-11-25",
+      "rank": 3,
+      "title": "Radware 客户报告称未认证管理 API 暴露云日志导出凭据",
+      "tags": [
+        "cybersecurity",
+        "identity",
+        "supply-chain",
+        "distributed-systems"
+      ],
+      "keywords": [
+        "供应商管理面",
+        "日志导出密钥",
+        "跨云权限"
+      ],
+      "focus": "防护流量仍正常，不代表供应商保存的客户云凭据没有风险。",
+      "sourceNote": "原始机构Radware，客户根因报告由匿名来源交给BleepingComputer，24日12:49 EST（北京25日01:49）首报。媒体已见报告，但厂商尚无同等详细公开声明，可信度中高，影响范围未独立确认。",
+      "sources": [
+        {
+          "name": "BleepingComputer 获得的根因报告",
+          "url": "https://www.bleepingcomputer.com/news/security/radware-discloses-breach-exposing-customer-cloud-access-keys/"
+        }
+      ],
+      "summary": "Radware的客户报告称，19日有未授权方访问了暴露于公网、无需认证的内部Cloud WAF管理API，可能读取客户联系信息及部分日志导出凭据。公司约在初次访问10小时后发现事件，称已阻断入口并轮换内部凭据，但客户保存在服务中的AWS S3、Azure Blob或SFTP导出密钥仍需分别更换。报告称未发现客户流量访问或安全策略篡改，受影响客户数量和凭据是否全部被滥用尚未确定。",
+      "impact": "分析：管理面秘密可能把供应商事故扩散至客户自有存储；服务可用性指标不足以证明保密性安全。",
+      "researchApplications": "建立供应商到客户存储的权限传播图，验证导出密钥最小权限和跨云批量撤销。",
+      "relevance": {
+        "level": "direct",
+        "reason": "分布式系统与身份安全：第三方控制面持有可跨越云服务边界的凭据。"
+      },
+      "previous": {
+        "ids": [],
+        "note": "无本地同事件前序，本期首次收录。"
+      }
+    },
+    {
+      "id": "2026-11-25-04",
+      "date": "2026-11-25",
+      "rank": 4,
+      "title": "CISA 新增 Drupal、Optimizely 与 AntiCsrf 三项已利用漏洞",
+      "tags": [
+        "cybersecurity",
+        "supply-chain",
+        "security-ai"
+      ],
+      "keywords": [
+        "安装器劫持",
+        "网页脚本供应链",
+        "失维护组件"
+      ],
+      "focus": "官方利用确认要求同时检查应用入口和供应链组件，而非仅看补丁是否安装。",
+      "sourceNote": "最早确认机构CISA；目录日期24日，官方同步提交24日19:58 UTC，即北京25日03:58。目录及Drupal原始公告高可信，三项漏洞的完整受害规模未公开。",
+      "sources": [
+        {
+          "name": "CISA 官方目录历史提交",
+          "url": "https://github.com/cisagov/kev-data/commit/02cf8df0c1e2a06cc12842214d3c5e9b0ece97d9"
+        },
+        {
+          "name": "Drupal 原始公告及利用确认",
+          "url": "https://www.drupal.org/sa-core-2026-017"
+        },
+        {
+          "name": "AntiCsrf 原始披露",
+          "url": "https://github.com/mandiant/Vulnerability-Disclosures/blob/master/2026/MNDT-2026-0048.md"
+        }
+      ],
+      "summary": "CISA将Drupal Core、Optimizely Web Experimentation和Idunno AntiCsrf共三项漏洞加入已在真实攻击中利用的目录。它们分别涉及匿名访问安装器接管网站、冒用客户后修改并分发网页JavaScript，以及旧组件反序列化导致代码执行；Drupal漏洞由Anthropic OSS Scanner发现，但利用者是否用AI没有据此确认。目录给适用美国联邦机构的处置期限为27日，并要求取证分诊，不能把该期限写成所有企业的共同法律义务。",
+      "impact": "分析：新增确认提高修补和入侵排查优先级，停止维护的组件还需要替换路径。",
+      "researchApplications": "研究安装后入口封闭、账号注册信任边界及第三方脚本的来源与完整性验证。",
+      "relevance": {
+        "level": "direct",
+        "reason": "安全AI与分布式供应链安全：涉及AI发现漏洞，以及共享组件或脚本分发放大影响。"
+      },
+      "previous": {
+        "ids": [],
+        "note": "有外部前序：Drupal18日修补、后确认19日起已有利用，Optimizely此前已复盘。本期新增CISA目录确认；与24日MONAI和MailAssure批次不同。"
+      }
+    },
+    {
+      "id": "2026-11-25-05",
+      "date": "2026-11-25",
+      "rank": 5,
+      "title": "微软确认 NTLM 签名加固与部分第三方登录不兼容",
+      "tags": [
+        "cybersecurity",
+        "identity",
+        "distributed-systems"
+      ],
+      "keywords": [
+        "协议兼容",
+        "真实签名",
+        "安全降级"
+      ],
+      "focus": "恢复登录不能简单等同安全修复，兼容回退可能撤掉新增保护。",
+      "sourceNote": "最早机构Microsoft，KB5135557原始日期10日，后新增已知兼容问题；25日09:02 UTC（北京17:02）报道核验。官方协议与故障说明高可信，未公开受影响设备总量。",
+      "sources": [
+        {
+          "name": "Microsoft 原始签名加固说明",
+          "url": "https://support.microsoft.com/en-us/servicing/os/windows/docs/2026/11/kb5135557-ntlm-signing-security-improvements"
+        },
+        {
+          "name": "当日兼容问题报道",
+          "url": "https://www.bleepingcomputer.com/news/microsoft/microsoft-confirms-authentication-issues-after-november-updates/"
+        }
+      ],
+      "summary": "微软确认，修复远程代码执行风险的11月安全更新会暴露部分NTLM代理、单点登录和应用打包产品的协议实现问题，造成认证失败。10日启动的第一阶段让客户端默认提供真实签名，部分中间设备却声明支持相关字段后返回空信息；第二阶段计划于2027年5月让服务器默认要求签名。官方仅提供临时兼容路径，长期仍需更新不兼容产品或采用合适认证配置，未公布故障设备数量。",
+      "impact": "分析：安全协议升级需要验证整条认证链，临时降低签名要求会产生新的风险窗口。",
+      "researchApplications": "对认证代理实施差分协议测试，研究签名协商不变量和可审计的兼容例外生命周期。",
+      "relevance": {
+        "level": "direct",
+        "reason": "分布式系统身份安全：认证双方与中间代理对协议状态的理解必须一致。"
+      },
+      "previous": {
+        "ids": [],
+        "note": "有外部前序：10日补丁与分阶段加固；本期新增已知兼容问题核验，不是新发现的另一项漏洞。"
+      }
+    },
+    {
+      "id": "2026-11-25-06",
+      "date": "2026-11-25",
+      "rank": 6,
+      "title": "InfraTrust 月度样本：38份含已利用漏洞的公告中33份涉及捆绑组件",
+      "tags": [
+        "cybersecurity",
+        "supply-chain",
+        "distributed-systems"
+      ],
+      "keywords": [
+        "上游补丁",
+        "设备厂商延迟",
+        "组件可见性"
+      ],
+      "focus": "上游已有补丁，不代表使用该组件的设备固件已完成修补。",
+      "sourceNote": "最早来源InfraTrust，Paul Asadoorian与Chase Snyder的25日报告；BleepingComputer于25日15:00 UTC（北京23:00）报道。统计口径可核验，是有限厂商与时间窗样本，非全行业普查。",
+      "sources": [
+        {
+          "name": "InfraTrust 原始月报",
+          "url": "https://pulse.infra-trust.org/november-2026/"
+        },
+        {
+          "name": "当日报道核对",
+          "url": "https://www.bleepingcomputer.com/news/security/infratrust-warns-of-exploited-supply-chain-flaws-in-network-appliances/"
+        }
+      ],
+      "summary": "InfraTrust统计10月15日至11月19日23家基础设施厂商的373份安全公告，其中38份包含CISA已利用目录中的漏洞。33份此类公告涉及产品捆绑的第三方组件，而非厂商自有代码，说明企业还须等待设备厂商将上游修补整合进固件。该比例衡量公告而不是漏洞数、设备数或受害者比例，不能直接推广为全行业长期趋势。",
+      "impact": "分析：采购与运维需要跟踪组件到设备版本的补丁传递链，漏洞扫描结果之外还存在修补交付延迟。",
+      "researchApplications": "研究SBOM到固件版本的映射、补丁传播时延和跨厂商共同组件的系统性故障。",
+      "relevance": {
+        "level": "direct",
+        "reason": "分布式系统与供应链安全：同一组件可同时影响多类基础设施的管理面。"
+      },
+      "previous": {
+        "ids": [],
+        "note": "无本地同事件前序，本期首次收录。"
+      }
+    },
+    {
+      "id": "2026-11-25-07",
+      "date": "2026-11-25",
+      "rank": 7,
+      "title": "OpenAI 蛋白设计研究给出湿实验结果：322项候选中35项显示结合",
+      "tags": [
+        "llm-research",
+        "evaluation"
+      ],
+      "keywords": [
+        "科研推理",
+        "实验验证",
+        "专用模型协作"
+      ],
+      "focus": "通用模型具备部分设计能力，不等于已独立完成药物研发。",
+      "sourceNote": "最早来源OpenAI与Onava预印本，原文署24日；官方发布传播为24日21:02 UTC，即北京25日05:02。实验为合作团队报告，未视为独立复现；预发布GPT-6.2与未公开研究模型的结果分别看待。",
+      "sources": [
+        {
+          "name": "OpenAI 原始研究说明",
+          "url": "https://openai.com/index/gpt-6-models-demonstrate-intrinsic-protein-design-capabilities/"
+        },
+        {
+          "name": "原始预印本",
+          "url": "https://cdn.openai.com/pdf/gpt-6-a-universal-foundation-model-for-protein-biology.pdf"
+        }
+      ],
+      "summary": "OpenAI与Onava报告，预发布GPT-6.2可用推理和代码提出蛋白三维骨架，随后由专用模型补充序列并筛选实验候选。针对5个目标测试的322项候选中，35项显示与预定目标结合，比例为10.9%；这不是单靠通用模型完成的全流程成功率。结合证据不等于具备预定生物功能、治疗效果或临床安全，其他内部模型的计算基准也不能混入这批湿实验结果。",
+      "impact": "分析：通用LLM科研能力出现可实验核验的进展，但工具贡献、筛选条件和成功定义必须分开报告。",
+      "researchApplications": "设计科研Agent的工具贡献消融、候选筛选与实验结果的可追溯评测，检验计算预测到实验证据的落差。",
+      "relevance": {
+        "level": "direct",
+        "reason": "LLM科研应用与能力评测：直接涉及通用模型执行科学设计及其证据边界。"
+      },
+      "previous": {
+        "ids": [],
+        "note": "无本地同事件前序，本期首次收录。"
+      }
+    },
+    {
+      "id": "2026-11-25-08",
+      "date": "2026-11-25",
+      "rank": 8,
+      "title": "Google Workspace 推出受治理的 MCP、CLI 与 Agent 访问约束",
+      "tags": [
+        "agent-security",
+        "identity",
+        "multi-agent"
+      ],
+      "keywords": [
+        "专用身份",
+        "请求级策略",
+        "分阶段执行"
+      ],
+      "focus": "Agent治理从提示约束延伸到平台身份、数据策略和撤销机制。",
+      "sourceNote": "最早机构Google Workspace；正文署24日，页面结构化日期25日，具体发布元数据为25日10:00 +0900，即北京09:00。按该精确元数据归档并保留日期差异；功能与政策属官方说明，安全效果尚无公开攻击基准。",
+      "sources": [
+        {
+          "name": "Google Workspace 原始公告",
+          "url": "https://workspace.google.com/blog/product-announcements/built-for-trust-and-control-new-ai-agent-protections-and-developer-tools-in-google-workspace"
+        }
+      ],
+      "summary": "Google宣布Workspace托管MCP服务器和CLI正式可用，并要求外部Agent使用专用OAuth身份、最小权限及符合管理员规则的敏感动作确认。新条款要求Agent通过受治理入口访问，技术执行计划于2027年2月1日开始，而部分限时授权、用户活动查看和访问限制仍标为即将推出。公告没有给出攻击阻断率，不能把所有未来控制都当作当天已全面生效。",
+      "impact": "分析：平台侧身份、撤销和数据策略可能减少Agent绕过组织控制的空间，分阶段能力仍需逐项验证。",
+      "researchApplications": "验证工具入口统一治理、身份链传播、敏感操作确认及撤销后的在途请求处理。",
+      "relevance": {
+        "level": "direct",
+        "reason": "单与多Agent安全：平台提供代理身份、工具权限和跨服务数据访问边界。"
+      },
+      "previous": {
+        "ids": [],
+        "note": "无本地同事件前序，本期首次收录。"
+      }
+    },
+    {
+      "id": "2026-11-25-09",
+      "date": "2026-11-25",
+      "rank": 9,
+      "title": "DeepMind 发布 HFE：衡量简单任务的稳定可靠性",
+      "tags": [
+        "llm-research",
+        "evaluation",
+        "agent-security"
+      ],
+      "keywords": [
+        "可靠性底线",
+        "问题变体",
+        "一次成功偏差"
+      ],
+      "focus": "高难题能力上限，不能替代日常任务始终正确的证据。",
+      "sourceNote": "最早机构Google DeepMind，页面署24日，元数据为24日19:30 UTC，即北京25日03:30。基准定义来自官方，模型表现与排行榜仍需独立复核。",
+      "sources": [
+        {
+          "name": "Google DeepMind 原始公告",
+          "url": "https://blog.google/innovation-and-ai/models-and-research/google-deepmind/humanitys-first-exam/"
+        },
+        {
+          "name": "HFE 技术报告",
+          "url": "https://storage.googleapis.com/deepmind-media/papers/hfe_tech_paper.pdf"
+        }
+      ],
+      "summary": "DeepMind推出Humanity’s First Exam，专门检验模型能否持续正确回答简单日常问题及其小幅变体。首版包含544道文本和图像提示、覆盖20类基础能力，把稳定表现与偶然解出一次区分开。它是基础可靠性评测，不直接证明长任务Agent的安全性，也不能由单个总分推断所有能力都已可靠。",
+      "impact": "分析：模型选择与部署评估需要同时观察能力上限和基础任务失误，避免只依赖高难题排行榜。",
+      "researchApplications": "把轻微输入变体、重复运行稳定性和错误恢复加入Agent基准，并研究跨模型共享失误。",
+      "relevance": {
+        "level": "direct",
+        "reason": "LLM能力与评测、单Agent可靠性：直接关系模型在普通任务上的失误边界。"
+      },
+      "previous": {
+        "ids": [],
+        "note": "无本地同事件前序，本期首次收录。"
+      }
+    },
+    {
+      "id": "2026-11-25-10",
+      "date": "2026-11-25",
+      "rank": 10,
+      "title": "Bithumb 扩大10月泄漏范围：新增证件、银行与钱包地址信息",
+      "tags": [
+        "crypto",
+        "cybersecurity",
+        "identity"
+      ],
+      "keywords": [
+        "办公系统",
+        "身份与链上关联",
+        "调查范围修订"
+      ],
+      "focus": "交易系统未被直接攻破，不代表关联客户资料没有风险。",
+      "sourceNote": "最早机构Bithumb，25日韩国时间更新；Yonhap于25日20:17 KST（北京19:17）报道，其他当日报道补充公告细节。公司披露及通讯社核对较可信，修订后的总人数未给出。",
+      "sources": [
+        {
+          "name": "Yonhap 原始采访报道",
+          "url": "https://en.yna.co.kr/view/AEN20261125010400320"
+        },
+        {
+          "name": "含公告细节的当日报道",
+          "url": "https://crypto.news/bithumb-confirms-data-breach-information-exposure/"
+        }
+      ],
+      "summary": "Bithumb重审10月内部办公系统入侵后，确认涉及更多个人及更多数据类别，包括护照、银行账户和加密钱包地址，具体字段因人而异。跟进披露把访问窗口扩展为10月12日至27日约15天，而非最初描述的短时访问；此前约7100人的数字不是修订后总量。公司称尚无交易服务或客户数据库直接失陷证据，不能把个人资料事件写成已确认加密资产被盗。",
+      "impact": "分析：身份资料与钱包地址结合可能增强定向诈骗能力，办公系统也应纳入交易平台安全边界。",
+      "researchApplications": "研究链上地址与身份数据关联的隐私风险、办公系统权限隔离及数据暴露后的账户防护。",
+      "relevance": {
+        "level": "direct",
+        "reason": "区块链隐私与身份安全：个人信息可连接到链上资产活动，扩大诈骗和归因风险。"
+      },
+      "previous": {
+        "ids": [],
+        "note": "有外部前序：10月29日首告。本期新增15天访问窗口、更多字段与受影响人员，未把旧的约7100人数当作最新统计。"
+      }
+    },
+    {
+      "id": "2026-11-25-11",
+      "date": "2026-11-25",
+      "rank": 11,
+      "title": "Bullpen 跟进：约257万USDC转为约42 BTC，测试账户损失总额仍不明",
+      "tags": [
+        "crypto",
+        "wallets",
+        "cross-chain",
+        "identity"
+      ],
+      "keywords": [
+        "导入私钥",
+        "跨链换币",
+        "统计分母"
+      ],
+      "focus": "某条资金路径的追踪金额，不等于所有受影响账户的最终损失。",
+      "sourceNote": "最早事件来源Bullpen与用户24日声明；Bitquery原始追踪含24日17:49 UTC之后及25日的链上观察。页面静态元数据仍标24日12:00，不能据此认定精确更新时间；Match Systems于25日核对19个早期测试账户范围。",
+      "sources": [
+        {
+          "name": "Bitquery 原始链上追踪",
+          "url": "https://www.bitquery.io/investigations/ansem-solana-wallet-drain"
+        },
+        {
+          "name": "Bullpen 原始事件通知",
+          "url": "https://x.com/BullpenFi/status/2125267130870272331"
+        },
+        {
+          "name": "25日范围核对",
+          "url": "https://matchsystems.com/incidents/bullpen-reports-unauthorized-transfers-from-early-beta-accounts"
+        }
+      ],
+      "summary": "Bullpen称未授权转出影响18至19个早期测试账户，已下线相关服务，最终跨账户损失尚未公布。Bitquery追踪到主要来自Ansem钱包的约257万USDC，经Arbitrum等路径汇集后，从24日17:49 UTC即北京25日01:49起换成约42 BTC，正文还记录了25日其他账户的后续转出。链上记录支持资金路径，但本身不能证明私钥最初怎样泄露，也不能把257万美元当作所有账户的确定总损失。",
+      "impact": "分析：集中导入密钥可能让旧测试服务保留长期资产风险；跨链换币会改变可冻结窗口。",
+      "researchApplications": "建立密钥生命周期清单、旧服务退出检查及跨链资金路径与冻结时间窗口模型。",
+      "relevance": {
+        "level": "direct",
+        "reason": "钱包与跨链安全：涉及导入私钥、不同链的资产转移及恢复限制。"
+      },
+      "previous": {
+        "ids": [],
+        "note": "有：24日初始转出及平台声明，本地无保留条目。本期聚焦北京25日发生的换币路径和后续资金观察，不补造24日日报记录。"
+      }
+    },
+    {
+      "id": "2026-11-25-12",
+      "date": "2026-11-25",
+      "rank": 12,
+      "title": "美国法官据报延长 Binance 相关 USDC 地址限制，非最终没收",
+      "tags": [
+        "crypto",
+        "stablecoins",
+        "regulation"
+      ],
+      "keywords": [
+        "地址冻结",
+        "临时司法保全",
+        "资产处置阶段"
+      ],
+      "focus": "维持区块名单、法院没收与向受害者归还资产是不同阶段。",
+      "sourceNote": "最早来源为法院文书；MLex于24日21:25 GMT（北京25日05:25）刊载官方文书摘要。当前核验到摘要及DOJ背景，未独立读取完整法院命令，细节可信度中等。",
+      "sources": [
+        {
+          "name": "MLex 法院文书摘要",
+          "url": "https://www.law360.com/mlex/financial-crime/articles/2559472/circle-ordered-by-us-judge-to-maintain-blocklist-in-binance-hack-forfeiture-case"
+        },
+        {
+          "name": "DOJ 原始案件背景",
+          "url": "https://www.justice.gov/usao-dc/pr/united-states-files-action-recover-more-1-billion-cryptocurrency-assets-related-north"
+        }
+      ],
+      "summary": "据MLex法院文书摘要，美国法官延长涉及Binance被盗加密资产案件的临时限制，并要求Circle维持有关地址的区块名单至2027年1月29日。案件涉及超过11亿美元加密资产，但维持限制并不等于法院已经最终没收或将同额资金归还受害者。该条以文书摘要为证据，完整命令适用的地址和法律条件仍需进一步核对。",
+      "impact": "分析：发行人冻结功能与司法程序共同影响资产可处置性，链上转账最终性不等于法律层面可自由使用。",
+      "researchApplications": "研究跨链稳定币冻结权限、地址状态一致性及保全到最终处置之间的审计证据。",
+      "relevance": {
+        "level": "indirect",
+        "reason": "区块链及跨链资产治理：涉及发行人控制与司法限制，但没有新增共识机制。"
+      },
+      "previous": {
+        "ids": [],
+        "note": "有外部前序：10月Binance被盗及23日DOJ没收诉讼。本期新增临时限制延长，不将此前冻结、扣押或归还金额重新相加。"
+      }
+    },
+    {
+      "id": "2026-11-25-13",
+      "date": "2026-11-25",
+      "rank": 13,
+      "title": "EBA 报告提示稳定币进入 DeFi 的消费者风险与规则套利",
+      "tags": [
+        "crypto",
+        "stablecoins",
+        "smart-contracts",
+        "regulation"
+      ],
+      "keywords": [
+        "借贷接入",
+        "规则套利",
+        "AI界面"
+      ],
+      "focus": "降低DeFi入口门槛，不等于相关稳定币和收益安排已获得同等监管保障。",
+      "sourceNote": "最早机构欧洲银行管理局EBA，25日官方报告与通告；未披露精确时区时间，按官方发布日期保留不确定性。机构结论高可信，属于研究与建议而非当天新增禁令。",
+      "sources": [
+        {
+          "name": "EBA 原始报告发布说明",
+          "url": "https://www.eba.europa.eu/publications-and-media/press-releases/eba-examines-use-stablecoins-including-emts-decentralised-finance"
+        }
+      ],
+      "summary": "EBA报告分析支付型稳定币等资产在DeFi借贷、交易、抵押和结算中的使用，称交易服务商与AI应用正让用户更容易接入。报告关注通过DeFi结构绕过MiCA发行和付息要求的可能性，并建议欧委会评估连接DeFi的服务商是否需要额外要求。通告没有给出统一损失规模或新实施期限，这是风险分析和监管建议，不是已经生效的新规则。",
+      "impact": "分析：接入界面与底层协议之间的责任边界可能受到更多审视，尤其是收益描述与资产可赎回性。",
+      "researchApplications": "研究Agent发起DeFi借贷时的权限、收益来源解释、风险披露与合约状态验证。",
+      "relevance": {
+        "level": "indirect",
+        "reason": "智能合约应用与Agent金融操作：涉及DeFi接入约束，但不是新的合约漏洞研究。"
+      },
+      "previous": {
+        "ids": [],
+        "note": "无本地同事件前序，本期首次收录。"
+      }
+    },
+    {
+      "id": "2026-11-25-14",
+      "date": "2026-11-25",
+      "rank": 14,
+      "title": "ShinyHunters 新站签名可验证，但旧私钥不能证明原团队回归",
+      "tags": [
+        "cybersecurity",
+        "identity"
+      ],
+      "keywords": [
+        "撤销密钥",
+        "签名验证",
+        "身份连续性"
+      ],
+      "focus": "能验证历史私钥持有，不等于能确认当前操作者身份。",
+      "sourceNote": "最早声明来自23日新泄漏站；BleepingComputer于24日11:30 EST（北京25日00:30）公布独立签名核验。签名事实较可信，犯罪团伙身份及被盗数据真实性未据此确认。",
+      "sources": [
+        {
+          "name": "BleepingComputer 原始核验",
+          "url": "https://www.bleepingcomputer.com/news/security/shinyhunters-resurfaces-after-fbi-arrests-uses-old-pgp-keys-as-proof/"
+        }
+      ],
+      "summary": "新站声称ShinyHunters回归，并用两把2020年历史PGP密钥签署验证消息，媒体确认签名有效。两把密钥已在2026年3月被撤销，且传闻曾由多人持有，11月消息也没有使用3月替换密钥签名。因此证据只能证明现操作者持有旧私钥，不能证明原团队身份连续，也不能验证其所有勒索声明。",
+      "impact": "分析：身份验证需要结合撤销状态、时序和授权链，历史签名不能自动恢复已失效信任。",
+      "researchApplications": "把密钥撤销、轮换与身份连续性纳入Agent签名和跨链消息验证的威胁模型。",
+      "relevance": {
+        "level": "indirect",
+        "reason": "密码身份与密钥治理可供区块链、Agent身份研究借鉴，但事件本身不是区块链漏洞。"
+      },
+      "previous": {
+        "ids": [],
+        "note": "有外部前序：9—10月逮捕、旧站离线及3月换钥。本期新增对新站签名的核验与证据限制。"
+      }
+    },
+    {
+      "id": "2026-11-25-15",
+      "date": "2026-11-25",
+      "rank": 15,
+      "title": "Inception 钓鱼活动跟进：域名证据与团伙归属说法存在边界",
+      "tags": [
+        "cybersecurity",
+        "identity"
+      ],
+      "keywords": [
+        "电话钓鱼",
+        "单点登录",
+        "团伙归属"
+      ],
+      "focus": "相似基础设施和勒索品牌关联，不等于每家列名机构均确认被攻破。",
+      "sourceNote": "最早技术报告为ReversingLabs与Okta于23日发布；BleepingComputer于24日15:21 EST（北京25日04:21）跟进并记录团伙否认关联的回应。域名样本较可信，受害名单和组织归属仍需分别确认。",
+      "sources": [
+        {
+          "name": "ReversingLabs 原始研究",
+          "url": "https://www.reversinglabs.com/blog/threat-researchers-notebook-sso-vishing-campaign-associated-with-emerging-inception-extortion-group"
+        },
+        {
+          "name": "Okta 原始研判",
+          "url": "https://www.okta.com/en-se/blog/threat-intelligence/former_shinyhunters_cluster_moves_to_new_inception_site/"
+        },
+        {
+          "name": "当日回应跟进",
+          "url": "https://www.bleepingcomputer.com/news/security/new-inception-extortion-gang-launches-large-scale-vishing-campaign/"
+        }
+      ],
+      "summary": "研究人员追踪到以电话社工和仿冒SSO页面窃取凭据的活动，ReversingLabs确认21个恶意域名，而Inception站点声称的7家受害机构尚未公开确认泄漏。Okta从基础设施和活动连续性推断相关入侵集群转向新勒索品牌，但团伙在当日跟进报道中否认旧组织关联。域名确认、品牌归属与真正受害是不同证据层，不能混作七家企业已失陷的结论。",
+      "impact": "分析：身份层攻击可绕开传统邮件入口，帮助台验证与抗钓鱼认证仍是关键。",
+      "researchApplications": "研究人工审批、身份提供商和Agent代办流程中的来源验证，区分活动聚类与实名归因。",
+      "relevance": {
+        "level": "indirect",
+        "reason": "分布式身份安全相关；没有公开证据表明该活动由LLM自主执行。"
+      },
+      "previous": {
+        "ids": [],
+        "note": "有23日研究与更早活动，本期新增团伙回应及核验边界；不与新ShinyHunters站点自动认定为同一操作者。"
+      }
+    },
+    {
+      "id": "2026-11-25-16",
+      "date": "2026-11-25",
+      "rank": 16,
+      "title": "KEPCO 推出泄漏后保护计划，保险上限不等于已确认损失",
+      "tags": [
+        "cybersecurity",
+        "identity"
+      ],
+      "keywords": [
+        "身份保护",
+        "二次诈骗",
+        "补偿上限"
+      ],
+      "focus": "泄漏后的身份与支付防护是应对措施，不是对根因或总损失的确认。",
+      "sourceNote": "最早机构韩国电力KEPCO，25日措施由Aju Press于09:32 KST（北京08:32）报道。措施说明较可信，未据此确认最终受害者总数或攻击者。",
+      "sources": [
+        {
+          "name": "Aju Press 原始措施报道",
+          "url": "https://www.ajupress.com/view/20261125093270307"
+        }
+      ],
+      "summary": "KEPCO宣布为收到泄漏通知的客户提供身份冒用防护及金融诈骗补偿保险，作为此前数据事件的后续措施。保障最高为1000万韩元、服务使用期为注册后一年，公司已与12家发卡机构讨论异常交易监测，但这些数字不是确认损失金额或赔付人数。攻击根因与最终去重后的受影响人数仍不能从该计划推定。",
+      "impact": "分析：事件恢复需要覆盖身份和支付层的二次损害，不能只以系统恢复运行作为结束。",
+      "researchApplications": "可研究跨机构异常交易信号协作与隐私保护；本次没有新增AI或区块链技术机制。",
+      "relevance": {
+        "level": "none",
+        "reason": "暂无明显相关：本期主要是泄漏后的客户保护安排，未公布可研究的具体攻击机制。"
+      },
+      "previous": {
+        "ids": [],
+        "note": "有20—23日泄漏确认与调查前序；本期新增25日客户保护计划，不把旧泄漏当成新入侵。"
+      }
+    },
+    {
+      "id": "2026-11-25-17",
+      "date": "2026-11-25",
+      "rank": 17,
+      "title": "SBI、SMFG 与 Solana Foundation 的合资业务开始全面运营",
+      "tags": [
+        "crypto",
+        "blockchain",
+        "stablecoins"
+      ],
+      "keywords": [
+        "公链金融",
+        "业务启动",
+        "计划与落地区分"
+      ],
+      "focus": "成立并运营业务主体，不等于相关支付和代币化产品已全面上线。",
+      "sourceNote": "最早机构SBI Holdings、SMFG、Solana Foundation，25日联合公告，日本当地日期明确，未给精确小时。官方合作事实高可信，产品规模及上线计划未量化。",
+      "sources": [
+        {
+          "name": "SBI 原始联合公告",
+          "url": "https://www.sbigroup.co.jp/english/news/pdf/2026/1125_a_en.pdf"
+        },
+        {
+          "name": "SMFG 同步官方公告",
+          "url": "https://www.smfg.co.jp/news_e/pdf/e20261125_01.pdf"
+        }
+      ],
+      "summary": "SBI Holdings、SMFG和Solana Foundation宣布完成新合资架构协议，原SBI R3 Japan以SBI Solana Global名称开始全面运营。业务方向包括稳定币付款、金融与现实资产代币化以及链上资产管理，但公告没有给出实际交易规模、资本金额或各产品全面上线日期。不能把合作方整体资产规模等同该合资公司的链上资产。",
+      "impact": "分析：大型金融机构与公链合作进一步进入运营阶段，实际采用程度仍需产品和交易数据验证。",
+      "researchApplications": "后续可研究托管权限、链上结算最终性与传统业务状态的一致性，目前暂无新增协议结果。",
+      "relevance": {
+        "level": "indirect",
+        "reason": "区块链金融基础设施应用相关，但公告没有新的共识、合约或跨链安全机制。"
+      },
+      "previous": {
+        "ids": [],
+        "note": "有此前合作及公司架构前序，本期新增合资架构完成并正式运营。"
+      }
+    },
+    {
+      "id": "2026-11-25-18",
+      "date": "2026-11-25",
+      "rank": 18,
+      "title": "Pearl：TEE 与2f+1副本仍不能在部分同步下保证两类公平排序",
+      "tags": [
+        "consensus",
+        "blockchain",
+        "distributed-systems"
+      ],
+      "keywords": [
+        "公平排序",
+        "可信执行",
+        "同步假设"
+      ],
+      "focus": "减少副本的安全收益，不能自动覆盖交易排序公平性。",
+      "sourceNote": "最早来源为论文作者团队的arXiv原文，核对为11月25日首次公告批次；初稿提交日可能早于公告日，以版本史为准。实验、原型与证明均按作者报告，未视为独立复现或现实部署保证。",
+      "sources": [
+        {
+          "name": "arXiv 原始论文",
+          "url": "https://arxiv.org/abs/2611.31468"
+        }
+      ],
+      "summary": "Pearl证明，在部分同步网络中，即使副本配有可信执行环境TEE，2f+1个副本仍不能实现论文规定的两类强公平排序性质，其中f是可容忍恶意副本数。攻击者可控制交易进入TEE的时机来影响排序信号，作者改在同步网络下使用可信时间戳或相对序号构建协议。结论依赖明确公平性和网络模型，不能概括成所有TEE共识都不安全，也不是已部署区块链的现实失陷。",
+      "impact": "分析：共识安全、性能和公平排序需要分开证明，TEE并未消除主机调度与网络时序影响。",
+      "researchApplications": "比较MEV排序目标、可信时钟和同步界，研究TEE入口调度控制及网络假设越界的回退。",
+      "relevance": {
+        "level": "direct",
+        "reason": "区块链共识与分布式系统安全：直接涉及公平排序下的副本下界与信任假设。"
+      },
+      "previous": {
+        "ids": [],
+        "note": "无本地同事件前序，本期首次收录。"
+      }
+    },
+    {
+      "id": "2026-11-25-19",
+      "date": "2026-11-25",
+      "rank": 19,
+      "title": "上下文压缩可把不可信资料改写成授权依据",
+      "tags": [
+        "agent-security",
+        "identity",
+        "llm-research"
+      ],
+      "keywords": [
+        "摘要来源",
+        "权限推导",
+        "数据型注入"
+      ],
+      "focus": "摘要保存了内容，不等于保存了谁有权发出该内容。",
+      "sourceNote": "最早来源为论文作者团队的arXiv原文，核对为11月25日首次公告批次；初稿提交日可能早于公告日，以版本史为准。实验、原型与证明均按作者报告，未视为独立复现或现实部署保证。",
+      "sources": [
+        {
+          "name": "arXiv 原始论文",
+          "url": "https://arxiv.org/abs/2611.32194"
+        }
+      ],
+      "summary": "研究发现，将模型生成的历史摘要放入用户消息后，基于用户请求生成权限的系统可能误信摘要中的外来数据。在指定收款账户实验中，摘要推导的策略有91%允许攻击者通知里的账户，而直接使用用户原话的策略没有允许；保留经过认证的用户原文后，40次AgentDojo重测未完成攻击动作。这个比例衡量特定授权实验，不能直接写成所有Claude Code或Codex任务的资金被盗概率。",
+      "impact": "分析：压缩会跨越信任边界，授权系统需要保留来源而不仅是语义相似的总结。",
+      "researchApplications": "设计不可改写的用户授权记录、来源标注摘要以及压缩前后权限非放大验证。",
+      "relevance": {
+        "level": "direct",
+        "reason": "单Agent安全与LLM长上下文：直接涉及压缩如何改变权限依据。"
+      },
+      "previous": {
+        "ids": [],
+        "note": "无本地同事件前序，本期首次收录。"
+      }
+    },
+    {
+      "id": "2026-11-25-20",
+      "date": "2026-11-25",
+      "rank": 20,
+      "title": "权限答复可能升级成修改长期策略的权限",
+      "tags": [
+        "agent-security",
+        "identity",
+        "supply-chain"
+      ],
+      "keywords": [
+        "委派审批",
+        "策略持久化",
+        "规则来源"
+      ],
+      "focus": "允许插件回答一次审批，不应自动允许它删除操作者的拒绝规则。",
+      "sourceNote": "最早来源为论文作者团队的arXiv原文，核对为11月25日首次公告批次；初稿提交日可能早于公告日，以版本史为准。实验、原型与证明均按作者报告，未视为独立复现或现实部署保证。",
+      "sources": [
+        {
+          "name": "arXiv 原始论文",
+          "url": "https://arxiv.org/abs/2611.32195"
+        }
+      ],
+      "summary": "论文展示Claude Code的一次权限答复可附带策略更新，删除保护秘密文件的拒绝规则，影响当前及后续会话。作者用规则来源与权限非放大界分析10个Agent系统的13种设计，并调查2227个插件，其中仅2个发送策略更新，不能因此把全部插件视为已利用漏洞。其修复在共同更新入口校验规则归属，实验与形式化边界仍依赖受测版本和模型。",
+      "impact": "分析：审批委派与策略管理必须分权，单次允许或拒绝结果不足以描述整段运行的权限变化。",
+      "researchApplications": "研究策略更新的主体归属、持久化授权审计和跨会话拒绝规则不变量。",
+      "relevance": {
+        "level": "direct",
+        "reason": "单Agent及工具供应链安全：直接关系委派审批是否变成长效权限提升。"
+      },
+      "previous": {
+        "ids": [],
+        "note": "无本地同事件前序，本期首次收录。"
+      }
+    },
+    {
+      "id": "2026-11-25-21",
+      "date": "2026-11-25",
+      "rank": 21,
+      "title": "MIMPA：正常协作也可污染共享记忆，影响后续多Agent任务",
+      "tags": [
+        "multi-agent",
+        "agent-security",
+        "ai-security"
+      ],
+      "keywords": [
+        "共享记忆",
+        "成功经验",
+        "内部投毒"
+      ],
+      "focus": "当前任务答对，不代表留下的协作记录可以无条件信任。",
+      "sourceNote": "最早来源为论文作者团队的arXiv原文，核对为11月25日首次公告批次；初稿提交日可能早于公告日，以版本史为准。实验、原型与证明均按作者报告，未视为独立复现或现实部署保证。",
+      "sources": [
+        {
+          "name": "arXiv 原始论文",
+          "url": "https://arxiv.org/abs/2611.31307"
+        }
+      ],
+      "summary": "MIMPA让恶意成员在早期任务中一边帮助团队答对，一边把隐藏载荷写进将被保存的成功协作记录，无需直接写共享数据库。记录在后续目标任务被检索后可诱导错误答案，作者在3个基准、2个模型基座上报告超过对照攻击，分层记忆和审计仅部分缓解。摘要没有跨全部设置统一适用的成功率，不能把实验结果当成所有多Agent记忆系统均已被攻破。",
+      "impact": "分析：经验复用可能把一次内部影响变成跨任务持续通道，正确结果不足以认证整段记忆。",
+      "researchApplications": "研究共享记忆的来源、写入权限、检索时降权及成功轨迹中的隐藏指令过滤。",
+      "relevance": {
+        "level": "direct",
+        "reason": "多Agent安全：直接涉及合法成员对跨任务共享经验的持续操纵。"
+      },
+      "previous": {
+        "ids": [],
+        "note": "无本地同事件前序，本期首次收录。"
+      }
+    },
+    {
+      "id": "2026-11-25-22",
+      "date": "2026-11-25",
+      "rank": 22,
+      "title": "AEGIS 用运行行为证据约束 HPC Agent，并联动集群隔离",
+      "tags": [
+        "agent-security",
+        "multi-agent",
+        "distributed-systems"
+      ],
+      "keywords": [
+        "行为证据",
+        "内核监控",
+        "合法流量外泄"
+      ],
+      "focus": "合法身份和加密API连接，仍可能承载被劫持Agent的数据外传。",
+      "sourceNote": "最早来源为论文作者团队的arXiv原文，核对为11月25日首次公告批次；初稿提交日可能早于公告日，以版本史为准。实验、原型与证明均按作者报告，未视为独立复现或现实部署保证。",
+      "sources": [
+        {
+          "name": "arXiv 原始论文",
+          "url": "https://arxiv.org/abs/2611.32958"
+        }
+      ],
+      "summary": "AEGIS把任务约束编成运行时配置，通过内核系统调用观察、跨Agent关联和集群调度器隔离来处理授权Agent被劫持的问题。在真实证明检查路径上，四类已实现攻击在一秒检查间隔下的检测中位延迟低于一秒，受测良性工作流未观察到误报。该结果覆盖的是有限攻击套件，不代表能识别所有加密LLM流量中的外泄，也不是模型自述即可完成的安全证明。",
+      "impact": "分析：高性能计算场景需要把Agent活动纳入集群权限和隔离控制，而不只检测聊天文本。",
+      "researchApplications": "研究任务行为契约、跨Agent行为关联及检测到调度器隔离的延迟与覆盖。",
+      "relevance": {
+        "level": "direct",
+        "reason": "单、多Agent和分布式系统安全：直接连接工具执行、敏感数据与集群控制面。"
+      },
+      "previous": {
+        "ids": [],
+        "note": "无本地同事件前序，本期首次收录。"
+      }
+    },
+    {
+      "id": "2026-11-25-23",
+      "date": "2026-11-25",
+      "rank": 23,
+      "title": "AgentBank 为代理支付引入链上授权额度和共享流动性",
+      "tags": [
+        "blockchain",
+        "smart-contracts",
+        "agent-security",
+        "stablecoins"
+      ],
+      "keywords": [
+        "代理支付",
+        "共享储备",
+        "相关提款"
+      ],
+      "focus": "减少每个Agent闲置资金，会同时引入共享储备和挤兑风险。",
+      "sourceNote": "最早来源为论文作者团队的arXiv原文，核对为11月25日首次公告批次；初稿提交日可能早于公告日，以版本史为准。实验、原型与证明均按作者报告，未视为独立复现或现实部署保证。",
+      "sources": [
+        {
+          "name": "arXiv 原始论文",
+          "url": "https://arxiv.org/abs/2611.32389"
+        }
+      ],
+      "summary": "AgentBank提出智能合约账本，让Agent依据所有者授权和链上额度消费账户债权，内部付款只更新余额而不逐次转移底层资产。作者原型相对逐Agent独立钱包减少52%至77%的闲置流动性，并分析失窃Agent密钥损失及相关提款下的储备要求。实验性合约层不是持牌银行或已有真实业务安全保证，资金利用率收益不能替代偿付能力评估。",
+      "impact": "分析：代理支付权限与资金池流动性需要联合建模，节省闲置资金也可能放大共同流动性故障。",
+      "researchApplications": "验证授权额度、负债与资产不变量，研究并发付款、Agent密钥失陷和自动化挤兑。",
+      "relevance": {
+        "level": "direct",
+        "reason": "智能合约、Agent安全与分布式支付：直接涉及机器代理的资产权限和共享状态。"
+      },
+      "previous": {
+        "ids": [],
+        "note": "无本地同事件前序，本期首次收录。"
+      }
+    },
+    {
+      "id": "2026-11-25-24",
+      "date": "2026-11-25",
+      "rank": 24,
+      "title": "PIEQ 用独立证据和执行时检查约束生产运维Agent",
+      "tags": [
+        "multi-agent",
+        "distributed-systems",
+        "agent-security"
+      ],
+      "keywords": [
+        "证据独立性",
+        "执行时状态",
+        "故障切换"
+      ],
+      "focus": "多个模型同意，不能替代来自不同故障域的真实系统证据。",
+      "sourceNote": "最早来源为论文作者团队的arXiv原文，核对为11月25日首次公告批次；初稿提交日可能早于公告日，以版本史为准。实验、原型与证明均按作者报告，未视为独立复现或现实部署保证。",
+      "sources": [
+        {
+          "name": "arXiv 原始论文",
+          "url": "https://arxiv.org/abs/2611.32032"
+        }
+      ],
+      "summary": "PIEQ把模型排除在可信计算核心之外，要求运维变更先取得独立来源证据，并在执行时核对版本、权限新鲜度和仍可能成立的故障情形。作者在etcd测试及PostgreSQL与Patroni集群原型中报告，假设范围内没有不安全准入或错误前置条件提交，模糊情形转为只读诊断。基准由作者标注、在线模型版本未固定，多主机硬件故障隔离和部分切换保证仍是未完成工作。",
+      "impact": "分析：多模型投票不能天然获得独立容错，生产变更还要防止检查后状态变化。",
+      "researchApplications": "建立跨故障域证据认证、检查到执行的原子绑定，以及保守拒绝与可用性的权衡。",
+      "relevance": {
+        "level": "direct",
+        "reason": "多Agent与分布式系统安全：直接涉及运维控制面、故障切换及并发一致性。"
+      },
+      "previous": {
+        "ids": [],
+        "note": "无本地同事件前序，本期首次收录。"
+      }
+    },
+    {
+      "id": "2026-11-25-25",
+      "date": "2026-11-25",
+      "rank": 25,
+      "title": "Agent 自然故障后的重试，可能造成重复写入以外的长期损害",
+      "tags": [
+        "agent-security",
+        "distributed-systems",
+        "evaluation"
+      ],
+      "keywords": [
+        "部分提交",
+        "重试幂等",
+        "错误首次写入"
+      ],
+      "focus": "重试安全不能仅靠查找重复API调用。",
+      "sourceNote": "最早来源为论文作者团队的arXiv原文，核对为11月25日首次公告批次；初稿提交日可能早于公告日，以版本史为准。实验、原型与证明均按作者报告，未视为独立复现或现实部署保证。",
+      "sources": [
+        {
+          "name": "arXiv 原始论文",
+          "url": "https://arxiv.org/abs/2611.31554"
+        }
+      ],
+      "summary": "研究审计AppWorld中Agent代码自然失败后的恢复：200个分层抽样候选中有145个确认发生部分执行，143个可判断结果中30个恢复留下持续损害。按分层权重估计，伤害比例为24.6%，约三分之二是重复效果，其余包括删除用户数据或首次写入错误对象。模型自己生成幂等标识的小规模试验未显示明确改善，因为同一操作可能被赋新标识，结果不能直接推广成所有真实Agent的事故率。",
+      "impact": "分析：外部状态已部分改变时，重跑整块代码可能造成不可逆副作用，操作身份需要可信定义。",
+      "researchApplications": "研究效果级幂等、执行日志、部分提交恢复，以及错误首次写入的补偿事务。",
+      "relevance": {
+        "level": "direct",
+        "reason": "单Agent和分布式系统安全：直接涉及重试、事务边界及外部状态一致性。"
+      },
+      "previous": {
+        "ids": [],
+        "note": "无本地同事件前序，本期首次收录。"
+      }
+    },
+    {
+      "id": "2026-11-25-26",
+      "date": "2026-11-25",
+      "rank": 26,
+      "title": "RecurSciBench 分开评估科研Agent自我改进与跨任务迁移",
+      "tags": [
+        "llm-research",
+        "evaluation",
+        "agent-security"
+      ],
+      "keywords": [
+        "科研自改进",
+        "独立任务",
+        "局部退化"
+      ],
+      "focus": "整体平均收益为正，不代表每个科研任务都获得提升。",
+      "sourceNote": "最早来源为论文作者团队的arXiv原文，核对为11月25日首次公告批次；初稿提交日可能早于公告日，以版本史为准。实验、原型与证明均按作者报告，未视为独立复现或现实部署保证。",
+      "sources": [
+        {
+          "name": "arXiv 原始论文",
+          "url": "https://arxiv.org/abs/2611.32508"
+        }
+      ],
+      "summary": "RecurSciBench从原始数据构建可执行且带科学有效性检查的建模与分析任务，用独立任务比较Agent演化前后的状态。作者在4个科学领域评估4种自我改进系统，发现收益因系统和领域而变，整体改善可与个别任务退化并存。源领域没有可测收益时仍可能向其他领域迁移，因此不能只用源任务得分认定改进有效或无效。",
+      "impact": "分析：科研Agent的经验学习需要独立验证集与退化监测，避免把训练任务优化视为普遍能力增长。",
+      "researchApplications": "构建源任务、同类型、跨类型和跨领域的隔离评测，并加入科学有效性与安全回归检查。",
+      "relevance": {
+        "level": "direct",
+        "reason": "LLM科研应用与评测：直接研究经验积累能否转化为可验证的科研进展。"
+      },
+      "previous": {
+        "ids": [],
+        "note": "无本地同事件前序，本期首次收录。"
+      }
+    },
+    {
+      "id": "2026-11-25-27",
+      "date": "2026-11-25",
+      "rank": 27,
+      "title": "SwarmLeak 等预算实验未发现四名攻击Agent优于一名",
+      "tags": [
+        "multi-agent",
+        "agent-security",
+        "evaluation"
+      ],
+      "keywords": [
+        "协同攻击",
+        "隐私泄漏",
+        "预算公平"
+      ],
+      "focus": "增加攻击Agent数量，不自动意味着更强的攻击。",
+      "sourceNote": "最早来源为论文作者团队的arXiv原文，核对为11月25日首次公告批次；初稿提交日可能早于公告日，以版本史为准。实验、原型与证明均按作者报告，未视为独立复现或现实部署保证。",
+      "sources": [
+        {
+          "name": "arXiv 原始论文",
+          "url": "https://arxiv.org/abs/2611.31791"
+        }
+      ],
+      "summary": "SwarmLeak在24个合成群聊场景、5个受害模型上，比较单个攻击者和共享私聊的四人攻击群，并把协调成本计入相同20万词元预算。该实验中单人攻击在各受害模型上均匹配或超过群体，而更换受害模型对泄漏结果的影响更大。数据来自带明确保密规则的合成记录，检索到秘密与实际发布秘密也必须区分，不能写成真实客户资料外泄。",
+      "impact": "分析：多Agent红队评测应控制总预算并分开计算读取和泄漏，不能仅按人数评价攻击强度。",
+      "researchApplications": "设计协同攻击预算消融，测量信息读取、首次泄漏字段与完整记录披露的差异。",
+      "relevance": {
+        "level": "direct",
+        "reason": "多Agent安全与隐私攻击：直接比较协作是否带来额外攻击优势。"
+      },
+      "previous": {
+        "ids": [],
+        "note": "无本地同事件前序，本期首次收录。"
+      }
+    },
+    {
+      "id": "2026-11-25-28",
+      "date": "2026-11-25",
+      "rank": 28,
+      "title": "ReQOR 修补量化后触发的模型后门，训练前后行为需分别检查",
+      "tags": [
+        "ai-security",
+        "llm-research",
+        "supply-chain"
+      ],
+      "keywords": [
+        "量化条件后门",
+        "算子差异",
+        "无梯度修补"
+      ],
+      "focus": "高精度模型表现正常，不能证明部署量化版本同样安全。",
+      "sourceNote": "最早来源为论文作者团队的arXiv原文，核对为11月25日首次公告批次；初稿提交日可能早于公告日，以版本史为准。实验、原型与证明均按作者报告，未视为独立复现或现实部署保证。",
+      "sources": [
+        {
+          "name": "arXiv 原始论文",
+          "url": "https://arxiv.org/abs/2611.32755"
+        }
+      ],
+      "summary": "ReQOR针对只在量化后触发的后门，用同一输入状态比较高精度与量化模块的运算差异，再以残差适配器修补主要差异方向。作者在4个LLM、3种PGD后门攻击及3种量化格式中报告缓解效果，并额外测试另一类注入攻击，但摘要未给可跨设置统一引用的风险降低幅度。方法无需攻击样本或梯度训练，其有效性仍取决于校准数据和受测后门，不能证明已清除任意后门。",
+      "impact": "分析：模型发布审计应覆盖实际量化产物和部署路径，而不只测试原始权重。",
+      "researchApplications": "研究量化差异的安全相关子空间、干净校准集覆盖及修补对良性能力的影响。",
+      "relevance": {
+        "level": "direct",
+        "reason": "LLM部署安全与模型供应链：直接涉及权重转换后出现的行为风险。"
+      },
+      "previous": {
+        "ids": [],
+        "note": "无本地同事件前序，本期首次收录。"
+      }
+    },
+    {
+      "id": "2026-11-25-29",
+      "date": "2026-11-25",
+      "rank": 29,
+      "title": "RECAP 让上下文压缩同时学习保留后续行为",
+      "tags": [
+        "llm-research",
+        "agent-security",
+        "evaluation"
+      ],
+      "keywords": [
+        "上下文压缩",
+        "行为失真",
+        "联合训练"
+      ],
+      "focus": "摘要质量应由后续行为是否改变衡量，而不仅是文本相似或最终奖励。",
+      "sourceNote": "最早来源为论文作者团队的arXiv原文，核对为11月25日首次公告批次；初稿提交日可能早于公告日，以版本史为准。实验、原型与证明均按作者报告，未视为独立复现或现实部署保证。",
+      "sources": [
+        {
+          "name": "arXiv 原始论文",
+          "url": "https://arxiv.org/abs/2611.31258"
+        }
+      ],
+      "summary": "RECAP把压缩后与原历史下的后续行为差异作为训练目标，同时训练摘要和之后的Agent动作。在Qwen3.5-4B上，相对仅用任务奖励的强化学习基线，BrowseComp-plus和SWE-bench Verified分别提高4.6及4.3个百分点。结果属于指定模型和环境的任务表现提升，保留行为不等于保存授权来源或已经抵抗提示注入。",
+      "impact": "分析：长任务压缩可以受更直接的行为信号约束，但能力保持和安全来源保持仍须分别验证。",
+      "researchApplications": "把行为失真目标与不可改写授权记录联合设计，测量长任务成功率及权限漂移。",
+      "relevance": {
+        "level": "direct",
+        "reason": "LLM训练、长上下文及单Agent安全：直接涉及压缩策略与持续执行行为。"
+      },
+      "previous": {
+        "ids": [],
+        "note": "无本地同事件前序，本期首次收录。"
+      }
+    },
+    {
+      "id": "2026-11-25-30",
+      "date": "2026-11-25",
+      "rank": 30,
+      "title": "TACT-Bench 同时考察抵御多轮操纵与继续完成合法任务",
+      "tags": [
+        "agent-security",
+        "evaluation",
+        "ai-security"
+      ],
+      "keywords": [
+        "自适应对话",
+        "信任预热",
+        "过度拒绝"
+      ],
+      "focus": "拒绝攻击与能够完成同类正常任务，必须一起评估。",
+      "sourceNote": "最早来源为论文作者团队的arXiv原文，核对为11月25日首次公告批次；初稿提交日可能早于公告日，以版本史为准。实验、原型与证明均按作者报告，未视为独立复现或现实部署保证。",
+      "sources": [
+        {
+          "name": "arXiv 原始论文",
+          "url": "https://arxiv.org/abs/2611.31756"
+        }
+      ],
+      "summary": "TACT-Bench用有状态多轮故事和自适应话术攻击工具Agent，把禁止动作与对应良性任务配对，并单独测试先完成正常任务再发动无关攻击。六款受测模型的结果显示，预先建立正常互动会进一步放大攻击影响，所测防御也未稳定改善安全拒绝与正常能力合成的指标。结果仍受场景脚本与受测模型范围限制，基准上的失败率不等于真实业务事故率。",
+      "impact": "分析：只统计拒绝次数可能奖励无法工作的防御，安全性和可用性需要配对测量。",
+      "researchApplications": "构建业务策略隐藏、多轮升级和信任预热测试，并控制正常任务完成能力。",
+      "relevance": {
+        "level": "direct",
+        "reason": "单Agent安全与评测：直接涉及对话操纵、工具权限及防御过度保守。"
+      },
+      "previous": {
+        "ids": [],
+        "note": "无本地同事件前序，本期首次收录。"
+      }
+    },
+    {
+      "id": "2026-11-25-31",
+      "date": "2026-11-25",
+      "rank": 31,
+      "title": "恢复安全评测区分动作提议、运行时放行与真正提交效果",
+      "tags": [
+        "agent-security",
+        "distributed-systems",
+        "evaluation"
+      ],
+      "keywords": [
+        "写入超时",
+        "在途状态",
+        "效果级评测"
+      ],
+      "focus": "模型提出危险动作、运行时拦截，以及实际发生副作用不能混作同一结果。",
+      "sourceNote": "最早来源为论文作者团队的arXiv原文，核对为11月25日首次公告批次；初稿提交日可能早于公告日，以版本史为准。实验、原型与证明均按作者报告，未视为独立复现或现实部署保证。",
+      "sources": [
+        {
+          "name": "arXiv 原始论文",
+          "url": "https://arxiv.org/abs/2611.31318"
+        }
+      ],
+      "summary": "研究为超时工具写入设计可执行评测，分别记录Agent提议、运行时决策和最终提交效果。5040次API实验中，一组写入缺失情形的合法恢复从原说明下39/576变为澄清后576/576，显示任务与契约定义可主导可用性；另有720次Claude Code实验。论文未展示普遍防御有效性，过期的未写入观察和延迟提交竞态仍会破坏恢复判断，不能把零危险效果等同模型从未提出风险动作。",
+      "impact": "分析：终点看似完成可能掩盖错误重试，安全评测需要观察真实提交及证据时效。",
+      "researchApplications": "比较原子幂等键、延迟提交和过期读，设计可审计的恢复契约与效果级指标。",
+      "relevance": {
+        "level": "direct",
+        "reason": "单Agent和分布式系统安全：直接涉及写入超时、幂等、竞态和恢复评测。"
+      },
+      "previous": {
+        "ids": [],
+        "note": "无本地同事件前序，本期首次收录。"
+      }
+    }
+  ]
+}
